@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JobMitra AI - Find jobs, prepare smart, get ready. India and Odisha jobs with AI preparation.">
+<title>JobMitra AI</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#101a43,#173eaa);color:white;padding:24px 6% 42px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:12px;background:#f6b928;color:#14204a;display:grid;place-items:center;font-weight:800}.brand h1{font-size:20px;margin:0}.brand small{display:block;color:#c9d4ff;margin-top:4px}
+nav a{color:#dce5ff;text-decoration:none;margin-left:22px;font-size:14px}
+.hero{max-width:1050px;margin:42px auto 0}.hero h2{font-size:42px;margin:0 0 12px}.hero p{color:#dbe4ff;font-size:17px}
+.search{display:flex;background:white;border-radius:14px;overflow:hidden;margin-top:24px;max-width:900px}.search input{flex:1;border:0;padding:18px;font-size:16px;outline:none}.search button{border:0;background:#f2a900;padding:0 25px;font-size:20px;cursor:pointer}
+main{max-width:1050px;margin:0 auto;padding:35px 20px}.section-title{display:flex;justify-content:space-between;align-items:center}.section-title h2{margin:0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0 35px}.category,.job,.feature{background:white;border-radius:16px;padding:20px;box-shadow:0 5px 18px #13204a12}.category{cursor:pointer;border:1px solid #e9edf6}.category b{display:block;margin:12px 0 6px}.category span{font-size:13px;color:#778198}
+.ai{background:linear-gradient(135deg,#123a9f,#2563eb);color:white;border-radius:20px;padding:28px;margin-bottom:35px}.ai h2{margin-top:0}.ai button{background:#f4b51b;border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer}
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.job h3{margin:0 0 8px}.job p{color:#6b7488;font-size:14px}.job button{border:1px solid #1d4ed8;background:white;color:#1d4ed8;border-radius:8px;padding:9px 14px;cursor:pointer}
+footer{text-align:center;background:#101a43;color:#cbd5f5;padding:25px;margin-top:30px}
+@media(max-width:750px){nav{display:none}.hero h2{font-size:30px}.grid{grid-template-columns:repeat(2,1fr)}.jobs{grid-template-columns:1fr}.search button{padding:0 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><div class="logo">JM<br>AI</div><div><h1>JOBMITRA AI</h1><small>Find Jobs. Prepare Smart. Get Ready.</small></div></div>
+    <nav><a href="#home">Home</a><a href="#jobs">Browse Jobs</a><a href="#ai">AI Prep</a><a href="#saved">♡ Saved</a></nav>
+  </div>
+  <div class="hero" id="home">
+    <h2>Explore Jobs / ଚାକିରି ଖୋଜନ୍ତୁ</h2>
+    <p>Find government & private jobs across India and Odisha. Prepare smarter with AI.</p>
+    <div class="search"><input id="search" placeholder="Search jobs / ଚାକିରି ଖୋଜନ୍ତୁ..."><button onclick="searchJobs()">⌕</button></div>
+  </div>
+</header>
+
+<main>
+  <div class="section-title"><h2>Start Here</h2><span>Made for your next step ✨</span></div>
+  <div class="grid">
+    <div class="category" onclick="filterJobs('Government')">🏛️<b>Govt Jobs</b><span>ସରକାରୀ ଚାକିରି</span></div>
+    <div class="category" onclick="filterJobs('Private')">💼<b>Private Jobs</b><span>ବେସରକାରୀ ଚାକିରି</span></div>
+    <div class="category" onclick="filterJobs('Odisha')">📍<b>Odisha Jobs</b><span>ଓଡ଼ିଶା ଚାକିରି</span></div>
+    <div class="category" onclick="document.getElementById('ai').scrollIntoView()">🤖<b>AI India</b><span>AI Job Preparation</span></div>
+  </div>
+
+  <section class="ai" id="ai">
+    <h2>🎓 AI Exam Preparation</h2>
+    <p>Practice questions, interview preparation and job-ready skills with AI.</p>
+    <button onclick="alert('AI Preparation section coming soon!')">Start AI Preparation →</button>
+  </section>
+
+  <div class="section-title" id="jobs"><h2>Latest Jobs</h2><span id="count"></span></div>
+  <div class="jobs" id="jobList"></div>
+</main>
+
+<footer>© 2026 JobMitra AI · Find Jobs. Prepare Smart. Get Ready.</footer>
+
+<script>
+const jobs=[
+ {title:"Odisha Government Recruitment",type:"Government",place:"Odisha",info:"Check official notification and eligibility."},
+ {title:"SSC / Central Government Jobs",type:"Government",place:"India",info:"Latest central government opportunities."},
+ {title:"Private Company Jobs",type:"Private",place:"India",info:"Entry-level and experienced vacancies."},
+ {title:"Odisha Private Jobs",type:"Private",place:"Odisha",info:"Jobs available across Odisha."}
+];
+function render(list=jobs){
+ const box=document.getElementById("jobList"); box.innerHTML="";
+ list.forEach(j=>box.innerHTML+=`<article class="job"><h3>${j.title}</h3><p>📍 ${j.place} · ${j.type}</p><p>${j.info}</p><button onclick="alert('Apply link will be added with the official notification.')">View / Apply</button></article>`);
+ document.getElementById("count").textContent=list.length+" jobs";
+}
+function filterJobs(type){render(jobs.filter(j=>j.type===type||j.place===type));document.getElementById("jobs").scrollIntoView();}
+function searchJobs(){let q=document.getElementById("search").value.toLowerCase();render(jobs.filter(j=>(j.title+" "+j.type+" "+j.place).toLowerCase().includes(q)));}
+render();
+</script>
+</body>
+</html>
