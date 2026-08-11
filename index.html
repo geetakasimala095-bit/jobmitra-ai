@@ -688,30 +688,33 @@ job.style.display="none";
 }
 
 </script>
-<!-- ================= SCHOLARSHIPS ================= -->
+<!-- ================= JOBMITRA SCHOLARSHIP SECTION ================= -->
 
 <section id="scholarships" style="
-  padding:20px;
-  background:#f5f8ff;
+  padding:20px 15px;
+  background:#f4f8ff;
   margin-top:25px;
 ">
 
-  <h2 style="
-    text-align:center;
-    color:#0757b8;
-    font-size:28px;
-    margin-bottom:8px;
-  ">
-    🎓 Scholarships
-  </h2>
+  <div style="text-align:center;margin-bottom:22px;">
 
-  <p style="
-    text-align:center;
-    color:#555;
-    margin-bottom:18px;
-  ">
-    School & College Students Scholarship Updates
-  </p>
+    <h2 style="
+      color:#0757b8;
+      font-size:28px;
+      margin-bottom:8px;
+    ">
+      🎓 Scholarships
+    </h2>
+
+    <p style="color:#555;line-height:1.6;">
+      School & College Students ପାଇଁ Scholarship Updates
+    </p>
+
+    <p style="color:#555;">
+      Pre-Matric • Post-Matric • Odisha State Scholarships
+    </p>
+
+  </div>
 
 
   <!-- CATEGORY BUTTONS -->
@@ -719,15 +722,15 @@ job.style.display="none";
   <div style="
     display:flex;
     justify-content:center;
-    gap:8px;
     flex-wrap:wrap;
+    gap:8px;
     margin-bottom:20px;
   ">
 
-    <button onclick="filterScholarship('all')" style="
-      padding:10px 15px;
+    <button onclick="showScholarships('all')" style="
       border:0;
-      border-radius:20px;
+      padding:10px 16px;
+      border-radius:22px;
       background:#0757b8;
       color:white;
       font-weight:bold;
@@ -735,10 +738,10 @@ job.style.display="none";
       📚 All
     </button>
 
-    <button onclick="filterScholarship('school')" style="
-      padding:10px 15px;
+    <button onclick="showScholarships('school')" style="
       border:0;
-      border-radius:20px;
+      padding:10px 16px;
+      border-radius:22px;
       background:#16a34a;
       color:white;
       font-weight:bold;
@@ -746,10 +749,10 @@ job.style.display="none";
       🏫 School
     </button>
 
-    <button onclick="filterScholarship('college')" style="
-      padding:10px 15px;
+    <button onclick="showScholarships('college')" style="
       border:0;
-      border-radius:20px;
+      padding:10px 16px;
+      border-radius:22px;
       background:#7c3aed;
       color:white;
       font-weight:bold;
@@ -760,109 +763,131 @@ job.style.display="none";
   </div>
 
 
-  <!-- ================= SCHOOL SCHOLARSHIPS ================= -->
+  <!-- ODISHA STATE SCHOLARSHIP PORTAL -->
 
-  <div class="scholarship-card school" style="
-    background:white;
-    padding:18px;
-    margin:15px 0;
-    border-radius:16px;
-    box-shadow:0 3px 12px #ddd;
+  <div style="
+    background:linear-gradient(135deg,#0757b8,#00a8ff);
+    color:white;
+    padding:22px;
+    border-radius:18px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 4px 15px #ccc;
   ">
 
-    <h3 style="color:#0757b8;">
-      🏫 PM YASASVI Scholarship – School Students
-    </h3>
+    <h2>🏛️ Odisha State Scholarship Portal</h2>
 
-    <p>👨‍🎓 <b>For:</b> Eligible OBC / EBC / DNT students</p>
-
-    <p>
-      📚 <b>Level:</b> School Students
+    <p style="margin:10px 0;line-height:1.6;">
+      Odisha Government Scholarship applications
+      official portal ମାଧ୍ୟମରେ apply କରିପାରିବେ।
     </p>
 
     <p>
-      💰 <b>Amount:</b> As per official scheme
-    </p>
-
-    <p>
-      📅 <b style="color:#d62828;">
-        Last Date: Check Official Portal
-      </b>
-    </p>
-
-    <p>
-      📋 <b>Eligibility:</b>
-      Check official notification for class,
-      income and category requirements.
+      🏫 School • 🎓 College • Pre-Matric • Post-Matric
     </p>
 
     <a
-      href="https://scholarships.gov.in/"
+      href="https://scholarship.odisha.gov.in/"
       target="_blank"
       style="
         display:inline-block;
-        background:#16a34a;
-        color:white;
+        margin-top:14px;
+        background:white;
+        color:#0757b8;
         padding:12px 20px;
         border-radius:9px;
         text-decoration:none;
         font-weight:bold;
-        margin-top:8px;
       ">
-      📝 APPLY NOW
+      🔗 OPEN STATE SCHOLARSHIP PORTAL
     </a>
 
   </div>
 
 
-  <!-- SCHOOL SCHOLARSHIP 2 -->
+  <!-- SCHOOL / PRE-MATRIC -->
 
-  <div class="scholarship-card school" style="
+  <div class="jm-scholarship school" style="
     background:white;
-    padding:18px;
+    padding:20px;
     margin:15px 0;
-    border-radius:16px;
-    box-shadow:0 3px 12px #ddd;
+    border-radius:17px;
+    box-shadow:0 4px 14px #ddd;
   ">
 
     <h3 style="color:#0757b8;">
       🏫 Pre-Matric Scholarship
     </h3>
 
-    <p>👨‍🎓 <b>For:</b> Eligible school students</p>
+    <p>👨‍🎓 <b>For:</b> Eligible School Students</p>
 
     <p>
-      📚 <b>Level:</b> Pre-Matric
+      📚 <b>Level:</b> Pre-Matric / School
     </p>
 
     <p>
-      💰 <b>Amount:</b> Depends on the scheme
+      💰 <b>Scholarship Amount:</b>
+      Scheme ଅନୁସାରେ ଭିନ୍ନ।
     </p>
 
     <p>
-      📅 <b style="color:#d62828;">
-        Last Date: Check Official Portal
-      </b>
+      🟢 <b>Apply Start:</b>
+      Official announcement ଅନୁସାରେ
+    </p>
+
+    <p style="color:#d62828;">
+      🔴 <b>Last Date:</b>
+      Official announcement ଅନୁସାରେ
     </p>
 
     <p>
       📋 <b>Eligibility:</b>
-      Category, income and class requirements
-      apply according to the specific scholarship.
+      Class, category, family income ଓ
+      scheme guidelines ଅନୁସାରେ।
     </p>
 
+    <details style="margin-top:12px;">
+
+      <summary style="
+        cursor:pointer;
+        color:#0757b8;
+        font-weight:bold;
+      ">
+        📄 Required Documents
+      </summary>
+
+      <ul style="
+        margin-top:10px;
+        padding-left:22px;
+        line-height:1.8;
+      ">
+
+        <li>Aadhaar Card / Aadhaar Number</li>
+        <li>Passport-size Photograph</li>
+        <li>Income Certificate</li>
+        <li>Caste Certificate – applicable ହେଲେ</li>
+        <li>Residence Certificate</li>
+        <li>Bank Passbook Front Page</li>
+        <li>Previous Examination Certificate</li>
+        <li>Matriculation Certificate – applicable ହେଲେ</li>
+        <li>Disability Certificate – applicable ହେଲେ</li>
+
+      </ul>
+
+    </details>
+
     <a
-      href="https://scholarships.gov.in/"
+      href="https://scholarship.odisha.gov.in/"
       target="_blank"
       style="
         display:inline-block;
+        margin-top:15px;
         background:#16a34a;
         color:white;
         padding:12px 20px;
         border-radius:9px;
         text-decoration:none;
         font-weight:bold;
-        margin-top:8px;
       ">
       📝 APPLY NOW
     </a>
@@ -870,110 +895,96 @@ job.style.display="none";
   </div>
 
 
-  <!-- ================= COLLEGE SCHOLARSHIPS ================= -->
+  <!-- COLLEGE / POST-MATRIC -->
 
-  <div class="scholarship-card college" style="
+  <div class="jm-scholarship college" style="
     background:white;
-    padding:18px;
+    padding:20px;
     margin:15px 0;
-    border-radius:16px;
-    box-shadow:0 3px 12px #ddd;
+    border-radius:17px;
+    box-shadow:0 4px 14px #ddd;
   ">
 
     <h3 style="color:#7c3aed;">
-      🎓 PM-USP Central Sector Scholarship
+      🎓 Post-Matric Scholarship
     </h3>
 
-    <p>🎓 <b>For:</b> College / University Students</p>
-
     <p>
-      📚 <b>Level:</b> UG / Higher Education
+      👨‍🎓 <b>For:</b>
+      Eligible students after Matriculation
     </p>
-
-    <p>
-      💰 <b>Amount:</b> As per official guidelines
-    </p>
-
-    <p>
-      📅 <b style="color:#d62828;">
-        Last Date: Check Official Portal
-      </b>
-    </p>
-
-    <p>
-      📋 <b>Eligibility:</b>
-      Students must satisfy the official
-      academic and income requirements.
-    </p>
-
-    <a
-      href="https://scholarships.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        background:#16a34a;
-        color:white;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-        margin-top:8px;
-      ">
-      📝 APPLY NOW
-    </a>
-
-  </div>
-
-
-  <!-- COLLEGE SCHOLARSHIP 2 -->
-
-  <div class="scholarship-card college" style="
-    background:white;
-    padding:18px;
-    margin:15px 0;
-    border-radius:16px;
-    box-shadow:0 3px 12px #ddd;
-  ">
-
-    <h3 style="color:#7c3aed;">
-      🎓 AICTE Pragati Scholarship
-    </h3>
-
-    <p>👩‍🎓 <b>For:</b> Eligible Girl Students</p>
 
     <p>
       📚 <b>Level:</b>
-      Technical Diploma / Degree
+      +2 • +3 • Diploma • ITI • UG • PG
+      (scheme ଅନୁସାରେ)
     </p>
 
     <p>
-      💰 <b>Amount:</b> As per official AICTE scheme
+      💰 <b>Scholarship Amount:</b>
+      Course ଓ scheme ଅନୁସାରେ ଭିନ୍ନ।
     </p>
 
     <p>
-      📅 <b style="color:#d62828;">
-        Last Date: Check Official Portal
-      </b>
+      🟢 <b>Apply Start:</b>
+      Official announcement ଅନୁସାରେ
+    </p>
+
+    <p style="color:#d62828;">
+      🔴 <b>Last Date:</b>
+      Official announcement ଅନୁସାରେ
     </p>
 
     <p>
       📋 <b>Eligibility:</b>
-      Girl students studying eligible
-      AICTE-approved technical courses.
+      Category, course, institution, income
+      ଓ scheme guidelines ଅନୁସାରେ।
     </p>
 
+    <details style="margin-top:12px;">
+
+      <summary style="
+        cursor:pointer;
+        color:#7c3aed;
+        font-weight:bold;
+      ">
+        📄 Required Documents
+      </summary>
+
+      <ul style="
+        margin-top:10px;
+        padding-left:22px;
+        line-height:1.8;
+      ">
+
+        <li>Aadhaar Card / Aadhaar Number</li>
+        <li>Applicant Photograph</li>
+        <li>Income Certificate</li>
+        <li>Caste Certificate – applicable ହେଲେ</li>
+        <li>Residence Certificate</li>
+        <li>Student Bank Passbook Front Page</li>
+        <li>Matriculation Certificate</li>
+        <li>Previous Examination Certificate / Marksheet</li>
+        <li>College / Institute ID Card</li>
+        <li>Admission / Bonafide Certificate – if required</li>
+        <li>Disability Certificate – applicable ହେଲେ</li>
+
+      </ul>
+
+    </details>
+
     <a
-      href="https://scholarships.gov.in/"
+      href="https://scholarship.odisha.gov.in/"
       target="_blank"
       style="
         display:inline-block;
+        margin-top:15px;
         background:#16a34a;
         color:white;
         padding:12px 20px;
         border-radius:9px;
         text-decoration:none;
         font-weight:bold;
-        margin-top:8px;
       ">
       📝 APPLY NOW
     </a>
@@ -981,120 +992,202 @@ job.style.display="none";
   </div>
 
 
-  <!-- COLLEGE SCHOLARSHIP 3 -->
-
-  <div class="scholarship-card college" style="
-    background:white;
-    padding:18px;
-    margin:15px 0;
-    border-radius:16px;
-    box-shadow:0 3px 12px #ddd;
-  ">
-
-    <h3 style="color:#7c3aed;">
-      🎓 AICTE Saksham Scholarship
-    </h3>
-
-    <p>♿ <b>For:</b> Eligible specially-abled students</p>
-
-    <p>
-      📚 <b>Level:</b>
-      Technical Diploma / Degree
-    </p>
-
-    <p>
-      💰 <b>Amount:</b> As per official AICTE scheme
-    </p>
-
-    <p>
-      📅 <b style="color:#d62828;">
-        Last Date: Check Official Portal
-      </b>
-    </p>
-
-    <p>
-      📋 <b>Eligibility:</b>
-      Check official AICTE guidelines.
-    </p>
-
-    <a
-      href="https://scholarships.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        background:#16a34a;
-        color:white;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-        margin-top:8px;
-      ">
-      📝 APPLY NOW
-    </a>
-
-  </div>
-
-
-  <!-- ================= OFFICIAL PORTAL ================= -->
+  <!-- ELIGIBILITY -->
 
   <div style="
-    text-align:center;
-    background:#e8f4ff;
+    background:#fff7df;
     padding:20px;
-    border-radius:16px;
+    border-radius:17px;
     margin-top:20px;
+    text-align:center;
+  ">
+
+    <h3 style="color:#9a6700;">
+      🔎 Check Scholarship Eligibility
+    </h3>
+
+    <p style="margin:10px 0;line-height:1.6;">
+      Odisha State Scholarship Portal ରେ
+      student details ଦେଇ eligible schemes check କରନ୍ତୁ।
+    </p>
+
+    <a
+      href="https://scholarship.odisha.gov.in/"
+      target="_blank"
+      style="
+        display:inline-block;
+        background:#f59e0b;
+        color:white;
+        padding:12px 20px;
+        border-radius:9px;
+        text-decoration:none;
+        font-weight:bold;
+      ">
+      🔎 CHECK ELIGIBILITY
+    </a>
+
+  </div>
+
+
+  <!-- HOW TO APPLY -->
+
+  <div style="
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:17px;
+    box-shadow:0 3px 12px #ddd;
   ">
 
     <h3 style="color:#0757b8;">
-      🌐 Official Scholarship Portal
+      📝 How to Apply
     </h3>
 
-    <p style="margin:10px 0;">
-      Apply and verify the latest scholarship information
-      through the official portal.
+    <ol style="
+      margin-top:12px;
+      padding-left:22px;
+      line-height:1.9;
+    ">
+
+      <li>Open Odisha State Scholarship Portal.</li>
+      <li>New student ହେଲେ Registration କରନ୍ତୁ।</li>
+      <li>Aadhaar authentication complete କରନ୍ତୁ।</li>
+      <li>Login କରନ୍ତୁ।</li>
+      <li>Department & Scholarship Scheme select କରନ୍ତୁ।</li>
+      <li>Student, Academic & Bank details fill କରନ୍ତୁ।</li>
+      <li>Required documents upload କରନ୍ତୁ।</li>
+      <li>Application preview check କରନ୍ତୁ।</li>
+      <li>Final Submit କରି application copy save କରନ୍ତୁ।</li>
+
+    </ol>
+
+  </div>
+
+
+  <!-- ================= APPLY HELP ₹99 ================= -->
+
+  <div style="
+    background:linear-gradient(135deg,#fff3cd,#ffe08a);
+    padding:22px 18px;
+    border-radius:17px;
+    text-align:center;
+    margin-top:22px;
+    box-shadow:0 3px 12px #ddd;
+  ">
+
+    <h2 style="color:#0757b8;">
+      🆘 Scholarship Apply Help
+    </h2>
+
+    <p style="
+      margin-top:10px;
+      line-height:1.7;
+      color:#444;
+    ">
+      ନିଜେ Scholarship Apply କରିପାରୁନାହାନ୍ତି?
+      ଆମକୁ Instagram ରେ DM କରନ୍ତୁ।
+    </p>
+
+    <p style="
+      margin-top:12px;
+      font-size:20px;
+    ">
+      💰 <b>Apply Assistance Fee: ₹99</b>
+    </p>
+
+    <p style="
+      margin-top:8px;
+      color:#555;
+      line-height:1.6;
+    ">
+      Required documents ଥିଲେ application process
+      ରେ ଆମେ help କରିବୁ।
+    </p>
+
+    <p style="
+      margin-top:10px;
+      font-weight:bold;
+    ">
+      📸 Instagram: @naik_babulu
     </p>
 
     <a
-      href="https://scholarships.gov.in/"
+      href="https://instagram.com/naik_babulu"
       target="_blank"
       style="
         display:inline-block;
-        background:#0757b8;
+        margin-top:12px;
+        background:#e1306c;
         color:white;
-        padding:12px 20px;
-        border-radius:9px;
+        padding:13px 22px;
+        border-radius:10px;
         text-decoration:none;
         font-weight:bold;
       ">
-      🔗 OPEN NSP
+      💬 DM @naik_babulu
     </a>
+
+    <p style="
+      font-size:12px;
+      color:#777;
+      margin-top:14px;
+    ">
+      ⚠️ OTP, password କିମ୍ବା bank PIN କେବେ ମଧ୍ୟ
+      share କରନ୍ତୁ ନାହିଁ।
+    </p>
+
+  </div>
+
+
+  <!-- IMPORTANT NOTICE -->
+
+  <div style="
+    background:#ffe9e9;
+    padding:18px;
+    margin-top:20px;
+    border-radius:15px;
+    border-left:5px solid #d62828;
+  ">
+
+    <h3 style="color:#b91c1c;">
+      ⚠️ Important
+    </h3>
+
+    <p style="
+      margin-top:8px;
+      line-height:1.7;
+    ">
+      Scholarship scheme ଅନୁସାରେ eligibility, documents,
+      application start date, last date ଏବଂ amount
+      ଭିନ୍ନ ହୋଇପାରେ। Apply କରିବା ପୂର୍ବରୁ official
+      notification ନିଶ୍ଚିତ ଭାବେ check କରନ୍ତୁ।
+    </p>
 
   </div>
 
 </section>
 
 
-<!-- ================= SCHOLARSHIP FILTER ================= -->
+<!-- ================= FILTER SCRIPT ================= -->
 
 <script>
 
-function filterScholarship(category){
+function showScholarships(type) {
 
   const cards =
-    document.querySelectorAll(".scholarship-card");
+    document.querySelectorAll(".jm-scholarship");
 
-  cards.forEach(function(card){
+  cards.forEach(function(card) {
 
-    if(category === "all"){
+    if (type === "all") {
       card.style.display = "block";
     }
 
-    else if(card.classList.contains(category)){
+    else if (card.classList.contains(type)) {
       card.style.display = "block";
     }
 
-    else{
+    else {
       card.style.display = "none";
     }
 
@@ -1103,5 +1196,107 @@ function filterScholarship(category){
 }
 
 </script>
+
+
+<!-- ================= ABOUT JOBMITRA ================= -->
+
+<section style="
+  padding:25px 18px;
+  margin-top:25px;
+  background:white;
+  text-align:center;
+">
+
+  <h2 style="color:#0757b8;">
+    ℹ️ About JobMitra
+  </h2>
+
+  <p style="
+    margin-top:12px;
+    color:#555;
+    line-height:1.7;
+  ">
+    JobMitra is a student-friendly platform providing
+    Government Job Updates, Scholarships, Exam Preparation,
+    Study Materials and Career Information.
+  </p>
+
+  <p style="margin-top:15px;">
+    <b>Created & Managed by</b>
+  </p>
+
+  <h3 style="color:#0757b8;">
+    Babulu Naik
+  </h3>
+
+</section>
+
+
+<!-- ================= SUPPORT ================= -->
+
+<section style="
+  padding:25px 18px;
+  margin-top:20px;
+  background:#f8f0ff;
+  text-align:center;
+">
+
+  <h2>❤️ Support JobMitra</h2>
+
+  <p style="
+    margin-top:10px;
+    line-height:1.7;
+  ">
+    JobMitra useful ଲାଗିଲେ friends ମାନଙ୍କ ସହିତ
+    share କରନ୍ତୁ ଏବଂ ଆମକୁ support କରନ୍ତୁ।
+  </p>
+
+  <a
+    href="https://instagram.com/naik_babulu"
+    target="_blank"
+    style="
+      display:inline-block;
+      margin-top:12px;
+      background:#e1306c;
+      color:white;
+      padding:12px 20px;
+      border-radius:9px;
+      text-decoration:none;
+      font-weight:bold;
+    ">
+    📸 Follow @naik_babulu
+  </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+  background:#073b7a;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+  margin-top:25px;
+">
+
+  <h2>🚀 JobMitra</h2>
+
+  <p style="margin:8px 0;">
+    Your Career & Government Job Preparation Partner
+  </p>
+
+  <p style="margin:8px 0;">
+    © 2026 JobMitra. All Rights Reserved.
+  </p>
+
+  <p>
+    Created & Managed by
+    <strong style="color:#ffd43b;">
+      Babulu Naik
+    </strong>
+  </p>
+
+</footer>
 </body>
 </html>
