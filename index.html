@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JobMitra - Latest Government Jobs</title>
+<title>JobMitra AI - Jobs, Cricket & AI Preparation</title>
 
 <style>
 *{box-sizing:border-box}
@@ -14,13 +14,16 @@ background:#f1f3f6;
 color:#222
 }
 header{
-background:#0b4ea2;
-color:white;
+background:#0757a5;
+color:#fff;
 padding:12px 15px;
+position:sticky;
+top:0;
+z-index:1000;
 box-shadow:0 2px 8px #0003
 }
 .top{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 display:flex;
 align-items:center;
@@ -28,52 +31,57 @@ justify-content:space-between
 }
 .logo{
 font-size:25px;
-font-weight:bold
+font-weight:800
 }
 .tag{
 font-size:12px;
-opacity:.9
+margin-top:3px
 }
 .menu{
-background:white;
-color:#0b4ea2;
+background:#fff;
+color:#0757a5;
 border:0;
-padding:8px 12px;
 border-radius:5px;
-font-size:19px
+padding:8px 12px;
+font-size:20px;
+cursor:pointer
 }
 nav{
 display:none;
-background:white;
 position:absolute;
 right:12px;
-top:60px;
-width:230px;
+top:62px;
+width:245px;
+background:#fff;
 box-shadow:0 5px 20px #0003;
-z-index:100
+border-radius:6px;
+overflow:hidden
 }
 nav.show{display:block}
 nav a{
 display:block;
 padding:13px;
-text-decoration:none;
 color:#222;
-border-bottom:1px solid #ddd
+text-decoration:none;
+border-bottom:1px solid #eee
 }
-nav a:hover{background:#edf4ff}
+nav a:hover{
+background:#edf4ff;
+color:#0757a5
+}
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:15px
 }
 
 .search{
-background:white;
+background:#fff;
 padding:15px;
 border-radius:6px;
 margin-bottom:15px;
-box-shadow:0 1px 5px #0002
+box-shadow:0 1px 6px #0002
 }
 .search input{
 width:100%;
@@ -85,20 +93,20 @@ font-size:15px
 
 .quick{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:8px;
 margin-bottom:15px
 }
 .quick button{
-background:white;
+background:#fff;
 border:1px solid #ccc;
 padding:11px 5px;
 border-radius:5px;
 cursor:pointer
 }
 .quick button:hover{
-background:#0b4ea2;
-color:white
+background:#0757a5;
+color:#fff
 }
 
 .layout{
@@ -108,7 +116,7 @@ gap:15px
 }
 
 .box{
-background:white;
+background:#fff;
 border-radius:6px;
 box-shadow:0 1px 6px #0002;
 margin-bottom:15px;
@@ -119,8 +127,8 @@ overflow:hidden
 font-size:18px;
 margin:0;
 padding:12px 15px;
-background:#0b4ea2;
-color:white
+background:#0757a5;
+color:#fff
 }
 
 .job{
@@ -131,7 +139,7 @@ border-bottom:1px solid #ddd
 .job h3{
 margin:0 0 8px;
 font-size:17px;
-color:#064d9d
+color:#0757a5
 }
 .job p{
 margin:5px 0;
@@ -148,26 +156,21 @@ color:#146b2d;
 font-weight:bold;
 margin-bottom:7px
 }
-.badge.new{
-background:#ffe4e4;
-color:#a00000
-}
 .apply{
 display:inline-block;
 margin-top:8px;
-background:#0b4ea2;
-color:white;
+background:#0757a5;
+color:#fff;
 text-decoration:none;
 padding:8px 12px;
 border-radius:4px;
 font-size:13px
 }
-.apply:hover{background:#07366f}
 
 .side a{
 display:block;
 padding:11px 13px;
-color:#064d9d;
+color:#0757a5;
 text-decoration:none;
 border-bottom:1px solid #eee;
 font-size:14px
@@ -175,17 +178,49 @@ font-size:14px
 .side a:hover{background:#f0f5fb}
 
 .ai{
-padding:15px;
-background:#fff8df;
-border:1px solid #f1d77a
+padding:17px;
+background:#fff7d9;
+border:1px solid #f0d77b;
+border-radius:6px;
+margin-bottom:15px
 }
 .ai button{
-background:#6c35d9;
-color:white;
+background:#6b35d5;
+color:#fff;
 border:0;
 padding:10px 14px;
 border-radius:5px;
-font-weight:bold
+font-weight:bold;
+cursor:pointer
+}
+
+.cricket{
+background:#fff;
+border-radius:6px;
+box-shadow:0 1px 6px #0002;
+margin-bottom:15px;
+overflow:hidden
+}
+.cricket h2{
+background:#08783f;
+color:#fff;
+padding:12px 15px;
+margin:0;
+font-size:18px
+}
+.cricketCard{
+padding:15px;
+border-bottom:1px solid #eee
+}
+.cricketCard:last-child{border-bottom:0}
+.cricketCard h3{
+margin:0 0 7px;
+color:#08783f
+}
+.cricketCard p{
+margin:5px 0;
+font-size:14px;
+color:#555
 }
 
 #aiPage{display:none}
@@ -205,8 +240,8 @@ text-align:center;
 cursor:pointer
 }
 .subject:hover{
-background:#0b4ea2;
-color:white
+background:#0757a5;
+color:#fff
 }
 
 .quiz{
@@ -222,8 +257,9 @@ margin:8px 0;
 padding:11px;
 text-align:left;
 border:1px solid #ccc;
-background:white;
-border-radius:5px
+background:#fff;
+border-radius:5px;
+cursor:pointer
 }
 .option.correct{background:#c9f3d1}
 .option.wrong{background:#ffd0d0}
@@ -231,7 +267,7 @@ border-radius:5px
 .back{
 margin:15px;
 background:#555;
-color:white;
+color:#fff;
 border:0;
 padding:9px 13px;
 border-radius:5px
@@ -239,16 +275,22 @@ border-radius:5px
 
 footer{
 background:#17202a;
-color:white;
+color:#fff;
 text-align:center;
 padding:25px 10px;
 margin-top:20px;
 font-size:13px
 }
 
-@media(max-width:750px){
+@media(max-width:800px){
 .layout{grid-template-columns:1fr}
 .quick{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:450px){
+.logo{font-size:20px}
+.quick{grid-template-columns:repeat(2,1fr)}
+.subjects{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -259,19 +301,58 @@ font-size:13px
 <div class="top">
 
 <div>
-<div class="logo">JobMitra</div>
-<div class="tag">Latest Jobs • Notifications • Preparation</div>
+<div class="logo">🚀 JobMitra AI</div>
+<div class="tag">Jobs • Cricket • AI Preparation</div>
 </div>
 
 <button class="menu" onclick="toggleMenu()">☰</button>
 
 <nav id="nav">
+
 <a href="#" onclick="home()">🏠 Home</a>
+
 <a href="#latest" onclick="home()">🆕 Latest Jobs</a>
-<a href="#odisha" onclick="filterState('Odisha')">🏛️ Odisha Jobs</a>
-<a href="#india" onclick="filterState('India')">🇮🇳 All India Jobs</a>
-<a href="#ai" onclick="openAI()">🎓 AI Preparation</a>
-<a href="#portals" onclick="home()">🌐 Official Portals</a>
+
+<a href="#latest" onclick="filterState('Odisha')">
+🏛️ Odisha Jobs
+</a>
+
+<a href="#latest" onclick="filterState('India')">
+🇮🇳 All India Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('10th')">
+📘 10th Pass Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('12th')">
+📗 12th Pass Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('Graduate')">
+🎓 Graduate Jobs
+</a>
+
+<a href="#latest" onclick="filterType('Government')">
+🏛️ Government Jobs
+</a>
+
+<a href="#latest" onclick="filterType('Private')">
+🏢 Private Jobs
+</a>
+
+<a href="#admit">🎫 Admit Card</a>
+
+<a href="#results">📊 Results</a>
+
+<a href="#syllabus">📖 Syllabus</a>
+
+<a href="#cricket">🏏 Cricket Updates</a>
+
+<a href="#" onclick="openAI()">🎓 AI Preparation</a>
+
+<a href="#portals">🌐 Official Portals</a>
+
 </nav>
 
 </div>
@@ -280,38 +361,63 @@ font-size:13px
 
 <main class="container">
 
-<!-- HOME -->
-
 <div id="homePage">
 
 <div class="search">
+
 <input
 id="search"
 type="search"
-placeholder="Search jobs, posts, qualification..."
+placeholder="🔎 Search jobs, posts, qualification..."
 oninput="searchJobs()">
+
 </div>
 
+
 <div class="quick">
-<button onclick="filterType('Government')">🏛️ Govt Jobs</button>
-<button onclick="filterQualification('10th')">📘 10th Pass</button>
-<button onclick="filterQualification('12th')">📗 12th Pass</button>
-<button onclick="filterQualification('Graduate')">🎓 Graduate</button>
+
+<button onclick="filterType('Government')">
+🏛️ Govt Jobs
+</button>
+
+<button onclick="filterType('Private')">
+🏢 Private Jobs
+</button>
+
+<button onclick="filterQualification('10th')">
+📘 10th
+</button>
+
+<button onclick="filterQualification('12th')">
+📗 12th
+</button>
+
+<button onclick="filterQualification('Graduate')">
+🎓 Graduate
+</button>
+
 </div>
 
 
 <div class="ai">
+
 <b>🎓 JobMitra AI Preparation</b>
+
 <p>
-Practice GK, English, Maths, Science, Odisha GK and Interview questions.
+GK • English • Maths • Science • Odisha GK • Interview Practice
 </p>
-<button onclick="openAI()">Start AI Preparation →</button>
+
+<button onclick="openAI()">
+Start AI Preparation →
+</button>
+
 </div>
 
 
 <div class="layout">
 
 <div>
+
 
 <div class="box" id="latest">
 
@@ -321,10 +427,112 @@ Practice GK, English, Maths, Science, Odisha GK and Interview questions.
 
 </div>
 
+
+<div class="cricket" id="cricket">
+
+<h2>🏏 Cricket Updates</h2>
+
+<div class="cricketCard">
+
+<h3>🏏 Latest Cricket News</h3>
+
+<p>
+Get the latest cricket news, team updates,
+player news and major match information.
+</p>
+
+</div>
+
+<div class="cricketCard">
+
+<h3>📅 Today's Cricket</h3>
+
+<p>
+Check today's matches, series and tournament updates.
+</p>
+
+</div>
+
+<div class="cricketCard">
+
+<h3>🇮🇳 Team India</h3>
+
+<p>
+India team news, player updates and match results.
+</p>
+
+</div>
+
+<div class="cricketCard">
+
+<h3>📊 Match Results</h3>
+
+<p>
+Latest cricket results and important match updates.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="box" id="admit">
+
+<h2>🎫 Admit Card</h2>
+
+<div class="job">
+
+<h3>Latest Admit Card Updates</h3>
+
+<p>
+Admit Card links will be added here.
+Always verify the official recruitment website.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="box" id="results">
+
+<h2>📊 Results</h2>
+
+<div class="job">
+
+<h3>Latest Exam Results</h3>
+
+<p>
+Latest government exam results will be listed here.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="box" id="syllabus">
+
+<h2>📖 Syllabus</h2>
+
+<div class="job">
+
+<h3>Exam Syllabus & Pattern</h3>
+
+<p>
+Syllabus and exam pattern updates will be added here.
+</p>
+
+</div>
+
+</div>
+
+
 </div>
 
 
 <div>
+
 
 <div class="box">
 
@@ -332,13 +540,57 @@ Practice GK, English, Maths, Science, Odisha GK and Interview questions.
 
 <div class="side">
 
-<a href="#latest">Latest Jobs</a>
-<a href="#odisha">Odisha Government Jobs</a>
-<a href="#india">All India Government Jobs</a>
-<a href="#" onclick="filterQualification('10th')">10th Pass Jobs</a>
-<a href="#" onclick="filterQualification('12th')">12th Pass Jobs</a>
-<a href="#" onclick="filterQualification('Graduate')">Graduate Jobs</a>
-<a href="#portals">Official Job Portals</a>
+<a href="#latest">🆕 Latest Jobs</a>
+
+<a href="#latest" onclick="filterType('Government')">
+🏛️ Government Jobs
+</a>
+
+<a href="#latest" onclick="filterState('Odisha')">
+🏛️ Odisha Jobs
+</a>
+
+<a href="#latest" onclick="filterState('India')">
+🇮🇳 All India Jobs
+</a>
+
+<a href="#latest" onclick="filterType('Private')">
+🏢 Private Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('10th')">
+📘 10th Pass Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('12th')">
+📗 12th Pass Jobs
+</a>
+
+<a href="#latest" onclick="filterQualification('Graduate')">
+🎓 Graduate Jobs
+</a>
+
+<a href="#latest">📝 Job Apply</a>
+
+<a href="#admit">🎫 Admit Card</a>
+
+<a href="#results">📊 Results</a>
+
+<a href="#syllabus">📖 Syllabus</a>
+
+<a href="#cricket">🏏 Cricket Updates</a>
+
+<a href="#" onclick="openAI()">
+🎓 AI Exam Preparation
+</a>
+
+<a href="#portals">
+🌐 Official Job Portals
+</a>
+
+<a href="#">
+🔔 Important Notifications
+</a>
 
 </div>
 
@@ -351,15 +603,25 @@ Practice GK, English, Maths, Science, Odisha GK and Interview questions.
 
 <div class="side">
 
-<a href="https://www.ossc.gov.in/" target="_blank">OSSC Official ↗️</a>
+<a href="https://www.ossc.gov.in/" target="_blank">
+OSSC Official ↗️
+</a>
 
-<a href="https://www.osssc.gov.in/" target="_blank">OSSSC Official ↗️</a>
+<a href="https://www.osssc.gov.in/" target="_blank">
+OSSSC Official ↗️
+</a>
 
-<a href="https://opsc.gov.in/" target="_blank">OPSC Official ↗️</a>
+<a href="https://opsc.gov.in/" target="_blank">
+OPSC Official ↗️
+</a>
 
-<a href="https://ssc.gov.in/" target="_blank">SSC India ↗️</a>
+<a href="https://ssc.gov.in/" target="_blank">
+SSC India ↗️
+</a>
 
-<a href="https://www.ncs.gov.in/" target="_blank">National Career Service ↗️</a>
+<a href="https://www.ncs.gov.in/" target="_blank">
+National Career Service ↗️
+</a>
 
 </div>
 
@@ -376,14 +638,18 @@ Practice GK, English, Maths, Science, Odisha GK and Interview questions.
 
 <div id="aiPage">
 
-<button class="back" onclick="home()">← Back to Home</button>
+<button class="back" onclick="home()">
+← Back to Home
+</button>
 
 <div class="box">
 
 <h2>🎓 AI Exam Preparation</h2>
 
 <div style="padding:15px">
-Choose your subject and start practice.
+
+Choose a subject and start your practice test.
+
 </div>
 
 <div class="subjects">
@@ -424,8 +690,13 @@ Choose your subject and start practice.
 
 
 <footer>
-© 2026 JobMitra · Find Jobs. Prepare Smart. Get Ready.<br>
+
+© 2026 JobMitra AI · Find Jobs. Prepare Smart. Get Ready.
+
+<br><br>
+
 ⚠️ Always verify the official recruitment notification before applying.
+
 </footer>
 
 
@@ -492,6 +763,18 @@ posts:"Multiple Jobs",
 lastDate:"Varies by vacancy",
 status:"Search Jobs",
 type:"Government",
+link:"https://www.ncs.gov.in/"
+},
+
+{
+title:"Private Jobs",
+department:"Private Sector Opportunities",
+state:"India",
+qualification:"10th / 12th / Graduate",
+posts:"Multiple Jobs",
+lastDate:"Varies by vacancy",
+status:"Latest",
+type:"Private",
 link:"https://www.ncs.gov.in/"
 }
 
@@ -567,11 +850,14 @@ document.getElementById("nav")
 
 function home(){
 
-document.getElementById("homePage").style.display="block";
+document.getElementById("homePage")
+.style.display="block";
 
-document.getElementById("aiPage").style.display="none";
+document.getElementById("aiPage")
+.style.display="none";
 
-document.getElementById("nav").classList.remove("show");
+document.getElementById("nav")
+.classList.remove("show");
 
 window.scrollTo(0,0);
 
@@ -582,11 +868,14 @@ window.scrollTo(0,0);
 
 function openAI(){
 
-document.getElementById("homePage").style.display="none";
+document.getElementById("homePage")
+.style.display="none";
 
-document.getElementById("aiPage").style.display="block";
+document.getElementById("aiPage")
+.style.display="block";
 
-document.getElementById("nav").classList.remove("show");
+document.getElementById("nav")
+.classList.remove("show");
 
 window.scrollTo(0,0);
 
@@ -616,7 +905,7 @@ box.innerHTML+=`
 
 <div class="job">
 
-<span class="badge new">
+<span class="badge">
 🔔 ${job.status}
 </span>
 
@@ -662,11 +951,13 @@ const q=document
 
 const result=jobs.filter(job=>
 
-(job.title+" "+
+(
+job.title+" "+
 job.department+" "+
 job.state+" "+
 job.qualification+" "+
-job.posts)
+job.posts
+)
 .toLowerCase()
 .includes(q)
 
@@ -677,7 +968,7 @@ displayJobs(result);
 }
 
 
-/* TYPE FILTER */
+/* FILTER */
 
 function filterType(type){
 
@@ -685,10 +976,9 @@ displayJobs(
 jobs.filter(job=>job.type===type)
 );
 
+home();
+
 }
-
-
-/* QUALIFICATION FILTER */
 
 function filterQualification(q){
 
@@ -704,15 +994,14 @@ job.qualification
 
 );
 
-document.getElementById("homePage")
+home();
+
+document.getElementById("latest")
 .scrollIntoView({
 behavior:"smooth"
 });
 
 }
-
-
-/* STATE FILTER */
 
 function filterState(state){
 
@@ -723,6 +1012,11 @@ jobs.filter(job=>job.state===state)
 );
 
 home();
+
+document.getElementById("latest")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
@@ -744,6 +1038,11 @@ document.getElementById("quizBox")
 .style.display="block";
 
 showQuestion();
+
+document.getElementById("quizBox")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
@@ -781,9 +1080,11 @@ ${String.fromCharCode(65+i)}. ${op}
 });
 
 html+=`
+
 <p style="margin-top:15px">
 Score: ${score}
 </p>
+
 `;
 
 document.getElementById("quizBox")
