@@ -3,189 +3,396 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>JobMitra AI | Odisha & India Jobs</title>
+<title>JobMitra AI - Jobs, Scholarships & Exam Preparation</title>
 
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(135deg,#fff7ed,#eef7ff,#f0fdf4);
-color:#17202a
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:linear-gradient(135deg,#fff7ed,#f8fbff,#f0fdf4);
+ color:#17202a
 }
 header{
-position:sticky;top:0;z-index:999;
-background:linear-gradient(135deg,#ff9933,#fff 48%,#138808);
-padding:14px;
-box-shadow:0 3px 15px #0003
+ background:linear-gradient(135deg,#ff9933,#fff 48%,#138808);
+ padding:14px;
+ position:sticky;
+ top:0;
+ z-index:1000;
+ box-shadow:0 3px 15px #0003
 }
 .top{
-max-width:1200px;margin:auto;text-align:center
+ max-width:1200px;
+ margin:auto;
+ text-align:center
 }
 .logo{
-font-size:29px;font-weight:900;color:#073b7a
+ font-size:27px;
+ font-weight:900;
+ color:#073b7a
 }
-.tagline{font-size:13px;font-weight:bold;color:#333}
-nav{
-display:flex;justify-content:center;gap:7px;
-flex-wrap:wrap;margin-top:12px
+.tagline{
+ font-size:12px;
+ color:#333;
+ margin-top:4px
 }
-nav a{
-text-decoration:none;color:#073b7a;
-background:#ffffffdd;padding:9px 11px;
-border-radius:8px;font-size:12px;font-weight:bold
+.menu{
+ display:flex;
+ gap:6px;
+ flex-wrap:wrap;
+ justify-content:center;
+ margin-top:12px
 }
-.container{max-width:1200px;margin:auto;padding:15px}
+.menu a{
+ color:#073b7a;
+ text-decoration:none;
+ background:#ffffffd9;
+ padding:8px 10px;
+ border-radius:7px;
+ font-size:12px;
+ font-weight:bold
+}
+.container{
+ max-width:1200px;
+ margin:auto;
+ padding:12px
+}
 
+/* INDEPENDENCE */
+.independence{
+ margin:12px auto;
+ padding:20px 12px;
+ border-radius:16px;
+ text-align:center;
+ background:linear-gradient(to bottom,#ff9933 0 33%,#fff 33% 66%,#138808 66%);
+ box-shadow:0 4px 15px #0002;
+ border:2px solid white
+}
+.independence h1{
+ margin:0;
+ font-size:26px;
+ color:#073b7a
+}
+.independence p{
+ margin:8px 0 0;
+ font-weight:bold
+}
+
+/* LIVE */
+.live{
+ margin:12px auto;
+ background:#fff1f1;
+ border:2px solid red;
+ border-radius:10px;
+ overflow:hidden;
+ box-shadow:0 3px 10px #0002
+}
+.live-title{
+ padding:9px 12px;
+ color:red;
+ font-weight:900
+}
+.dot{
+ display:inline-block;
+ width:11px;
+ height:11px;
+ background:red;
+ border-radius:50%;
+ margin-right:5px;
+ animation:blink .8s infinite
+}
+@keyframes blink{
+ 50%{opacity:.2}
+}
+.ticker{
+ white-space:nowrap;
+ overflow:hidden;
+ padding:9px 0
+}
+.ticker span{
+ display:inline-block;
+ padding-left:100%;
+ animation:move 22s linear infinite;
+ color:#c00;
+ font-weight:bold
+}
+@keyframes move{
+ 100%{transform:translateX(-100%)}
+}
+
+/* HERO */
 .hero{
-margin-top:15px;
-background:white;padding:28px 18px;
-border-radius:18px;text-align:center;
-box-shadow:0 4px 18px #0002
+ background:white;
+ padding:25px 16px;
+ border-radius:16px;
+ text-align:center;
+ box-shadow:0 3px 15px #0001
 }
-.hero h1{margin:0;color:#0757a5;font-size:28px}
-.hero p{line-height:1.7;color:#555}
+.hero h1{
+ margin:0;
+ color:#0757a5;
+ font-size:27px
+}
+.hero p{
+ color:#555;
+ line-height:1.6;
+ font-size:14px
+}
 .search{
-width:100%;max-width:750px;
-padding:15px;border:2px solid #cbd5e1;
-border-radius:11px;font-size:15px
+ width:100%;
+ max-width:750px;
+ padding:14px;
+ border:2px solid #d5deea;
+ border-radius:10px;
+ font-size:15px;
+ outline:none
 }
 
-.india{
-margin-top:15px;
-padding:20px;
-border-radius:18px;
-text-align:center;
-background:linear-gradient(#ff9933 0 33%,#fff 33% 66%,#138808 66%);
-box-shadow:0 4px 15px #0002
-}
-.india h2{margin:0;color:#073b7a}
-.india p{font-weight:bold}
-
+/* QUICK */
 .quick{
-display:grid;grid-template-columns:repeat(4,1fr);
-gap:12px;margin:18px 0
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:12px;
+ margin:18px 0
 }
 .quick a{
-background:white;text-decoration:none;color:#17202a;
-padding:18px 10px;border-radius:13px;
-text-align:center;font-weight:bold;
-box-shadow:0 3px 12px #0001
+ background:white;
+ padding:17px 8px;
+ border-radius:12px;
+ text-align:center;
+ text-decoration:none;
+ color:#17202a;
+ font-weight:bold;
+ box-shadow:0 3px 10px #0001;
+ border-bottom:4px solid #0757a5
 }
-.quick span{display:block;font-size:27px;margin-bottom:7px}
+.quick span{
+ display:block;
+ font-size:27px;
+ margin-bottom:6px
+}
 
-.section{
-margin-top:30px;
-scroll-margin-top:120px
+/* TITLES */
+.category-title{
+ margin-top:30px;
+ padding:16px;
+ border-radius:13px;
+ color:white;
+ font-size:21px;
+ font-weight:900;
+ box-shadow:0 4px 12px #0002
 }
-.title{
-padding:16px;border-radius:12px;
-color:white;font-size:21px;font-weight:900;
-box-shadow:0 3px 10px #0002
-}
-.odg{background:linear-gradient(135deg,#0757a5,#138808)}
-.odp{background:linear-gradient(135deg,#ea580c,#f59e0b)}
-.aig{background:linear-gradient(135deg,#0757a5,#1d4ed8)}
-.aip{background:linear-gradient(135deg,#6d28d9,#9333ea)}
+.odisha-gov{background:linear-gradient(135deg,#0757a5,#138808)}
+.odisha-private{background:linear-gradient(135deg,#ea580c,#f59e0b)}
+.india-gov{background:linear-gradient(135deg,#0757a5,#1d4ed8)}
+.india-private{background:linear-gradient(135deg,#6d28d9,#9333ea)}
 
+/* FILTER */
 .filters{
-display:flex;gap:8px;overflow:auto;
-padding:12px 0
+ display:flex;
+ gap:8px;
+ overflow-x:auto;
+ padding:5px 0 12px
 }
 .filters button{
-border:0;background:white;padding:10px 14px;
-border-radius:22px;font-weight:bold;
-white-space:nowrap;box-shadow:0 2px 8px #0002
+ border:0;
+ padding:9px 14px;
+ border-radius:20px;
+ background:white;
+ box-shadow:0 2px 8px #0002;
+ white-space:nowrap;
+ font-weight:bold;
+ cursor:pointer
+}
+.filters button:hover{
+ background:#0757a5;
+ color:white
 }
 
+/* JOBS */
 .jobs{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;margin-top:14px
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:14px;
+ margin-top:14px
 }
 .job{
-background:white;padding:18px;
-border-radius:14px;
-box-shadow:0 3px 13px #0002;
-border-left:6px solid #0757a5
+ background:white;
+ padding:17px;
+ border-radius:14px;
+ box-shadow:0 3px 13px #0001;
+ border-left:6px solid #0757a5
 }
-.job.odisha{border-left-color:#138808}
-.job.private{border-left-color:#f59e0b}
-.job.allprivate{border-left-color:#7c3aed}
-
+.job.odisha{
+ border-left-color:#138808;
+ background:linear-gradient(135deg,#f0fff4,#fff)
+}
+.job.private{
+ border-left-color:#f59e0b
+}
+.job.india-private{
+ border-left-color:#7c3aed
+}
 .badge{
-display:inline-block;
-padding:6px 9px;
-border-radius:6px;
-font-size:11px;
-font-weight:900;
-background:#e8f7ed;color:#16733a
+ display:inline-block;
+ padding:5px 8px;
+ border-radius:6px;
+ background:#e7f7ec;
+ color:#16733a;
+ font-size:11px;
+ font-weight:900;
+ margin-bottom:8px
 }
-.job h3{color:#0757a5;margin:9px 0;font-size:18px}
-.job p{font-size:13px;line-height:1.5;color:#555;margin:7px 0}
+.odisha-badge{
+ background:#138808;
+ color:white
+}
+.private-badge{
+ background:#fff0d9;
+ color:#c2410c
+}
+.india-badge{
+ background:#e8efff;
+ color:#174ea6
+}
+.job h3{
+ margin:4px 0 10px;
+ color:#0757a5;
+ font-size:18px
+}
+.job p{
+ margin:7px 0;
+ color:#555;
+ font-size:13px;
+ line-height:1.45
+}
 .job strong{color:#222}
 .salary{
-font-size:17px!important;
-font-weight:900;
-color:#138808!important
+ color:#138808!important;
+ font-weight:900;
+ font-size:15px!important
+}
+.vacancy{
+ color:#0757a5!important;
+ font-weight:900
+}
+.date{
+ color:#d00000!important;
+ font-weight:900
+}
+.btn{
+ display:inline-block;
+ margin-top:8px;
+ padding:10px 13px;
+ border-radius:7px;
+ text-decoration:none;
+ color:white;
+ background:#0757a5;
+ font-size:12px;
+ font-weight:bold
 }
 .apply{
-display:inline-block;
-margin-top:9px;
-background:#138808;color:white;
-padding:11px 15px;
-border-radius:7px;
-text-decoration:none;
-font-size:12px;font-weight:bold
+ background:#138808
 }
-.more{
-background:#0757a5
+.dm{
+ background:#e1306c
 }
 
-.card{
-background:white;padding:20px;
-border-radius:16px;
-margin-top:15px;
-box-shadow:0 3px 13px #0002
+/* SCHOLARSHIP */
+.scholarship{
+ margin-top:30px;
+ background:#f4f8ff;
+ padding:20px 14px;
+ border-radius:17px
 }
-.card h3{color:#0757a5}
-.card li,.card p{line-height:1.7}
+.scholarship h2{
+ text-align:center;
+ color:#0757b8;
+ font-size:27px
+}
+.sch-card{
+ background:white;
+ margin-top:15px;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 3px 12px #0001
+}
+.sch-card h3{color:#0757b8}
+.sch-card p{line-height:1.6;font-size:14px}
+.sch-btn{
+ display:inline-block;
+ background:#16a34a;
+ color:white;
+ padding:11px 16px;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:5px
+}
 
+/* HELP */
+.help{
+ margin-top:22px;
+ background:linear-gradient(135deg,#fff3cd,#ffe08a);
+ padding:22px 16px;
+ border-radius:17px;
+ text-align:center;
+ box-shadow:0 3px 12px #0002
+}
+.help h2{color:#0757b8}
+.help .price{
+ font-size:21px;
+ font-weight:900;
+ color:#0757b8
+}
+
+/* AI */
 .ai{
-margin-top:30px;
-padding:28px;
-border-radius:18px;
-text-align:center;
-color:white;
-background:linear-gradient(135deg,#172554,#4b6cb7);
-box-shadow:0 4px 15px #0002
+ margin-top:25px;
+ background:linear-gradient(135deg,#182848,#4b6cb7);
+ color:white;
+ padding:25px;
+ border-radius:16px;
+ text-align:center
 }
 .ai a{
-display:inline-block;
-background:white;color:#0757a5;
-padding:12px 18px;border-radius:8px;
-text-decoration:none;font-weight:bold
+ display:inline-block;
+ background:white;
+ color:#0757a5;
+ padding:11px 17px;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:bold
 }
 
+/* NOTICE */
 .notice{
-margin-top:25px;padding:18px;
-background:#fff8dc;border:1px solid #efd36b;
-border-radius:12px;line-height:1.7;font-size:13px
+ margin-top:20px;
+ padding:17px;
+ background:#fff8dc;
+ border:1px solid #efd36b;
+ border-radius:10px;
+ line-height:1.6;
+ font-size:13px
 }
 
+/* FOOTER */
 footer{
-margin-top:35px;background:#073b7a;
-color:white;text-align:center;padding:30px 15px;
-line-height:1.8
+ margin-top:30px;
+ background:#073b7a;
+ color:white;
+ text-align:center;
+ padding:30px 15px;
+ line-height:1.7
 }
 footer strong{color:#ffd43b}
 
-@media(max-width:750px){
-.quick{grid-template-columns:repeat(2,1fr)}
-.jobs{grid-template-columns:1fr}
-.logo{font-size:24px}
-.hero h1{font-size:23px}
+@media(max-width:800px){
+ .quick{grid-template-columns:repeat(2,1fr)}
+ .jobs{grid-template-columns:1fr}
+ .independence h1{font-size:21px}
+ .hero h1{font-size:23px}
 }
 </style>
 </head>
@@ -195,507 +402,602 @@ footer strong{color:#ffd43b}
 <header>
 <div class="top">
 <div class="logo">🤖 JobMitra AI</div>
-<div class="tagline">Jobs • Scholarships • Exams • AI Preparation</div>
+<div class="tagline">
+Jobs • Scholarships • Exams • AI Preparation
+</div>
 
-<nav>
+<nav class="menu">
 <a href="#home">🏠 Home</a>
-<a href="#odisha-govt">🏛️ Odisha Govt</a>
+<a href="#odisha-gov">🏛️ Odisha Govt</a>
 <a href="#odisha-private">🏢 Odisha Private</a>
-<a href="#india-govt">🇮🇳 India Govt</a>
+<a href="#india-gov">🇮🇳 India Govt</a>
 <a href="#india-private">💼 India Private</a>
-<a href="#scholarship">🎓 Scholarship</a>
-<a href="#results">📊 Results</a>
-<a href="#syllabus">📚 Syllabus</a>
-<a href="#ai">🤖 AI Prep</a>
+<a href="#scholarships">🎓 Scholarship</a>
+<a href="#ai">🤖 AI Preparation</a>
 </nav>
 </div>
 </header>
 
-<main class="container" id="home">
+<div class="container">
 
-<section class="india">
-<h2>🇮🇳 HAPPY INDEPENDENCE DAY 2026 🇮🇳</h2>
-<p>ଜୟ ହିନ୍ଦ • Career ରେ ଆଗକୁ ବଢନ୍ତୁ 🚀</p>
+<!-- INDEPENDENCE -->
+<section class="independence">
+<h1>🇮🇳 HAPPY INDEPENDENCE DAY 2026 🇮🇳</h1>
+<p>ଆଜାଦୀର ସ୍ୱପ୍ନକୁ Career & Success ରେ ପରିଣତ କରନ୍ତୁ 🚀</p>
+<p>🇮🇳 Jai Hind 🇮🇳</p>
 </section>
 
-<section class="hero">
-<h1>🚀 JobMitra AI</h1>
+<!-- LIVE -->
+<div class="live">
+<div class="live-title">
+<span class="dot"></span>
+🔴 LIVE — Latest Job & Exam Updates
+</div>
+<div class="ticker">
+<span>
+🏛️ Odisha Govt Jobs •
+🏢 Odisha Private Jobs •
+🇮🇳 All India Govt Jobs •
+💼 All India Private Jobs •
+🎓 Scholarship Update •
+🎫 Admit Card •
+📊 Results •
+🤖 AI Preparation •
+</span>
+</div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>🚀 JobMitra AI — Smart Job Portal</h1>
+
 <p>
-Odisha ଓ All India Government + Private Jobs,
-Scholarship, Results, Syllabus ଏବଂ AI Preparation
-ସବୁ ଗୋଟିଏ website ରେ।
+8th Pass ଠାରୁ Doctor / Professional ପର୍ଯ୍ୟନ୍ତ
+Odisha ଏବଂ All India Government & Private Jobs
+ଗୋଟିଏ ସ୍ଥାନରେ।
 </p>
 
 <input
 id="search"
 class="search"
 type="search"
-placeholder="🔍 Search job, company, qualification, salary..."
+placeholder="🔍 Search job, company, qualification..."
 onkeyup="searchJobs()">
 </section>
 
+<!-- QUICK -->
 <div class="quick">
-<a href="#odisha-govt"><span>🏛️</span>Odisha Govt Jobs</a>
-<a href="#odisha-private"><span>🏢</span>Odisha Private Jobs</a>
-<a href="#india-govt"><span>🇮🇳</span>All India Govt Jobs</a>
-<a href="#india-private"><span>💼</span>All India Private Jobs</a>
-<a href="#scholarship"><span>🎓</span>Scholarship</a>
-<a href="#results"><span>📊</span>Results</a>
-<a href="#syllabus"><span>📚</span>Syllabus</a>
-<a href="#ai"><span>🤖</span>AI Preparation</a>
+
+<a href="#odisha-gov">
+<span>🏛️</span>
+Odisha Govt Jobs
+</a>
+
+<a href="#odisha-private">
+<span>🏢</span>
+Odisha Private Jobs
+</a>
+
+<a href="#india-gov">
+<span>🇮🇳</span>
+All India Govt Jobs
+</a>
+
+<a href="#india-private">
+<span>💼</span>
+All India Private Jobs
+</a>
+
+<a href="#scholarships">
+<span>🎓</span>
+Scholarship
+</a>
+
+<a href="#ai">
+<span>🤖</span>
+AI Preparation
+</a>
+
 </div>
+
+<!-- FILTER -->
+<h2>🔥 Find Jobs by Qualification</h2>
 
 <div class="filters">
 <button onclick="filterJobs('All')">All</button>
 <button onclick="filterJobs('8th')">8th Pass</button>
-<button onclick="filterJobs('10th')">10th Pass</button>
-<button onclick="filterJobs('12th')">12th Pass</button>
-<button onclick="filterJobs('Graduate')">Graduate</button>
-<button onclick="filterJobs('Diploma')">Diploma</button>
+<button onclick="filterJobs('10th')">10th</button>
+<button onclick="filterJobs('12th')">12th</button>
 <button onclick="filterJobs('ITI')">ITI</button>
+<button onclick="filterJobs('Diploma')">Diploma</button>
+<button onclick="filterJobs('Graduate')">Graduate</button>
 <button onclick="filterJobs('Engineering')">Engineering</button>
+<button onclick="filterJobs('Nursing')">Nursing</button>
 <button onclick="filterJobs('Doctor')">Doctor</button>
 </div>
 
-
-<!-- ODISHA GOVERNMENT -->
-
-<section class="section" id="odisha-govt">
-<div class="title odg">🏛️ ODISHA GOVERNMENT JOBS</div>
+<!-- =====================================================
+ ODISHA GOVERNMENT
+===================================================== -->
+<div class="category-title odisha-gov" id="odisha-gov">
+🏛️ ODISHA GOVERNMENT JOBS
+</div>
 
 <div class="jobs">
 
-<div class="job odisha" data-category="8th Odisha Govt">
-<span class="badge">ODISHA GOVT • 8th PASS</span>
-<h3>Odisha Govt Support / Group-D Type Jobs</h3>
-<p>🏛️ Organization: Odisha Government Departments</p>
-<p>🎓 Qualification: 8th / post-wise</p>
-<p>🎂 Age: Recruitment-wise</p>
-<p class="salary">💰 Salary: Pay-scale / notification-wise</p>
-<p>👥 Vacancy: Check current notification</p>
-<p>📅 Apply Date: Notification-wise</p>
-<p>📅 Last Date: Notification-wise</p>
-<a class="apply" href="https://odisha.gov.in/" target="_blank">📝 OFFICIAL ODISHA SITE</a>
+<div class="job odisha" data-category="8th 10th Odisha Govt">
+<span class="badge odisha-badge">⭐ ODISHA GOVT</span>
+<h3>Odisha Govt Group-D / Support Jobs</h3>
+<p>🏛️ <strong>Organization:</strong> Odisha Government Departments</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> 8th / 10th Pass depending on post</p>
+<p>🎂 <strong>Age:</strong> Usually recruitment-wise</p>
+<p class="salary">💰 Salary: ₹18,000–₹25,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://odisha.gov.in/" target="_blank">📝 Official Apply ↗️</a>
 </div>
 
-<div class="job odisha" data-category="10th Odisha Govt">
-<span class="badge">ODISHA GOVT • 10th</span>
-<h3>OSSSC Recruitment</h3>
-<p>🏛️ Organization: Odisha Sub-Ordinate Staff Selection Commission</p>
-<p>🎓 Qualification: 10th / post-wise</p>
-<p>🎂 Age: Post-wise notification</p>
-<p class="salary">💰 Salary: Post-wise government pay scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Last Date: Check notification</p>
-<a class="apply" href="https://www.osssc.gov.in/" target="_blank">📝 OSSSC OFFICIAL</a>
+<div class="job odisha" data-category="10th 12th Odisha Govt">
+<span class="badge odisha-badge">⭐ ODISHA GOVT</span>
+<h3>Odisha Police Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> Odisha Police</p>
+<p>👥 <strong>Vacancy:</strong> Post-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th depending on post</p>
+<p>🎂 <strong>Age:</strong> Notification-wise</p>
+<p class="salary">💰 Salary: ₹21,700–₹35,400+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Recruitment-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://odishapolice.gov.in/" target="_blank">📝 Official Site ↗️</a>
 </div>
 
 <div class="job odisha" data-category="Graduate Engineering Odisha Govt">
-<span class="badge">ODISHA GOVT • GRADUATE</span>
+<span class="badge odisha-badge">⭐ ODISHA GOVT</span>
 <h3>OPSC Recruitment</h3>
-<p>🏛️ Organization: Odisha Public Service Commission</p>
-<p>🎓 Qualification: Graduate / Engineering / post-wise</p>
-<p>🎂 Age: Notification-wise</p>
-<p class="salary">💰 Salary: Government Pay Scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Apply / Last Date: Notification-wise</p>
-<a class="apply" href="https://opsc.gov.in/" target="_blank">📝 OPSC OFFICIAL</a>
+<p>🏛️ <strong>Organization:</strong> Odisha Public Service Commission</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> Graduate / Professional as notified</p>
+<p>🎂 <strong>Age:</strong> Notification-wise</p>
+<p class="salary">💰 Salary: ₹44,900–₹1,42,400+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://opsc.gov.in/" target="_blank">📝 Official Site ↗️</a>
 </div>
 
-<div class="job odisha" data-category="Doctor Odisha Govt">
-<span class="badge">ODISHA GOVT • DOCTOR</span>
-<h3>Odisha Health Department Jobs</h3>
-<p>🏥 Organization: Odisha Health & Family Welfare Department</p>
-<p>🎓 Qualification: MBBS / PG / post-wise</p>
-<p>🎂 Age: Notification-wise</p>
-<p class="salary">💰 Salary: Post-wise government remuneration</p>
-<p>👥 Vacancy: Notification-wise</p>
-<p>📅 Last Date: Check official notice</p>
-<a class="apply" href="https://health.odisha.gov.in/" target="_blank">📝 HEALTH DEPT OFFICIAL</a>
+<div class="job odisha" data-category="10th 12th Graduate Nursing Odisha Govt">
+<span class="badge odisha-badge">⭐ ODISHA GOVT</span>
+<h3>OSSSC Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> Odisha Sub-Ordinate Staff Selection Commission</p>
+<p>👥 <strong>Vacancy:</strong> Post-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate / Nursing depending on post</p>
+<p>🎂 <strong>Age:</strong> Recruitment-wise</p>
+<p class="salary">💰 Salary: ₹19,900–₹1,12,400+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://www.osssc.gov.in/" target="_blank">📝 Official Site ↗️</a>
 </div>
 
 </div>
-</section>
 
-
-<!-- ODISHA PRIVATE -->
-
-<section class="section" id="odisha-private">
-<div class="title odp">🏢 ODISHA PRIVATE JOBS</div>
+<!-- =====================================================
+ ODISHA PRIVATE
+===================================================== -->
+<div class="category-title odisha-private" id="odisha-private">
+🏢 ODISHA PRIVATE JOBS
+</div>
 
 <div class="jobs">
 
-<div class="job private" data-category="8th Odisha Private">
-<span class="badge">PRIVATE • 8th PASS</span>
-<h3>Private Company Helper / Field Jobs</h3>
-<p>🏢 Organization: Company-wise</p>
-<p>🎓 Qualification: 8th / 10th depending on vacancy</p>
-<p>🎂 Age: Company-wise</p>
-<p class="salary">💰 Salary: ₹10,000 – ₹20,000+*</p>
-<p>👥 Vacancy: Company-wise</p>
-<p>📅 Last Date: Company-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND & APPLY</a>
+<div class="job private" data-category="8th 10th Odisha Private">
+<span class="badge private-badge">⭐ ODISHA PRIVATE</span>
+<h3>Warehouse / Delivery Jobs — Odisha</h3>
+<p>🏢 <strong>Company:</strong> E-commerce / Logistics Companies</p>
+<p>👥 <strong>Vacancy:</strong> Company-wise</p>
+<p>🎓 <strong>Qualification:</strong> 8th / 10th Pass</p>
+<p>🎂 <strong>Age:</strong> 18–35 years usually</p>
+<p class="salary">💰 Salary: ₹12,000–₹25,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.ncs.gov.in/" target="_blank">🔎 Find & Apply ↗️</a>
 </div>
 
-<div class="job private" data-category="10th Odisha Private">
-<span class="badge">PRIVATE • 10th PASS</span>
-<h3>Amazon Delivery / Operations Opportunities</h3>
-<p>🏢 Company: Amazon</p>
-<p>🎓 Qualification: Role-wise</p>
-<p>🎂 Age: Role/location-wise</p>
-<p class="salary">💰 Salary: Job-location & role-wise*</p>
-<p>👥 Vacancy: Check current opening</p>
-<p>📅 Last Date: Opening-wise</p>
-<a class="apply" href="https://www.amazon.jobs/en/" target="_blank">📝 AMAZON CAREERS</a>
+<div class="job private" data-category="10th 12th Odisha Private">
+<span class="badge private-badge">⭐ ODISHA PRIVATE</span>
+<h3>Flipkart / E-commerce Delivery Jobs</h3>
+<p>🏢 <strong>Company:</strong> Flipkart / Logistics Partners</p>
+<p>👥 <strong>Vacancy:</strong> Location-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th depending on role</p>
+<p>🎂 <strong>Age:</strong> 18+ usually</p>
+<p class="salary">💰 Salary: ₹15,000–₹30,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.flipkartcareers.com/" target="_blank">📝 Flipkart Careers ↗️</a>
 </div>
 
 <div class="job private" data-category="10th 12th Graduate Odisha Private">
-<span class="badge">PRIVATE • MULTIPLE QUALIFICATION</span>
-<h3>Flipkart Jobs</h3>
-<p>🏢 Company: Flipkart</p>
-<p>🎓 Qualification: Role-wise</p>
-<p>🎂 Age: Role-wise</p>
-<p class="salary">💰 Salary: Role & location-wise*</p>
-<p>👥 Vacancy: Current openings check online</p>
-<p>📅 Last Date: Job-post-wise</p>
-<a class="apply" href="https://www.flipkartcareers.com/" target="_blank">📝 FLIPKART CAREERS</a>
+<span class="badge private-badge">⭐ ODISHA PRIVATE</span>
+<h3>Amazon Delivery / Operations Jobs</h3>
+<p>🏢 <strong>Company:</strong> Amazon / Delivery Partners</p>
+<p>👥 <strong>Vacancy:</strong> Location-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate depending on role</p>
+<p>🎂 <strong>Age:</strong> 18+ usually</p>
+<p class="salary">💰 Salary: ₹15,000–₹35,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.amazon.jobs/" target="_blank">📝 Amazon Careers ↗️</a>
 </div>
 
 <div class="job private" data-category="ITI Diploma Engineering Odisha Private">
-<span class="badge">PRIVATE • TECHNICAL</span>
-<h3>Odisha ITI / Diploma / Engineering Jobs</h3>
-<p>🏢 Organization: Private Companies / Industries</p>
-<p>🎓 Qualification: ITI / Diploma / Engineering</p>
-<p>🎂 Age: Company-wise</p>
-<p class="salary">💰 Salary: ₹12,000 – ₹40,000+*</p>
-<p>👥 Vacancy: Company-wise</p>
-<p>📅 Last Date: Company-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND JOBS</a>
+<span class="badge private-badge">🔧 TECHNICAL</span>
+<h3>ITI / Diploma Private Jobs</h3>
+<p>🏢 <strong>Company:</strong> Manufacturing / Engineering Companies</p>
+<p>👥 <strong>Vacancy:</strong> Company-wise</p>
+<p>🎓 <strong>Qualification:</strong> ITI / Diploma</p>
+<p>🎂 <strong>Age:</strong> 18–35 years usually</p>
+<p class="salary">💰 Salary: ₹15,000–₹40,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.ncs.gov.in/" target="_blank">🔎 Find Jobs ↗️</a>
 </div>
 
 </div>
-</section>
 
-
-<!-- ALL INDIA GOVT -->
-
-<section class="section" id="india-govt">
-<div class="title aig">🇮🇳 ALL INDIA GOVERNMENT JOBS</div>
+<!-- =====================================================
+ ALL INDIA GOVERNMENT
+===================================================== -->
+<div class="category-title india-gov" id="india-gov">
+🇮🇳 ALL INDIA GOVERNMENT JOBS
+</div>
 
 <div class="jobs">
 
-<div class="job" data-category="10th India Govt">
-<span class="badge">CENTRAL GOVT • 10th</span>
+<div class="job" data-category="10th 12th Graduate India Govt">
+<span class="badge india-badge">🇮🇳 CENTRAL GOVT</span>
 <h3>SSC Recruitment</h3>
-<p>🏛️ Organization: Staff Selection Commission</p>
-<p>🎓 Qualification: 10th / 12th / Graduate depending on exam</p>
-<p>🎂 Age: Exam-wise</p>
-<p class="salary">💰 Salary: Government pay scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Last Date: Check official notice</p>
-<a class="apply" href="https://ssc.gov.in/" target="_blank">📝 SSC OFFICIAL</a>
+<p>🏛️ <strong>Organization:</strong> Staff Selection Commission</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate</p>
+<p>🎂 <strong>Age:</strong> Post-wise</p>
+<p class="salary">💰 Salary: ₹18,000–₹1,51,100+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://ssc.gov.in/" target="_blank">📝 SSC Official ↗️</a>
 </div>
 
-<div class="job" data-category="10th ITI Diploma Graduate India Govt">
-<span class="badge">RAILWAY • ALL INDIA</span>
-<h3>Railway Recruitment</h3>
-<p>🚆 Organization: Railway Recruitment Boards</p>
-<p>🎓 Qualification: 10th / ITI / Diploma / Graduate depending on post</p>
-<p>🎂 Age: Recruitment-wise</p>
-<p class="salary">💰 Salary: Railway pay scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Last Date: Check official notification</p>
-<a class="apply" href="https://www.rrbapply.gov.in/" target="_blank">📝 RRB APPLY</a>
+<div class="job" data-category="10th 12th ITI Diploma Graduate India Govt">
+<span class="badge india-badge">🚆 RAILWAY</span>
+<h3>Indian Railway Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> Railway Recruitment Boards</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / ITI / Diploma / Graduate</p>
+<p>🎂 <strong>Age:</strong> Post-wise</p>
+<p class="salary">💰 Salary: ₹18,000–₹1,42,400+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.rrbapply.gov.in/" target="_blank">📝 Railway Apply ↗️</a>
 </div>
 
 <div class="job" data-category="Graduate India Govt">
-<span class="badge">BANKING • GRADUATE</span>
+<span class="badge india-badge">🏦 BANKING</span>
 <h3>IBPS Bank Recruitment</h3>
-<p>🏦 Organization: IBPS</p>
-<p>🎓 Qualification: Graduate / post-wise</p>
-<p>🎂 Age: Recruitment-wise</p>
-<p class="salary">💰 Salary: Bank pay scale</p>
-<p>👥 Vacancy: Exam-wise</p>
-<p>📅 Last Date: Notification-wise</p>
-<a class="apply" href="https://www.ibps.in/" target="_blank">📝 IBPS OFFICIAL</a>
-</div>
-
-<div class="job" data-category="Graduate Engineering India Govt">
-<span class="badge">DEFENCE / SCIENCE</span>
-<h3>DRDO Recruitment</h3>
-<p>🚀 Organization: Defence Research & Development Organisation</p>
-<p>🎓 Qualification: Post-wise</p>
-<p>🎂 Age: Notification-wise</p>
-<p class="salary">💰 Salary: Government pay scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Last Date: Notification-wise</p>
-<a class="apply" href="https://www.drdo.gov.in/" target="_blank">📝 DRDO OFFICIAL</a>
+<p>🏛️ <strong>Organization:</strong> IBPS</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> Graduate / post-wise</p>
+<p>🎂 <strong>Age:</strong> Post-wise</p>
+<p class="salary">💰 Salary: ₹25,000–₹60,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://www.ibps.in/" target="_blank">📝 IBPS Official ↗️</a>
 </div>
 
 <div class="job" data-category="Nursing Graduate India Govt">
-<span class="badge">HEALTH • NURSING</span>
-<h3>AIIMS Recruitment</h3>
-<p>🏥 Organization: All India Institute of Medical Sciences</p>
-<p>🎓 Qualification: Nursing / Medical / post-wise</p>
-<p>🎂 Age: Notification-wise</p>
-<p class="salary">💰 Salary: Government pay scale</p>
-<p>👥 Vacancy: Recruitment-wise</p>
-<p>📅 Last Date: Check official notification</p>
-<a class="apply" href="https://www.aiimsexams.ac.in/" target="_blank">📝 AIIMS EXAMS</a>
+<span class="badge india-badge">🏥 HEALTH</span>
+<h3>AIIMS Nursing Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> AIIMS</p>
+<p>👥 <strong>Vacancy:</strong> Recruitment-wise</p>
+<p>🎓 <strong>Qualification:</strong> Nursing qualification</p>
+<p>🎂 <strong>Age:</strong> Notification-wise</p>
+<p class="salary">💰 Salary: ₹44,900+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Check Official Notification</p>
+<a class="btn apply" href="https://www.aiimsexams.ac.in/" target="_blank">📝 AIIMS Official ↗️</a>
 </div>
 
-<div class="job" data-category="Doctor India Govt">
-<span class="badge">DOCTOR • MEDICAL</span>
-<h3>Central Government Medical Jobs</h3>
-<p>🏥 Organization: Central Government medical institutions</p>
-<p>🎓 Qualification: MBBS / PG / post-wise</p>
-<p>🎂 Age: Notification-wise</p>
-<p class="salary">💰 Salary: Government pay scale / post-wise</p>
-<p>👥 Vacancy: Institution-wise</p>
-<p>📅 Last Date: Notification-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND JOBS</a>
+<div class="job" data-category="Engineering Graduate India Govt">
+<span class="badge india-badge">🚀 SCIENCE</span>
+<h3>DRDO Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> Defence Research & Development Organisation</p>
+<p>👥 <strong>Vacancy:</strong> Post-wise</p>
+<p>🎓 <strong>Qualification:</strong> Diploma / Engineering / Graduate / PG</p>
+<p>🎂 <strong>Age:</strong> Notification-wise</p>
+<p class="salary">💰 Salary: ₹20,000–₹1,00,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Notification-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.drdo.gov.in/" target="_blank">📄 DRDO Official ↗️</a>
+</div>
+
+<div class="job" data-category="Graduate India Govt">
+<span class="badge india-badge">👨‍💼 UPSC</span>
+<h3>UPSC Recruitment</h3>
+<p>🏛️ <strong>Organization:</strong> Union Public Service Commission</p>
+<p>👥 <strong>Vacancy:</strong> Examination / Post-wise</p>
+<p>🎓 <strong>Qualification:</strong> Graduate / Professional</p>
+<p>🎂 <strong>Age:</strong> Examination-wise</p>
+<p class="salary">💰 Salary: ₹56,100–₹2,50,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Examination-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Notification-wise</p>
+<a class="btn apply" href="https://upsc.gov.in/" target="_blank">📝 UPSC Official ↗️</a>
 </div>
 
 </div>
-</section>
 
-
-<!-- ALL INDIA PRIVATE -->
-
-<section class="section" id="india-private">
-<div class="title aip">💼 ALL INDIA PRIVATE JOBS</div>
+<!-- =====================================================
+ ALL INDIA PRIVATE
+===================================================== -->
+<div class="category-title india-private" id="india-private">
+💼 ALL INDIA PRIVATE JOBS
+</div>
 
 <div class="jobs">
 
-<div class="job allprivate" data-category="8th India Private">
-<span class="badge">PRIVATE • 8th PASS</span>
-<h3>Warehouse / Delivery / Support Jobs</h3>
-<p>🏢 Company: Multiple private employers</p>
-<p>🎓 Qualification: 8th / 10th depending on job</p>
-<p>🎂 Age: Employer-wise</p>
-<p class="salary">💰 Salary: ₹10,000 – ₹25,000+*</p>
-<p>👥 Vacancy: Location-wise</p>
-<p>📅 Last Date: Opening-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND & APPLY</a>
-</div>
-
-<div class="job allprivate" data-category="10th 12th India Private">
-<span class="badge">AMAZON • PRIVATE</span>
+<div class="job india-private" data-category="10th 12th Graduate India Private">
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">🇮🇳 PRIVATE</span>
 <h3>Amazon Jobs</h3>
-<p>🏢 Company: Amazon</p>
-<p>🎓 Qualification: Role-wise</p>
-<p>🎂 Age: Role/location-wise</p>
-<p class="salary">💰 Salary: Role & location-wise*</p>
-<p>👥 Vacancy: Current opening-wise</p>
-<p>📅 Last Date: Job-post-wise</p>
-<a class="apply" href="https://www.amazon.jobs/en/" target="_blank">📝 APPLY AMAZON</a>
+<p>🏢 <strong>Company:</strong> Amazon</p>
+<p>👥 <strong>Vacancy:</strong> Location / role-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate depending on role</p>
+<p>🎂 <strong>Age:</strong> Role-wise</p>
+<p class="salary">💰 Salary: ₹15,000–₹60,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Job-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Job posting-wise</p>
+<a class="btn apply" href="https://www.amazon.jobs/" target="_blank">📝 Apply ↗️</a>
 </div>
 
-<div class="job allprivate" data-category="10th 12th Graduate India Private">
-<span class="badge">FLIPKART • PRIVATE</span>
+<div class="job india-private" data-category="10th 12th Graduate India Private">
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">🛒 E-COMMERCE</span>
 <h3>Flipkart Jobs</h3>
-<p>🏢 Company: Flipkart</p>
-<p>🎓 Qualification: Role-wise</p>
-<p>🎂 Age: Role-wise</p>
-<p class="salary">💰 Salary: Role & location-wise*</p>
-<p>👥 Vacancy: Current openings</p>
-<p>📅 Last Date: Job-post-wise</p>
-<a class="apply" href="https://www.flipkartcareers.com/" target="_blank">📝 APPLY FLIPKART</a>
+<p>🏢 <strong>Company:</strong> Flipkart</p>
+<p>👥 <strong>Vacancy:</strong> Role / location-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate depending on role</p>
+<p>🎂 <strong>Age:</strong> Role-wise</p>
+<p class="salary">💰 Salary: ₹15,000–₹60,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Job-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Job posting-wise</p>
+<a class="btn apply" href="https://www.flipkartcareers.com/" target="_blank">📝 Apply ↗️</a>
 </div>
 
-<div class="job allprivate" data-category="Graduate India Private">
-<span class="badge">PRIVATE • GRADUATE</span>
-<h3>Corporate / Office Jobs</h3>
-<p>🏢 Organization: Private Companies</p>
-<p>🎓 Qualification: Graduate / role-wise</p>
-<p>🎂 Age: Company-wise</p>
-<p class="salary">💰 Salary: ₹15,000 – ₹60,000+*</p>
-<p>👥 Vacancy: Company-wise</p>
-<p>📅 Last Date: Opening-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND JOBS</a>
+<div class="job india-private" data-category="10th 12th Graduate India Private">
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">🏢 CORPORATE</span>
+<h3>Private Company Jobs — India</h3>
+<p>🏢 <strong>Company:</strong> Multiple Private Companies</p>
+<p>👥 <strong>Vacancy:</strong> Company-wise</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate</p>
+<p>🎂 <strong>Age:</strong> Company-wise</p>
+<p class="salary">💰 Salary: ₹15,000–₹70,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.ncs.gov.in/" target="_blank">🔎 Find Jobs ↗️</a>
 </div>
 
-<div class="job allprivate" data-category="ITI Diploma Engineering India Private">
-<span class="badge">TECHNICAL • PRIVATE</span>
+<div class="job india-private" data-category="ITI Diploma Engineering India Private">
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">🔧 TECHNICAL</span>
 <h3>ITI / Diploma / Engineering Jobs</h3>
-<p>🏢 Organization: Industries / Companies</p>
-<p>🎓 Qualification: ITI / Diploma / Engineering</p>
-<p>🎂 Age: Employer-wise</p>
-<p class="salary">💰 Salary: ₹15,000 – ₹50,000+*</p>
-<p>👥 Vacancy: Company-wise</p>
-<p>📅 Last Date: Opening-wise</p>
-<a class="apply" href="https://www.ncs.gov.in/" target="_blank">🔎 FIND JOBS</a>
+<p>🏢 <strong>Company:</strong> Private Industries</p>
+<p>👥 <strong>Vacancy:</strong> Company-wise</p>
+<p>🎓 <strong>Qualification:</strong> ITI / Diploma / Engineering</p>
+<p>🎂 <strong>Age:</strong> Usually 18+</p>
+<p class="salary">💰 Salary: ₹15,000–₹60,000+ / month</p>
+<p>📅 <strong>Apply Start:</strong> Company-wise</p>
+<p class="date">🔴 <strong>Last Date:</strong> Vacancy-wise</p>
+<a class="btn apply" href="https://www.ncs.gov.in/" target="_blank">🔎 Find Jobs ↗️</a>
 </div>
 
 </div>
-</section>
 
+<!-- =====================================================
+ SCHOLARSHIP
+===================================================== -->
+<section class="scholarship" id="scholarships">
 
-<!-- SCHOLARSHIP -->
+<h2>🎓 Scholarship Updates</h2>
 
-<section class="section" id="scholarship">
-<div class="title odg">🎓 SCHOLARSHIP</div>
-
-<div class="card">
+<div class="sch-card">
 <h3>🏛️ Odisha State Scholarship Portal</h3>
 <p>
 School, +2, +3, Diploma, ITI, UG, PG ଇତ୍ୟାଦି ପାଇଁ
-scheme-wise scholarship check କରନ୍ତୁ।
+eligible scholarship scheme check କରିପାରିବେ।
 </p>
-<a class="apply" href="https://scholarship.odisha.gov.in/" target="_blank">
-🔗 OPEN SCHOLARSHIP PORTAL
+<p>📋 Eligibility • Documents • Application • Status</p>
+<a class="sch-btn" href="https://scholarship.odisha.gov.in/" target="_blank">
+🔗 OPEN ODISHA SCHOLARSHIP PORTAL
 </a>
 </div>
 
-<div class="card">
-<h3>📋 Documents</h3>
-<ul>
-<li>Aadhaar</li>
-<li>Income Certificate</li>
-<li>Caste Certificate — applicable ହେଲେ</li>
-<li>Residence Certificate</li>
-<li>Bank Passbook</li>
-<li>Marksheet / Academic Documents</li>
-<li>College/School documents — scheme ଅନୁସାରେ</li>
-</ul>
+<div class="sch-card">
+<h3>🏦 SBI Scholarship / Education Support</h3>
+<p>
+SBI Foundation ଓ SBI ର scholarship/education support
+program ଗୁଡିକ ପାଇଁ official information check କରନ୍ତୁ।
+</p>
+<p>🎓 Students • Education Support • Scheme-wise Eligibility</p>
+<a class="sch-btn" href="https://www.sbi.co.in/" target="_blank">
+🔗 SBI OFFICIAL WEBSITE
+</a>
 </div>
+
+<div class="sch-card">
+<h3>🏫 Pre-Matric Scholarship</h3>
+<p>
+School students ପାଇଁ applicable scheme ଅନୁସାରେ
+eligibility, amount ଓ last date ଭିନ୍ନ ହୋଇପାରେ।
+</p>
+<a class="sch-btn" href="https://scholarship.odisha.gov.in/" target="_blank">
+📝 CHECK ELIGIBILITY
+</a>
+</div>
+
+<div class="sch-card">
+<h3>🎓 Post-Matric Scholarship</h3>
+<p>
++2 • +3 • Diploma • ITI • UG • PG students
+ପାଇଁ scheme-wise scholarship check କରନ୍ତୁ।
+</p>
+<a class="sch-btn" href="https://scholarship.odisha.gov.in/" target="_blank">
+📝 CHECK & APPLY
+</a>
+</div>
+
 </section>
 
+<!-- =====================================================
+ ₹99 APPLY HELP
+===================================================== -->
+<section class="help">
 
-<!-- RESULTS -->
-
-<section class="section" id="results">
-<div class="title aig">📊 RESULTS</div>
-
-<div class="card">
-<h3>📊 Odisha Results</h3>
-<p>Odisha Government / Board / Recruitment result official source ରୁ check କରନ୍ତୁ।</p>
-<a class="apply" href="https://odisha.gov.in/" target="_blank">🔎 OFFICIAL ODISHA</a>
-</div>
-
-<div class="card">
-<h3>📊 SSC Results</h3>
-<a class="apply" href="https://ssc.gov.in/" target="_blank">🔎 SSC OFFICIAL</a>
-</div>
-
-<div class="card">
-<h3>📊 Railway Results</h3>
-<a class="apply" href="https://www.rrbapply.gov.in/" target="_blank">🔎 RRB OFFICIAL</a>
-</div>
-</section>
-
-
-<!-- SYLLABUS -->
-
-<section class="section" id="syllabus">
-<div class="title odg">📚 SYLLABUS & EXAM PREPARATION</div>
-
-<div class="card">
-<h3>📚 SSC</h3>
-<p>Exam-wise syllabus, subjects and pattern official notification ଅନୁସାରେ check କରନ୍ତୁ।</p>
-<a class="apply" href="https://ssc.gov.in/" target="_blank">SSC OFFICIAL</a>
-</div>
-
-<div class="card">
-<h3>🚆 Railway</h3>
-<p>Post-wise syllabus ଏବଂ exam pattern official recruitment notification ରେ check କରନ୍ତୁ।</p>
-<a class="apply" href="https://www.rrbapply.gov.in/" target="_blank">RRB OFFICIAL</a>
-</div>
-
-<div class="card">
-<h3>🏛️ Odisha Exams</h3>
-<p>OPSC / OSSSC / Odisha recruitment syllabus official notification ରୁ verify କରନ୍ତୁ।</p>
-<a class="apply" href="https://opsc.gov.in/" target="_blank">OPSC</a>
-</div>
-</section>
-
-
-<!-- AI -->
-
-<section class="ai section" id="ai">
-<h2>🤖 JobMitra AI Preparation</h2>
+<h2>🆘 Job / Scholarship Apply Help</h2>
 
 <p>
-MCQ Practice • Mock Test • General Knowledge •
-Math • Reasoning • English • Interview Preparation
+ନିଜେ online application କରିପାରୁନାହାନ୍ତି?
+ଆମକୁ Instagram ରେ DM କରନ୍ତୁ।
 </p>
 
-<a href="#ai">
-🚀 START AI PREPARATION
+<p class="price">
+💰 Apply Assistance Fee: ₹99
+</p>
+
+<p>
+Required documents ଥିଲେ application process ରେ
+ଆମେ help କରିବୁ।
+</p>
+
+<p><strong>📸 Instagram: @naik_babulu</strong></p>
+
+<a class="btn dm"
+href="https://instagram.com/naik_babulu"
+target="_blank">
+💬 DM @naik_babulu — Apply Help ₹99
 </a>
+
+<p style="font-size:12px;color:#666">
+⚠️ OTP, password, ATM PIN କିମ୍ବା bank PIN କେବେ share କରନ୍ତୁ ନାହିଁ।
+</p>
+
 </section>
 
+<!-- =====================================================
+ AI
+===================================================== -->
+<section class="ai" id="ai">
 
+<h2>🤖 AI Exam Preparation</h2>
+
+<p>
+Question Practice • Mock Test • Syllabus •
+Exam Guidance • Interview Preparation
+</p>
+
+<a href="ai-preparation.html">
+🚀 Start AI Preparation
+</a>
+
+</section>
+
+<!-- =====================================================
+ NOTICE
+===================================================== -->
 <div class="notice">
-⚠️ <strong>Important:</strong><br>
-JobMitra AI job information platform. Vacancy, salary, age,
-qualification, application fee ଏବଂ dates recruitment-wise
-change ହୋଇପାରେ। Apply କରିବା ପୂର୍ବରୁ official notification
-ନିଶ୍ଚିତ ଭାବେ verify କରନ୍ତୁ।<br><br>
-*Private job salary examples are indicative only. Actual salary
-depends on company, location, experience and role.
+
+⚠️ <strong>Important Notice:</strong><br><br>
+
+JobMitra AI job seekers ଙ୍କୁ information ଏବଂ official
+application links ପାଇବାରେ help କରେ। Vacancy, salary,
+age, qualification, application date ଓ last date
+recruitment ଅନୁସାରେ change ହୋଇପାରେ।
+
+<strong>
+Apply କରିବା ପୂର୍ବରୁ official notification ନିଶ୍ଚିତ
+ଭାବେ verify କରନ୍ତୁ।
+</strong>
+
+Private job ପାଇଁ company ର official careers page
+କିମ୍ବା trusted employment portal ରୁ apply କରନ୍ତୁ।
+
 </div>
 
-</main>
-
+</div>
 
 <footer>
-<h2>🤖 JobMitra AI</h2>
-<p>ଚାକିରି ଖୋଜନ୍ତୁ • ପ୍ରସ୍ତୁତି କରନ୍ତୁ • ଭବିଷ୍ୟତ ଗଢନ୍ତୁ</p>
-<p>🇮🇳 Happy Independence Day 2026 🇮🇳</p>
-<p>© 2026 JobMitra AI</p>
-<p>Created & Managed by <strong>Babulu Naik</strong></p>
-</footer>
 
+<h2>🤖 JobMitra AI</h2>
+
+<p>
+ଚାକିରି ଖୋଜନ୍ତୁ • ପ୍ରସ୍ତୁତି କରନ୍ତୁ • ଭବିଷ୍ୟତ ଗଢନ୍ତୁ
+</p>
+
+<p>🇮🇳 Happy Independence Day 2026 🇮🇳</p>
+
+<p>© 2026 JobMitra AI. All Rights Reserved.</p>
+
+<p>
+Created & Managed by
+<strong>Babulu Naik</strong>
+</p>
+
+</footer>
 
 <script>
 
 /* SEARCH */
-
 function searchJobs(){
 
-let input=document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
+ const input=document
+ .getElementById("search")
+ .value
+ .toLowerCase()
+ .trim();
 
-document.querySelectorAll(".job").forEach(function(job){
+ const jobs=document.querySelectorAll(".job");
 
-let text=job.innerText.toLowerCase();
+ jobs.forEach(function(job){
 
-job.style.display=
-text.includes(input) ? "block" : "none";
+   const text=job.innerText.toLowerCase();
 
-});
+   job.style.display=
+   text.includes(input) ? "" : "none";
+
+ });
 
 }
-
 
 /* FILTER */
-
 function filterJobs(category){
 
-document.querySelectorAll(".job").forEach(function(job){
+ const jobs=document.querySelectorAll(".job");
 
-let data=
-job.getAttribute("data-category") || "";
+ jobs.forEach(function(job){
 
-if(category==="All" || data.includes(category)){
-job.style.display="block";
-}else{
-job.style.display="none";
+   const data=
+   job.getAttribute("data-category") || "";
+
+   if(category==="All" || data.includes(category)){
+      job.style.display="";
+   }else{
+      job.style.display="none";
+   }
+
+ });
+
 }
+
+/* ENTER KEY SEARCH */
+document.getElementById("search")
+.addEventListener("keydown",function(e){
+
+ if(e.key==="Enter"){
+   searchJobs();
+ }
 
 });
-
-}
-
-
-/* MENU / SECTION LINKS
-   All links use #section instead of
-   separate HTML files, so no 404.
-*/
 
 </script>
 
