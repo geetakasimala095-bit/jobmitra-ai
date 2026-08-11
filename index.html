@@ -4,273 +4,492 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>JobMitra AI - Jobs, Exams & Preparation</title>
+<title>JobMitra AI - Jobs, Scholarships & Exam Preparation</title>
 
 <style>
 *{box-sizing:border-box}
 
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f3f6fa;
-color:#17202a
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:linear-gradient(135deg,#fff7ed,#fff,#f0fdf4);
+ color:#17202a;
 }
 
+/* ================= HEADER ================= */
+
 header{
-background:linear-gradient(135deg,#0757a5,#0b78d0);
-color:white;
-padding:18px 15px 22px;
-position:sticky;
-top:0;
-z-index:10;
-box-shadow:0 3px 12px #0003
+ background:linear-gradient(135deg,#ff9933 0%,#ffffff 48%,#138808 100%);
+ padding:14px;
+ position:sticky;
+ top:0;
+ z-index:1000;
+ box-shadow:0 3px 15px #0003;
 }
 
 .top{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px
+ max-width:1150px;
+ margin:auto;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
 }
 
 .logo{
-font-size:25px;
-font-weight:bold
+ font-size:25px;
+ font-weight:900;
+ color:#073b7a;
 }
 
 .tagline{
-font-size:12px;
-opacity:.9;
-margin-top:4px
+ font-size:12px;
+ color:#333;
+ margin-top:3px;
 }
 
 .menu{
-display:flex;
-gap:7px;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:15px
+ display:flex;
+ gap:6px;
+ flex-wrap:wrap;
+ justify-content:center;
+ margin-top:12px;
 }
 
 .menu a{
-color:white;
-text-decoration:none;
-background:#ffffff20;
-padding:8px 10px;
-border-radius:6px;
-font-size:12px
+ color:#073b7a;
+ text-decoration:none;
+ background:#ffffffc9;
+ padding:8px 10px;
+ border-radius:7px;
+ font-size:12px;
+ font-weight:bold;
 }
 
+/* ================= INDEPENDENCE BANNER ================= */
+
+.independence{
+ max-width:1150px;
+ margin:14px auto 0;
+ border-radius:16px;
+ padding:22px 15px;
+ text-align:center;
+ background:linear-gradient(
+   to bottom,
+   #ff9933 0 33%,
+   #ffffff 33% 66%,
+   #138808 66% 100%
+ );
+ box-shadow:0 4px 15px #0002;
+ border:2px solid white;
+}
+
+.independence h1{
+ margin:0;
+ color:#073b7a;
+ font-size:27px;
+ text-shadow:0 1px 2px #fff;
+}
+
+.independence p{
+ margin:8px 0 0;
+ font-weight:bold;
+ color:#222;
+}
+
+/* ================= LIVE BAR ================= */
+
+.live{
+ max-width:1150px;
+ margin:12px auto;
+ background:#fff1f1;
+ border:2px solid red;
+ border-radius:9px;
+ overflow:hidden;
+}
+
+.live-title{
+ padding:9px 12px;
+ font-weight:bold;
+ color:red;
+}
+
+.dot{
+ display:inline-block;
+ width:10px;
+ height:10px;
+ background:red;
+ border-radius:50%;
+ animation:blink .8s infinite;
+}
+
+@keyframes blink{
+ 50%{opacity:.2}
+}
+
+.ticker{
+ white-space:nowrap;
+ overflow:hidden;
+ padding:8px 0;
+}
+
+.ticker span{
+ display:inline-block;
+ padding-left:100%;
+ animation:move 20s linear infinite;
+ color:#c00;
+ font-weight:bold;
+}
+
+@keyframes move{
+ 100%{transform:translateX(-100%)}
+}
+
+/* ================= CONTAINER ================= */
+
 .container{
-max-width:1100px;
-margin:auto;
-padding:15px
+ max-width:1150px;
+ margin:auto;
+ padding:15px;
 }
 
 .hero{
-background:white;
-border-radius:14px;
-padding:25px 18px;
-margin-top:15px;
-box-shadow:0 3px 15px #0001;
-text-align:center
+ background:white;
+ border-radius:15px;
+ padding:25px 18px;
+ text-align:center;
+ box-shadow:0 3px 15px #0001;
 }
 
-.hero h1{
-margin:0;
-font-size:27px;
-color:#0757a5
+.hero h2{
+ margin:0;
+ color:#0757a5;
+ font-size:26px;
 }
 
 .hero p{
-color:#667;
-font-size:14px;
-line-height:1.5
+ color:#555;
+ line-height:1.6;
+ font-size:14px;
 }
 
 .search{
-width:100%;
-max-width:700px;
-padding:14px;
-border:1px solid #ccd5df;
-border-radius:9px;
-font-size:15px;
-outline:none
+ width:100%;
+ max-width:700px;
+ padding:14px;
+ border:2px solid #d6dee8;
+ border-radius:10px;
+ font-size:15px;
+ outline:none;
 }
 
+/* ================= QUICK MENU ================= */
+
 .quick{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin:18px 0
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin:18px 0;
 }
 
 .quick a{
-background:white;
-padding:18px 10px;
-border-radius:10px;
-text-align:center;
-text-decoration:none;
-color:#17202a;
-font-weight:bold;
-box-shadow:0 2px 10px #0001;
-font-size:14px
+ background:white;
+ padding:18px 10px;
+ border-radius:12px;
+ text-align:center;
+ text-decoration:none;
+ color:#17202a;
+ font-weight:bold;
+ box-shadow:0 2px 10px #0001;
 }
 
 .quick span{
-display:block;
-font-size:27px;
-margin-bottom:7px
+ display:block;
+ font-size:27px;
+ margin-bottom:6px;
 }
 
+/* ================= SECTION ================= */
+
 .section-title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin:25px 0 12px
+ margin:30px 0 12px;
 }
 
 .section-title h2{
-margin:0;
-font-size:21px
+ margin:0;
+ font-size:22px;
 }
 
+/* ================= FILTER ================= */
+
 .filters{
-display:flex;
-gap:8px;
-overflow-x:auto;
-padding-bottom:8px
+ display:flex;
+ gap:8px;
+ overflow-x:auto;
+ padding-bottom:10px;
 }
 
 .filters button{
-border:0;
-background:white;
-padding:9px 13px;
-border-radius:20px;
-white-space:nowrap;
-cursor:pointer
+ border:0;
+ padding:9px 13px;
+ border-radius:20px;
+ background:white;
+ box-shadow:0 2px 7px #0001;
+ cursor:pointer;
+ white-space:nowrap;
+ font-weight:bold;
 }
 
+/* ================= JOB CATEGORY ================= */
+
+.category-title{
+ margin-top:28px;
+ padding:15px;
+ border-radius:12px;
+ color:white;
+ font-size:20px;
+ font-weight:900;
+}
+
+.odisha-gov{
+ background:linear-gradient(135deg,#0757a5,#138808);
+}
+
+.odisha-private{
+ background:linear-gradient(135deg,#ea580c,#f59e0b);
+}
+
+.india-gov{
+ background:linear-gradient(135deg,#0757a5,#1d4ed8);
+}
+
+.india-private{
+ background:linear-gradient(135deg,#6d28d9,#9333ea);
+}
+
+/* ================= JOB GRID ================= */
+
 .jobs{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:14px;
+ margin-top:14px;
 }
 
 .job{
-background:white;
-padding:17px;
-border-radius:11px;
-box-shadow:0 2px 10px #0001;
-border-left:4px solid #0757a5
+ background:white;
+ padding:17px;
+ border-radius:13px;
+ box-shadow:0 3px 12px #0001;
+ border-left:5px solid #0757a5;
+ position:relative;
+}
+
+.job.odisha{
+ border-left-color:#138808;
+ background:linear-gradient(135deg,#f0fff4,#fff);
+}
+
+.job.private{
+ border-left-color:#f59e0b;
+}
+
+.job.india-private{
+ border-left-color:#7c3aed;
 }
 
 .badge{
-display:inline-block;
-font-size:11px;
-font-weight:bold;
-background:#e2f5e8;
-color:#16733a;
-padding:5px 8px;
-border-radius:5px;
-margin-bottom:8px
+ display:inline-block;
+ padding:5px 8px;
+ border-radius:6px;
+ background:#e7f7ec;
+ color:#16733a;
+ font-size:11px;
+ font-weight:900;
+ margin-bottom:8px;
+}
+
+.odisha-badge{
+ background:#138808;
+ color:white;
 }
 
 .job h3{
-margin:3px 0 10px;
-font-size:17px;
-color:#0757a5
+ margin:4px 0 10px;
+ color:#0757a5;
+ font-size:17px;
 }
 
 .job p{
-font-size:13px;
-margin:7px 0;
-color:#555;
-line-height:1.4
+ margin:7px 0;
+ color:#555;
+ font-size:13px;
+ line-height:1.45;
 }
 
 .job strong{
-color:#222
+ color:#222;
+}
+
+.last{
+ color:#d00000 !important;
+ font-weight:900;
+}
+
+.warning{
+ display:inline-block;
+ margin-top:5px;
+ background:#dc2626;
+ color:white;
+ padding:5px 8px;
+ border-radius:5px;
+ font-size:11px;
+ font-weight:900;
+ animation:blink .8s infinite;
 }
 
 .btn{
-display:inline-block;
-background:#0757a5;
-color:white;
-text-decoration:none;
-padding:10px 13px;
-border-radius:6px;
-font-size:12px;
-margin-top:8px
+ display:inline-block;
+ margin-top:8px;
+ padding:10px 12px;
+ border-radius:7px;
+ text-decoration:none;
+ color:white;
+ background:#0757a5;
+ font-size:12px;
+ font-weight:bold;
 }
+
+.apply{
+ background:#138808;
+}
+
+.details{
+ background:#0757a5;
+ margin-left:4px;
+}
+
+/* ================= SCHOLARSHIP ================= */
+
+.scholarship{
+ margin-top:30px;
+ background:#f4f8ff;
+ border-radius:16px;
+ padding:20px 15px;
+}
+
+.scholarship-head{
+ text-align:center;
+}
+
+.scholarship-head h2{
+ color:#0757b8;
+ font-size:27px;
+}
+
+.scholarship-card{
+ background:white;
+ margin-top:15px;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 3px 12px #0001;
+}
+
+.scholarship-card h3{
+ color:#0757b8;
+}
+
+.scholarship-card p{
+ line-height:1.6;
+ font-size:14px;
+}
+
+.sch-btn{
+ display:inline-block;
+ margin-top:8px;
+ background:#16a34a;
+ color:white;
+ padding:11px 16px;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:bold;
+}
+
+/* ================= AI ================= */
 
 .ai{
-margin-top:22px;
-background:linear-gradient(135deg,#182848,#4b6cb7);
-color:white;
-padding:25px;
-border-radius:13px;
-text-align:center
-}
-
-.ai h2{
-margin-top:0
+ margin-top:25px;
+ background:linear-gradient(135deg,#182848,#4b6cb7);
+ color:white;
+ padding:25px;
+ border-radius:15px;
+ text-align:center;
 }
 
 .ai a{
-display:inline-block;
-background:white;
-color:#0757a5;
-padding:11px 17px;
-border-radius:7px;
-text-decoration:none;
-font-weight:bold
+ display:inline-block;
+ background:white;
+ color:#0757a5;
+ padding:11px 17px;
+ border-radius:7px;
+ text-decoration:none;
+ font-weight:bold;
 }
+
+/* ================= NOTICE ================= */
 
 .notice{
-background:#fff8dc;
-border:1px solid #efd36b;
-padding:14px;
-border-radius:8px;
-margin-top:20px;
-font-size:13px;
-line-height:1.5
+ margin-top:20px;
+ padding:17px;
+ background:#fff8dc;
+ border:1px solid #efd36b;
+ border-radius:10px;
+ line-height:1.6;
+ font-size:13px;
 }
 
+/* ================= FOOTER ================= */
+
 footer{
-margin-top:30px;
-background:#17202a;
-color:white;
-text-align:center;
-padding:25px 10px;
-font-size:12px;
-line-height:1.7
+ margin-top:30px;
+ background:#073b7a;
+ color:white;
+ text-align:center;
+ padding:28px 15px;
+ line-height:1.7;
 }
+
+footer strong{
+ color:#ffd43b;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
-.top{
-display:block;
-text-align:center
-}
+ .top{
+  display:block;
+  text-align:center;
+ }
 
-.quick{
-grid-template-columns:repeat(2,1fr)
-}
+ .quick{
+  grid-template-columns:repeat(2,1fr);
+ }
 
-.jobs{
-grid-template-columns:1fr
-}
+ .jobs{
+  grid-template-columns:1fr;
+ }
 
-.hero h1{
-font-size:23px
-}
+ .independence h1{
+  font-size:22px;
+ }
 
-.menu a{
-font-size:11px
-}
+ .hero h2{
+  font-size:22px;
+ }
+
+ .menu a{
+  font-size:11px;
+ }
 
 }
 </style>
@@ -278,14 +497,17 @@ font-size:11px
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <div class="top">
 
 <div>
 <div class="logo">🤖 JobMitra AI</div>
+
 <div class="tagline">
-Find Jobs • Prepare Smart • Get Ready
+Jobs • Scholarships • Exams • AI Preparation
 </div>
 </div>
 
@@ -294,92 +516,125 @@ Find Jobs • Prepare Smart • Get Ready
 <nav class="menu">
 
 <a href="index.html">🏠 Home</a>
-
 <a href="jobs.html">💼 Jobs</a>
-
-<a href="notifications.html">🔔 Notifications</a>
-
+<a href="notifications.html">📢 Official Notice</a>
 <a href="admit-card.html">🎫 Admit Card</a>
-
 <a href="results.html">📊 Results</a>
-
 <a href="syllabus.html">📚 Syllabus</a>
-
-<a href="ai-preparation.html">🎓 AI Preparation</a>
+<a href="ai-preparation.html">🤖 AI Preparation</a>
 
 </nav>
 
 </header>
 
 
+<!-- ================= 15 AUGUST ================= -->
+
+<section class="independence">
+
+<h1>🇮🇳 HAPPY INDEPENDENCE DAY 2026 🇮🇳</h1>
+
+<p>
+ଆଜାଦୀର ସ୍ୱପ୍ନକୁ Career & Success ରେ ପରିଣତ କରନ୍ତୁ 🚀
+</p>
+
+<p>
+🇮🇳 Jai Hind 🇮🇳
+</p>
+
+</section>
+
+
+<!-- ================= LIVE ================= -->
+
+<div class="live">
+
+<div class="live-title">
+<span class="dot"></span>
+🔴 LIVE — Latest Job & Exam Updates
+</div>
+
+<div class="ticker">
+
+<span>
+🇮🇳 Independence Day Special &nbsp; • &nbsp;
+🏛️ Odisha Govt Jobs &nbsp; • &nbsp;
+💼 Odisha Private Jobs &nbsp; • &nbsp;
+🇮🇳 All India Govt Jobs &nbsp; • &nbsp;
+🏢 All India Private Jobs &nbsp; • &nbsp;
+🎓 Scholarship Update &nbsp; • &nbsp;
+🎫 Admit Card &nbsp; • &nbsp;
+📊 Result Update
+</span>
+
+</div>
+
+</div>
+
+
 <main class="container">
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
-<h1>🚀 Smart Job & Exam Portal</h1>
+<h2>🚀 Smart Job & Exam Portal</h2>
 
 <p>
-ସରକାରୀ ଚାକିରି, Odisha Jobs, All India Jobs ଏବଂ Exam Preparation
-ପାଇଁ JobMitra AI ସହିତ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ।
+Odisha ଏବଂ All India ର Government Jobs, Private Jobs,
+Scholarships, Admit Card, Results ଏବଂ Exam Preparation
+ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।
 </p>
 
 <input
 class="search"
 id="search"
 type="search"
-placeholder="🔍 Search Job, Exam, Qualification..."
+placeholder="🔍 Search Job, Organization, Qualification..."
 onkeyup="searchJobs()">
 
 </section>
 
 
+<!-- ================= QUICK ================= -->
+
 <div class="quick">
 
-<a href="jobs.html">
-<span>💼</span>
-Latest Jobs
-<br>
-ନୂଆ ଚାକିରି
+<a href="#odisha-gov">
+<span>🏛️</span>
+Odisha Govt Jobs
 </a>
 
-<a href="notifications.html">
-<span>🔔</span>
-Notifications
-<br>
-ନିଯୁକ୍ତି ସୂଚନା
+<a href="#odisha-private">
+<span>🏢</span>
+Odisha Private Jobs
+</a>
+
+<a href="#india-gov">
+<span>🇮🇳</span>
+All India Govt Jobs
+</a>
+
+<a href="#india-private">
+<span>💼</span>
+All India Private
+</a>
+
+<a href="scholarship.html">
+<span>🎓</span>
+Scholarship
 </a>
 
 <a href="admit-card.html">
 <span>🎫</span>
 Admit Card
-<br>
-ପ୍ରବେଶ ପତ୍ର
-</a>
-
-<a href="results.html">
-<span>📊</span>
-Results
-<br>
-ପରୀକ୍ଷା ଫଳ
-</a>
-
-<a href="syllabus.html">
-<span>📚</span>
-Syllabus
-<br>
-ପାଠ୍ୟକ୍ରମ
-</a>
-
-<a href="ai-preparation.html">
-<span>🎓</span>
-AI Preparation
-<br>
-ପରୀକ୍ଷା ପ୍ରସ୍ତୁତି
 </a>
 
 </div>
 
+
+<!-- ================= FILTER ================= -->
 
 <div class="section-title">
 
@@ -387,34 +642,37 @@ AI Preparation
 
 </div>
 
-
 <div class="filters">
 
 <button onclick="filterJobs('All')">All</button>
-
-<button onclick="filterJobs('10th')">10th Pass</button>
-
-<button onclick="filterJobs('12th')">12th Pass</button>
-
+<button onclick="filterJobs('10th')">10th</button>
+<button onclick="filterJobs('12th')">12th</button>
 <button onclick="filterJobs('Graduate')">Graduate</button>
-
 <button onclick="filterJobs('Diploma')">Diploma</button>
-
 <button onclick="filterJobs('ITI')">ITI</button>
-
 <button onclick="filterJobs('Nursing')">Nursing</button>
-
 <button onclick="filterJobs('Engineering')">Engineering</button>
 
 </div>
 
 
-<div class="jobs" id="jobList">
+<!-- ================================================= -->
+<!-- ODISHA GOVERNMENT -->
+<!-- ================================================= -->
+
+<div class="category-title odisha-gov" id="odisha-gov">
+
+🏛️ ODISHA GOVERNMENT JOBS
+</div>
+
+<div class="jobs">
 
 
-<div class="job" data-category="Engineering Graduate">
+<div class="job odisha" data-category="Engineering Graduate Odisha">
 
-<span class="badge">🔥 APPLY NOW</span>
+<span class="badge odisha-badge">
+⭐ ODISHA GOVT JOB
+</span>
 
 <h3>OPSC Assistant Executive Engineer</h3>
 
@@ -422,125 +680,162 @@ AI Preparation
 
 <p>📍 <strong>Location:</strong> Odisha</p>
 
-<p>👥 <strong>Vacancy:</strong> 46 Posts</p>
+<p>👥 <strong>Vacancy:</strong> Check Official Notification</p>
 
 <p>🎓 <strong>Qualification:</strong> B.E / B.Tech Civil Engineering</p>
 
-<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
 
-<p>📝 <strong>Exam:</strong> Written Exam / Selection as per notification</p>
-
-<p>💰 <strong>Salary:</strong> Official Pay Scale</p>
-
-<p>📅 <strong>Last Date:</strong> 11 September 2026</p>
-
-<a class="btn"
+<a class="btn apply"
 href="https://opsc.gov.in/"
 target="_blank">
-Official Notification ↗️
+📝 Apply / Official Site ↗️
 </a>
 
 </div>
 
 
-<div class="job" data-category="Nursing Graduate">
+<div class="job odisha" data-category="Nursing Graduate Odisha">
 
-<span class="badge">🔥 CLOSING SOON</span>
+<span class="badge odisha-badge">
+⭐ ODISHA GOVT JOB
+</span>
 
-<h3>OSSSC Nursing Officer</h3>
+<h3>OSSSC Recruitment Updates</h3>
 
 <p>🏛️ <strong>Organization:</strong> OSSSC</p>
 
 <p>📍 <strong>Location:</strong> Odisha</p>
 
-<p>👥 <strong>Vacancy:</strong> 5,989 Posts</p>
+<p>🎓 <strong>Qualification:</strong> Post-wise</p>
 
-<p>🎓 <strong>Qualification:</strong> Nursing qualification</p>
+<p>📝 <strong>Selection:</strong> Written / Skill Test as applicable</p>
 
-<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
 
-<p>📝 <strong>Exam:</strong> Written Examination / Selection Process</p>
-
-<p>💰 <strong>Salary:</strong> Official Pay Scale</p>
-
-<p>📅 <strong>Last Date:</strong> 12 August 2026</p>
-
-<a class="btn"
+<a class="btn apply"
 href="https://www.osssc.gov.in/"
 target="_blank">
-Official Notification ↗️
+📝 Apply / Official Site ↗️
 </a>
 
 </div>
 
 
-<div class="job" data-category="Graduate">
+<div class="job odisha" data-category="10th 12th Graduate Odisha">
 
-<span class="badge">🆕 ALL INDIA</span>
+<span class="badge odisha-badge">
+⭐ ODISHA GOVT JOB
+</span>
 
-<h3>IBPS Clerk / CSA Recruitment</h3>
+<h3>Odisha Government Recruitment Updates</h3>
 
-<p>🏛️ <strong>Organization:</strong> IBPS</p>
+<p>🏛️ <strong>Organization:</strong> Odisha Government Departments</p>
 
-<p>📍 <strong>Location:</strong> All India</p>
+<p>📍 <strong>Location:</strong> Odisha</p>
 
-<p>👥 <strong>Vacancy:</strong> Check Official Notification</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate / Diploma / ITI</p>
 
-<p>🎓 <strong>Qualification:</strong> Graduate</p>
+<p>📝 <strong>Selection:</strong> Recruitment-wise</p>
 
-<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+<p>📅 <strong>Last Date:</strong> Vacancy-wise</p>
 
-<p>📝 <strong>Exam:</strong> Preliminary + Main Examination</p>
-
-<p>💰 <strong>Salary:</strong> Bank Pay Scale</p>
-
-<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
-
-<a class="btn"
-href="https://www.ibps.in/"
+<a class="btn details"
+href="https://odisha.gov.in/"
 target="_blank">
-Official Notification ↗️
+📄 Official Details ↗️
 </a>
 
 </div>
 
 
-<div class="job" data-category="Nursing">
+</div>
 
-<span class="badge">🔥 ALL INDIA</span>
 
-<h3>AIIMS NORCET Nursing Officer</h3>
+<!-- ================================================= -->
+<!-- ODISHA PRIVATE -->
+<!-- ================================================= -->
 
-<p>🏛️ <strong>Organization:</strong> AIIMS</p>
+<div class="category-title odisha-private" id="odisha-private">
 
-<p>📍 <strong>Location:</strong> All India</p>
+🏢 ODISHA PRIVATE JOBS
+</div>
 
-<p>👥 <strong>Vacancy:</strong> Check Official Notification</p>
+<div class="jobs">
 
-<p>🎓 <strong>Qualification:</strong> Nursing qualification</p>
 
-<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+<div class="job private" data-category="Graduate Odisha Private">
 
-<p>📝 <strong>Exam:</strong> NORCET Examination</p>
+<span class="badge" style="background:#fff0d9;color:#c2410c">
+⭐ ODISHA PRIVATE
+</span>
 
-<p>💰 <strong>Salary:</strong> Government Pay Scale</p>
+<h3>Private Company Jobs — Odisha</h3>
 
-<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+<p>📍 <strong>Location:</strong> Odisha</p>
 
-<a class="btn"
-href="https://www.aiimsexams.ac.in/"
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate / Diploma</p>
+
+<p>💼 <strong>Job Type:</strong> Sales / Office / Field / Support</p>
+
+<p>📅 <strong>Last Date:</strong> Company-wise</p>
+
+<a class="btn apply"
+href="https://www.ncs.gov.in/"
 target="_blank">
-Official Notification ↗️
+🔎 Find Jobs ↗️
 </a>
 
 </div>
 
 
-<div class="job" data-category="10th">
+<div class="job private" data-category="ITI Diploma Engineering Odisha Private">
 
-<span class="badge">🇮🇳 CENTRAL GOVT</span>
+<span class="badge" style="background:#fff0d9;color:#c2410c">
+⭐ ODISHA PRIVATE
+</span>
 
-<h3>SSC Government Jobs</h3>
+<h3>Private Technical Jobs — Odisha</h3>
+
+<p>📍 <strong>Location:</strong> Odisha</p>
+
+<p>🎓 <strong>Qualification:</strong> ITI / Diploma / Engineering</p>
+
+<p>💼 <strong>Job Type:</strong> Technical / Apprentice / Production</p>
+
+<p>📅 <strong>Last Date:</strong> Company-wise</p>
+
+<a class="btn apply"
+href="https://www.ncs.gov.in/"
+target="_blank">
+🔎 Find Jobs ↗️
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ALL INDIA GOVERNMENT -->
+<!-- ================================================= -->
+
+<div class="category-title india-gov" id="india-gov">
+
+🇮🇳 ALL INDIA GOVERNMENT JOBS
+</div>
+
+<div class="jobs">
+
+
+<div class="job" data-category="10th 12th Graduate India Government">
+
+<span class="badge">
+🇮🇳 CENTRAL GOVT
+</span>
+
+<h3>SSC Government Recruitment</h3>
 
 <p>🏛️ <strong>Organization:</strong> Staff Selection Commission</p>
 
@@ -548,26 +843,24 @@ Official Notification ↗️
 
 <p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate depending on post</p>
 
-<p>🎂 <strong>Age:</strong> Different by recruitment</p>
-
-<p>📝 <strong>Exam:</strong> SSC examination as per post</p>
-
-<p>💰 <strong>Salary:</strong> Government Pay Scale</p>
+<p>📝 <strong>Exam:</strong> SSC examination as per recruitment</p>
 
 <p>📅 <strong>Last Date:</strong> Vacancy-wise</p>
 
-<a class="btn"
+<a class="btn apply"
 href="https://ssc.gov.in/"
 target="_blank">
-SSC Official ↗️
+📝 Apply / Official Site ↗️
 </a>
 
 </div>
 
 
-<div class="job" data-category="10th 12th Graduate ITI Diploma">
+<div class="job" data-category="10th 12th ITI Diploma Graduate India Government">
 
-<span class="badge">🚆 RAILWAY</span>
+<span class="badge">
+🚆 RAILWAY
+</span>
 
 <h3>Railway Recruitment Updates</h3>
 
@@ -575,20 +868,97 @@ SSC Official ↗️
 
 <p>📍 <strong>Location:</strong> All India</p>
 
-<p>🎓 <strong>Qualification:</strong> 10th / 12th / ITI / Diploma / Graduate depending on post</p>
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / ITI / Diploma / Graduate</p>
 
-<p>🎂 <strong>Age:</strong> Vacancy-wise</p>
+<p>📝 <strong>Exam:</strong> CBT / Skill Test / applicable stages</p>
 
-<p>📝 <strong>Exam:</strong> CBT / Skill Test / Other stages as applicable</p>
+<p>📅 <strong>Last Date:</strong> Recruitment-wise</p>
 
-<p>💰 <strong>Salary:</strong> Railway Pay Scale</p>
+<a class="btn apply"
+href="https://www.rrbapply.gov.in/"
+target="_blank">
+📝 Apply / Official Site ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Graduate India Government">
+
+<span class="badge">
+🏦 BANKING
+</span>
+
+<h3>IBPS Bank Recruitment</h3>
+
+<p>🏛️ <strong>Organization:</strong> IBPS</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> Graduate / post-wise eligibility</p>
+
+<p>📝 <strong>Exam:</strong> Preliminary + Main as applicable</p>
 
 <p>📅 <strong>Last Date:</strong> Check Official Notification</p>
 
-<a class="btn"
-href="https://www.rrbapply.gov.in/"
+<a class="btn apply"
+href="https://www.ibps.in/"
 target="_blank">
-Railway Official ↗️
+📝 Apply / Official Site ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Nursing Graduate India Government">
+
+<span class="badge">
+🏥 HEALTH
+</span>
+
+<h3>AIIMS Nursing Recruitment</h3>
+
+<p>🏛️ <strong>Organization:</strong> AIIMS</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> Nursing qualification as notified</p>
+
+<p>📝 <strong>Exam:</strong> Recruitment examination</p>
+
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+
+<a class="btn apply"
+href="https://www.aiimsexams.ac.in/"
+target="_blank">
+📝 Apply / Official Site ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Engineering Graduate India Government">
+
+<span class="badge">
+🚀 DEFENCE / SCIENCE
+</span>
+
+<h3>DRDO Recruitment Updates</h3>
+
+<p>🏛️ <strong>Organization:</strong> DRDO</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> Post-wise</p>
+
+<p>📝 <strong>Selection:</strong> Recruitment-wise</p>
+
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+
+<a class="btn details"
+href="https://www.drdo.gov.in/"
+target="_blank">
+📄 Official Details ↗️
 </a>
 
 </div>
@@ -596,27 +966,189 @@ Railway Official ↗️
 
 </div>
 
+
+<!-- ================================================= -->
+<!-- ALL INDIA PRIVATE -->
+<!-- ================================================= -->
+
+<div class="category-title india-private" id="india-private">
+
+💼 ALL INDIA PRIVATE JOBS
+</div>
+
+<div class="jobs">
+
+
+<div class="job india-private" data-category="10th 12th Graduate India Private">
+
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">
+🇮🇳 PRIVATE JOB
+</span>
+
+<h3>National Private Job Opportunities</h3>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate</p>
+
+<p>💼 <strong>Job Type:</strong> Office / Sales / Customer Support / Field</p>
+
+<p>📅 <strong>Last Date:</strong> Company-wise</p>
+
+<a class="btn apply"
+href="https://www.ncs.gov.in/"
+target="_blank">
+🔎 Find Jobs ↗️
+</a>
+
+</div>
+
+
+<div class="job india-private" data-category="ITI Diploma Engineering India Private">
+
+<span class="badge" style="background:#f0e7ff;color:#6d28d9">
+🔧 TECHNICAL JOB
+</span>
+
+<h3>Technical Private Jobs</h3>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> ITI / Diploma / Engineering</p>
+
+<p>💼 <strong>Job Type:</strong> Technician / Production / Maintenance</p>
+
+<p>📅 <strong>Last Date:</strong> Company-wise</p>
+
+<a class="btn apply"
+href="https://www.ncs.gov.in/"
+target="_blank">
+🔎 Find Jobs ↗️
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- SCHOLARSHIP -->
+<!-- ================================================= -->
+
+<section class="scholarship" id="scholarships">
+
+<div class="scholarship-head">
+
+<h2>🎓 Scholarships</h2>
+
+<p>
+School & College Students ପାଇଁ Scholarship Updates
+</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<h3>🏛️ Odisha State Scholarship Portal</h3>
+
+<p>
+Odisha Government scholarship application ପାଇଁ
+official portal ରେ application କରନ୍ତୁ।
+</p>
+
+<p>
+🏫 School • 🎓 College • Pre-Matric • Post-Matric
+</p>
+
+<a
+class="sch-btn"
+href="https://scholarship.odisha.gov.in/"
+target="_blank">
+🔗 OPEN SCHOLARSHIP PORTAL
+</a>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<h3>🏫 Pre-Matric Scholarship</h3>
+
+<p>
+Eligible school students ପାଇଁ scheme-wise scholarship।
+Eligibility, amount ଏବଂ last date official portal ରେ check କରନ୍ତୁ।
+</p>
+
+<a
+class="sch-btn"
+href="https://scholarship.odisha.gov.in/"
+target="_blank">
+📝 APPLY / CHECK
+</a>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<h3>🎓 Post-Matric Scholarship</h3>
+
+<p>
++2 • +3 • Diploma • ITI • UG • PG students ପାଇଁ
+scheme ଅନୁସାରେ scholarship availability check କରନ୍ତୁ।
+</p>
+
+<a
+class="sch-btn"
+href="https://scholarship.odisha.gov.in/"
+target="_blank">
+📝 APPLY / CHECK
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- AI PREPARATION -->
+<!-- ================================================= -->
 
 <section class="ai">
 
 <h2>🤖 AI Exam Preparation</h2>
 
 <p>
-Question Practice • Mock Tests • Exam Guidance • Interview Preparation
+Question Practice • Mock Tests • Exam Guidance •
+Interview Preparation • Study Support
 </p>
 
 <a href="ai-preparation.html">
-Start AI Preparation →
+🚀 Start AI Preparation
 </a>
 
 </section>
 
 
+<!-- ================================================= -->
+<!-- IMPORTANT NOTICE -->
+<!-- ================================================= -->
+
 <div class="notice">
 
-⚠️ <strong>Important:</strong>
-Apply କରିବା ପୂର୍ବରୁ official notification ନିଶ୍ଚିତ ଭାବେ ପଢ଼ନ୍ତୁ।
-Eligibility, age limit, fee, exam pattern ଏବଂ last date official website ରୁ verify କରନ୍ତୁ।
+⚠️ <strong>Important Notice:</strong>
+
+JobMitra AI provides job and career information for students
+and job seekers. Apply କରିବା ପୂର୍ବରୁ official notification
+ନିଶ୍ଚିତ ଭାବେ ପଢନ୍ତୁ।
+
+Eligibility, age limit, vacancy, application fee,
+starting date ଏବଂ last date official website ରୁ verify କରନ୍ତୁ।
+
+Private jobs ପାଇଁ company ର official recruitment page
+verify କରିବା ପରେ apply କରନ୍ତୁ।
 
 </div>
 
@@ -624,757 +1156,151 @@ Eligibility, age limit, fee, exam pattern ଏବଂ last date official website �
 </main>
 
 
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
 <footer>
 
-🤖 <strong>JobMitra AI</strong><br>
+<h2>🤖 JobMitra AI</h2>
 
-ଚାକିରି ଖୋଜନ୍ତୁ • ପରୀକ୍ଷା ପାଇଁ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ • ସଫଳ ହୁଅନ୍ତୁ
+<p>
+ଚାକିରି ଖୋଜନ୍ତୁ • ପ୍ରସ୍ତୁତି କରନ୍ତୁ • ନିଜ ଭବିଷ୍ୟତ ଗଢନ୍ତୁ
+</p>
 
-<br><br>
+<p>
+🇮🇳 Happy Independence Day 2026 🇮🇳
+</p>
 
-© 2026 JobMitra AI
+<p>
+© 2026 JobMitra AI. All Rights Reserved.
+</p>
+
+<p>
+Created & Managed by
+<strong>Babulu Naik</strong>
+</p>
 
 </footer>
 
 
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
 <script>
+
+/* ================= SEARCH ================= */
 
 function searchJobs(){
 
-let input=document
-.getElementById("search")
-.value
-.toLowerCase();
+ const input =
+ document.getElementById("search")
+ .value
+ .toLowerCase();
 
-let jobs=document
-.querySelectorAll(".job");
+ const jobs =
+ document.querySelectorAll(".job");
 
-jobs.forEach(function(job){
+ jobs.forEach(function(job){
 
-let text=job.innerText.toLowerCase();
+   const text =
+   job.innerText.toLowerCase();
 
-job.style.display=
-text.includes(input)
-?"block"
-:"none";
+   job.style.display =
+   text.includes(input)
+   ? "block"
+   : "none";
 
-});
+ });
 
 }
 
+
+/* ================= FILTER ================= */
 
 function filterJobs(category){
 
-let jobs=document
-.querySelectorAll(".job");
+ const jobs =
+ document.querySelectorAll(".job");
 
-jobs.forEach(function(job){
+ jobs.forEach(function(job){
 
-let data=job
-.getAttribute("data-category");
+   const data =
+   job.getAttribute("data-category") || "";
 
-if(category==="All" || data.includes(category)){
+   if(category==="All" ||
+      data.includes(category)){
 
-job.style.display="block";
+      job.style.display="block";
 
-}else{
+   }else{
 
-job.style.display="none";
+      job.style.display="none";
+
+   }
+
+ });
 
 }
 
-});
+
+/* ================= LAST DATE WARNING ================= */
+
+/*
+   Example:
+   If you later add a real date to a job,
+   use:
+
+   data-lastdate="2026-08-15"
+
+   The system can show a warning automatically.
+*/
+
+function checkLastDates(){
+
+ const jobs =
+ document.querySelectorAll(".job");
+
+ const today =
+ new Date();
+
+ jobs.forEach(function(job){
+
+   const date =
+   job.getAttribute("data-lastdate");
+
+   if(!date) return;
+
+   const last =
+   new Date(date);
+
+   const diff =
+   Math.ceil(
+   (last-today)/(1000*60*60*24)
+   );
+
+   if(diff>=0 && diff<=5){
+
+      const warning =
+      document.createElement("span");
+
+      warning.className="warning";
+
+      warning.innerText =
+      "⚠️ CLOSING SOON";
+
+      job.appendChild(warning);
+
+   }
+
+ });
 
 }
 
-
-
-
-</script>
-<!-- ================= JOBMITRA SCHOLARSHIP SECTION ================= -->
-<!-- 🔴 LIVE NOTIFICATION -->
-<div style="
-  width:100%;
-  box-sizing:border-box;
-  background:#fff1f1;
-  border:2px solid red;
-  border-radius:10px;
-  margin:10px 0 18px 0;
-  overflow:hidden;
-  box-shadow:0 3px 10px rgba(0,0,0,0.12);
-">
-
-  <div style="
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:9px 12px;
-    font-weight:bold;
-  ">
-    <span style="
-      width:11px;
-      height:11px;
-      background:red;
-      border-radius:50%;
-      display:inline-block;
-      animation:jobmitraBlink .8s infinite;
-    "></span>
-
-    <span style="
-      color:red;
-      font-size:18px;
-      font-weight:900;
-      animation:jobmitraBlink .8s infinite;
-    ">🔴 LIVE</span>
-
-    <span>Latest Updates</span>
-  </div>
-
-  <div style="
-    overflow:hidden;
-    white-space:nowrap;
-    padding:9px 0;
-  ">
-    <div style="
-      display:inline-block;
-      padding-left:100%;
-      color:red;
-      font-weight:700;
-      animation:jobmitraMove 18s linear infinite;
-    ">
-      🎓 Scholarship Update &nbsp; • &nbsp;
-      💼 New Government Job &nbsp; • &nbsp;
-      📝 New Vacancy &nbsp; • &nbsp;
-      📢 Admit Card Update &nbsp; • &nbsp;
-      🏆 Result Update &nbsp; • &nbsp;
-      📚 Exam Update &nbsp; • &nbsp;
-    </div>
-  </div>
-
-</div>
-
-<style>
-@keyframes jobmitraBlink {
-  0%,100% { opacity:1; }
-  50% { opacity:.25; }
-}
-
-@keyframes jobmitraMove {
-  0% { transform:translateX(0); }
-  100% { transform:translateX(-100%); }
-}
-</style>
-
-<!-- ========== JOBMITRA SCHOLARSHIP SECTION ========== -->
-<section id="scholarships" style="
-  padding:20px 15px;
-  background:#f4f8ff;
-  margin-top:25px;
-">
-
-  <div style="text-align:center;margin-bottom:22px;">
-
-    <h2 style="
-      color:#0757b8;
-      font-size:28px;
-      margin-bottom:8px;
-    ">
-      🎓 Scholarships
-    </h2>
-
-    <p style="color:#555;line-height:1.6;">
-      School & College Students ପାଇଁ Scholarship Updates
-    </p>
-
-    <p style="color:#555;">
-      Pre-Matric • Post-Matric • Odisha State Scholarships
-    </p>
-
-  </div>
-
-
-  <!-- CATEGORY BUTTONS -->
-
-  <div style="
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:20px;
-  ">
-
-    <button onclick="showScholarships('all')" style="
-      border:0;
-      padding:10px 16px;
-      border-radius:22px;
-      background:#0757b8;
-      color:white;
-      font-weight:bold;
-    ">
-      📚 All
-    </button>
-
-    <button onclick="showScholarships('school')" style="
-      border:0;
-      padding:10px 16px;
-      border-radius:22px;
-      background:#16a34a;
-      color:white;
-      font-weight:bold;
-    ">
-      🏫 School
-    </button>
-
-    <button onclick="showScholarships('college')" style="
-      border:0;
-      padding:10px 16px;
-      border-radius:22px;
-      background:#7c3aed;
-      color:white;
-      font-weight:bold;
-    ">
-      🎓 College
-    </button>
-
-  </div>
-
-
-  <!-- ODISHA STATE SCHOLARSHIP PORTAL -->
-
-  <div style="
-    background:linear-gradient(135deg,#0757b8,#00a8ff);
-    color:white;
-    padding:22px;
-    border-radius:18px;
-    margin-bottom:20px;
-    text-align:center;
-    box-shadow:0 4px 15px #ccc;
-  ">
-
-    <h2>🏛️ Odisha State Scholarship Portal</h2>
-
-    <p style="margin:10px 0;line-height:1.6;">
-      Odisha Government Scholarship applications
-      official portal ମାଧ୍ୟମରେ apply କରିପାରିବେ।
-    </p>
-
-    <p>
-      🏫 School • 🎓 College • Pre-Matric • Post-Matric
-    </p>
-
-    <a
-      href="https://scholarship.odisha.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        margin-top:14px;
-        background:white;
-        color:#0757b8;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-      ">
-      🔗 OPEN STATE SCHOLARSHIP PORTAL
-    </a>
-
-  </div>
-
-
-  <!-- SCHOOL / PRE-MATRIC -->
-
-  <div class="jm-scholarship school" style="
-    background:white;
-    padding:20px;
-    margin:15px 0;
-    border-radius:17px;
-    box-shadow:0 4px 14px #ddd;
-  ">
-
-    <h3 style="color:#0757b8;">
-      🏫 Pre-Matric Scholarship
-    </h3>
-
-    <p>👨‍🎓 <b>For:</b> Eligible School Students</p>
-
-    <p>
-      📚 <b>Level:</b> Pre-Matric / School
-    </p>
-
-    <p>
-      💰 <b>Scholarship Amount:</b>
-      Scheme ଅନୁସାରେ ଭିନ୍ନ।
-    </p>
-
-    <p>
-      🟢 <b>Apply Start:</b>
-      Official announcement ଅନୁସାରେ
-    </p>
-
-    <p style="color:#d62828;">
-      🔴 <b>Last Date:</b>
-      Official announcement ଅନୁସାରେ
-    </p>
-
-    <p>
-      📋 <b>Eligibility:</b>
-      Class, category, family income ଓ
-      scheme guidelines ଅନୁସାରେ।
-    </p>
-
-    <details style="margin-top:12px;">
-
-      <summary style="
-        cursor:pointer;
-        color:#0757b8;
-        font-weight:bold;
-      ">
-        📄 Required Documents
-      </summary>
-
-      <ul style="
-        margin-top:10px;
-        padding-left:22px;
-        line-height:1.8;
-      ">
-
-        <li>Aadhaar Card / Aadhaar Number</li>
-        <li>Passport-size Photograph</li>
-        <li>Income Certificate</li>
-        <li>Caste Certificate – applicable ହେଲେ</li>
-        <li>Residence Certificate</li>
-        <li>Bank Passbook Front Page</li>
-        <li>Previous Examination Certificate</li>
-        <li>Matriculation Certificate – applicable ହେଲେ</li>
-        <li>Disability Certificate – applicable ହେଲେ</li>
-
-      </ul>
-
-    </details>
-
-    <a
-      href="https://scholarship.odisha.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        margin-top:15px;
-        background:#16a34a;
-        color:white;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-      ">
-      📝 APPLY NOW
-    </a>
-
-  </div>
-
-
-  <!-- COLLEGE / POST-MATRIC -->
-
-  <div class="jm-scholarship college" style="
-    background:white;
-    padding:20px;
-    margin:15px 0;
-    border-radius:17px;
-    box-shadow:0 4px 14px #ddd;
-  ">
-
-    <h3 style="color:#7c3aed;">
-      🎓 Post-Matric Scholarship
-    </h3>
-
-    <p>
-      👨‍🎓 <b>For:</b>
-      Eligible students after Matriculation
-    </p>
-
-    <p>
-      📚 <b>Level:</b>
-      +2 • +3 • Diploma • ITI • UG • PG
-      (scheme ଅନୁସାରେ)
-    </p>
-
-    <p>
-      💰 <b>Scholarship Amount:</b>
-      Course ଓ scheme ଅନୁସାରେ ଭିନ୍ନ।
-    </p>
-
-    <p>
-      🟢 <b>Apply Start:</b>
-      Official announcement ଅନୁସାରେ
-    </p>
-
-    <p style="color:#d62828;">
-      🔴 <b>Last Date:</b>
-      Official announcement ଅନୁସାରେ
-    </p>
-
-    <p>
-      📋 <b>Eligibility:</b>
-      Category, course, institution, income
-      ଓ scheme guidelines ଅନୁସାରେ।
-    </p>
-
-    <details style="margin-top:12px;">
-
-      <summary style="
-        cursor:pointer;
-        color:#7c3aed;
-        font-weight:bold;
-      ">
-        📄 Required Documents
-      </summary>
-
-      <ul style="
-        margin-top:10px;
-        padding-left:22px;
-        line-height:1.8;
-      ">
-
-        <li>Aadhaar Card / Aadhaar Number</li>
-        <li>Applicant Photograph</li>
-        <li>Income Certificate</li>
-        <li>Caste Certificate – applicable ହେଲେ</li>
-        <li>Residence Certificate</li>
-        <li>Student Bank Passbook Front Page</li>
-        <li>Matriculation Certificate</li>
-        <li>Previous Examination Certificate / Marksheet</li>
-        <li>College / Institute ID Card</li>
-        <li>Admission / Bonafide Certificate – if required</li>
-        <li>Disability Certificate – applicable ହେଲେ</li>
-
-      </ul>
-
-    </details>
-
-    <a
-      href="https://scholarship.odisha.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        margin-top:15px;
-        background:#16a34a;
-        color:white;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-      ">
-      📝 APPLY NOW
-    </a>
-
-  </div>
-
-
-  <!-- ELIGIBILITY -->
-
-  <div style="
-    background:#fff7df;
-    padding:20px;
-    border-radius:17px;
-    margin-top:20px;
-    text-align:center;
-  ">
-
-    <h3 style="color:#9a6700;">
-      🔎 Check Scholarship Eligibility
-    </h3>
-
-    <p style="margin:10px 0;line-height:1.6;">
-      Odisha State Scholarship Portal ରେ
-      student details ଦେଇ eligible schemes check କରନ୍ତୁ।
-    </p>
-
-    <a
-      href="https://scholarship.odisha.gov.in/"
-      target="_blank"
-      style="
-        display:inline-block;
-        background:#f59e0b;
-        color:white;
-        padding:12px 20px;
-        border-radius:9px;
-        text-decoration:none;
-        font-weight:bold;
-      ">
-      🔎 CHECK ELIGIBILITY
-    </a>
-
-  </div>
-
-
-  <!-- HOW TO APPLY -->
-
-  <div style="
-    background:white;
-    padding:20px;
-    margin-top:20px;
-    border-radius:17px;
-    box-shadow:0 3px 12px #ddd;
-  ">
-
-    <h3 style="color:#0757b8;">
-      📝 How to Apply
-    </h3>
-
-    <ol style="
-      margin-top:12px;
-      padding-left:22px;
-      line-height:1.9;
-    ">
-
-      <li>Open Odisha State Scholarship Portal.</li>
-      <li>New student ହେଲେ Registration କରନ୍ତୁ।</li>
-      <li>Aadhaar authentication complete କରନ୍ତୁ।</li>
-      <li>Login କରନ୍ତୁ।</li>
-      <li>Department & Scholarship Scheme select କରନ୍ତୁ।</li>
-      <li>Student, Academic & Bank details fill କରନ୍ତୁ।</li>
-      <li>Required documents upload କରନ୍ତୁ।</li>
-      <li>Application preview check କରନ୍ତୁ।</li>
-      <li>Final Submit କରି application copy save କରନ୍ତୁ।</li>
-
-    </ol>
-
-  </div>
-
-
-  <!-- ================= APPLY HELP ₹99 ================= -->
-
-  <div style="
-    background:linear-gradient(135deg,#fff3cd,#ffe08a);
-    padding:22px 18px;
-    border-radius:17px;
-    text-align:center;
-    margin-top:22px;
-    box-shadow:0 3px 12px #ddd;
-  ">
-
-    <h2 style="color:#0757b8;">
-      🆘 Scholarship Apply Help
-    </h2>
-
-    <p style="
-      margin-top:10px;
-      line-height:1.7;
-      color:#444;
-    ">
-      ନିଜେ Scholarship Apply କରିପାରୁନାହାନ୍ତି?
-      ଆମକୁ Instagram ରେ DM କରନ୍ତୁ।
-    </p>
-
-    <p style="
-      margin-top:12px;
-      font-size:20px;
-    ">
-      💰 <b>Apply Assistance Fee: ₹99</b>
-    </p>
-
-    <p style="
-      margin-top:8px;
-      color:#555;
-      line-height:1.6;
-    ">
-      Required documents ଥିଲେ application process
-      ରେ ଆମେ help କରିବୁ।
-    </p>
-
-    <p style="
-      margin-top:10px;
-      font-weight:bold;
-    ">
-      📸 Instagram: @naik_babulu
-    </p>
-
-    <a
-      href="https://instagram.com/naik_babulu"
-      target="_blank"
-      style="
-        display:inline-block;
-        margin-top:12px;
-        background:#e1306c;
-        color:white;
-        padding:13px 22px;
-        border-radius:10px;
-        text-decoration:none;
-        font-weight:bold;
-      ">
-      💬 DM @naik_babulu
-    </a>
-
-    <p style="
-      font-size:12px;
-      color:#777;
-      margin-top:14px;
-    ">
-      ⚠️ OTP, password କିମ୍ବା bank PIN କେବେ ମଧ୍ୟ
-      share କରନ୍ତୁ ନାହିଁ।
-    </p>
-
-  </div>
-
-
-  <!-- IMPORTANT NOTICE -->
-
-  <div style="
-    background:#ffe9e9;
-    padding:18px;
-    margin-top:20px;
-    border-radius:15px;
-    border-left:5px solid #d62828;
-  ">
-
-    <h3 style="color:#b91c1c;">
-      ⚠️ Important
-    </h3>
-
-    <p style="
-      margin-top:8px;
-      line-height:1.7;
-    ">
-      Scholarship scheme ଅନୁସାରେ eligibility, documents,
-      application start date, last date ଏବଂ amount
-      ଭିନ୍ନ ହୋଇପାରେ। Apply କରିବା ପୂର୍ବରୁ official
-      notification ନିଶ୍ଚିତ ଭାବେ check କରନ୍ତୁ।
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FILTER SCRIPT ================= -->
-
-<script>
-
-function showScholarships(type) {
-
-  const cards =
-    document.querySelectorAll(".jm-scholarship");
-
-  cards.forEach(function(card) {
-
-    if (type === "all") {
-      card.style.display = "block";
-    }
-
-    else if (card.classList.contains(type)) {
-      card.style.display = "block";
-    }
-
-    else {
-      card.style.display = "none";
-    }
-
-  });
-
-}
+checkLastDates();
 
 </script>
 
-
-<!-- ================= ABOUT JOBMITRA ================= -->
-
-<section style="
-  padding:25px 18px;
-  margin-top:25px;
-  background:white;
-  text-align:center;
-">
-
-  <h2 style="color:#0757b8;">
-    ℹ️ About JobMitra
-  </h2>
-
-  <p style="
-    margin-top:12px;
-    color:#555;
-    line-height:1.7;
-  ">
-    JobMitra is a student-friendly platform providing
-    Government Job Updates, Scholarships, Exam Preparation,
-    Study Materials and Career Information.
-  </p>
-
-  <p style="margin-top:15px;">
-    <b>Created & Managed by</b>
-  </p>
-
-  <h3 style="color:#0757b8;">
-    Babulu Naik
-  </h3>
-
-</section>
-
-
-<!-- ================= SUPPORT ================= -->
-
-<section style="
-  padding:25px 18px;
-  margin-top:20px;
-  background:#f8f0ff;
-  text-align:center;
-">
-
-  <h2>❤️ Support JobMitra</h2>
-
-  <p style="
-    margin-top:10px;
-    line-height:1.7;
-  ">
-    JobMitra useful ଲାଗିଲେ friends ମାନଙ୍କ ସହିତ
-    share କରନ୍ତୁ ଏବଂ ଆମକୁ support କରନ୍ତୁ।
-  </p>
-
-  <a
-    href="https://instagram.com/naik_babulu"
-    target="_blank"
-    style="
-      display:inline-block;
-      margin-top:12px;
-      background:#e1306c;
-      color:white;
-      padding:12px 20px;
-      border-radius:9px;
-      text-decoration:none;
-      font-weight:bold;
-    ">
-    📸 Follow @naik_babulu
-  </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer style="
-  background:#073b7a;
-  color:white;
-  text-align:center;
-  padding:28px 15px;
-  margin-top:25px;
-">
-
-  <h2>🚀 JobMitra</h2>
-
-  <p style="margin:8px 0;">
-    Your Career & Government Job Preparation Partner
-  </p>
-
-  <p style="margin:8px 0;">
-    © 2026 JobMitra. All Rights Reserved.
-  </p>
-
-  <p>
-    Created & Managed by
-    <strong style="color:#ffd43b;">
-      Babulu Naik
-    </strong>
-  </p>
-
-</body>
-</html>
-</footer>
 </body>
 </html>
