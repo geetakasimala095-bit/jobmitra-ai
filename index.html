@@ -688,7 +688,7 @@ job.style.display="none";
 }
 
 </script>
-<!-- ================= SCHOLARSHIP SECTION ================= -->
+<!-- ================= SCHOLARSHIPS ================= -->
 
 <section id="scholarships" style="
   padding:20px;
@@ -699,43 +699,101 @@ job.style.display="none";
   <h2 style="
     text-align:center;
     color:#0757b8;
+    font-size:28px;
     margin-bottom:8px;
   ">
-    🎓 Latest Scholarships
+    🎓 Scholarships
   </h2>
 
   <p style="
     text-align:center;
     color:#555;
-    margin-bottom:20px;
+    margin-bottom:18px;
   ">
-    Check Scholarship • Eligibility • Last Date • Apply Link
+    School & College Students Scholarship Updates
   </p>
 
 
-  <!-- Scholarship 1 -->
+  <!-- CATEGORY BUTTONS -->
+
   <div style="
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+  ">
+
+    <button onclick="filterScholarship('all')" style="
+      padding:10px 15px;
+      border:0;
+      border-radius:20px;
+      background:#0757b8;
+      color:white;
+      font-weight:bold;
+    ">
+      📚 All
+    </button>
+
+    <button onclick="filterScholarship('school')" style="
+      padding:10px 15px;
+      border:0;
+      border-radius:20px;
+      background:#16a34a;
+      color:white;
+      font-weight:bold;
+    ">
+      🏫 School
+    </button>
+
+    <button onclick="filterScholarship('college')" style="
+      padding:10px 15px;
+      border:0;
+      border-radius:20px;
+      background:#7c3aed;
+      color:white;
+      font-weight:bold;
+    ">
+      🎓 College
+    </button>
+
+  </div>
+
+
+  <!-- ================= SCHOOL SCHOLARSHIPS ================= -->
+
+  <div class="scholarship-card school" style="
     background:white;
     padding:18px;
     margin:15px 0;
-    border-radius:15px;
+    border-radius:16px;
     box-shadow:0 3px 12px #ddd;
   ">
 
     <h3 style="color:#0757b8;">
-      🎓 PM YASASVI Scholarship
+      🏫 PM YASASVI Scholarship – School Students
     </h3>
 
-    <p>👨‍🎓 Category: OBC / EBC / DNT</p>
+    <p>👨‍🎓 <b>For:</b> Eligible OBC / EBC / DNT students</p>
+
+    <p>
+      📚 <b>Level:</b> School Students
+    </p>
+
+    <p>
+      💰 <b>Amount:</b> As per official scheme
+    </p>
 
     <p>
       📅 <b style="color:#d62828;">
-      Last Date: 31 August 2026
+        Last Date: Check Official Portal
       </b>
     </p>
 
     <p>
-      📋 Eligibility: Check the official scholarship guidelines.
+      📋 <b>Eligibility:</b>
+      Check official notification for class,
+      income and category requirements.
     </p>
 
     <a
@@ -745,8 +803,8 @@ job.style.display="none";
         display:inline-block;
         background:#16a34a;
         color:white;
-        padding:11px 18px;
-        border-radius:8px;
+        padding:12px 20px;
+        border-radius:9px;
         text-decoration:none;
         font-weight:bold;
         margin-top:8px;
@@ -757,29 +815,95 @@ job.style.display="none";
   </div>
 
 
-  <!-- Scholarship 2 -->
-  <div style="
+  <!-- SCHOOL SCHOLARSHIP 2 -->
+
+  <div class="scholarship-card school" style="
     background:white;
     padding:18px;
     margin:15px 0;
-    border-radius:15px;
+    border-radius:16px;
     box-shadow:0 3px 12px #ddd;
   ">
 
     <h3 style="color:#0757b8;">
+      🏫 Pre-Matric Scholarship
+    </h3>
+
+    <p>👨‍🎓 <b>For:</b> Eligible school students</p>
+
+    <p>
+      📚 <b>Level:</b> Pre-Matric
+    </p>
+
+    <p>
+      💰 <b>Amount:</b> Depends on the scheme
+    </p>
+
+    <p>
+      📅 <b style="color:#d62828;">
+        Last Date: Check Official Portal
+      </b>
+    </p>
+
+    <p>
+      📋 <b>Eligibility:</b>
+      Category, income and class requirements
+      apply according to the specific scholarship.
+    </p>
+
+    <a
+      href="https://scholarships.gov.in/"
+      target="_blank"
+      style="
+        display:inline-block;
+        background:#16a34a;
+        color:white;
+        padding:12px 20px;
+        border-radius:9px;
+        text-decoration:none;
+        font-weight:bold;
+        margin-top:8px;
+      ">
+      📝 APPLY NOW
+    </a>
+
+  </div>
+
+
+  <!-- ================= COLLEGE SCHOLARSHIPS ================= -->
+
+  <div class="scholarship-card college" style="
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:16px;
+    box-shadow:0 3px 12px #ddd;
+  ">
+
+    <h3 style="color:#7c3aed;">
       🎓 PM-USP Central Sector Scholarship
     </h3>
 
-    <p>🎓 Category: College / University Students</p>
+    <p>🎓 <b>For:</b> College / University Students</p>
+
+    <p>
+      📚 <b>Level:</b> UG / Higher Education
+    </p>
+
+    <p>
+      💰 <b>Amount:</b> As per official guidelines
+    </p>
 
     <p>
       📅 <b style="color:#d62828;">
-      Last Date: 30 September 2026
+        Last Date: Check Official Portal
       </b>
     </p>
 
     <p>
-      📋 Eligibility: As per official scholarship guidelines.
+      📋 <b>Eligibility:</b>
+      Students must satisfy the official
+      academic and income requirements.
     </p>
 
     <a
@@ -789,8 +913,8 @@ job.style.display="none";
         display:inline-block;
         background:#16a34a;
         color:white;
-        padding:11px 18px;
-        border-radius:8px;
+        padding:12px 20px;
+        border-radius:9px;
         text-decoration:none;
         font-weight:bold;
         margin-top:8px;
@@ -801,29 +925,41 @@ job.style.display="none";
   </div>
 
 
-  <!-- Scholarship 3 -->
-  <div style="
+  <!-- COLLEGE SCHOLARSHIP 2 -->
+
+  <div class="scholarship-card college" style="
     background:white;
     padding:18px;
     margin:15px 0;
-    border-radius:15px;
+    border-radius:16px;
     box-shadow:0 3px 12px #ddd;
   ">
 
-    <h3 style="color:#0757b8;">
+    <h3 style="color:#7c3aed;">
       🎓 AICTE Pragati Scholarship
     </h3>
 
-    <p>👩‍🎓 Category: Girl Students / Technical Education</p>
+    <p>👩‍🎓 <b>For:</b> Eligible Girl Students</p>
+
+    <p>
+      📚 <b>Level:</b>
+      Technical Diploma / Degree
+    </p>
+
+    <p>
+      💰 <b>Amount:</b> As per official AICTE scheme
+    </p>
 
     <p>
       📅 <b style="color:#d62828;">
-      Last Date: 31 October 2026
+        Last Date: Check Official Portal
       </b>
     </p>
 
     <p>
-      📋 Eligibility: Check official AICTE guidelines.
+      📋 <b>Eligibility:</b>
+      Girl students studying eligible
+      AICTE-approved technical courses.
     </p>
 
     <a
@@ -833,8 +969,8 @@ job.style.display="none";
         display:inline-block;
         background:#16a34a;
         color:white;
-        padding:11px 18px;
-        border-radius:8px;
+        padding:12px 20px;
+        border-radius:9px;
         text-decoration:none;
         font-weight:bold;
         margin-top:8px;
@@ -845,29 +981,40 @@ job.style.display="none";
   </div>
 
 
-  <!-- Scholarship 4 -->
-  <div style="
+  <!-- COLLEGE SCHOLARSHIP 3 -->
+
+  <div class="scholarship-card college" style="
     background:white;
     padding:18px;
     margin:15px 0;
-    border-radius:15px;
+    border-radius:16px;
     box-shadow:0 3px 12px #ddd;
   ">
 
-    <h3 style="color:#0757b8;">
+    <h3 style="color:#7c3aed;">
       🎓 AICTE Saksham Scholarship
     </h3>
 
-    <p>♿ Category: Specially-Abled Students</p>
+    <p>♿ <b>For:</b> Eligible specially-abled students</p>
+
+    <p>
+      📚 <b>Level:</b>
+      Technical Diploma / Degree
+    </p>
+
+    <p>
+      💰 <b>Amount:</b> As per official AICTE scheme
+    </p>
 
     <p>
       📅 <b style="color:#d62828;">
-      Last Date: 31 October 2026
+        Last Date: Check Official Portal
       </b>
     </p>
 
     <p>
-      📋 Eligibility: Check official AICTE guidelines.
+      📋 <b>Eligibility:</b>
+      Check official AICTE guidelines.
     </p>
 
     <a
@@ -877,8 +1024,8 @@ job.style.display="none";
         display:inline-block;
         background:#16a34a;
         color:white;
-        padding:11px 18px;
-        border-radius:8px;
+        padding:12px 20px;
+        border-radius:9px;
         text-decoration:none;
         font-weight:bold;
         margin-top:8px;
@@ -889,19 +1036,23 @@ job.style.display="none";
   </div>
 
 
-  <!-- Official Portal -->
+  <!-- ================= OFFICIAL PORTAL ================= -->
+
   <div style="
     text-align:center;
     background:#e8f4ff;
     padding:20px;
-    border-radius:15px;
+    border-radius:16px;
     margin-top:20px;
   ">
 
-    <h3>🌐 Official Scholarship Portal</h3>
+    <h3 style="color:#0757b8;">
+      🌐 Official Scholarship Portal
+    </h3>
 
-    <p>
-      Always verify eligibility and last date before applying.
+    <p style="margin:10px 0;">
+      Apply and verify the latest scholarship information
+      through the official portal.
     </p>
 
     <a
@@ -912,12 +1063,11 @@ job.style.display="none";
         background:#0757b8;
         color:white;
         padding:12px 20px;
-        border-radius:8px;
+        border-radius:9px;
         text-decoration:none;
         font-weight:bold;
-        margin-top:8px;
       ">
-      OPEN NSP PORTAL
+      🔗 OPEN NSP
     </a>
 
   </div>
@@ -925,105 +1075,33 @@ job.style.display="none";
 </section>
 
 
-<!-- ================= ABOUT JOBMITRA ================= -->
+<!-- ================= SCHOLARSHIP FILTER ================= -->
 
-<section style="
-  padding:25px 20px;
-  margin-top:25px;
-  background:white;
-  text-align:center;
-">
+<script>
 
-  <h2 style="color:#0757b8;">
-    ℹ️ About JobMitra
-  </h2>
+function filterScholarship(category){
 
-  <p style="
-    line-height:1.7;
-    color:#555;
-    margin-top:12px;
-  ">
-    JobMitra is a student-friendly platform providing
-    Government Job Updates, Scholarships, Exam Preparation,
-    Study Materials and Career Information.
-  </p>
+  const cards =
+    document.querySelectorAll(".scholarship-card");
 
-  <p style="margin-top:15px;">
-    <b>Created & Managed by:</b><br>
-    <strong style="color:#0757b8;font-size:19px;">
-      Babulu Naik
-    </strong>
-  </p>
+  cards.forEach(function(card){
 
-</section>
+    if(category === "all"){
+      card.style.display = "block";
+    }
 
+    else if(card.classList.contains(category)){
+      card.style.display = "block";
+    }
 
-<!-- ================= SUPPORT ================= -->
+    else{
+      card.style.display = "none";
+    }
 
-<section style="
-  padding:25px 20px;
-  margin-top:20px;
-  background:linear-gradient(135deg,#fff3cd,#ffe08a);
-  text-align:center;
-  border-radius:15px;
-">
+  });
 
-  <h2>❤️ Support JobMitra</h2>
+}
 
-  <p style="
-    margin-top:10px;
-    line-height:1.6;
-  ">
-    If JobMitra is useful for you, please support us
-    by following and sharing our website.
-  </p>
-
-  <a
-    href="https://instagram.com/YOUR_INSTAGRAM_ID"
-    target="_blank"
-    style="
-      display:inline-block;
-      background:#e1306c;
-      color:white;
-      padding:12px 20px;
-      border-radius:9px;
-      text-decoration:none;
-      font-weight:bold;
-      margin-top:12px;
-    ">
-    📸 Follow JobMitra on Instagram
-  </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer style="
-  background:#073b7a;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
-  margin-top:25px;
-">
-
-  <h2>🚀 JobMitra</h2>
-
-  <p style="margin:8px 0;">
-    Your Career & Government Job Preparation Partner
-  </p>
-
-  <p style="margin:8px 0;">
-    © 2026 JobMitra. All Rights Reserved.
-  </p>
-
-  <p>
-    Created & Managed by
-    <strong style="color:#ffd43b;">
-      Babulu Naik
-    </strong>
-  </p>
-
-</footer>
+</script>
 </body>
 </html>
