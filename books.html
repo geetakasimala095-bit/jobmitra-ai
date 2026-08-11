@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Books & Study Materials | JobMitra-AI</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#0f172a,#1d4ed8);
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#facc15;
+}
+
+header p{
+  margin-top:6px;
+  font-size:14px;
+}
+
+/* BACK BUTTON */
+.back{
+  display:block;
+  width:max-content;
+  margin:15px auto 5px;
+  background:white;
+  color:#1d4ed8;
+  text-decoration:none;
+  padding:9px 18px;
+  border-radius:20px;
+  font-weight:bold;
+  box-shadow:0 3px 10px rgba(0,0,0,.12);
+}
+
+/* HERO */
+.hero{
+  margin:18px auto;
+  max-width:1000px;
+  padding:25px 18px;
+  text-align:center;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  color:white;
+  border-radius:20px;
+}
+
+.hero h1{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.hero p{
+  font-size:15px;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:650px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.search-box input{
+  width:100%;
+  padding:14px 18px;
+  border:none;
+  border-radius:30px;
+  outline:none;
+  font-size:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.12);
+}
+
+/* CATEGORY */
+.categories{
+  max-width:1000px;
+  margin:auto;
+  padding:10px 15px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+}
+
+.categories button{
+  border:none;
+  padding:10px 15px;
+  border-radius:25px;
+  background:white;
+  color:#1d4ed8;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.categories button:hover{
+  background:#1d4ed8;
+  color:white;
+}
+
+/* SECTION */
+.section{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 15px;
+}
+
+.section-title{
+  font-size:23px;
+  margin-bottom:15px;
+  color:#111827;
+}
+
+/* BOOK GRID */
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+/* BOOK CARD */
+.book{
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 5px 18px rgba(0,0,0,.09);
+  border:1px solid #e5e7eb;
+  transition:.2s;
+}
+
+.book:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 25px rgba(0,0,0,.13);
+}
+
+.book-icon{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.badge{
+  display:inline-block;
+  background:#fee2e2;
+  color:#dc2626;
+  padding:5px 9px;
+  border-radius:15px;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.book h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.book p{
+  color:#596273;
+  font-size:14px;
+  line-height:1.5;
+  margin-bottom:12px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:14px;
+}
+
+.tags span{
+  background:#eef2ff;
+  color:#3730a3;
+  padding:5px 8px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* BUY BUTTON */
+.buy{
+  display:block;
+  text-align:center;
+  background:#16a34a;
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.buy:hover{
+  background:#15803d;
+}
+
+/* NOTE */
+.note{
+  max-width:1000px;
+  margin:25px auto;
+  padding:15px;
+  background:#fff7ed;
+  color:#7c2d12;
+  border-radius:12px;
+  text-align:center;
+  font-size:13px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:35px;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+  font-size:13px;
+}
+
+footer a{
+  color:#60a5fa;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .hero h1{
+    font-size:24px;
+  }
+
+  .book-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    font-size:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">📚 Job<span>Mitra-AI</span></div>
+  <p>Books & Study Materials for Government Job Preparation</p>
+</header>
+
+<!-- BACK -->
+<a href="index.html" class="back">⬅️ Back to Home</a>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>📚 Books & Study Materials</h1>
+  <p>
+    Prepare Smart • Practice More • Crack Your Dream Government Job
+  </p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔍 Search books, exams or subjects..."
+    onkeyup="searchBooks()"
+  >
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+
+  <button onclick="filterBooks('all')">🔥 All</button>
+
+  <button onclick="filterBooks('odisha')">
+    🏛️ Odisha Jobs
+  </button>
+
+  <button onclick="filterBooks('police')">
+    👮 Police
+  </button>
+
+  <button onclick="filterBooks('ossc')">
+    📝 OSSC / OSSSC
+  </button>
+
+  <button onclick="filterBooks('opsc')">
+    🎓 OPSC
+  </button>
+
+  <button onclick="filterBooks('teacher')">
+    👨‍🏫 Teacher
+  </button>
+
+  <button onclick="filterBooks('grammar')">
+    📘 Odia Grammar
+  </button>
+
+  <button onclick="filterBooks('gk')">
+    🧠 GK
+  </button>
+
+  <button onclick="filterBooks('math')">
+    ➗ Maths
+  </button>
+
+  <button onclick="filterBooks('reasoning')">
+    🧩 Reasoning
+  </button>
+
+  <button onclick="filterBooks('english')">
+    🔤 English
+  </button>
+
+  <button onclick="filterBooks('pyq')">
+    📖 Previous Year
+  </button>
+
+</div>
+
+
+<!-- BOOK SECTION -->
+<section class="section">
+
+<h2 class="section-title">
+  ⭐ Recommended Books
+</h2>
+
+<div class="book-grid" id="bookGrid">
+
+
+<!-- BOOK 1 -->
+<div class="book"
+     data-category="odisha grammar ossc osssc opsc police">
+
+  <div class="book-icon">📘</div>
+
+  <span class="badge">⭐ RECOMMENDED</span>
+
+  <h3>Saraswata Byabaharika Odia Byakarana</h3>
+
+  <p>
+    Popular Odia Grammar book for Odisha
+    competitive examinations and students.
+  </p>
+
+  <div class="tags">
+    <span>OSSC</span>
+    <span>OSSSC</span>
+    <span>OPSC</span>
+    <span>Police</span>
+  </div>
+
+  <!-- PASTE YOUR AFFILIATE LINK HERE -->
+  <a
+    href="YOUR_AFFILIATE_LINK_1"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 2 -->
+<div class="book"
+     data-category="odisha gk ossc osssc opsc police">
+
+  <div class="book-icon">🏛️</div>
+
+  <span class="badge">🔥 POPULAR</span>
+
+  <h3>Odisha General Knowledge</h3>
+
+  <p>
+    Odisha History, Geography, Culture,
+    Economy, General Awareness and MCQs.
+  </p>
+
+  <div class="tags">
+    <span>OSSC</span>
+    <span>OSSSC</span>
+    <span>OPSC</span>
+    <span>Police</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_2"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 3 -->
+<div class="book"
+     data-category="ossc osssc pyq odisha">
+
+  <div class="book-icon">📖</div>
+
+  <span class="badge">🎯 PYQ</span>
+
+  <h3>OSSSC Previous Year Questions</h3>
+
+  <p>
+    Previous Year Papers with solutions for
+    RI, ARI, AMIN, JA, PEO and other exams.
+  </p>
+
+  <div class="tags">
+    <span>RI</span>
+    <span>ARI</span>
+    <span>AMIN</span>
+    <span>JA</span>
+    <span>PEO</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_3"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 4 -->
+<div class="book"
+     data-category="police odisha gk reasoning math">
+
+  <div class="book-icon">👮</div>
+
+  <span class="badge">🔥 POLICE</span>
+
+  <h3>Odisha Police Preparation Book</h3>
+
+  <p>
+    General Knowledge, Reasoning, Mathematics,
+    General Science and practice questions.
+  </p>
+
+  <div class="tags">
+    <span>Police</span>
+    <span>GK</span>
+    <span>Maths</span>
+    <span>Reasoning</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_4"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 5 -->
+<div class="book"
+     data-category="opsc odisha gk english reasoning">
+
+  <div class="book-icon">🎓</div>
+
+  <span class="badge">🏛️ OPSC</span>
+
+  <h3>OPSC / OCS Preparation</h3>
+
+  <p>
+    Odisha GK, General Studies, Current Affairs,
+    English, Reasoning and practice material.
+  </p>
+
+  <div class="tags">
+    <span>OPSC</span>
+    <span>OCS</span>
+    <span>GS</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_5"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 6 -->
+<div class="book"
+     data-category="teacher grammar odisha">
+
+  <div class="book-icon">👨‍🏫</div>
+
+  <span class="badge">📚 TEACHER</span>
+
+  <h3>CT / OTET / OSSTET Preparation</h3>
+
+  <p>
+    Child Development, Teaching Aptitude,
+    Odia, English, Maths and practice questions.
+  </p>
+
+  <div class="tags">
+    <span>CT</span>
+    <span>OTET</span>
+    <span>OSSTET</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_6"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 7 -->
+<div class="book"
+     data-category="math reasoning ossc osssc police">
+
+  <div class="book-icon">➗</div>
+
+  <span class="badge">🧠 PRACTICE</span>
+
+  <h3>Maths & Reasoning Practice</h3>
+
+  <p>
+    Arithmetic, Percentage, Profit & Loss,
+    Time & Work, Series, Coding-Decoding and more.
+  </p>
+
+  <div class="tags">
+    <span>Maths</span>
+    <span>Reasoning</span>
+    <span>MCQ</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_7"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+<!-- BOOK 8 -->
+<div class="book"
+     data-category="english ossc osssc police teacher">
+
+  <div class="book-icon">🔤</div>
+
+  <span class="badge">📖 ENGLISH</span>
+
+  <h3>English Grammar & Practice</h3>
+
+  <p>
+    Grammar, Vocabulary, Synonyms, Antonyms,
+    Error Detection and competitive exam practice.
+  </p>
+
+  <div class="tags">
+    <span>Grammar</span>
+    <span>Vocabulary</span>
+    <span>MCQ</span>
+  </div>
+
+  <a
+    href="YOUR_AFFILIATE_LINK_8"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+    class="buy">
+    🛒 BUY BOOK
+  </a>
+
+</div>
+
+
+</div>
+</section>
+
+
+<!-- HANDWRITTEN NOTES -->
+<section class="section">
+
+<h2 class="section-title">
+  📝 Free Handwritten Notes
+</h2>
+
+<div class="book-grid">
+
+<div class="book">
+  <div class="book-icon">✍️</div>
+  <h3>Odisha Govt Job Notes</h3>
+  <p>
+    Free handwritten-style notes for
+    Odisha competitive exam preparation.
+  </p>
+
+  <a href="#" class="buy">
+    📥 DOWNLOAD FREE NOTES
+  </a>
+</div>
+
+<div class="book">
+  <div class="book-icon">📘</div>
+  <h3>Odia Grammar Notes</h3>
+  <p>
+    Sandhi, Samasa, Karaka, Bibhakti,
+    Synonyms, Antonyms and more.
+  </p>
+
+  <a href="#" class="buy">
+    📥 DOWNLOAD FREE NOTES
+  </a>
+</div>
+
+<div class="book">
+  <div class="book-icon">🧠</div>
+  <h3>Odisha GK Notes</h3>
+  <p>
+    Odisha History, Geography, Culture
+    and important facts.
+  </p>
+
+  <a href="#" class="buy">
+    📥 DOWNLOAD FREE NOTES
+  </a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AFFILIATE NOTICE -->
+<div class="note">
+  💡 Some book links may be affiliate links.
+  If you purchase through our link, we may earn a small commission
+  at no extra cost to you.
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <strong>JobMitra-AI</strong>
+
+  <p style="margin-top:8px;">
+    Latest Jobs • Scholarships • Admit Cards • Results • Books
+  </p>
+
+  <p style="margin-top:8px;">
+    © 2026 JobMitra-AI
+  </p>
+
+</footer>
+
+
+<script>
+
+/* FILTER BOOKS */
+
+function filterBooks(category){
+
+  const books = document.querySelectorAll(".book");
+  const buttons = document.querySelectorAll(".categories button");
+
+  books.forEach(book => {
+
+    if(category === "all"){
+      book.style.display = "";
+      return;
+    }
+
+    const categories =
+      book.getAttribute("data-category").split(" ");
+
+    if(categories.includes(category)){
+      book.style.display = "";
+    }else{
+      book.style.display = "none";
+    }
+
+  });
+}
+
+
+/* SEARCH BOOKS */
+
+function searchBooks(){
+
+  const input =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+  const books =
+    document.querySelectorAll(".book");
+
+  books.forEach(book => {
+
+    const text =
+      book.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      book.style.display = "";
+    }else{
+      book.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
