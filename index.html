@@ -2,295 +2,276 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JobMitra AI - Jobs, Cricket & AI Preparation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>JobMitra AI - Jobs, Exams & Preparation</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
-background:#f1f3f6;
-color:#222
+background:#f3f6fa;
+color:#17202a
 }
+
 header{
-background:#0757a5;
-color:#fff;
-padding:12px 15px;
+background:linear-gradient(135deg,#0757a5,#0b78d0);
+color:white;
+padding:18px 15px 22px;
 position:sticky;
 top:0;
-z-index:1000;
-box-shadow:0 2px 8px #0003
+z-index:10;
+box-shadow:0 3px 12px #0003
 }
+
 .top{
-max-width:1150px;
+max-width:1100px;
 margin:auto;
 display:flex;
+justify-content:space-between;
 align-items:center;
-justify-content:space-between
+gap:10px
 }
+
 .logo{
 font-size:25px;
-font-weight:800
+font-weight:bold
 }
-.tag{
+
+.tagline{
 font-size:12px;
-margin-top:3px
+opacity:.9;
+margin-top:4px
 }
+
 .menu{
-background:#fff;
-color:#0757a5;
-border:0;
-border-radius:5px;
-padding:8px 12px;
-font-size:20px;
-cursor:pointer
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:15px
 }
-nav{
-display:none;
-position:absolute;
-right:12px;
-top:62px;
-width:245px;
-background:#fff;
-box-shadow:0 5px 20px #0003;
-border-radius:6px;
-overflow:hidden
-}
-nav.show{display:block}
-nav a{
-display:block;
-padding:13px;
-color:#222;
+
+.menu a{
+color:white;
 text-decoration:none;
-border-bottom:1px solid #eee
-}
-nav a:hover{
-background:#edf4ff;
-color:#0757a5
+background:#ffffff20;
+padding:8px 10px;
+border-radius:6px;
+font-size:12px
 }
 
 .container{
-max-width:1150px;
+max-width:1100px;
 margin:auto;
 padding:15px
 }
 
-.search{
-background:#fff;
-padding:15px;
-border-radius:6px;
-margin-bottom:15px;
-box-shadow:0 1px 6px #0002
+.hero{
+background:white;
+border-radius:14px;
+padding:25px 18px;
+margin-top:15px;
+box-shadow:0 3px 15px #0001;
+text-align:center
 }
-.search input{
+
+.hero h1{
+margin:0;
+font-size:27px;
+color:#0757a5
+}
+
+.hero p{
+color:#667;
+font-size:14px;
+line-height:1.5
+}
+
+.search{
 width:100%;
-padding:12px;
-border:1px solid #bbb;
-border-radius:5px;
-font-size:15px
+max-width:700px;
+padding:14px;
+border:1px solid #ccd5df;
+border-radius:9px;
+font-size:15px;
+outline:none
 }
 
 .quick{
 display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:8px;
-margin-bottom:15px
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin:18px 0
 }
-.quick button{
-background:#fff;
-border:1px solid #ccc;
-padding:11px 5px;
-border-radius:5px;
+
+.quick a{
+background:white;
+padding:18px 10px;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+color:#17202a;
+font-weight:bold;
+box-shadow:0 2px 10px #0001;
+font-size:14px
+}
+
+.quick span{
+display:block;
+font-size:27px;
+margin-bottom:7px
+}
+
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:25px 0 12px
+}
+
+.section-title h2{
+margin:0;
+font-size:21px
+}
+
+.filters{
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding-bottom:8px
+}
+
+.filters button{
+border:0;
+background:white;
+padding:9px 13px;
+border-radius:20px;
+white-space:nowrap;
 cursor:pointer
 }
-.quick button:hover{
-background:#0757a5;
-color:#fff
-}
 
-.layout{
+.jobs{
 display:grid;
-grid-template-columns:2fr 1fr;
-gap:15px
-}
-
-.box{
-background:#fff;
-border-radius:6px;
-box-shadow:0 1px 6px #0002;
-margin-bottom:15px;
-overflow:hidden
-}
-
-.box h2{
-font-size:18px;
-margin:0;
-padding:12px 15px;
-background:#0757a5;
-color:#fff
+grid-template-columns:repeat(2,1fr);
+gap:14px
 }
 
 .job{
-padding:15px;
-border-bottom:1px solid #ddd
+background:white;
+padding:17px;
+border-radius:11px;
+box-shadow:0 2px 10px #0001;
+border-left:4px solid #0757a5
 }
-.job:last-child{border-bottom:0}
-.job h3{
-margin:0 0 8px;
-font-size:17px;
-color:#0757a5
-}
-.job p{
-margin:5px 0;
-font-size:14px;
-color:#555
-}
+
 .badge{
 display:inline-block;
 font-size:11px;
-padding:4px 7px;
-border-radius:4px;
-background:#dff5e4;
-color:#146b2d;
 font-weight:bold;
-margin-bottom:7px
-}
-.apply{
-display:inline-block;
-margin-top:8px;
-background:#0757a5;
-color:#fff;
-text-decoration:none;
-padding:8px 12px;
-border-radius:4px;
-font-size:13px
+background:#e2f5e8;
+color:#16733a;
+padding:5px 8px;
+border-radius:5px;
+margin-bottom:8px
 }
 
-.side a{
-display:block;
-padding:11px 13px;
-color:#0757a5;
-text-decoration:none;
-border-bottom:1px solid #eee;
-font-size:14px
+.job h3{
+margin:3px 0 10px;
+font-size:17px;
+color:#0757a5
 }
-.side a:hover{background:#f0f5fb}
+
+.job p{
+font-size:13px;
+margin:7px 0;
+color:#555;
+line-height:1.4
+}
+
+.job strong{
+color:#222
+}
+
+.btn{
+display:inline-block;
+background:#0757a5;
+color:white;
+text-decoration:none;
+padding:10px 13px;
+border-radius:6px;
+font-size:12px;
+margin-top:8px
+}
 
 .ai{
-padding:17px;
-background:#fff7d9;
-border:1px solid #f0d77b;
-border-radius:6px;
-margin-bottom:15px
-}
-.ai button{
-background:#6b35d5;
-color:#fff;
-border:0;
-padding:10px 14px;
-border-radius:5px;
-font-weight:bold;
-cursor:pointer
+margin-top:22px;
+background:linear-gradient(135deg,#182848,#4b6cb7);
+color:white;
+padding:25px;
+border-radius:13px;
+text-align:center
 }
 
-.cricket{
-background:#fff;
-border-radius:6px;
-box-shadow:0 1px 6px #0002;
-margin-bottom:15px;
-overflow:hidden
-}
-.cricket h2{
-background:#08783f;
-color:#fff;
-padding:12px 15px;
-margin:0;
-font-size:18px
-}
-.cricketCard{
-padding:15px;
-border-bottom:1px solid #eee
-}
-.cricketCard:last-child{border-bottom:0}
-.cricketCard h3{
-margin:0 0 7px;
-color:#08783f
-}
-.cricketCard p{
-margin:5px 0;
-font-size:14px;
-color:#555
+.ai h2{
+margin-top:0
 }
 
-#aiPage{display:none}
-
-.subjects{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-padding:15px
-}
-.subject{
-padding:18px 5px;
-background:#f4f7ff;
-border:1px solid #d6e0f5;
-border-radius:6px;
-text-align:center;
-cursor:pointer
-}
-.subject:hover{
-background:#0757a5;
-color:#fff
+.ai a{
+display:inline-block;
+background:white;
+color:#0757a5;
+padding:11px 17px;
+border-radius:7px;
+text-decoration:none;
+font-weight:bold
 }
 
-.quiz{
-margin:15px;
-padding:18px;
-border:1px solid #ddd;
-border-radius:6px
-}
-.option{
-display:block;
-width:100%;
-margin:8px 0;
-padding:11px;
-text-align:left;
-border:1px solid #ccc;
-background:#fff;
-border-radius:5px;
-cursor:pointer
-}
-.option.correct{background:#c9f3d1}
-.option.wrong{background:#ffd0d0}
-
-.back{
-margin:15px;
-background:#555;
-color:#fff;
-border:0;
-padding:9px 13px;
-border-radius:5px
+.notice{
+background:#fff8dc;
+border:1px solid #efd36b;
+padding:14px;
+border-radius:8px;
+margin-top:20px;
+font-size:13px;
+line-height:1.5
 }
 
 footer{
+margin-top:30px;
 background:#17202a;
-color:#fff;
+color:white;
 text-align:center;
 padding:25px 10px;
-margin-top:20px;
-font-size:13px
+font-size:12px;
+line-height:1.7
 }
 
-@media(max-width:800px){
-.layout{grid-template-columns:1fr}
-.quick{grid-template-columns:repeat(2,1fr)}
+@media(max-width:700px){
+
+.top{
+display:block;
+text-align:center
 }
 
-@media(max-width:450px){
-.logo{font-size:20px}
-.quick{grid-template-columns:repeat(2,1fr)}
-.subjects{grid-template-columns:repeat(2,1fr)}
+.quick{
+grid-template-columns:repeat(2,1fr)
+}
+
+.jobs{
+grid-template-columns:1fr
+}
+
+.hero h1{
+font-size:23px
+}
+
+.menu a{
+font-size:11px
+}
+
 }
 </style>
 </head>
@@ -298,897 +279,415 @@ font-size:13px
 <body>
 
 <header>
+
 <div class="top">
 
 <div>
-<div class="logo">🚀 JobMitra AI</div>
-<div class="tag">Jobs • Cricket • AI Preparation</div>
+<div class="logo">🤖 JobMitra AI</div>
+<div class="tagline">
+Find Jobs • Prepare Smart • Get Ready
+</div>
 </div>
 
-<button class="menu" onclick="toggleMenu()">☰</button>
+</div>
 
-<nav id="nav">
+<nav class="menu">
 
-<a href="#" onclick="home()">🏠 Home</a>
+<a href="index.html">🏠 Home</a>
 
-<a href="#latest" onclick="home()">🆕 Latest Jobs</a>
+<a href="jobs.html">💼 Jobs</a>
 
-<a href="#latest" onclick="filterState('Odisha')">
-🏛️ Odisha Jobs
-</a>
+<a href="notifications.html">🔔 Notifications</a>
 
-<a href="#latest" onclick="filterState('India')">
-🇮🇳 All India Jobs
-</a>
+<a href="admit-card.html">🎫 Admit Card</a>
 
-<a href="#latest" onclick="filterQualification('10th')">
-📘 10th Pass Jobs
-</a>
+<a href="results.html">📊 Results</a>
 
-<a href="#latest" onclick="filterQualification('12th')">
-📗 12th Pass Jobs
-</a>
+<a href="syllabus.html">📚 Syllabus</a>
 
-<a href="#latest" onclick="filterQualification('Graduate')">
-🎓 Graduate Jobs
-</a>
-
-<a href="#latest" onclick="filterType('Government')">
-🏛️ Government Jobs
-</a>
-
-<a href="#latest" onclick="filterType('Private')">
-🏢 Private Jobs
-</a>
-
-<a href="#admit">🎫 Admit Card</a>
-
-<a href="#results">📊 Results</a>
-
-<a href="#syllabus">📖 Syllabus</a>
-
-<a href="#cricket">🏏 Cricket Updates</a>
-
-<a href="#" onclick="openAI()">🎓 AI Preparation</a>
-
-<a href="#portals">🌐 Official Portals</a>
+<a href="ai-preparation.html">🎓 AI Preparation</a>
 
 </nav>
 
-</div>
 </header>
 
 
 <main class="container">
 
-<div id="homePage">
 
-<div class="search">
+<section class="hero">
+
+<h1>🚀 Smart Job & Exam Portal</h1>
+
+<p>
+ସରକାରୀ ଚାକିରି, Odisha Jobs, All India Jobs ଏବଂ Exam Preparation
+ପାଇଁ JobMitra AI ସହିତ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ।
+</p>
 
 <input
+class="search"
 id="search"
 type="search"
-placeholder="🔎 Search jobs, posts, qualification..."
-oninput="searchJobs()">
+placeholder="🔍 Search Job, Exam, Qualification..."
+onkeyup="searchJobs()">
 
-</div>
+</section>
 
 
 <div class="quick">
 
-<button onclick="filterType('Government')">
-🏛️ Govt Jobs
-</button>
+<a href="jobs.html">
+<span>💼</span>
+Latest Jobs
+<br>
+ନୂଆ ଚାକିରି
+</a>
 
-<button onclick="filterType('Private')">
-🏢 Private Jobs
-</button>
+<a href="notifications.html">
+<span>🔔</span>
+Notifications
+<br>
+ନିଯୁକ୍ତି ସୂଚନା
+</a>
 
-<button onclick="filterQualification('10th')">
-📘 10th
-</button>
+<a href="admit-card.html">
+<span>🎫</span>
+Admit Card
+<br>
+ପ୍ରବେଶ ପତ୍ର
+</a>
 
-<button onclick="filterQualification('12th')">
-📗 12th
-</button>
+<a href="results.html">
+<span>📊</span>
+Results
+<br>
+ପରୀକ୍ଷା ଫଳ
+</a>
 
-<button onclick="filterQualification('Graduate')">
-🎓 Graduate
-</button>
+<a href="syllabus.html">
+<span>📚</span>
+Syllabus
+<br>
+ପାଠ୍ୟକ୍ରମ
+</a>
+
+<a href="ai-preparation.html">
+<span>🎓</span>
+AI Preparation
+<br>
+ପରୀକ୍ଷା ପ୍ରସ୍ତୁତି
+</a>
 
 </div>
 
 
-<div class="ai">
+<div class="section-title">
 
-<b>🎓 JobMitra AI Preparation</b>
+<h2>🔥 Latest Jobs</h2>
+
+</div>
+
+
+<div class="filters">
+
+<button onclick="filterJobs('All')">All</button>
+
+<button onclick="filterJobs('10th')">10th Pass</button>
+
+<button onclick="filterJobs('12th')">12th Pass</button>
+
+<button onclick="filterJobs('Graduate')">Graduate</button>
+
+<button onclick="filterJobs('Diploma')">Diploma</button>
+
+<button onclick="filterJobs('ITI')">ITI</button>
+
+<button onclick="filterJobs('Nursing')">Nursing</button>
+
+<button onclick="filterJobs('Engineering')">Engineering</button>
+
+</div>
+
+
+<div class="jobs" id="jobList">
+
+
+<div class="job" data-category="Engineering Graduate">
+
+<span class="badge">🔥 APPLY NOW</span>
+
+<h3>OPSC Assistant Executive Engineer</h3>
+
+<p>🏛️ <strong>Organization:</strong> Odisha Public Service Commission</p>
+
+<p>📍 <strong>Location:</strong> Odisha</p>
+
+<p>👥 <strong>Vacancy:</strong> 46 Posts</p>
+
+<p>🎓 <strong>Qualification:</strong> B.E / B.Tech Civil Engineering</p>
+
+<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+
+<p>📝 <strong>Exam:</strong> Written Exam / Selection as per notification</p>
+
+<p>💰 <strong>Salary:</strong> Official Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> 11 September 2026</p>
+
+<a class="btn"
+href="https://opsc.gov.in/"
+target="_blank">
+Official Notification ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Nursing Graduate">
+
+<span class="badge">🔥 CLOSING SOON</span>
+
+<h3>OSSSC Nursing Officer</h3>
+
+<p>🏛️ <strong>Organization:</strong> OSSSC</p>
+
+<p>📍 <strong>Location:</strong> Odisha</p>
+
+<p>👥 <strong>Vacancy:</strong> 5,989 Posts</p>
+
+<p>🎓 <strong>Qualification:</strong> Nursing qualification</p>
+
+<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+
+<p>📝 <strong>Exam:</strong> Written Examination / Selection Process</p>
+
+<p>💰 <strong>Salary:</strong> Official Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> 12 August 2026</p>
+
+<a class="btn"
+href="https://www.osssc.gov.in/"
+target="_blank">
+Official Notification ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Graduate">
+
+<span class="badge">🆕 ALL INDIA</span>
+
+<h3>IBPS Clerk / CSA Recruitment</h3>
+
+<p>🏛️ <strong>Organization:</strong> IBPS</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>👥 <strong>Vacancy:</strong> Check Official Notification</p>
+
+<p>🎓 <strong>Qualification:</strong> Graduate</p>
+
+<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+
+<p>📝 <strong>Exam:</strong> Preliminary + Main Examination</p>
+
+<p>💰 <strong>Salary:</strong> Bank Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+
+<a class="btn"
+href="https://www.ibps.in/"
+target="_blank">
+Official Notification ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="Nursing">
+
+<span class="badge">🔥 ALL INDIA</span>
+
+<h3>AIIMS NORCET Nursing Officer</h3>
+
+<p>🏛️ <strong>Organization:</strong> AIIMS</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>👥 <strong>Vacancy:</strong> Check Official Notification</p>
+
+<p>🎓 <strong>Qualification:</strong> Nursing qualification</p>
+
+<p>🎂 <strong>Age:</strong> Check Official Notification</p>
+
+<p>📝 <strong>Exam:</strong> NORCET Examination</p>
+
+<p>💰 <strong>Salary:</strong> Government Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+
+<a class="btn"
+href="https://www.aiimsexams.ac.in/"
+target="_blank">
+Official Notification ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="10th">
+
+<span class="badge">🇮🇳 CENTRAL GOVT</span>
+
+<h3>SSC Government Jobs</h3>
+
+<p>🏛️ <strong>Organization:</strong> Staff Selection Commission</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / Graduate depending on post</p>
+
+<p>🎂 <strong>Age:</strong> Different by recruitment</p>
+
+<p>📝 <strong>Exam:</strong> SSC examination as per post</p>
+
+<p>💰 <strong>Salary:</strong> Government Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> Vacancy-wise</p>
+
+<a class="btn"
+href="https://ssc.gov.in/"
+target="_blank">
+SSC Official ↗️
+</a>
+
+</div>
+
+
+<div class="job" data-category="10th 12th Graduate ITI Diploma">
+
+<span class="badge">🚆 RAILWAY</span>
+
+<h3>Railway Recruitment Updates</h3>
+
+<p>🏛️ <strong>Organization:</strong> Railway Recruitment Boards</p>
+
+<p>📍 <strong>Location:</strong> All India</p>
+
+<p>🎓 <strong>Qualification:</strong> 10th / 12th / ITI / Diploma / Graduate depending on post</p>
+
+<p>🎂 <strong>Age:</strong> Vacancy-wise</p>
+
+<p>📝 <strong>Exam:</strong> CBT / Skill Test / Other stages as applicable</p>
+
+<p>💰 <strong>Salary:</strong> Railway Pay Scale</p>
+
+<p>📅 <strong>Last Date:</strong> Check Official Notification</p>
+
+<a class="btn"
+href="https://www.rrbapply.gov.in/"
+target="_blank">
+Railway Official ↗️
+</a>
+
+</div>
+
+
+</div>
+
+
+<section class="ai">
+
+<h2>🤖 AI Exam Preparation</h2>
 
 <p>
-GK • English • Maths • Science • Odisha GK • Interview Practice
+Question Practice • Mock Tests • Exam Guidance • Interview Preparation
 </p>
 
-<button onclick="openAI()">
+<a href="ai-preparation.html">
 Start AI Preparation →
-</button>
-
-</div>
-
-
-<div class="layout">
-
-<div>
-
-
-<div class="box" id="latest">
-
-<h2>🆕 Latest Job Notifications</h2>
-
-<div id="jobList"></div>
-
-</div>
-
-
-<div class="cricket" id="cricket">
-
-<h2>🏏 Cricket Updates</h2>
-
-<div class="cricketCard">
-
-<h3>🏏 Latest Cricket News</h3>
-
-<p>
-Get the latest cricket news, team updates,
-player news and major match information.
-</p>
-
-</div>
-
-<div class="cricketCard">
-
-<h3>📅 Today's Cricket</h3>
-
-<p>
-Check today's matches, series and tournament updates.
-</p>
-
-</div>
-
-<div class="cricketCard">
-
-<h3>🇮🇳 Team India</h3>
-
-<p>
-India team news, player updates and match results.
-</p>
-
-</div>
-
-<div class="cricketCard">
-
-<h3>📊 Match Results</h3>
-
-<p>
-Latest cricket results and important match updates.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="box" id="admit">
-
-<h2>🎫 Admit Card</h2>
-
-<div class="job">
-
-<h3>Latest Admit Card Updates</h3>
-
-<p>
-Admit Card links will be added here.
-Always verify the official recruitment website.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="box" id="results">
-
-<h2>📊 Results</h2>
-
-<div class="job">
-
-<h3>Latest Exam Results</h3>
-
-<p>
-Latest government exam results will be listed here.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="box" id="syllabus">
-
-<h2>📖 Syllabus</h2>
-
-<div class="job">
-
-<h3>Exam Syllabus & Pattern</h3>
-
-<p>
-Syllabus and exam pattern updates will be added here.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div>
-
-
-<div class="box">
-
-<h2>📌 Important Links</h2>
-
-<div class="side">
-
-<a href="#latest">🆕 Latest Jobs</a>
-
-<a href="#latest" onclick="filterType('Government')">
-🏛️ Government Jobs
 </a>
 
-<a href="#latest" onclick="filterState('Odisha')">
-🏛️ Odisha Jobs
-</a>
+</section>
 
-<a href="#latest" onclick="filterState('India')">
-🇮🇳 All India Jobs
-</a>
 
-<a href="#latest" onclick="filterType('Private')">
-🏢 Private Jobs
-</a>
+<div class="notice">
 
-<a href="#latest" onclick="filterQualification('10th')">
-📘 10th Pass Jobs
-</a>
-
-<a href="#latest" onclick="filterQualification('12th')">
-📗 12th Pass Jobs
-</a>
-
-<a href="#latest" onclick="filterQualification('Graduate')">
-🎓 Graduate Jobs
-</a>
-
-<a href="#latest">📝 Job Apply</a>
-
-<a href="#admit">🎫 Admit Card</a>
-
-<a href="#results">📊 Results</a>
-
-<a href="#syllabus">📖 Syllabus</a>
-
-<a href="#cricket">🏏 Cricket Updates</a>
-
-<a href="#" onclick="openAI()">
-🎓 AI Exam Preparation
-</a>
-
-<a href="#portals">
-🌐 Official Job Portals
-</a>
-
-<a href="#">
-🔔 Important Notifications
-</a>
+⚠️ <strong>Important:</strong>
+Apply କରିବା ପୂର୍ବରୁ official notification ନିଶ୍ଚିତ ଭାବେ ପଢ଼ନ୍ତୁ।
+Eligibility, age limit, fee, exam pattern ଏବଂ last date official website ରୁ verify କରନ୍ତୁ।
 
 </div>
 
-</div>
-
-
-<div class="box" id="portals">
-
-<h2>🌐 Official Portals</h2>
-
-<div class="side">
-
-<a href="https://www.ossc.gov.in/" target="_blank">
-OSSC Official ↗️
-</a>
-
-<a href="https://www.osssc.gov.in/" target="_blank">
-OSSSC Official ↗️
-</a>
-
-<a href="https://opsc.gov.in/" target="_blank">
-OPSC Official ↗️
-</a>
-
-<a href="https://ssc.gov.in/" target="_blank">
-SSC India ↗️
-</a>
-
-<a href="https://www.ncs.gov.in/" target="_blank">
-National Career Service ↗️
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- AI PAGE -->
-
-<div id="aiPage">
-
-<button class="back" onclick="home()">
-← Back to Home
-</button>
-
-<div class="box">
-
-<h2>🎓 AI Exam Preparation</h2>
-
-<div style="padding:15px">
-
-Choose a subject and start your practice test.
-
-</div>
-
-<div class="subjects">
-
-<div class="subject" onclick="startQuiz('GK')">
-🧠<br>General Knowledge
-</div>
-
-<div class="subject" onclick="startQuiz('English')">
-📖<br>English
-</div>
-
-<div class="subject" onclick="startQuiz('Math')">
-➗<br>Math
-</div>
-
-<div class="subject" onclick="startQuiz('Science')">
-🔬<br>Science
-</div>
-
-<div class="subject" onclick="startQuiz('Odisha')">
-🏛️<br>Odisha GK
-</div>
-
-<div class="subject" onclick="startQuiz('Interview')">
-💼<br>Interview
-</div>
-
-</div>
-
-<div id="quizBox" class="quiz" style="display:none"></div>
-
-</div>
-
-</div>
 
 </main>
 
 
 <footer>
 
-© 2026 JobMitra AI · Find Jobs. Prepare Smart. Get Ready.
+🤖 <strong>JobMitra AI</strong><br>
+
+ଚାକିରି ଖୋଜନ୍ତୁ • ପରୀକ୍ଷା ପାଇଁ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ • ସଫଳ ହୁଅନ୍ତୁ
 
 <br><br>
 
-⚠️ Always verify the official recruitment notification before applying.
+© 2026 JobMitra AI
 
 </footer>
 
 
 <script>
 
-/* JOB DATA */
-
-const jobs=[
-
-{
-title:"OPSC Assistant Executive Engineer",
-department:"Odisha Public Service Commission",
-state:"Odisha",
-qualification:"Graduate",
-posts:"46 Posts",
-lastDate:"Check Official Notification",
-status:"Notification",
-type:"Government",
-link:"https://opsc.gov.in/"
-},
-
-{
-title:"OSSC Latest Recruitment",
-department:"Odisha Staff Selection Commission",
-state:"Odisha",
-qualification:"12th / Graduate",
-posts:"Multiple Posts",
-lastDate:"Check Official Notification",
-status:"Latest",
-type:"Government",
-link:"https://www.ossc.gov.in/"
-},
-
-{
-title:"OSSSC Latest Recruitment",
-department:"Odisha Sub-Ordinate Staff Selection Commission",
-state:"Odisha",
-qualification:"10th / 12th / Graduate",
-posts:"Multiple Posts",
-lastDate:"Check Official Notification",
-status:"Latest",
-type:"Government",
-link:"https://www.osssc.gov.in/"
-},
-
-{
-title:"SSC Latest Government Jobs",
-department:"Staff Selection Commission",
-state:"India",
-qualification:"10th / 12th / Graduate",
-posts:"Multiple Posts",
-lastDate:"Check Official Notification",
-status:"Latest",
-type:"Government",
-link:"https://ssc.gov.in/"
-},
-
-{
-title:"National Career Service Jobs",
-department:"Government of India",
-state:"India",
-qualification:"10th / 12th / Graduate",
-posts:"Multiple Jobs",
-lastDate:"Varies by vacancy",
-status:"Search Jobs",
-type:"Government",
-link:"https://www.ncs.gov.in/"
-},
-
-{
-title:"Private Jobs",
-department:"Private Sector Opportunities",
-state:"India",
-qualification:"10th / 12th / Graduate",
-posts:"Multiple Jobs",
-lastDate:"Varies by vacancy",
-status:"Latest",
-type:"Private",
-link:"https://www.ncs.gov.in/"
-}
-
-];
-
-
-/* QUESTIONS */
-
-const questions={
-
-GK:[
-["What is the capital of India?",["Mumbai","New Delhi","Kolkata","Chennai"],1],
-["Who wrote the Indian National Anthem?",["Rabindranath Tagore","Mahatma Gandhi","Nehru","Sardar Patel"],0],
-["How many states are there in India?",["26","28","30","32"],1],
-["Which is the largest planet?",["Earth","Mars","Jupiter","Venus"],2],
-["Who is known as the Father of the Indian Constitution?",["Gandhi","B. R. Ambedkar","Nehru","Patel"],1]
-],
-
-English:[
-["Correct spelling?",["Goverment","Government","Govarnment","Governmant"],1],
-["Opposite of Strong?",["Powerful","Weak","Hard","Brave"],1],
-["Correct sentence?",["He go to school.","He goes to school.","He going school.","He gone school."],1],
-["Synonym of Happy?",["Sad","Angry","Joyful","Weak"],2],
-["Plural of Child?",["Childs","Children","Childes","Childrens"],1]
-],
-
-Math:[
-["25 + 35 = ?",["50","55","60","65"],2],
-["12 × 5 = ?",["50","60","70","80"],1],
-["100 ÷ 4 = ?",["20","25","30","40"],1],
-["15% of 200 = ?",["20","25","30","35"],2],
-["10² = ?",["10","20","100","1000"],2]
-],
-
-Science:[
-["Red Planet?",["Earth","Mars","Jupiter","Venus"],1],
-["Gas needed for breathing?",["Oxygen","CO2","Nitrogen","Hydrogen"],0],
-["Water freezes at?",["0°C","10°C","50°C","100°C"],0],
-["Organ that pumps blood?",["Liver","Heart","Lung","Kidney"],1],
-["Plants prepare food by?",["Respiration","Photosynthesis","Digestion","Fermentation"],1]
-],
-
-Odisha:[
-["Capital of Odisha?",["Cuttack","Bhubaneswar","Puri","Baripada"],1],
-["Famous temple in Puri?",["Lingaraj","Jagannath Temple","Mukteshwar","Konark"],1],
-["Famous dance of Mayurbhanj?",["Kathak","Bharatanatyam","Mayurbhanj Chhau","Kuchipudi"],2],
-["Silver City of Odisha?",["Puri","Cuttack","Sambalpur","Balasore"],1],
-["Similipal is in which district?",["Mayurbhanj","Puri","Khordha","Ganjam"],0]
-],
-
-Interview:[
-["Before an interview you should?",["Arrive late","Research the job","Ignore the company","Avoid preparation"],1],
-["Good interview quality?",["Confidence","Rudeness","Dishonesty","Arguing"],0],
-["If you don't know an answer?",["Make up answer","Answer honestly","Leave","Argue"],1],
-["Good interview dress?",["Untidy","Clean and professional","Dirty","Very casual"],1],
-["Good communication means?",["Listening and speaking clearly","Interrupting","Shouting","Ignoring"],0]
-]
-
-};
-
-
-/* MENU */
-
-function toggleMenu(){
-
-document.getElementById("nav")
-.classList.toggle("show");
-
-}
-
-
-/* HOME */
-
-function home(){
-
-document.getElementById("homePage")
-.style.display="block";
-
-document.getElementById("aiPage")
-.style.display="none";
-
-document.getElementById("nav")
-.classList.remove("show");
-
-window.scrollTo(0,0);
-
-}
-
-
-/* AI */
-
-function openAI(){
-
-document.getElementById("homePage")
-.style.display="none";
-
-document.getElementById("aiPage")
-.style.display="block";
-
-document.getElementById("nav")
-.classList.remove("show");
-
-window.scrollTo(0,0);
-
-}
-
-
-/* JOB DISPLAY */
-
-function displayJobs(list){
-
-const box=document.getElementById("jobList");
-
-box.innerHTML="";
-
-if(list.length===0){
-
-box.innerHTML=
-"<div class='job'><b>No matching jobs found.</b></div>";
-
-return;
-
-}
-
-list.forEach(job=>{
-
-box.innerHTML+=`
-
-<div class="job">
-
-<span class="badge">
-🔔 ${job.status}
-</span>
-
-<h3>${job.title}</h3>
-
-<p>🏢 ${job.department}</p>
-
-<p>📍 <b>${job.state}</b></p>
-
-<p>👥 Vacancy: <b>${job.posts}</b></p>
-
-<p>🎓 Qualification: <b>${job.qualification}</b></p>
-
-<p>📅 Last Date: <b>${job.lastDate}</b></p>
-
-<a
-class="apply"
-href="${job.link}"
-target="_blank"
-rel="noopener">
-
-Official Notification / Apply ↗️
-
-</a>
-
-</div>
-
-`;
-
-});
-
-}
-
-
-/* SEARCH */
-
 function searchJobs(){
 
-const q=document
+let input=document
 .getElementById("search")
 .value
 .toLowerCase();
 
-const result=jobs.filter(job=>
+let jobs=document
+.querySelectorAll(".job");
 
-(
-job.title+" "+
-job.department+" "+
-job.state+" "+
-job.qualification+" "+
-job.posts
-)
-.toLowerCase()
-.includes(q)
+jobs.forEach(function(job){
 
-);
+let text=job.innerText.toLowerCase();
 
-displayJobs(result);
-
-}
-
-
-/* FILTER */
-
-function filterType(type){
-
-displayJobs(
-jobs.filter(job=>job.type===type)
-);
-
-home();
-
-}
-
-function filterQualification(q){
-
-displayJobs(
-
-jobs.filter(job=>
-
-job.qualification
-.toLowerCase()
-.includes(q.toLowerCase())
-
-)
-
-);
-
-home();
-
-document.getElementById("latest")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-function filterState(state){
-
-displayJobs(
-
-jobs.filter(job=>job.state===state)
-
-);
-
-home();
-
-document.getElementById("latest")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* QUIZ */
-
-let subject="";
-let index=0;
-let score=0;
-
-
-function startQuiz(s){
-
-subject=s;
-index=0;
-score=0;
-
-document.getElementById("quizBox")
-.style.display="block";
-
-showQuestion();
-
-document.getElementById("quizBox")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-function showQuestion(){
-
-const q=questions[subject][index];
-
-let html=`
-
-<h3>
-Question ${index+1} / ${questions[subject].length}
-</h3>
-
-<p style="margin:15px 0;font-weight:bold">
-${q[0]}
-</p>
-
-`;
-
-q[1].forEach((op,i)=>{
-
-html+=`
-
-<button
-class="option"
-onclick="answer(${i})">
-
-${String.fromCharCode(65+i)}. ${op}
-
-</button>
-
-`;
+job.style.display=
+text.includes(input)
+?"block"
+:"none";
 
 });
 
-html+=`
-
-<p style="margin-top:15px">
-Score: ${score}
-</p>
-
-`;
-
-document.getElementById("quizBox")
-.innerHTML=html;
-
 }
 
 
-function answer(selected){
+function filterJobs(category){
 
-const q=questions[subject][index];
+let jobs=document
+.querySelectorAll(".job");
 
-const buttons=document
-.querySelectorAll(".option");
+jobs.forEach(function(job){
 
-buttons.forEach(b=>b.disabled=true);
+let data=job
+.getAttribute("data-category");
 
-if(selected===q[2]){
+if(category==="All" || data.includes(category)){
 
-score++;
-
-buttons[selected]
-.classList.add("correct");
+job.style.display="block";
 
 }else{
 
-buttons[selected]
-.classList.add("wrong");
-
-buttons[q[2]]
-.classList.add("correct");
+job.style.display="none";
 
 }
 
-setTimeout(()=>{
-
-index++;
-
-if(index<questions[subject].length){
-
-showQuestion();
-
-}else{
-
-showResult();
+});
 
 }
-
-},700);
-
-}
-
-
-function showResult(){
-
-const total=questions[subject].length;
-
-const percent=Math.round(
-(score/total)*100
-);
-
-let message="Keep Practicing 💪";
-
-if(percent>=80)
-message="Excellent! 🎉";
-
-else if(percent>=50)
-message="Good Job! 👍";
-
-document.getElementById("quizBox")
-.innerHTML=`
-
-<div style="text-align:center">
-
-<h2>🎉 Test Complete</h2>
-
-<h1 style="margin:15px 0">
-${score}/${total}
-</h1>
-
-<p>Score: ${percent}%</p>
-
-<h3 style="margin:15px">
-${message}
-</h3>
-
-<button onclick="startQuiz('${subject}')">
-🔄 Try Again
-</button>
-
-</div>
-
-`;
-
-}
-
-
-/* INITIAL LOAD */
-
-displayJobs(jobs);
 
 </script>
-<a href="admit-card.html" style="display:block;background:#0757a5;color:white;text-align:center;padding:14px;margin:20px;border-radius:8px;text-decoration:none;font-weight:bold;">
-🎫 Latest Admit Cards
-</a>
+
 </body>
 </html>
