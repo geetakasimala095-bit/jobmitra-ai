@@ -3,157 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#4c1d95">
-<title>JobMitra AI | Jobs • Scholarship • Schemes • Preparation</title>
+<meta name="theme-color" content="#7f1d1d">
+<title>JobMitra AI - Jobs, Scholarships, Schemes & Preparation</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
 font-family:Arial,"Noto Sans Oriya",sans-serif;
-background:#f5f7ff;
-color:#172033;
-padding-bottom:90px
+background:#fff8f0;
+color:#261515;
+padding-bottom:82px;
 }
 
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:linear-gradient(135deg,#4c1d95,#6d28d9,#2563eb);
+background:linear-gradient(135deg,#7f1d1d,#991b1b,#b45309);
 color:#fff;
-box-shadow:0 4px 20px #0003
+box-shadow:0 4px 20px #0004;
 }
 
 .nav{
-max-width:1200px;
 width:94%;
-height:65px;
+max-width:1200px;
+height:64px;
 margin:auto;
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 
 .logo{
 font-size:23px;
-font-weight:900
+font-weight:900;
 }
 
 .logo span{color:#facc15}
 
-.nav-right{
-display:flex;
-gap:8px
-}
-
 .nav-btn{
 border:1px solid #ffffff55;
 background:#ffffff18;
-color:white;
+color:#fff;
 padding:8px 12px;
 border-radius:20px;
-cursor:pointer
+cursor:pointer;
+margin-left:5px;
 }
 
 .container{
 width:94%;
 max-width:1200px;
-margin:auto
+margin:auto;
 }
 
 /* HERO */
 
 .hero{
 position:relative;
-overflow:hidden;
+min-height:455px;
 margin-top:18px;
-min-height:430px;
+overflow:hidden;
 border-radius:30px;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
-box-shadow:0 12px 35px #0003
+color:#fff;
+box-shadow:0 12px 35px #0004;
 }
 
-.hero-bg{
+.hero-slide{
 position:absolute;
 inset:0;
 background-size:cover;
 background-position:center;
-transition:background-image 1s ease;
-z-index:0
+opacity:0;
+transform:scale(1.04);
+transition:opacity 1.2s ease,transform 6s ease;
 }
 
-.hero-bg:after{
-content:"";
+.hero-slide.active{
+opacity:1;
+transform:scale(1);
+}
+
+.hero-overlay{
 position:absolute;
 inset:0;
+z-index:1;
 background:linear-gradient(
 135deg,
-#111827d9,
-#312e81b8,
-#6d28d9a8
-)
+rgba(55,10,10,.68),
+rgba(127,29,29,.45),
+rgba(0,0,0,.38)
+);
 }
-
-.side-pattern{
-position:absolute;
-top:0;
-bottom:0;
-width:85px;
-z-index:2;
-opacity:.65;
-background-image:
-radial-gradient(circle,#facc15 2px,transparent 3px);
-background-size:18px 18px
-}
-
-.side-pattern.left{left:0}
-.side-pattern.right{right:0}
 
 .hero-content{
 position:relative;
-z-index:3;
+z-index:5;
 width:92%;
-max-width:800px
+max-width:820px;
+background:rgba(255,248,235,.91);
+border:4px solid #7f1d1d;
+border-radius:28px;
+padding:35px 25px;
+box-shadow:
+0 0 0 8px rgba(127,29,29,.16),
+0 12px 35px rgba(0,0,0,.3);
+}
+
+/* DEEP RED JHOTI DECORATION */
+
+.hero-content:before,
+.hero-content:after{
+position:absolute;
+left:7%;
+right:7%;
+color:#7f1d1d;
+font-size:20px;
+letter-spacing:9px;
+font-weight:900;
+white-space:nowrap;
+}
+
+.hero-content:before{
+content:"✦  ❈  ❖  ❈  ✦  ❈  ❖  ❈  ✦";
+top:-20px;
+background:#fff8eb;
+}
+
+.hero-content:after{
+content:"✦  ❈  ❖  ❈  ✦  ❈  ❖  ❈  ✦";
+bottom:-20px;
+background:#fff8eb;
 }
 
 .hero-icon{
-font-size:48px
+font-size:48px;
+filter:drop-shadow(0 4px 8px #0003);
 }
 
 .hero h1{
-font-size:42px;
-margin:5px 0
+font-size:46px;
+font-weight:900;
+color:#7f1d1d;
+text-shadow:0 2px 5px #fff;
+margin:5px 0;
 }
 
-.hero h1 span{color:#facc15}
+.hero h1 span{color:#b45309}
 
 .hero p{
-font-size:16px;
-margin-top:7px
+color:#3f1d1d;
+font-weight:700;
+font-size:15px;
+line-height:1.5;
 }
 
 .culture-label{
 display:inline-block;
 margin-top:12px;
-padding:6px 13px;
+padding:7px 15px;
 border-radius:20px;
-background:#ffffff22;
-border:1px solid #ffffff55;
-font-size:12px
+background:#7f1d1d;
+color:#fff;
+font-size:12px;
+font-weight:bold;
 }
 
 .search{
 max-width:720px;
-margin:22px auto 0;
+margin:20px auto 0;
 background:#fff;
 padding:6px;
 border-radius:40px;
-display:flex
+display:flex;
+box-shadow:0 5px 15px #0002;
 }
 
 .search input{
@@ -161,19 +190,57 @@ flex:1;
 border:0;
 outline:0;
 padding:13px 18px;
-font-size:15px;
-border-radius:30px
+font-size:14px;
+border-radius:30px;
 }
 
 .search button{
 border:0;
-background:#7c3aed;
+background:#7f1d1d;
 color:#fff;
 padding:0 22px;
 border-radius:30px;
 font-weight:bold;
-cursor:pointer
+cursor:pointer;
 }
+
+.hero-dots{
+margin-top:17px;
+display:flex;
+justify-content:center;
+gap:7px;
+}
+
+.dot{
+width:9px;
+height:9px;
+border-radius:50%;
+background:#7f1d1d55;
+}
+
+.dot.active{
+background:#7f1d1d;
+transform:scale(1.3);
+}
+
+/* SIDE JHOTI */
+
+.side-pattern{
+position:absolute;
+top:25px;
+bottom:25px;
+width:42px;
+z-index:4;
+opacity:.9;
+background-image:
+radial-gradient(circle,#7f1d1d 2px,transparent 3px);
+background-size:14px 14px;
+border-top:3px solid #7f1d1d;
+border-bottom:3px solid #7f1d1d;
+}
+
+.side-pattern.left{left:12px}
+.side-pattern.right{right:12px}
 
 /* SECTION */
 
@@ -183,23 +250,21 @@ cursor:pointer
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:14px
+margin-bottom:14px;
 }
 
 .title h2{font-size:22px}
 
 .badge{
 background:#fee2e2;
-color:#dc2626;
+color:#b91c1c;
 padding:5px 10px;
 border-radius:20px;
 font-size:11px;
-font-weight:bold
+font-weight:bold;
 }
 
-.live{
-animation:blink 1s infinite
-}
+.live{animation:blink 1s infinite}
 
 @keyframes blink{
 50%{opacity:.25}
@@ -210,7 +275,7 @@ animation:blink 1s infinite
 .quick{
 display:grid;
 grid-template-columns:repeat(6,1fr);
-gap:10px
+gap:10px;
 }
 
 .quick button{
@@ -222,115 +287,20 @@ box-shadow:0 4px 15px #0001;
 font-size:13px;
 font-weight:bold;
 cursor:pointer;
-transition:.2s
+transition:.2s;
 }
 
 .quick button:hover{
 transform:translateY(-3px);
-background:#f3e8ff
+background:#fff1e6;
 }
 
 .i1{border-top:4px solid #2563eb!important}
 .i2{border-top:4px solid #16a34a!important}
-.i3{border-top:4px solid #f59e0b!important}
-.i4{border-top:4px solid #ef4444!important}
+.i3{border-top:4px solid #0891b2!important}
+.i4{border-top:4px solid #dc2626!important}
 .i5{border-top:4px solid #7c3aed!important}
-.i6{border-top:4px solid #ec4899!important}
-
-/* CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
-}
-
-.card{
-background:#fff;
-border-radius:19px;
-padding:18px;
-box-shadow:0 5px 20px #0000000d;
-border:1px solid #eee;
-transition:.2s
-}
-
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px #0002
-}
-
-.card h3{
-font-size:18px;
-margin-bottom:7px
-}
-
-.card p{
-font-size:13px;
-color:#667085
-}
-
-.job{border-top:4px solid #2563eb}
-.scholar{border-top:4px solid #16a34a}
-.book{border-top:4px solid #f59e0b}
-.news{border-left:5px solid #7c3aed}
-.service{border-top:4px solid #ec4899}
-.scheme{border-top:4px solid #0891b2}
-
-.info{
-margin-top:12px;
-padding:10px;
-background:#f8fafc;
-border-radius:11px;
-font-size:12px
-}
-
-.info div{margin:4px 0}
-
-.salary{
-color:#15803d;
-font-weight:bold
-}
-
-.last{
-color:#dc2626;
-font-weight:bold
-}
-
-.official{
-color:#2563eb;
-font-weight:bold
-}
-
-.tag{
-display:inline-block;
-margin-top:10px;
-padding:5px 9px;
-background:#f3e8ff;
-color:#6d28d9;
-border-radius:8px;
-font-size:10px;
-font-weight:bold
-}
-
-.btn{
-display:inline-block;
-text-decoration:none;
-border:0;
-margin-top:12px;
-padding:9px 13px;
-border-radius:9px;
-color:#fff;
-font-size:12px;
-font-weight:bold;
-cursor:pointer
-}
-
-.apply{background:#6d28d9}
-.green{background:#16a34a}
-.orange{background:#ea580c}
-.pink{background:#e1306c}
-.blue{background:#2563eb}
-.cyan{background:#0891b2}
+.i6{border-top:4px solid #e1306c!important}
 
 /* DATE */
 
@@ -338,30 +308,122 @@ cursor:pointer
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:15px;
-background:linear-gradient(135deg,#fff,#f3e8ff);
-border:1px solid #e9d5ff;
+background:linear-gradient(135deg,#fff,#fff1e6);
+border:1px solid #fed7aa;
 border-radius:22px;
-padding:20px
+padding:20px;
 }
 
 .date{
 font-size:27px;
 font-weight:900;
-color:#6d28d9
+color:#7f1d1d;
 }
 
 .time{
 font-size:27px;
-font-weight:900
+font-weight:900;
+color:#b45309;
 }
 
-/* FILTER */
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.card{
+background:#fff;
+border-radius:19px;
+padding:18px;
+box-shadow:0 5px 20px #0000000d;
+border:1px solid #f1e5dd;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px #0002;
+}
+
+.card h3{
+font-size:18px;
+margin-bottom:7px;
+}
+
+.card p{
+font-size:13px;
+color:#667085;
+line-height:1.5;
+}
+
+.job{border-top:4px solid #2563eb}
+.scholar{border-top:4px solid #16a34a}
+.scheme{border-top:4px solid #0891b2}
+.book{border-top:4px solid #f59e0b}
+.news{border-left:5px solid #7c3aed}
+.service{border-top:4px solid #e1306c}
+
+.info{
+margin-top:12px;
+padding:10px;
+background:#fffaf5;
+border-radius:11px;
+font-size:12px;
+}
+
+.info div{margin:5px 0}
+
+.salary{
+color:#15803d;
+font-weight:bold;
+}
+
+.last{
+color:#dc2626;
+font-weight:bold;
+}
+
+.tag{
+display:inline-block;
+margin-top:10px;
+padding:5px 9px;
+background:#fef3c7;
+color:#92400e;
+border-radius:8px;
+font-size:10px;
+font-weight:bold;
+}
+
+.btn{
+display:inline-block;
+text-decoration:none;
+border:0;
+margin-top:10px;
+padding:9px 13px;
+border-radius:9px;
+color:#fff;
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.apply{background:#7f1d1d}
+.green{background:#16a34a}
+.orange{background:#ea580c}
+.pink{background:#e1306c}
+.blue{background:#2563eb}
+.cyan{background:#0891b2}
+
+/* FILTERS */
 
 .filters{
 display:flex;
 gap:8px;
 overflow-x:auto;
-padding:5px 0 13px
+padding:5px 0 13px;
 }
 
 .filters button{
@@ -370,9 +432,9 @@ border:0;
 padding:9px 13px;
 border-radius:20px;
 background:#fff;
-color:#6d28d9;
+color:#7f1d1d;
 box-shadow:0 3px 10px #0001;
-cursor:pointer
+cursor:pointer;
 }
 
 /* AI */
@@ -382,7 +444,7 @@ background:linear-gradient(135deg,#fff7ed,#fef3c7);
 border-radius:23px;
 padding:25px;
 text-align:center;
-box-shadow:0 5px 20px #0001
+box-shadow:0 5px 20px #0001;
 }
 
 .ai h2{color:#92400e}
@@ -391,7 +453,7 @@ box-shadow:0 5px 20px #0001
 max-width:700px;
 margin:15px auto 0;
 display:flex;
-gap:8px
+gap:8px;
 }
 
 .ai-input input{
@@ -399,95 +461,45 @@ flex:1;
 border:1px solid #ddd;
 padding:13px;
 border-radius:11px;
-outline:0
+outline:0;
 }
 
 .ai-input button{
 border:0;
-background:#f59e0b;
-color:white;
+background:#b45309;
+color:#fff;
 padding:0 18px;
 border-radius:11px;
-font-weight:bold
+font-weight:bold;
 }
 
 .answer{
 margin-top:15px;
 font-weight:bold;
 color:#78350f;
-line-height:1.7
-}
-
-/* NEWS PAPER */
-
-.paper{
-border-top:4px solid #dc2626
-}
-
-.paper a{
-margin-right:5px
-}
-
-/* COMMENT */
-
-.comment{border-top:4px solid #ef4444}
-
-.form{
-margin-top:15px;
-display:flex;
-flex-direction:column;
-gap:9px
-}
-
-.form input,.form textarea{
-border:1px solid #ddd;
-padding:12px;
-border-radius:10px;
-font-family:inherit;
-outline:0
-}
-
-.form textarea{
-height:100px;
-resize:vertical
-}
-
-.form button{
-border:0;
-background:#ef4444;
-color:white;
-padding:12px;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer
-}
-
-.note{
-font-size:11px;
-color:#777;
-margin-top:8px
+line-height:1.7;
 }
 
 /* FOOTER */
 
 footer{
 margin-top:40px;
-background:#111827;
+background:#3b0a0a;
 color:#fff;
 text-align:center;
-padding:28px 15px
+padding:28px 15px;
 }
 
 footer p{
 font-size:12px;
 opacity:.8;
-margin-top:5px
+margin-top:5px;
 }
 
 .design{
 color:#facc15!important;
 font-weight:bold;
-opacity:1!important
+opacity:1!important;
 }
 
 /* BOTTOM AD */
@@ -498,43 +510,43 @@ bottom:0;
 left:0;
 right:0;
 z-index:3000;
-background:linear-gradient(135deg,#111827,#4c1d95,#7c3aed);
-color:white;
+background:linear-gradient(135deg,#3b0a0a,#7f1d1d,#991b1b);
+color:#fff;
 box-shadow:0 -5px 25px #0004;
-border-top:2px solid #a78bfa
+border-top:2px solid #f59e0b;
 }
 
 .ad-inner{
 max-width:1200px;
 margin:auto;
 padding:9px 45px 9px 12px;
-position:relative
+position:relative;
 }
 
 .ad-title{
 font-size:16px;
 font-weight:900;
-color:#facc15
+color:#facc15;
 }
 
 .ad-text{
 font-size:11px;
-margin-top:2px
+margin-top:2px;
 }
 
 .ad-services{
 font-size:10px;
-color:#e9d5ff;
-margin-top:3px
+color:#ffe4e6;
+margin-top:3px;
 }
 
 .ad-price{
 display:inline-block;
 background:#facc15;
-color:#111827;
+color:#3b0a0a;
 padding:3px 7px;
 border-radius:6px;
-margin-left:4px
+margin-left:4px;
 }
 
 .ad-dm{
@@ -546,7 +558,7 @@ text-decoration:none;
 padding:5px 10px;
 border-radius:7px;
 font-size:10px;
-font-weight:bold
+font-weight:bold;
 }
 
 .ad-close{
@@ -560,7 +572,7 @@ border-radius:50%;
 background:#ffffff22;
 color:#fff;
 font-size:18px;
-cursor:pointer
+cursor:pointer;
 }
 
 /* MOBILE */
@@ -568,22 +580,71 @@ cursor:pointer
 @media(max-width:850px){
 .quick{grid-template-columns:repeat(3,1fr)}
 .cards{grid-template-columns:1fr 1fr}
-.hero h1{font-size:31px}
+.hero h1{font-size:36px}
 }
 
 @media(max-width:550px){
-.nav-right button:first-child{display:none}
+
+body{padding-bottom:95px}
+
 .logo{font-size:20px}
-.hero{min-height:390px}
-.hero h1{font-size:27px}
-.side-pattern{width:35px}
+
+.nav-btn{padding:7px 9px;font-size:11px}
+
+.hero{
+min-height:420px;
+margin-top:10px;
+}
+
+.hero-content{
+padding:30px 17px;
+border-width:3px;
+}
+
+.hero h1{font-size:29px}
+
+.hero p{font-size:12px}
+
+.hero-icon{font-size:38px}
+
+.hero-content:before,
+.hero-content:after{
+font-size:13px;
+letter-spacing:4px;
+}
+
+.side-pattern{
+width:25px;
+opacity:.65;
+}
+
 .cards{grid-template-columns:1fr}
-.quick{grid-template-columns:repeat(3,1fr)}
-.quick button{font-size:11px;padding:13px 5px}
-.datebox{grid-template-columns:1fr;text-align:center}
-.ai-input{flex-direction:column}
-.ai-input button{padding:12px}
-.ad-title{font-size:14px}
+
+.quick{
+grid-template-columns:repeat(3,1fr);
+}
+
+.quick button{
+font-size:11px;
+padding:13px 5px;
+}
+
+.datebox{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.date,.time{font-size:23px}
+
+.ai-input{
+flex-direction:column;
+}
+
+.ai-input button{
+padding:12px;
+}
+
+.ad-title{font-size:13px}
 .ad-services{font-size:9px}
 }
 </style>
@@ -593,26 +654,34 @@ cursor:pointer
 
 <header>
 <div class="nav">
+<div class="logo">🚀 Job<span>Mitra</span> AI</div>
 
-<div class="logo">
-🚀 Job<span>Mitra</span> AI
-</div>
-
-<div class="nav-right">
+<div>
 <button class="nav-btn" onclick="goTop()">🏠 Home</button>
-<button class="nav-btn" onclick="directDM()">📩 Direct DM</button>
+<button class="nav-btn" onclick="directDM()">📩 DM</button>
 </div>
-
 </div>
 </header>
 
 <main class="container">
 
-<!-- HERO -->
+<!-- MAIN HERO -->
 
 <section class="hero">
 
-<div class="hero-bg" id="heroBg"></div>
+<div class="hero-slide active"
+style="background-image:url('https://images.unsplash.com/photo-1600100397608-f0106c4a3f18?auto=format&fit=crop&w=1600&q=85')"></div>
+
+<div class="hero-slide"
+style="background-image:url('https://images.unsplash.com/photo-1625736301004-5b9d1c4f9a38?auto=format&fit=crop&w=1600&q=85')"></div>
+
+<div class="hero-slide"
+style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85')"></div>
+
+<div class="hero-slide"
+style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1600&q=85')"></div>
+
+<div class="hero-overlay"></div>
 
 <div class="side-pattern left"></div>
 <div class="side-pattern right"></div>
@@ -627,8 +696,8 @@ cursor:pointer
 Jobs • Scholarships • Government Schemes • News • Books • AI Preparation
 </p>
 
-<div class="culture-label" id="cultureLabel">
-🇮🇳 Odisha Culture
+<div class="culture-label" id="cultureName">
+🛕 Jagannath Temple, Puri
 </div>
 
 <div class="search">
@@ -642,12 +711,19 @@ placeholder="Job / Scholarship / Scheme / Exam search କରନ୍ତୁ..."
 
 </div>
 
+<div class="hero-dots">
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
 </div>
 
 </section>
 
 
-<!-- QUICK -->
+<!-- QUICK ACCESS -->
 
 <section class="section">
 
@@ -658,36 +734,24 @@ placeholder="Job / Scholarship / Scheme / Exam search କରନ୍ତୁ..."
 
 <div class="quick">
 
-<button class="i1" onclick="scrollToSection('jobs')">
-💼<br>Jobs
-</button>
+<button class="i1" onclick="scrollToSection('jobs')">💼<br>Jobs</button>
 
-<button class="i2" onclick="scrollToSection('scholarships')">
-🎓<br>Scholarship
-</button>
+<button class="i2" onclick="scrollToSection('scholarships')">🎓<br>Scholarship</button>
 
-<button class="i3" onclick="scrollToSection('schemes')">
-🏛️<br>Schemes
-</button>
+<button class="i3" onclick="scrollToSection('schemes')">🏛️<br>Schemes</button>
 
-<button class="i4" onclick="scrollToSection('current')">
-📰<br>Current Affairs
-</button>
+<button class="i4" onclick="scrollToSection('current')">📰<br>Current Affairs</button>
 
-<button class="i5" onclick="scrollToSection('ai')">
-🤖<br>AI Prep
-</button>
+<button class="i5" onclick="scrollToSection('ai')">🤖<br>AI Prep</button>
 
-<button class="i6" onclick="scrollToSection('services')">
-💻<br>Online Work
-</button>
+<button class="i6" onclick="scrollToSection('services')">💻<br>Online Work</button>
 
 </div>
 
 </section>
 
 
-<!-- TODAY -->
+<!-- DATE -->
 
 <section class="section">
 
@@ -723,7 +787,6 @@ placeholder="Job / Scholarship / Scheme / Exam search କରନ୍ତୁ..."
 </div>
 
 <div class="filters">
-
 <button onclick="filterJobs('all')">All</button>
 <button onclick="filterJobs('odisha')">Odisha</button>
 <button onclick="filterJobs('central')">Central</button>
@@ -734,13 +797,11 @@ placeholder="Job / Scholarship / Scheme / Exam search କରନ୍ତୁ..."
 <button onclick="filterJobs('railway')">Railway</button>
 <button onclick="filterJobs('police')">Police</button>
 <button onclick="filterJobs('ssc')">SSC</button>
-
 </div>
 
 <div class="cards" id="jobsList">
 
 <div class="card job" data-category="central bank graduate">
-
 <h3>🏦 SBI Recruitment</h3>
 <p>SBI current recruitment information.</p>
 
@@ -748,7 +809,7 @@ placeholder="Job / Scholarship / Scheme / Exam search କରନ୍ତୁ..."
 <div>🎓 Qualification: Post-wise</div>
 <div>👤 Age: Notification-wise</div>
 <div class="salary">💰 Salary: Official notification ଅନୁସାରେ</div>
-<div class="last">📅 Last Date: Official notification check କରନ୍ତୁ</div>
+<div class="last">📅 Last Date: Official notice check କରନ୍ତୁ</div>
 </div>
 
 <span class="tag">BANKING</span><br>
@@ -761,15 +822,13 @@ target="_blank">📄 Official Notification</a>
 href="https://sbi.bank.in/web/careers/current-openings"
 target="_blank">🟢 Apply</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 
 <div class="card job" data-category="odisha graduate">
-
 <h3>🏛️ OSSC Recruitment</h3>
 <p>Odisha Staff Selection Commission updates.</p>
 
@@ -782,23 +841,21 @@ target="_blank">🟢 Apply</a>
 
 <span class="tag">ODISHA</span><br>
 
-<a class="btn apply" href="https://www.ossc.gov.in/" target="_blank">
-📄 Official Notification
-</a>
+<a class="btn apply"
+href="https://www.ossc.gov.in/"
+target="_blank">📄 Official Notification</a>
 
-<a class="btn blue" href="https://www.ossc.gov.in/" target="_blank">
-🟢 Apply / Portal
-</a>
+<a class="btn blue"
+href="https://www.ossc.gov.in/"
+target="_blank">🟢 Apply Portal</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 
 <div class="card job" data-category="odisha +2 police">
-
 <h3>👮 Odisha Police</h3>
 <p>Odisha Police recruitment information.</p>
 
@@ -811,23 +868,21 @@ target="_blank">🟢 Apply</a>
 
 <span class="tag">POLICE</span><br>
 
-<a class="btn apply" href="https://odishapolice.gov.in/" target="_blank">
-📄 Official Notification
-</a>
+<a class="btn apply"
+href="https://odishapolice.gov.in/"
+target="_blank">📄 Official Notification</a>
 
-<a class="btn blue" href="https://odishapolice.gov.in/" target="_blank">
-🟢 Official Portal
-</a>
+<a class="btn blue"
+href="https://odishapolice.gov.in/"
+target="_blank">🟢 Official Portal</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 
 <div class="card job" data-category="central railway 10th +2 graduate">
-
 <h3>🚆 Railway / RRB Jobs</h3>
 <p>RRB recruitment information.</p>
 
@@ -840,23 +895,21 @@ target="_blank">🟢 Apply</a>
 
 <span class="tag">RAILWAY</span><br>
 
-<a class="btn apply" href="https://www.rrbapply.gov.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn apply"
+href="https://www.rrbapply.gov.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://www.rrbapply.gov.in/" target="_blank">
-🟢 Apply
-</a>
+<a class="btn blue"
+href="https://www.rrbapply.gov.in/"
+target="_blank">🟢 Apply</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 
 <div class="card job" data-category="central ssc graduate +2">
-
 <h3>📝 SSC Jobs</h3>
 <p>SSC CGL, CHSL and other recruitment updates.</p>
 
@@ -869,18 +922,17 @@ target="_blank">🟢 Apply</a>
 
 <span class="tag">SSC</span><br>
 
-<a class="btn apply" href="https://ssc.gov.in/" target="_blank">
-📄 Official Notification
-</a>
+<a class="btn apply"
+href="https://ssc.gov.in/"
+target="_blank">📄 Official Notification</a>
 
-<a class="btn blue" href="https://ssc.gov.in/" target="_blank">
-🟢 SSC Portal
-</a>
+<a class="btn blue"
+href="https://ssc.gov.in/"
+target="_blank">🟢 SSC Portal</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 </div>
@@ -900,7 +952,6 @@ target="_blank">🟢 Apply</a>
 <div class="cards">
 
 <div class="card scholar">
-
 <h3>🏛️ Odisha State Scholarship</h3>
 <p>Odisha State Scholarship Portal.</p>
 
@@ -909,46 +960,41 @@ target="_blank">🟢 Apply</a>
 <div>📄 Eligibility: Scheme-wise</div>
 </div>
 
-<a class="btn green" href="https://scholarship.odisha.gov.in/" target="_blank">
-🟢 Direct Apply
-</a>
+<a class="btn green"
+href="https://scholarship.odisha.gov.in/"
+target="_blank">🟢 Direct Apply</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Apply Help
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Apply Help</a>
 </div>
 
 
 <div class="card scholar">
-
 <h3>🇮🇳 National Scholarship Portal</h3>
 <p>Central Government scholarship schemes.</p>
 
-<a class="btn green" href="https://scholarships.gov.in/" target="_blank">
-🟢 Direct Apply
-</a>
+<a class="btn green"
+href="https://scholarships.gov.in/"
+target="_blank">🟢 Direct Apply</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Apply Help
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Apply Help</a>
 </div>
 
 
 <div class="card scholar">
-
 <h3>🏦 SBI Scholarship</h3>
 <p>SBI Foundation scholarship opportunities.</p>
 
-<a class="btn green" href="https://www.sbi.co.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn green"
+href="https://www.sbi.co.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">📩 Direct DM</a>
 </div>
 
 </div>
@@ -956,12 +1002,12 @@ target="_blank">🟢 Apply</a>
 </section>
 
 
-<!-- GOVERNMENT SCHEMES -->
+<!-- SCHEMES -->
 
 <section class="section" id="schemes">
 
 <div class="title">
-<h2>🏛️ Odisha Government Schemes & Services</h2>
+<h2>🏛️ Odisha Government Schemes</h2>
 <span class="badge">OFFICIAL</span>
 </div>
 
@@ -969,15 +1015,15 @@ target="_blank">🟢 Apply</a>
 
 <div class="card scheme">
 <h3>📋 Odisha Government Schemes</h3>
-<p>Odisha Government ର ବିଭିନ୍ନ schemes ଓ citizen services ଦେଖନ୍ତୁ।</p>
+<p>Odisha Government ର ବିଭିନ୍ନ schemes ଓ citizen services.</p>
 
-<a class="btn cyan" href="https://odisha.gov.in/en/schemes" target="_blank">
-📄 Official Details
-</a>
+<a class="btn cyan"
+href="https://odisha.gov.in/en/schemes"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://odisha.gov.in/en/schemes" target="_blank">
-🟢 View Schemes
-</a>
+<a class="btn blue"
+href="https://odisha.gov.in/en/schemes"
+target="_blank">🟢 View Schemes</a>
 </div>
 
 
@@ -985,41 +1031,41 @@ target="_blank">🟢 Apply</a>
 <h3>🪪 e-District Services</h3>
 <p>Caste, Income, Residence, SEBC ଭଳି certificate services.</p>
 
-<a class="btn cyan" href="https://edistrict.odisha.gov.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn cyan"
+href="https://edistrict.odisha.gov.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://edistrict.odisha.gov.in/" target="_blank">
-🟢 Direct Apply
-</a>
+<a class="btn blue"
+href="https://edistrict.odisha.gov.in/"
+target="_blank">🟢 Direct Apply</a>
 </div>
 
 
 <div class="card scheme">
-<h3>🌾 Farmer / Agriculture Services</h3>
+<h3>🌾 Agriculture Services</h3>
 <p>Farmer schemes ଓ agriculture-related services.</p>
 
-<a class="btn cyan" href="https://agri.odisha.gov.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn cyan"
+href="https://agri.odisha.gov.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://sugam.odisha.gov.in/" target="_blank">
-🟢 Apply / Portal
-</a>
+<a class="btn blue"
+href="https://sugam.odisha.gov.in/"
+target="_blank">🟢 Apply / Portal</a>
 </div>
 
 
 <div class="card scheme">
 <h3>👴 Social Security / Pension</h3>
-<p>Social security ଓ pension-related government services.</p>
+<p>Social security ଓ pension-related services.</p>
 
-<a class="btn cyan" href="https://ssepd.odisha.gov.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn cyan"
+href="https://ssepd.odisha.gov.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://ssepd.odisha.gov.in/" target="_blank">
-🟢 Official Portal
-</a>
+<a class="btn blue"
+href="https://ssepd.odisha.gov.in/"
+target="_blank">🟢 Official Portal</a>
 </div>
 
 
@@ -1027,23 +1073,23 @@ target="_blank">🟢 Apply</a>
 <h3>🏛️ Odisha One</h3>
 <p>Citizen services ପାଇଁ Odisha Government platform.</p>
 
-<a class="btn cyan" href="https://odishaone.gov.in/" target="_blank">
-📄 Official Details
-</a>
+<a class="btn cyan"
+href="https://odishaone.gov.in/"
+target="_blank">📄 Official Details</a>
 
-<a class="btn blue" href="https://odishaone.gov.in/" target="_blank">
-🟢 Open Portal
-</a>
+<a class="btn blue"
+href="https://odishaone.gov.in/"
+target="_blank">🟢 Open Portal</a>
 </div>
 
 
 <div class="card scheme">
 <h3>📜 Certificates</h3>
-<p>Caste • Income • Residence • SEBC ଇତ୍ୟାଦି services.</p>
+<p>Caste • Income • Residence • SEBC ଇତ୍ୟାଦି.</p>
 
-<a class="btn blue" href="https://edistrict.odisha.gov.in/" target="_blank">
-🟢 Direct Apply
-</a>
+<a class="btn blue"
+href="https://edistrict.odisha.gov.in/"
+target="_blank">🟢 Direct Apply</a>
 </div>
 
 </div>
@@ -1085,56 +1131,56 @@ target="_blank">🟢 Apply</a>
 </section>
 
 
-<!-- NEWSPAPER -->
+<!-- NEWSPAPERS -->
 
 <section class="section" id="newspaper">
 
 <div class="title">
-<h2>🗞️ Today's Newspaper</h2>
+<h2>🗞️ Newspapers</h2>
 <span class="badge live">NEW</span>
 </div>
 
 <div class="cards">
 
-<div class="card paper">
+<div class="card news">
 <h3>🟠 Odia Newspaper</h3>
-<p>Odia news ପାଇଁ official newspaper websites.</p>
+<p>Odia news ପାଇଁ newspaper websites.</p>
 
-<a class="btn orange" href="https://www.sambad.in/" target="_blank">
-📰 Sambad
-</a>
+<a class="btn orange"
+href="https://www.sambad.in/"
+target="_blank">📰 Sambad</a>
 
-<a class="btn orange" href="https://www.prameya.com/" target="_blank">
-📰 Prameya
-</a>
+<a class="btn orange"
+href="https://www.prameya.com/"
+target="_blank">📰 Prameya</a>
 </div>
 
 
-<div class="card paper">
+<div class="card news">
 <h3>🔴 Hindi Newspaper</h3>
 <p>Hindi news ଓ national updates.</p>
 
-<a class="btn orange" href="https://www.jagran.com/" target="_blank">
-📰 Jagran
-</a>
+<a class="btn orange"
+href="https://www.jagran.com/"
+target="_blank">📰 Jagran</a>
 
-<a class="btn orange" href="https://www.livehindustan.com/" target="_blank">
-📰 Live Hindustan
-</a>
+<a class="btn orange"
+href="https://www.livehindustan.com/"
+target="_blank">📰 Live Hindustan</a>
 </div>
 
 
-<div class="card paper">
+<div class="card news">
 <h3>🔵 English Newspaper</h3>
 <p>English national and current affairs news.</p>
 
-<a class="btn blue" href="https://www.thehindu.com/" target="_blank">
-📰 The Hindu
-</a>
+<a class="btn blue"
+href="https://www.thehindu.com/"
+target="_blank">📰 The Hindu</a>
 
-<a class="btn blue" href="https://indianexpress.com/" target="_blank">
-📰 Indian Express
-</a>
+<a class="btn blue"
+href="https://indianexpress.com/"
+target="_blank">📰 Indian Express</a>
 </div>
 
 </div>
@@ -1152,7 +1198,6 @@ target="_blank">🟢 Apply</a>
 </div>
 
 <div class="filters">
-
 <button onclick="filterBooks('all')">All</button>
 <button onclick="filterBooks('ossc')">OSSC</button>
 <button onclick="filterBooks('osssc')">OSSSC</button>
@@ -1160,7 +1205,6 @@ target="_blank">🟢 Apply</a>
 <button onclick="filterBooks('ssc')">SSC</button>
 <button onclick="filterBooks('railway')">Railway</button>
 <button onclick="filterBooks('bank')">Bank</button>
-
 </div>
 
 <div class="cards" id="bookList">
@@ -1169,9 +1213,9 @@ target="_blank">🟢 Apply</a>
 <h3>📕 OSSC Preparation</h3>
 <p>Odisha GK • Odia • English • Maths • Reasoning • PYQ</p>
 <span class="tag">OSSC</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=OSSC+exam+preparation+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=OSSC+exam+preparation+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 
@@ -1179,9 +1223,9 @@ target="_blank">🟢 Apply</a>
 <h3>📗 OSSSC RI / ARI / Amin</h3>
 <p>Odisha GK • Maths • Reasoning • Odia • English • PYQ</p>
 <span class="tag">OSSSC</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=OSSSC+RI+ARI+Amin+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=OSSSC+RI+ARI+Amin+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 
@@ -1189,9 +1233,9 @@ target="_blank">🟢 Apply</a>
 <h3>👮 Odisha Police Book</h3>
 <p>GK • Maths • Reasoning • Odia • English • Current Affairs</p>
 <span class="tag">POLICE</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=Odisha+Police+exam+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=Odisha+Police+exam+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 
@@ -1199,9 +1243,9 @@ target="_blank">🟢 Apply</a>
 <h3>📘 SSC CGL / CHSL</h3>
 <p>Maths • Reasoning • English • GK • Current Affairs • PYQ</p>
 <span class="tag">SSC</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=SSC+CGL+CHSL+exam+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=SSC+CGL+CHSL+exam+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 
@@ -1209,9 +1253,9 @@ target="_blank">🟢 Apply</a>
 <h3>🚆 Railway / RRB</h3>
 <p>Maths • Reasoning • Science • GK • Current Affairs • PYQ</p>
 <span class="tag">RAILWAY</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=RRB+Railway+exam+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=RRB+Railway+exam+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 
@@ -1219,9 +1263,9 @@ target="_blank">🟢 Apply</a>
 <h3>🏦 SBI / IBPS Bank</h3>
 <p>Quant • Reasoning • English • Banking Awareness • Current Affairs</p>
 <span class="tag">BANKING</span><br>
-<a class="btn orange" href="https://www.amazon.in/s?k=SBI+IBPS+bank+exam+book" target="_blank">
-🛒 Buy Book
-</a>
+<a class="btn orange"
+href="https://www.amazon.in/s?k=SBI+IBPS+bank+exam+book"
+target="_blank">🛒 Buy Book</a>
 </div>
 
 </div>
@@ -1241,7 +1285,8 @@ target="_blank">🟢 Apply</a>
 
 <div class="ai-input">
 
-<input id="bookInput" placeholder="Example: OSSC RI">
+<input id="bookInput"
+placeholder="Example: OSSC RI">
 
 <button onclick="findBook()">Find Book</button>
 
@@ -1265,35 +1310,37 @@ target="_blank">🟢 Apply</a>
 
 <div class="card service">
 
-<h3>🌐 ଆମ ପାଖରେ Online କାମ ପାଇଁ Assistance</h3>
+<h3>🌐 Online Application Assistance</h3>
 
 <p style="margin-top:8px">
 ନିଜେ online application କରିପାରୁନାହାନ୍ତି?
-ଆମେ form filling ଓ application process ବୁଝାଇବାରେ assistance କରିବୁ।
+Form filling ଓ application process ବୁଝାଇବାରେ assistance ମିଳିବ।
 </p>
 
 <div class="info">
 
-<div>🪪 <b>ଆଧାର</b> — available service ଅନୁସାରେ assistance</div>
-<div>🍚 <b>ରାସନ୍ କାର୍ଡ</b> — Apply / Update assistance</div>
-<div>👶 <b>ଜନ୍ମ ପ୍ରମାଣପତ୍ର</b></div>
-<div>⚰️ <b>ମୃତ୍ୟୁ ପ୍ରମାଣପତ୍ର</b></div>
-<div>📜 <b>ଜାତି ପ୍ରମାଣପତ୍ର</b></div>
-<div>💰 <b>ଆୟ ପ୍ରମାଣପତ୍ର</b></div>
-<div>🏠 <b>ବାସସ୍ଥାନ ପ୍ରମାଣପତ୍ର</b></div>
-<div>📑 <b>SEBC / OBC</b></div>
-<div>🌾 <b>ଭୁଲେଖ / Land Record</b> assistance</div>
-<div>🎓 <b>Scholarship Apply</b></div>
-<div>💼 <b>Government Job Apply</b></div>
-<div>📝 <b>Other Online Forms</b></div>
+<div>🪪 Aadhaar — available service ଅନୁସାରେ</div>
+<div>🍚 Ration Card — Apply / Update assistance</div>
+<div>👶 Birth Certificate</div>
+<div>⚰️ Death Certificate</div>
+<div>📜 Caste Certificate</div>
+<div>💰 Income Certificate</div>
+<div>🏠 Residence Certificate</div>
+<div>📑 SEBC / OBC</div>
+<div>🌾 Land Record assistance</div>
+<div>🎓 Scholarship Apply</div>
+<div>💼 Government Job Apply</div>
+<div>📝 Other Online Forms</div>
 
 </div>
 
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct Instagram DM — Assistance ₹99
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
+📩 Direct DM — Assistance ₹99
 </a>
 
-<p class="note">
+<p style="font-size:11px;color:#777;margin-top:8px">
 ⚠️ ଏହା ସରକାରୀ କାର୍ଯ୍ୟାଳୟ ନୁହେଁ। Official government fee ଥିଲେ ତାହା ଅଲଗା।
 </p>
 
@@ -1302,43 +1349,7 @@ target="_blank">🟢 Apply</a>
 </section>
 
 
-<!-- COMMENT -->
-
-<section class="section">
-
-<div class="card comment">
-
-<h2>💬 କୌଣସି Problem ଅଛି?</h2>
-
-<p style="margin-top:7px">
-Job, Scholarship, Scheme, Apply, Admit Card କିମ୍ବା website ବିଷୟରେ
-କୌଣସି problem ହେଲେ ଏଠାରେ ଲେଖନ୍ତୁ।
-</p>
-
-<div class="form">
-
-<input id="commentName" placeholder="👤 ଆପଣଙ୍କ ନାମ">
-
-<input id="commentMobile" placeholder="📱 Mobile Number (Optional)">
-
-<textarea id="commentText" placeholder="💬 ଆପଣଙ୍କ Problem ଲେଖନ୍ତୁ..."></textarea>
-
-<button onclick="sendComment()">
-📤 Problem Send
-</button>
-
-</div>
-
-<a class="btn pink" href="https://ig.me/m/naik_babulu" target="_blank">
-📩 Direct DM
-</a>
-
-</div>
-
-</section>
-
-
-<!-- AI -->
+<!-- AI PREPARATION -->
 
 <section class="section" id="ai">
 
@@ -1352,13 +1363,37 @@ Job, Scholarship, Scheme, Apply, Admit Card କିମ୍ବା website ବିଷ
 
 <div class="ai-input">
 
-<input id="aiInput" placeholder="Example: OSSC CGL preparation">
+<input id="aiInput"
+placeholder="Example: OSSC CGL preparation">
 
 <button onclick="askAI()">Ask AI</button>
 
 </div>
 
 <div class="answer" id="aiAnswer"></div>
+
+</div>
+
+</section>
+
+
+<!-- PROBLEM / DM -->
+
+<section class="section">
+
+<div class="card service">
+
+<h2>💬 Problem / Help</h2>
+
+<p style="margin-top:7px">
+Job, Scholarship, Scheme, Apply କିମ୍ବା website problem ହେଲେ Direct DM କରନ୍ତୁ।
+</p>
+
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
+📩 Direct Instagram DM
+</a>
 
 </div>
 
@@ -1404,12 +1439,13 @@ Online form filling / application process assistance ପାଇଁ Direct DM କ�
 </div>
 
 <div class="ad-services">
-🪪 Aadhaar • 🍚 Ration • 👶 Birth • ⚰️ Death • 📜 Caste •
-💰 Income • 🏠 Residence • 📑 SEBC/OBC •
-🌾 Land Record • 🎓 Scholarship • 💼 Job Apply
+🪪 Aadhaar • 🍚 Ration • 👶 Birth • 📜 Caste •
+💰 Income • 🏠 Residence • 🎓 Scholarship • 💼 Job Apply
 </div>
 
-<a class="ad-dm" href="https://ig.me/m/naik_babulu" target="_blank">
+<a class="ad-dm"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
 📩 Direct DM
 </a>
 
@@ -1420,56 +1456,51 @@ Online form filling / application process assistance ପାଇଁ Direct DM କ�
 
 <script>
 
-/* =========================
-   ODISHA HERO SLIDER
-========================= */
+/* HERO SLIDER */
 
-const cultureImages = [
-{
-name:"🛕 Jagannath Temple, Puri",
-image:"https://images.unsplash.com/photo-1600100397608-f0106c4a3f18?auto=format&fit=crop&w=1600&q=85"
-},
-{
-name:"☀️ Konark Sun Temple",
-image:"https://images.unsplash.com/photo-1625736301004-5b9d1c4f9a38?auto=format&fit=crop&w=1600&q=85"
-},
-{
-name:"🌿 Similipal",
-image:"https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85"
-},
-{
-name:"🥁 Odisha Adivasi / Tribal Culture",
-image:"https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1600&q=85"
-}
+const slides=document.querySelectorAll(".hero-slide");
+const dots=document.querySelectorAll(".dot");
+const cultureName=document.getElementById("cultureName");
+
+const cultureNames=[
+"🛕 Jagannath Temple, Puri",
+"☀️ Konark Sun Temple",
+"🌿 Similipal",
+"🥁 Odisha Adivasi / Tribal Culture"
 ];
 
-let cultureIndex=0;
+let currentSlide=0;
 
-function changeCulture(){
+function showSlide(index){
 
-const bg=document.getElementById("heroBg");
-const label=document.getElementById("cultureLabel");
+slides.forEach((slide,i)=>{
+slide.classList.toggle("active",i===index);
+});
 
-bg.style.backgroundImage=
-"url('"+cultureImages[cultureIndex].image+"')";
+dots.forEach((dot,i)=>{
+dot.classList.toggle("active",i===index);
+});
 
-label.innerText=cultureImages[cultureIndex].name;
-
-cultureIndex++;
-
-if(cultureIndex>=cultureImages.length){
-cultureIndex=0;
-}
+cultureName.innerText=cultureNames[index];
 
 }
 
-changeCulture();
-setInterval(changeCulture,5000);
+showSlide(0);
+
+setInterval(()=>{
+
+currentSlide++;
+
+if(currentSlide>=slides.length){
+currentSlide=0;
+}
+
+showSlide(currentSlide);
+
+},5000);
 
 
-/* =========================
-   DATE + CLOCK
-========================= */
+/* DATE + CLOCK */
 
 function updateClock(){
 
@@ -1496,22 +1527,7 @@ updateClock();
 setInterval(updateClock,1000);
 
 
-/* =========================
-   SCROLL
-========================= */
-
-function scrollToSection(id){
-
-const element=document.getElementById(id);
-
-if(element){
-element.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-}
-
-}
+/* NAVIGATION */
 
 function goTop(){
 
@@ -1522,10 +1538,21 @@ behavior:"smooth"
 
 }
 
+function scrollToSection(id){
 
-/* =========================
-   DIRECT INSTAGRAM DM
-========================= */
+const el=document.getElementById(id);
+
+if(el){
+el.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+}
+
+}
+
+
+/* DIRECT DM */
 
 function directDM(){
 
@@ -1534,9 +1561,7 @@ window.location.href="https://ig.me/m/naik_babulu";
 }
 
 
-/* =========================
-   JOB FILTER
-========================= */
+/* JOB FILTER */
 
 function filterJobs(category){
 
@@ -1555,9 +1580,7 @@ categories.includes(category)
 }
 
 
-/* =========================
-   BOOK FILTER
-========================= */
+/* BOOK FILTER */
 
 function filterBooks(category){
 
@@ -1576,9 +1599,7 @@ book===category
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 function searchSite(){
 
@@ -1631,9 +1652,7 @@ alert(
 }
 
 
-/* =========================
-   BOOK FINDER
-========================= */
+/* BOOK FINDER */
 
 function findBook(){
 
@@ -1686,14 +1705,11 @@ return;
 
 }
 
-if(
-q.includes("railway")||
-q.includes("rrb")
-){
+if(q.includes("railway")||q.includes("rrb")){
 
 ans.innerHTML=
 "🎯 <b>Railway:</b><br>"+
-"Maths + Reasoning + General Science + GK + Current Affairs + PYQ";
+"Maths + Reasoning + Science + GK + Current Affairs + PYQ";
 
 return;
 
@@ -1730,9 +1746,7 @@ ans.innerHTML=
 }
 
 
-/* =========================
-   AI PREPARATION
-========================= */
+/* AI PREPARATION */
 
 function askAI(){
 
@@ -1797,44 +1811,11 @@ ans.innerHTML=
 }
 
 
-/* =========================
-   COMMENT
-========================= */
-
-function sendComment(){
-
-const name=
-document.getElementById("commentName").value.trim();
-
-const text=
-document.getElementById("commentText").value.trim();
-
-if(!name||!text){
-
-alert("⚠️ ନାମ ଏବଂ Problem ଲେଖନ୍ତୁ।");
-return;
-
-}
-
-const message=
-"Hello JobMitra AI,%0A%0A"+
-"Name: "+encodeURIComponent(name)+
-"%0AProblem: "+encodeURIComponent(text);
-
-window.location.href=
-"https://ig.me/m/naik_babulu?text="+message;
-
-}
-
-
-/* =========================
-   CLOSE AD
-========================= */
+/* CLOSE AD */
 
 function closeAd(){
 
 document.getElementById("bottomAd").style.display="none";
-
 document.body.style.paddingBottom="20px";
 
 }
