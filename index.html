@@ -2,139 +2,428 @@
 <html lang="or">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobMitra AI | Odisha Students & Public Services</title>
-<meta name="description" content="JobMitra AI - Study, Jobs, Scholarships, Government Services, Career and Life Knowledge">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JobMitra AI — Study, Jobs & Life Services</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,"Noto Sans Oriya",sans-serif;
+background:#f4f5f8;
+color:#202020;
+padding-bottom:70px;
+}
+a{text-decoration:none;color:inherit}
+
+header{
+background:linear-gradient(135deg,#6d0000,#c91515);
+color:white;
+padding:15px;
+position:sticky;
+top:0;
+z-index:99;
+box-shadow:0 4px 18px #0003;
+}
+.header{
+max-width:1100px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logo{font-size:24px;font-weight:900}
+.tag{font-size:11px;opacity:.9}
+
+.menu{
+background:#ffffff22;
+border:1px solid #ffffff44;
+color:white;
+font-size:22px;
+padding:7px 12px;
+border-radius:10px;
+}
+
+nav{
+display:none;
+max-width:1100px;
+margin:10px auto 0;
+background:white;
+border-radius:12px;
+overflow:hidden;
+}
+nav.open{display:block}
+nav button{
+width:100%;
+padding:13px;
+border:0;
+border-bottom:1px solid #eee;
+background:white;
+text-align:left;
+font-weight:bold;
+}
+
+.hero{
+max-width:1100px;
+margin:auto;
+padding:18px;
+}
+.heroBox{
+background:linear-gradient(135deg,#790000,#d91e1e);
+color:white;
+border-radius:25px;
+padding:30px 22px;
+box-shadow:0 10px 30px #0002;
+}
+.heroBox h1{
+font-size:31px;
+line-height:1.25;
+margin:8px 0;
+}
+.heroBox p{font-size:14px}
+.date{
+display:inline-block;
+margin-top:14px;
+background:#fff2;
+border:1px solid #ffffff55;
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+}
+
+.search{
+max-width:1100px;
+margin:auto;
+padding:0 18px 18px;
+}
+.search input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:15px;
+font-size:15px;
+outline:none;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 18px 30px;
+}
+
+.title{
+margin:25px 0 14px;
+font-size:22px;
+color:#750000;
+}
+
+.homeGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.bigCard{
+min-height:175px;
+padding:22px;
+border-radius:21px;
+color:white;
+cursor:pointer;
+box-shadow:0 8px 22px #0002;
+}
+.bigCard:nth-child(1){background:linear-gradient(135deg,#a40000,#ef3434)}
+.bigCard:nth-child(2){background:linear-gradient(135deg,#064b78,#238bc5)}
+.bigCard:nth-child(3){background:linear-gradient(135deg,#11613d,#27a36a)}
+.bigCard:nth-child(4){background:linear-gradient(135deg,#74328b,#d22a62)}
+.bigCard:nth-child(5){background:linear-gradient(135deg,#755000,#d09519)}
+.bigCard:nth-child(6){background:linear-gradient(135deg,#263d86,#5b72df)}
+
+.icon{font-size:42px}
+.bigCard h2{margin:4px 0;font-size:20px}
+.bigCard p{font-size:13px}
+.open{
+display:inline-block;
+margin-top:10px;
+padding:5px 11px;
+border:1px solid #ffffff55;
+border-radius:20px;
+background:#fff2;
+font-size:12px;
+}
+
+.ad{
+margin:20px 0;
+background:white;
+border:2px dashed #ccc;
+border-radius:18px;
+padding:22px;
+text-align:center;
+color:#777;
+}
+
+.service{
+background:linear-gradient(135deg,#fff0e8,#fff);
+border:1px solid #ffc3a5;
+border-radius:20px;
+padding:22px;
+margin-bottom:25px;
+}
+.service h2{color:#8e2800}
+.dm{
+display:inline-block;
+background:#c51616;
+color:white;
+padding:11px 18px;
+border-radius:11px;
+font-weight:bold;
+margin-top:12px;
+}
+
+.page{
+display:none;
+}
+.page.show{
+display:block;
+}
+
+.back{
+background:#222;
+color:white;
+border:0;
+padding:9px 14px;
+border-radius:10px;
+margin:18px 0;
+cursor:pointer;
+}
+
+.pageHead{
+border-radius:20px;
+padding:25px 20px;
+color:white;
+margin-bottom:18px;
+}
+.studentsHead{background:linear-gradient(135deg,#8c0000,#e52d2d)}
+.jobsHead{background:linear-gradient(135deg,#063b65,#2285c4)}
+.careerHead{background:linear-gradient(135deg,#683080,#ce2d60)}
+.lifeHead{background:linear-gradient(135deg,#14603e,#27a16b)}
+.serviceHead{background:linear-gradient(135deg,#795000,#d09620)}
+.knowledgeHead{background:linear-gradient(135deg,#263d82,#5c72df)}
+
+.pageHead h1{font-size:27px}
+.pageHead p{margin-top:5px;font-size:13px}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:13px;
+}
+
+.card{
+background:white;
+border-radius:17px;
+padding:18px;
+border:1px solid #e8e8e8;
+box-shadow:0 5px 18px #0000000c;
+transition:.2s;
+}
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 9px 22px #0002;
+}
+.card h3{
+font-size:17px;
+color:#790000;
+margin-bottom:5px;
+}
+.card p{
+font-size:13px;
+color:#666;
+}
+.card .go{
+display:inline-block;
+margin-top:11px;
+background:#f5e5e5;
+color:#850000;
+padding:6px 10px;
+border-radius:8px;
+font-size:12px;
+font-weight:bold;
+}
+
+.info{
+margin-top:18px;
+padding:16px;
+background:#fff8df;
+border-left:5px solid #d29b00;
+border-radius:10px;
+font-size:13px;
+}
+
+footer{
+background:#181818;
+color:white;
+text-align:center;
+padding:30px 15px;
+margin-top:20px;
+}
+footer p{font-size:12px;color:#aaa;margin-top:5px}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:64px;
+background:white;
+border-top:1px solid #ddd;
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:100;
+}
+.bottom button{
+background:none;
+border:0;
+font-size:19px;
+color:#333;
+}
+.bottom small{
+display:block;
+font-size:9px;
+}
+
+@media(min-width:700px){
+.menu{display:none}
+nav{
+display:flex;
+gap:4px;
+padding:5px;
+}
+nav button{
+width:auto;
+border:0;
+border-radius:8px;
+}
+.bottom{display:none}
+body{padding-bottom:0}
+}
+
+@media(max-width:700px){
+.cards{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:430px){
+.cards{grid-template-columns:1fr}
+.homeGrid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="topbar">
-    <div>
-      <div class="logo">🔴 JobMitra AI</div>
-      <div class="tagline">ପଢ଼ା • ଚାକିରି • ସେବା • ଜୀବନ • ଜ୍ଞାନ</div>
-    </div>
+<div class="header">
+<div>
+<div class="logo">🔴 JobMitra AI</div>
+<div class="tag">Study • Jobs • Services • Career • Life</div>
+</div>
+<button class="menu" onclick="menu()">☰</button>
+</div>
 
-    <button class="menuBtn" onclick="toggleMenu()">☰</button>
-  </div>
-
-  <nav id="menu">
-    <button onclick="showHome()">🏠 Home</button>
-    <button onclick="showSection('students')">🎓 Students</button>
-    <button onclick="showSection('jobs')">💼 Jobs</button>
-    <button onclick="showSection('services')">🇮🇳 Services</button>
-    <button onclick="showSection('career')">🚀 Career</button>
-    <button onclick="showSection('life')">🌱 Life</button>
-    <button onclick="showSection('knowledge')">📚 Knowledge</button>
-  </nav>
+<nav id="nav">
+<button onclick="home()">🏠 Home</button>
+<button onclick="page('students')">🎓 Students</button>
+<button onclick="page('jobs')">💼 Jobs</button>
+<button onclick="page('career')">🚀 Career</button>
+<button onclick="page('life')">🌱 Life</button>
+<button onclick="page('services')">🇮🇳 Services</button>
+<button onclick="page('knowledge')">📚 Knowledge</button>
+</nav>
 </header>
 
 
+<!-- HOME -->
+
 <main id="home">
 
-<section class="hero">
-  <div class="heroText">
-    <span class="badge">WELCOME TO JOBMITRA AI</span>
-    <h1>ଜୀବନରେ ଦରକାରୀ ଜ୍ଞାନ,<br>ଗୋଟିଏ ଜାଗାରେ।</h1>
-    <p>
-      Students ପାଇଁ Study ଠାରୁ Job, Career,
-      Government Service ଓ Life Knowledge ପର୍ଯ୍ୟନ୍ତ।
-    </p>
+<div class="hero">
+<div class="heroBox">
+<div>WELCOME TO JOBMITRA AI</div>
+<h1>ଜୀବନରେ ଦରକାରୀ<br>ସବୁ ଜ୍ଞାନ ଗୋଟିଏ ଜାଗାରେ</h1>
+<p>Students ଠାରୁ Career, Government Services ଓ Life Knowledge ପର୍ଯ୍ୟନ୍ତ।</p>
+<div class="date" id="date"></div>
+</div>
+</div>
 
-    <div class="today" id="today"></div>
-  </div>
-</section>
+<div class="search">
+<input id="search" placeholder="🔍 Search — Job, Scholarship, Aadhaar, Exam..." oninput="search()">
+</div>
 
+<div class="container">
 
-<section class="searchBox">
-  <input
-    id="search"
-    type="search"
-    placeholder="🔍 Job, Scholarship, Aadhaar, Exam, Life Skill..."
-    oninput="searchSite()">
-</section>
+<h2 class="title">🎓 ପ୍ରଥମେ Students ପାଇଁ</h2>
 
+<div class="homeGrid">
 
-<section class="wrap">
+<div class="bigCard" onclick="page('students')">
+<div class="icon">🎓</div>
+<h2>Students</h2>
+<p>Study, Exam, Scholarship, Admission, Result ଓ student resources</p>
+<span class="open">ଖୋଲନ୍ତୁ →</span>
+</div>
 
-<h2 class="sectionTitle">⭐ ଆଗରେ Students ପାଇଁ</h2>
+<div class="bigCard" onclick="page('jobs')">
+<div class="icon">💼</div>
+<h2>All Jobs</h2>
+<p>Odisha + All India Government Jobs ଓ official apply links</p>
+<span class="open">Job ଦେଖନ୍ତୁ →</span>
+</div>
 
-<div class="grid">
+<div class="bigCard" onclick="page('career')">
+<div class="icon">🚀</div>
+<h2>Career & Skills</h2>
+<p>Computer, AI, Photography, Fashion, Business ଓ Digital Skills</p>
+<span class="open">ଜାଣନ୍ତୁ →</span>
+</div>
 
-  <article class="feature" onclick="showSection('students')">
-    <div class="emoji">🎓</div>
-    <h3>Study & Student</h3>
-    <p>Notes, Exam, Scholarship, Admission, Result ଓ Student Resources</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
+<div class="bigCard" onclick="page('life')">
+<div class="icon">🌱</div>
+<h2>Life Knowledge</h2>
+<p>ଅଧିକାର, Money, Cyber Safety, Yoga ଓ Life Skills</p>
+<span class="open">ଜାଣନ୍ତୁ →</span>
+</div>
 
-  <article class="feature" onclick="showSection('jobs')">
-    <div class="emoji">💼</div>
-    <h3>All Jobs</h3>
-    <p>Odisha ଓ All India Government Job ପାଇଁ Official Recruitment Links</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
+<div class="bigCard" onclick="page('services')">
+<div class="icon">🇮🇳</div>
+<h2>All Government Services</h2>
+<p>Aadhaar, PAN, Voter, Certificate, Land, Ration ଓ more</p>
+<span class="open">Services →</span>
+</div>
 
-  <article class="feature" onclick="showSection('services')">
-    <div class="emoji">🇮🇳</div>
-    <h3>All Services</h3>
-    <p>Aadhaar, PAN, Voter, Certificate, Land, Ration ଓ Government Services</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
-
-  <article class="feature" onclick="showSection('career')">
-    <div class="emoji">🚀</div>
-    <h3>Career & Skills</h3>
-    <p>Computer, AI, Photography, Fashion, Business, YouTube ଓ Skills</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
-
-  <article class="feature" onclick="showSection('life')">
-    <div class="emoji">🌱</div>
-    <h3>Life Knowledge</h3>
-    <p>ଅଧିକାର, Money, Safety, Cyber Safety, Yoga ଓ Life Skills</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
-
-  <article class="feature" onclick="showSection('knowledge')">
-    <div class="emoji">📚</div>
-    <h3>Knowledge & Culture</h3>
-    <p>History, Constitution, Odisha, India, Gita ଓ Stories</p>
-    <span>ଖୋଲନ୍ତୁ →</span>
-  </article>
+<div class="bigCard" onclick="page('knowledge')">
+<div class="icon">📚</div>
+<h2>Knowledge & Culture</h2>
+<p>Constitution, History, Odisha, Gita Niti ଓ Stories</p>
+<span class="open">ଜାଣନ୍ତୁ →</span>
+</div>
 
 </div>
 
-
-<div class="advertisement">
-  <small>ADVERTISEMENT</small>
-  <p>ଆପଣଙ୍କ Advertisement ଏଠାରେ ଦେଖାଯିବ</p>
+<div class="ad">
+ADVERTISEMENT<br>
+ଏଠାରେ ଆପଣଙ୍କ Advertisement ଦେଖାଯିବ
 </div>
 
-
-<div class="serviceAd">
-  <div class="serviceIcon">📢</div>
-  <h2>₹99 Apply Assistance</h2>
-  <p>
-    Job Form, Scholarship, Admission କିମ୍ବା Online Form
-    apply କରିବାରେ ସହାୟତା ଦରକାର?
-  </p>
-
-  <strong>Service ₹99 ରୁ</strong>
-
-  <a
-    class="dmButton"
-    href="https://ig.me/m/naik_babulu"
-    target="_blank">
-    📩 Instagram Direct DM
-  </a>
-
-  <small>Instagram: @naik_babulu</small>
+<div class="service">
+<h2>📢 JobMitra AI ₹99 Service</h2>
+<p>Job Form, Scholarship, Admission କିମ୍ବା Online Form apply କରିବାରେ assistance ଦରକାର?</p>
+<strong>Service ₹99 ରୁ</strong><br>
+<a class="dm" href="https://ig.me/m/naik_babulu" target="_blank">
+📩 Instagram Direct DM
+</a>
+<p>Instagram: @naik_babulu</p>
 </div>
 
-</section>
+</div>
 </main>
 
 
@@ -142,74 +431,82 @@
 <!-- STUDENTS -->
 
 <section class="page" id="students">
+<div class="container">
 
-<div class="wrap">
+<button class="back" onclick="home()">← Home</button>
 
-<button class="back" onclick="showHome()">← Home</button>
-
-<h1>🎓 Study & Student</h1>
-<p class="intro">
-ଛାତ୍ରଛାତ୍ରୀଙ୍କ ପାଇଁ ପଢ଼ା ଠାରୁ scholarship ପର୍ଯ୍ୟନ୍ତ।
-</p>
+<div class="pageHead studentsHead">
+<h1>🎓 Students Zone</h1>
+<p>ଛାତ୍ରଛାତ୍ରୀଙ୍କ ପାଇଁ ପ୍ରଥମେ ଦରକାରୀ ସବୁକିଛି।</p>
+</div>
 
 <div class="cards">
 
-<a class="item" href="https://scholarships.gov.in/" target="_blank">
+<a class="card" href="https://scholarships.gov.in/" target="_blank">
 <h3>💰 Scholarship</h3>
 <p>National Scholarship Portal</p>
+<span class="go">Official Portal →</span>
 </a>
 
-<a class="item" href="https://www.nta.ac.in/" target="_blank">
+<a class="card" href="https://www.nta.ac.in/" target="_blank">
 <h3>📝 Entrance Exam</h3>
-<p>NTA official information</p>
+<p>NTA exams & official information</p>
+<span class="go">Open →</span>
 </a>
 
-<a class="item" href="https://results.gov.in/" target="_blank">
+<a class="card" href="https://results.gov.in/" target="_blank">
 <h3>📊 Result</h3>
 <p>Government examination results</p>
+<span class="go">Check Result →</span>
 </a>
 
-<a class="item" href="https://www.digilocker.gov.in/" target="_blank">
+<a class="card" href="https://www.digilocker.gov.in/" target="_blank">
 <h3>📄 DigiLocker</h3>
-<p>Digital documents & certificates</p>
+<p>Marksheet, certificate ଓ digital documents</p>
+<span class="go">Open →</span>
 </a>
 
-<a class="item" href="https://swayam.gov.in/" target="_blank">
+<a class="card" href="https://swayam.gov.in/" target="_blank">
 <h3>💻 Online Learning</h3>
-<p>SWAYAM courses & learning</p>
+<p>Free learning resources & courses</p>
+<span class="go">Learn →</span>
 </a>
 
-<a class="item" href="https://www.ugc.gov.in/" target="_blank">
+<a class="card" href="https://www.ugc.gov.in/" target="_blank">
 <h3>🏫 Higher Education</h3>
-<p>UGC information</p>
+<p>UGC official information</p>
+<span class="go">Open →</span>
 </a>
 
-<a class="item" href="https://www.ncs.gov.in/" target="_blank">
+<a class="card" href="https://www.ncs.gov.in/" target="_blank">
 <h3>🧭 Career Guidance</h3>
 <p>National Career Service</p>
+<span class="go">Open →</span>
 </a>
 
-<div class="item">
+<div class="card">
 <h3>📚 Notes</h3>
-<p>
-Class-wise notes, important questions,
-revision material ଓ exam preparation ଏଠାରେ ରଖିହେବ।
-</p>
+<p>Subject-wise notes, important questions ଓ revision material।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🧪 Mock Test</h3>
-<p>
-Practice test, MCQ, previous questions
-ଓ self assessment।
-</p>
+<p>MCQ, practice test ଓ self assessment।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>📰 Current Affairs</h3>
-<p>
-India, Odisha, World, Sports ଓ important daily events।
-</p>
+<p>India, Odisha, World, Sports ଓ daily important events।</p>
+</div>
+
+<div class="card">
+<h3>🎯 Exam Preparation</h3>
+<p>CT, B.Ed, OSSC, OPSC, SSC ଓ competitive exam preparation।</p>
+</div>
+
+<div class="card">
+<h3>🎓 Admission</h3>
+<p>College admission, entrance information ଓ important portals।</p>
 </div>
 
 </div>
@@ -222,199 +519,93 @@ India, Odisha, World, Sports ଓ important daily events।
 <!-- JOBS -->
 
 <section class="page" id="jobs">
+<div class="container">
 
-<div class="wrap">
+<button class="back" onclick="home()">← Home</button>
 
-<button class="back" onclick="showHome()">← Home</button>
-
+<div class="pageHead jobsHead">
 <h1>💼 All Jobs</h1>
-
-<p class="intro">
-Job apply କରିବା ପୂର୍ବରୁ official notification ନିଶ୍ଚିତ check କରନ୍ତୁ।
-</p>
+<p>Odisha ଓ Indiaର Government Job ପାଇଁ official recruitment links।</p>
+</div>
 
 <div class="cards">
 
-<a class="item" href="https://www.upsc.gov.in/" target="_blank">
+<a class="card" href="https://www.upsc.gov.in/" target="_blank">
 <h3>🏛️ UPSC</h3>
-<p>Union Public Service Commission</p>
+<p>Civil Services ଓ Central Government recruitment</p>
+<span class="go">Official Website →</span>
 </a>
 
-<a class="item" href="https://ssc.gov.in/" target="_blank">
+<a class="card" href="https://ssc.gov.in/" target="_blank">
 <h3>📋 SSC</h3>
-<p>Staff Selection Commission</p>
+<p>SSC CGL, CHSL, MTS ଓ other exams</p>
+<span class="go">Official Website →</span>
 </a>
 
-<a class="item" href="https://www.rrbapply.gov.in/" target="_blank">
+<a class="card" href="https://www.rrbapply.gov.in/" target="_blank">
 <h3>🚆 Railway</h3>
 <p>Railway recruitment application portal</p>
+<span class="go">Apply Portal →</span>
 </a>
 
-<a class="item" href="https://www.ibps.in/" target="_blank">
+<a class="card" href="https://www.ibps.in/" target="_blank">
 <h3>🏦 Banking</h3>
-<p>IBPS recruitment</p>
+<p>IBPS banking recruitment</p>
+<span class="go">Official Website →</span>
 </a>
 
-<a class="item" href="https://opsc.gov.in/" target="_blank">
+<a class="card" href="https://opsc.gov.in/" target="_blank">
 <h3>🏛️ OPSC</h3>
 <p>Odisha Public Service Commission</p>
+<span class="go">Official Website →</span>
 </a>
 
-<a class="item" href="https://ossc.gov.in/" target="_blank">
+<a class="card" href="https://ossc.gov.in/" target="_blank">
 <h3>📝 OSSC</h3>
 <p>Odisha Staff Selection Commission</p>
+<span class="go">Official Website →</span>
 </a>
 
-<a class="item" href="https://www.ncs.gov.in/" target="_blank">
-<h3>💼 National Career Service</h3>
-<p>Government career & job portal</p>
+<a class="card" href="https://www.ncs.gov.in/" target="_blank">
+<h3>💼 NCS</h3>
+<p>National Career Service</p>
+<span class="go">Find Jobs →</span>
 </a>
 
-<a class="item" href="https://odisha.gov.in/" target="_blank">
+<a class="card" href="https://odisha.gov.in/" target="_blank">
 <h3>🏛️ Odisha Government</h3>
-<p>Official Odisha Government Portal</p>
+<p>Odisha government departments & recruitment information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://www.joinindianarmy.nic.in/" target="_blank">
+<h3>🪖 Indian Army</h3>
+<p>Army recruitment & official information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://agnipathvayu.cdac.in/" target="_blank">
+<h3>✈️ Indian Air Force</h3>
+<p>Air Force recruitment information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://indiancoastguard.gov.in/" target="_blank">
+<h3>⚓ Coast Guard</h3>
+<p>Indian Coast Guard recruitment information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://www.drdo.gov.in/" target="_blank">
+<h3>🔬 DRDO</h3>
+<p>Defence research opportunities</p>
+<span class="go">Open →</span>
 </a>
 
 </div>
 
-<div class="warning">
-⚠️ Job notificationର Last Date, Qualification, Age ଓ Fee
-official notificationରୁ check କରି apply କରନ୍ତୁ।
-</div>
-
-</div>
-</section>
-
-
-
-<!-- SERVICES -->
-
-<section class="page" id="services">
-
-<div class="wrap">
-
-<button class="back" onclick="showHome()">← Home</button>
-
-<h1>🇮🇳 All Government Services</h1>
-
-<p class="intro">
-ଦରକାରୀ Government Services ପାଇଁ official portal।
-</p>
-
-<div class="cards">
-
-<a class="item" href="https://myaadhaar.uidai.gov.in/" target="_blank">
-<h3>🪪 Aadhaar</h3>
-<p>My Aadhaar official portal</p>
-</a>
-
-<a class="item" href="https://www.incometax.gov.in/" target="_blank">
-<h3>💳 PAN / Income Tax</h3>
-<p>PAN & Income Tax services</p>
-</a>
-
-<a class="item" href="https://voters.eci.gov.in/" target="_blank">
-<h3>🗳️ Voter</h3>
-<p>Voter registration & services</p>
-</a>
-
-<a class="item" href="https://www.digilocker.gov.in/" target="_blank">
-<h3>📄 DigiLocker</h3>
-<p>Digital documents</p>
-</a>
-
-<a class="item" href="https://edistrict.odisha.gov.in/" target="_blank">
-<h3>📜 Odisha e-District</h3>
-<p>Income, Residence, Caste, OBC, SEBC, SC, ST & other certificates</p>
-</a>
-
-<a class="item" href="https://www.pdsodisha.gov.in/" target="_blank">
-<h3>🍚 Ration Card</h3>
-<p>Odisha PDS services</p>
-</a>
-
-<a class="item" href="https://bhulekh.ori.nic.in/" target="_blank">
-<h3>🌾 Bhulekh Odisha</h3>
-<p>Land records</p>
-</a>
-
-<a class="item" href="https://odishalandrevenue.nic.in/" target="_blank">
-<h3>🏠 Land & Revenue</h3>
-<p>Revenue information & services</p>
-</a>
-
-<a class="item" href="https://labour.odisha.gov.in/" target="_blank">
-<h3>👷 Labour</h3>
-<p>Labour Department services</p>
-</a>
-
-<a class="item" href="https://health.odisha.gov.in/" target="_blank">
-<h3>🏥 Health</h3>
-<p>Odisha Health Department</p>
-</a>
-
-<a class="item" href="https://www.passportindia.gov.in/" target="_blank">
-<h3>🛂 Passport</h3>
-<p>Passport Seva</p>
-</a>
-
-<a class="item" href="https://parivahan.gov.in/" target="_blank">
-<h3>🚗 Transport</h3>
-<p>Driving Licence & vehicle services</p>
-</a>
-
-<a class="item" href="https://pgportal.gov.in/" target="_blank">
-<h3>📢 Grievance</h3>
-<p>Government public grievance portal</p>
-</a>
-
-<a class="item" href="https://odisha.gov.in/" target="_blank">
-<h3>🏛️ Odisha Government</h3>
-<p>Departments & government services</p>
-</a>
-
-</div>
-
-
-<h2 class="sectionTitle">🏛️ କେଉଁ Officer କଣ କରନ୍ତି?</h2>
-
-<div class="cards">
-
-<div class="item">
-<h3>🏘️ Sarpanch</h3>
-<p>
-Gram Panchayat ସ୍ତରରେ local development,
-ବିଭିନ୍ନ Panchayat କାମ ଓ ଲୋକଙ୍କ ସମସ୍ୟା
-ଉପରେ କାମ କରନ୍ତି।
-</p>
-</div>
-
-<div class="item">
-<h3>🏢 BDO</h3>
-<p>
-Block level development programmes,
-Panchayat ଓ development schemesର implementation
-ସହିତ ଜଡ଼ିତ କାମ କରନ୍ତି।
-</p>
-</div>
-
-<div class="item">
-<h3>🏛️ Collector / DM</h3>
-<p>
-District administration, coordination,
-revenue, disaster management ଓ ବିଭିନ୍ନ
-district-level government functions।
-</p>
-</div>
-
-<div class="item">
-<h3>⚖️ Tahasildar</h3>
-<p>
-Revenue, land records, certificates ଓ
-ତହସିଲ ସମ୍ବନ୍ଧୀୟ କାମରେ ଭୂମିକା ରହେ।
-</p>
-</div>
-
+<div class="info">
+⚠️ Job apply କରିବା ପୂର୍ବରୁ Qualification, Age Limit, Fee, Exam Date ଓ Last Date official notificationରୁ ନିଶ୍ଚିତ check କରନ୍ତୁ।
 </div>
 
 </div>
@@ -425,84 +616,66 @@ Revenue, land records, certificates ଓ
 <!-- CAREER -->
 
 <section class="page" id="career">
+<div class="container">
 
-<div class="wrap">
+<button class="back" onclick="home()">← Home</button>
 
-<button class="back" onclick="showHome()">← Home</button>
-
-<h1>🚀 Career & Skill</h1>
+<div class="pageHead careerHead">
+<h1>🚀 Career & Skills</h1>
+<p>Degree ସହିତ extra skill ମଧ୍ୟ ଶିଖନ୍ତୁ।</p>
+</div>
 
 <div class="cards">
 
-<div class="item">
+<div class="card">
 <h3>💻 Computer</h3>
-<p>
-Basic Computer → MS Office → Internet →
-Advanced Computer Skills.
-</p>
+<p>Basic Computer → MS Office → Advanced Computer → Internet Skills.</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🤖 Artificial Intelligence</h3>
-<p>
-AI tools, prompt writing, productivity,
-digital skills ଓ responsible AI use।
-</p>
+<p>AI tools, prompting, productivity ଓ responsible AI use ବିଷୟରେ ଜାଣନ୍ତୁ।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>📸 Photography</h3>
-<p>
-Camera basics, mobile photography,
-composition, editing ଓ portfolio।
-</p>
+<p>Mobile photography, camera basics, composition, lighting ଓ editing।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>👗 Fashion Design</h3>
-<p>
-Fashion basics, design, colour,
-pattern ଓ portfolio development।
-</p>
+<p>Design, colour combination, pattern, styling ଓ portfolio basics।</p>
 </div>
 
-<div class="item">
-<h3>🎥 YouTube / Influencer</h3>
-<p>
-Content planning, video basics,
-thumbnail, audience ଓ creator skills।
-</p>
+<div class="card">
+<h3>🎥 YouTube</h3>
+<p>Content idea, shooting, editing, thumbnail ଓ audience building basics।</p>
 </div>
 
-<div class="item">
-<h3>💡 Business</h3>
-<p>
-Small business ideas, basic planning,
-customer service ଓ digital marketing।
-</p>
+<div class="card">
+<h3>💼 Business</h3>
+<p>Small business idea, customer service, marketing ଓ basic planning।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🗣️ Spoken English</h3>
-<p>
-Daily conversation, vocabulary,
-grammar ଓ communication practice।
-</p>
+<p>Daily conversation, vocabulary, grammar ଓ communication practice।</p>
 </div>
 
-<div class="item">
-<h3>🧑‍💼 Resume & Interview</h3>
-<p>
-Resume preparation, interview behaviour
-ଓ communication skills।
-</p>
+<div class="card">
+<h3>🧑‍💼 Resume</h3>
+<p>Good CV/Resume କିପରି କରିବେ ଓ interview ପାଇଁ prepare କରିବେ।</p>
+</div>
+
+<div class="card">
+<h3>📱 Digital Marketing</h3>
+<p>Social media, content, branding ଓ online promotion basics।</p>
 </div>
 
 </div>
 
-<div class="note">
-💡 ଏଗୁଡ଼ିକର course ଆମେ ବିକ୍ରି କରୁନାହୁଁ।
-ଆମେ useful resources ଓ guidance ଦେବୁ।
+<div class="info">
+💡 JobMitra AI ଏଠାରେ course ବିକ୍ରି କରୁନାହିଁ। ଆମେ useful guidance ଓ learning resources ଦେବୁ।
 </div>
 
 </div>
@@ -513,80 +686,203 @@ Resume preparation, interview behaviour
 <!-- LIFE -->
 
 <section class="page" id="life">
+<div class="container">
 
-<div class="wrap">
+<button class="back" onclick="home()">← Home</button>
 
-<button class="back" onclick="showHome()">← Home</button>
-
+<div class="pageHead lifeHead">
 <h1>🌱 Life Knowledge</h1>
+<p>ଜୀବନରେ ସମସ୍ତଙ୍କୁ ଜାଣିବା ଦରକାରୀ practical knowledge।</p>
+</div>
 
 <div class="cards">
 
-<div class="item">
-<h3>🧠 Life Skills</h3>
-<p>
-Decision making, communication,
-problem solving ଓ responsibility।
-</p>
-</div>
-
-<div class="item">
+<div class="card">
 <h3>⚖️ ମୋ ଅଧିକାର</h3>
-<p>
-ନିଜର basic constitutional rights,
-consumer awareness ଓ public services
-ବିଷୟରେ ଜାଣନ୍ତୁ।
-</p>
+<p>ନିଜର basic rights, public services, consumer awareness ଓ citizen responsibilities ବିଷୟରେ ଜାଣନ୍ତୁ।</p>
 </div>
 
-<div class="item">
+<div class="card">
+<h3>🧠 Life Skills</h3>
+<p>Decision making, communication, problem solving, discipline ଓ responsibility।</p>
+</div>
+
+<div class="card">
+<h3>😡 ରାଗକୁ କିପରି ନିୟନ୍ତ୍ରଣ କରିବେ?</h3>
+<p>Pause କରନ୍ତୁ, deep breathing କରନ୍ତୁ, ତୁରନ୍ତ reaction ନଦିଅନ୍ତୁ ଓ ଶାନ୍ତ ଭାବରେ କଥା କହନ୍ତୁ।</p>
+</div>
+
+<div class="card">
 <h3>💰 Money Knowledge</h3>
-<p>
-Saving, budgeting, bank account,
-UPI safety, loan ଓ EMI basics।
-</p>
+<p>Saving, budget, bank account, UPI safety, loan ଓ EMI basics।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🔐 Cyber Safety</h3>
-<p>
-OTP, PIN, password, phishing,
-fake links ଓ online fraud ବିଷୟରେ ସଚେତନ ହୁଅନ୍ତୁ।
-</p>
+<p>OTP, PIN, password, phishing, fake links ଓ online fraud ଠାରୁ ସୁରକ୍ଷିତ ରୁହନ୍ତୁ।</p>
 </div>
 
-<div class="item">
-<h3>😡 Anger Management</h3>
-<p>
-ରାଗ ଆସିଲେ ତୁରନ୍ତ reaction ନଦେଇ
-pause, breathing ଓ calm communication practice କରନ୍ତୁ।
-</p>
-</div>
-
-<div class="item">
+<div class="card">
 <h3>🧘 Yoga</h3>
-<p>
-Yoga, breathing, flexibility ଓ
-general wellness ବିଷୟରେ basic guidance।
-</p>
+<p>Yoga, breathing, stretching ଓ general wellness ବିଷୟରେ basic guidance।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🛡️ Personal Safety</h3>
-<p>
-Emergency awareness, safe travel,
-important contacts ଓ digital safety।
-</p>
+<p>Emergency awareness, safe travel ଓ important contacts ବିଷୟରେ ଜାଣନ୍ତୁ।</p>
 </div>
 
-<div class="item">
-<h3>🤝 Social Responsibility</h3>
-<p>
-ସମାଜ, ପରିବେଶ ଓ ଅନ୍ୟମାନଙ୍କ ପ୍ରତି
-ନିଜ ଦାୟିତ୍ୱ ବିଷୟରେ ଜାଣନ୍ତୁ।
-</p>
+<div class="card">
+<h3>🤝 Social Awareness</h3>
+<p>ସମାଜ, ପରିବେଶ, public property ଓ ଅନ୍ୟମାନଙ୍କ ପ୍ରତି ଦାୟିତ୍ୱ।</p>
 </div>
 
+</div>
+
+</div>
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section class="page" id="services">
+<div class="container">
+
+<button class="back" onclick="home()">← Home</button>
+
+<div class="pageHead serviceHead">
+<h1>🇮🇳 All Government Services</h1>
+<p>ଦରକାରୀ Government Portal ଗୋଟିଏ ଜାଗାରେ।</p>
+</div>
+
+<div class="cards">
+
+<a class="card" href="https://myaadhaar.uidai.gov.in/" target="_blank">
+<h3>🪪 Aadhaar</h3>
+<p>Aadhaar update, download ଓ related services</p>
+<span class="go">Official Portal →</span>
+</a>
+
+<a class="card" href="https://www.incometax.gov.in/" target="_blank">
+<h3>💳 PAN / Income Tax</h3>
+<p>PAN & Income Tax services</p>
+<span class="go">Official Portal →</span>
+</a>
+
+<a class="card" href="https://voters.eci.gov.in/" target="_blank">
+<h3>🗳️ Voter</h3>
+<p>Voter registration, correction ଓ voter services</p>
+<span class="go">Official Portal →</span>
+</a>
+
+<a class="card" href="https://www.digilocker.gov.in/" target="_blank">
+<h3>📄 DigiLocker</h3>
+<p>Digital certificate, marksheet ଓ documents</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://edistrict.odisha.gov.in/" target="_blank">
+<h3>📜 Odisha e-District</h3>
+<p>Certificate ଓ citizen services</p>
+<span class="go">Official Portal →</span>
+</a>
+
+<a class="card" href="https://www.pdsodisha.gov.in/" target="_blank">
+<h3>🍚 Ration / PDS</h3>
+<p>Odisha food & public distribution services</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://bhulekh.ori.nic.in/" target="_blank">
+<h3>🌾 Bhulekh Odisha</h3>
+<p>Land record information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://odishalandrevenue.nic.in/" target="_blank">
+<h3>🏠 Land & Revenue</h3>
+<p>Revenue department information</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://labour.odisha.gov.in/" target="_blank">
+<h3>👷 Labour</h3>
+<p>Labour department services</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://health.odisha.gov.in/" target="_blank">
+<h3>🏥 Health</h3>
+<p>Odisha Health Department</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://parivahan.gov.in/" target="_blank">
+<h3>🚗 Driving Licence / Vehicle</h3>
+<p>Transport related online services</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://www.passportindia.gov.in/" target="_blank">
+<h3>🛂 Passport</h3>
+<p>Passport Seva</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://pgportal.gov.in/" target="_blank">
+<h3>📢 Public Grievance</h3>
+<p>Government complaint / grievance portal</p>
+<span class="go">Open →</span>
+</a>
+
+<a class="card" href="https://odisha.gov.in/" target="_blank">
+<h3>🏛️ Odisha Government</h3>
+<p>Departments & citizen information</p>
+<span class="go">Open →</span>
+</a>
+
+</div>
+
+
+<h2 class="title">🏘️ କେଉଁ Officer କଣ କରନ୍ତି?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏘️ Sarpanch</h3>
+<p>Gram Panchayat level local development ଓ Panchayat activitiesରେ ଭୂମିକା ରହେ।</p>
+</div>
+
+<div class="card">
+<h3>🏢 BDO</h3>
+<p>Block-level development programmes ଓ rural development administration ସହିତ ଜଡ଼ିତ କାମ।</p>
+</div>
+
+<div class="card">
+<h3>🏛️ Collector / DM</h3>
+<p>District administration, coordination, revenue ଓ disaster management ଭଳି district-level functions।</p>
+</div>
+
+<div class="card">
+<h3>⚖️ Tahasildar</h3>
+<p>Revenue administration, land records ଓ tahasil-level revenue matters।</p>
+</div>
+
+<div class="card">
+<h3>👮 Police</h3>
+<p>Law & order, crime reporting, investigation ଓ public safety।</p>
+</div>
+
+<div class="card">
+<h3>🏥 Medical Officer</h3>
+<p>Government health facilityର medical services ଓ health administrationରେ ଭୂମିକା।</p>
+</div>
+
+</div>
+
+<div class="info">
+📢 କୌଣସି ସମସ୍ୟା ହେଲେ ପ୍ରଥମେ ସମ୍ପର୍କିତ departmentର official grievance/service portal ବ୍ୟବହାର କରନ୍ତୁ।
 </div>
 
 </div>
@@ -597,86 +893,60 @@ important contacts ଓ digital safety।
 <!-- KNOWLEDGE -->
 
 <section class="page" id="knowledge">
+<div class="container">
 
-<div class="wrap">
+<button class="back" onclick="home()">← Home</button>
 
-<button class="back" onclick="showHome()">← Home</button>
-
+<div class="pageHead knowledgeHead">
 <h1>📚 Knowledge & Culture</h1>
+<p>ଜୀବନ ଓ ସମାଜ ବିଷୟରେ ଅଧିକ ଜାଣନ୍ତୁ।</p>
+</div>
 
 <div class="cards">
 
-<div class="item">
+<div class="card">
 <h3>📜 Odisha History</h3>
-<p>
-Kalinga, Utkal, Odishaର historical events
-ଓ important personalities।
-</p>
+<p>Kalinga, Utkal, important personalities ଓ Odisha history।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🇮🇳 Indian History</h3>
-<p>
-Ancient, Medieval ଓ Modern Indiaର
-important historical events।
-</p>
+<p>Ancient, Medieval ଓ Modern Indiaର important events।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🌍 World Knowledge</h3>
-<p>
-Countries, capitals, geography,
-science ଓ important world facts।
-</p>
+<p>Countries, capitals, geography, science ଓ important facts।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>⚖️ Constitution</h3>
-<p>
-Preamble, Fundamental Rights,
-Duties, Parliament, State Government
-ଓ basic constitutional structure।
-</p>
+<p>Preamble, Fundamental Rights, Duties, Parliament ଓ basic constitutional knowledge।</p>
 </div>
 
-<div class="item">
-<h3>📖 Basic Law</h3>
-<p>
-ନିଜର legal rights, complaint process,
-consumer awareness ଓ responsible citizenship।
-</p>
-</div>
-
-<div class="item">
+<div class="card">
 <h3>🏛️ Government System</h3>
-<p>
-Panchayat → Block → District →
-State → Central Government କିପରି କାମ କରେ।
-</p>
+<p>Panchayat → Block → District → State → Central Government କିପରି କାମ କରେ।</p>
 </div>
 
-<div class="item">
-<h3>🕉️ Gita Niti</h3>
-<p>
-ଭଗବଦ୍ ଗୀତାରୁ ମିଳୁଥିବା ନୀତି,
-କର୍ତ୍ତବ୍ୟ ଓ ଜୀବନ ଶିକ୍ଷା।
-</p>
+<div class="card">
+<h3>📖 Gita Niti</h3>
+<p>ଭଗବଦ୍ ଗୀତାରୁ ମିଳୁଥିବା କର୍ତ୍ତବ୍ୟ, ନୀତି ଓ ଜୀବନ ଶିକ୍ଷା।</p>
 </div>
 
-<div class="item">
-<h3>📖 Story Section</h3>
-<p>
-ନୀତି କାହାଣୀ, inspiring stories
-ଓ life lessons।
-</p>
+<div class="card">
+<h3>📚 Story Section</h3>
+<p>ନୀତି କାହାଣୀ, inspiring stories ଓ practical life lessons।</p>
 </div>
 
-<div class="item">
+<div class="card">
 <h3>🎭 Odisha Culture</h3>
-<p>
-Chhau, festivals, traditions,
-handicrafts ଓ Odishaର ସଂସ୍କୃତି।
-</p>
+<p>Chhau, festivals, traditions, handicrafts ଓ Odisha culture।</p>
+</div>
+
+<div class="card">
+<h3>🌱 Environment</h3>
+<p>Forest, water, wildlife, pollution ଓ environment awareness।</p>
 </div>
 
 </div>
@@ -687,35 +957,115 @@ handicrafts ଓ Odishaର ସଂସ୍କୃତି।
 
 
 <footer>
-
-<h3>🔴 JobMitra AI</h3>
-
-<p>
-Study • Jobs • Career • Government Services • Life Knowledge
-</p>
-
-<p>
-📩 ₹99 Apply Assistance: @naik_babulu
-</p>
-
-<p class="copy">
-© 2026 JobMitra AI
-</p>
-
+<h2>🔴 JobMitra AI</h2>
+<p>Study • Jobs • Career • Government Services • Life Knowledge</p>
+<p>📩 ₹99 Assistance: Instagram @naik_babulu</p>
+<p>© 2026 JobMitra AI</p>
 </footer>
 
 
-<div class="bottomNav">
-
-<button onclick="showHome()">🏠<small>Home</small></button>
-<button onclick="showSection('students')">🎓<small>Study</small></button>
-<button onclick="showSection('jobs')">💼<small>Jobs</small></button>
-<button onclick="showSection('services')">🇮🇳<small>Services</small></button>
-<button onclick="toggleMenu()">☰<small>More</small></button>
-
+<div class="bottom">
+<button onclick="home()">🏠<small>Home</small></button>
+<button onclick="page('students')">🎓<small>Study</small></button>
+<button onclick="page('jobs')">💼<small>Jobs</small></button>
+<button onclick="page('services')">🇮🇳<small>Services</small></button>
+<button onclick="menu()">☰<small>More</small></button>
 </div>
 
-<script src="script.js"></script>
+
+<script>
+
+const nav=document.getElementById("nav");
+const homePage=document.getElementById("home");
+const pages=document.querySelectorAll(".page");
+
+function menu(){
+nav.classList.toggle("open");
+}
+
+function closeNav(){
+nav.classList.remove("open");
+}
+
+function home(){
+
+homePage.style.display="block";
+
+pages.forEach(function(p){
+p.classList.remove("show");
+});
+
+closeNav();
+
+window.scrollTo(0,0);
+
+}
+
+function page(id){
+
+homePage.style.display="none";
+
+pages.forEach(function(p){
+p.classList.remove("show");
+});
+
+const target=document.getElementById(id);
+
+if(target){
+target.classList.add("show");
+}
+
+closeNav();
+
+window.scrollTo(0,0);
+
+}
+
+document.getElementById("date").innerText=
+"📅 "+new Date().toLocaleDateString("or-IN",{
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+});
+
+
+function search(){
+
+const q=document.getElementById("search").value.toLowerCase().trim();
+
+if(!q){
+home();
+return;
+}
+
+let found=false;
+
+pages.forEach(function(p){
+
+if(p.innerText.toLowerCase().includes(q)){
+
+homePage.style.display="none";
+
+pages.forEach(function(x){
+x.classList.remove("show");
+});
+
+p.classList.add("show");
+
+found=true;
+
+}
+
+});
+
+if(!found){
+alert("ଏହି ବିଷୟରେ ଏବେ content ମିଳିଲା ନାହିଁ।");
+}
+
+}
+
+</script>
 
 </body>
-</html>
+  </html>
