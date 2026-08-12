@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#8b0000">
+
+<title>JobMitra AI | ଆପଣମାନଙ୍କ ସେବାରେ JobMitra ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,"Noto Sans Oriya",sans-serif;
+  background:#f5f6f8;
+  color:#222;
+  padding-bottom:75px;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input{
+  font-family:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:linear-gradient(135deg,#750000,#c90000);
+  color:white;
+  padding:13px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 18px #0004;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#ffd83d;
+}
+
+.menuBtn{
+  font-size:27px;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:
+  radial-gradient(circle at 15% 20%,#ff4d4d55,transparent 30%),
+  radial-gradient(circle at 85% 80%,#ffcf4050,transparent 28%),
+  linear-gradient(135deg,#760000,#d71920);
+  color:white;
+  text-align:center;
+  padding:40px 17px 48px;
+  border-radius:0 0 32px 32px;
+}
+
+.hero h1{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.hero h1 span{
+  color:#ffd83d;
+}
+
+.hero h2{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+.tagline{
+  margin:18px auto;
+  font-size:20px;
+  font-weight:800;
+}
+
+.search{
+  max-width:680px;
+  margin:auto;
+  background:white;
+  padding:6px;
+  border-radius:50px;
+  display:flex;
+  box-shadow:0 10px 30px #0004;
+}
+
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:13px 17px;
+  border-radius:50px;
+  font-size:14px;
+}
+
+.search button{
+  border:0;
+  background:#8b0000;
+  color:white;
+  border-radius:50px;
+  padding:0 21px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ================= DATE ================= */
+
+.dateBox{
+  max-width:600px;
+  margin:-18px auto 0;
+  position:relative;
+  z-index:5;
+  background:white;
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  box-shadow:0 7px 22px #0002;
+}
+
+.dateBox b{
+  color:#8b0000;
+}
+
+#today{
+  color:#555;
+  font-size:13px;
+  margin-top:4px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+  max-width:1180px;
+  margin:auto;
+  padding:18px 15px;
+}
+
+.title{
+  text-align:center;
+  margin:31px 0 18px;
+}
+
+.title h2{
+  color:#8b0000;
+  font-size:23px;
+}
+
+.title p{
+  color:#666;
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* ================= ZONES ================= */
+
+.zones{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.zone{
+  background:white;
+  padding:25px 17px;
+  text-align:center;
+  border-radius:23px;
+  box-shadow:0 7px 23px #00000012;
+  border-top:6px solid;
+  transition:.3s;
+}
+
+.zone:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px #0002;
+}
+
+.student{
+  border-color:#1976d2;
+}
+
+.farmer{
+  border-color:#2e9d45;
+}
+
+.public{
+  border-color:#ef8500;
+}
+
+.zoneIcon{
+  font-size:48px;
+  margin-bottom:7px;
+}
+
+.zone h3{
+  font-size:21px;
+}
+
+.zone h4{
+  font-size:14px;
+  color:#666;
+  margin:5px 0 11px;
+}
+
+.zone p{
+  color:#666;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 17px;
+  border-radius:25px;
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.blue{
+  background:#1976d2;
+}
+
+.green{
+  background:#2e9d45;
+}
+
+.orange{
+  background:#ef8500;
+}
+
+/* ================= COMMON GRID ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:18px 13px;
+  box-shadow:0 4px 15px #00000010;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.card p{
+  color:#666;
+  font-size:12px;
+  line-height:1.55;
+}
+
+.card .action{
+  display:inline-block;
+  margin-top:11px;
+  color:#9b0000;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* ================= HIGHLIGHTS ================= */
+
+.highlights{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.highlight{
+  color:white;
+  border-radius:19px;
+  padding:19px;
+  min-height:145px;
+  box-shadow:0 6px 18px #0002;
+}
+
+.highlight h3{
+  margin:8px 0;
+}
+
+.highlight p{
+  font-size:12px;
+  line-height:1.5;
+}
+
+.jobs{
+  background:linear-gradient(135deg,#65158f,#a52bb8);
+}
+
+.scholarship{
+  background:linear-gradient(135deg,#b27b00,#f4b400);
+}
+
+.admit{
+  background:linear-gradient(135deg,#0277bd,#03a9f4);
+}
+
+.govt{
+  background:linear-gradient(135deg,#ad001d,#e51c3a);
+}
+
+/* ================= NOTIFICATION ================= */
+
+.notice{
+  background:white;
+  border-radius:18px;
+  padding:14px 16px;
+  box-shadow:0 4px 15px #0001;
+  overflow:hidden;
+}
+
+.noticeLine{
+  white-space:nowrap;
+  animation:scrollText 18s linear infinite;
+  color:#8b0000;
+  font-weight:bold;
+  font-size:13px;
+}
+
+@keyframes scrollText{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
+}
+
+/* ================= QUICK SERVICES ================= */
+
+.quick{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.quickCard{
+  background:white;
+  border-radius:17px;
+  padding:15px 7px;
+  text-align:center;
+  box-shadow:0 4px 13px #0001;
+  transition:.2s;
+}
+
+.quickCard:hover{
+  transform:scale(1.03);
+}
+
+.quickCard span{
+  display:block;
+  font-size:28px;
+  margin-bottom:6px;
+}
+
+.quickCard b{
+  font-size:11px;
+}
+
+/* ================= SPECIAL ================= */
+
+.special{
+  background:white;
+  border-radius:23px;
+  padding:22px;
+  margin-top:20px;
+  box-shadow:0 5px 20px #00000010;
+}
+
+.special h3{
+  color:#820000;
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.special>p{
+  color:#555;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.roadmap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.step{
+  background:#f1f3f7;
+  border-radius:15px;
+  padding:12px 14px;
+  font-size:12px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.arrow{
+  color:#a00000;
+  font-size:19px;
+}
+
+/* ================= SPOKEN ================= */
+
+.english{
+  border-left:6px solid #6a1b9a;
+}
+
+.future{
+  border-left:6px solid #d49b00;
+}
+
+.knowledge{
+  border-left:6px solid #00897b;
+}
+
+.career{
+  border-left:6px solid #e53935;
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  margin-top:20px;
+  box-shadow:0 7px 22px #0002;
+}
+
+.slide{
+  display:none;
+  padding:28px 20px;
+  color:white;
+  min-height:170px;
+}
+
+.slide.active{
+  display:block;
+  animation:fade .5s;
+}
+
+.slide h2{
+  margin-bottom:8px;
+}
+
+.slide p{
+  font-size:13px;
+  line-height:1.6;
+}
+
+.slide1{
+  background:linear-gradient(135deg,#8b0000,#df1e2f);
+}
+
+.slide2{
+  background:linear-gradient(135deg,#126b35,#2e9d45);
+}
+
+.slide3{
+  background:linear-gradient(135deg,#174c91,#1976d2);
+}
+
+@keyframes fade{
+  from{opacity:.3}
+  to{opacity:1}
+}
+
+/* ================= PROMISE ================= */
+
+.promise{
+  margin:35px 0 20px;
+  background:linear-gradient(135deg,#760000,#c90000);
+  color:white;
+  padding:33px 18px;
+  text-align:center;
+  border-radius:25px;
+}
+
+.promise h2{
+  font-size:23px;
+  margin-bottom:11px;
+}
+
+.promise strong{
+  color:#ffd83d;
+}
+
+.promise p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#190000;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+}
+
+footer h2{
+  color:#ffd83d;
+  margin-bottom:8px;
+}
+
+footer p{
+  color:#ddd;
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottomNav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:9999;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:7px 2px;
+  box-shadow:0 -3px 15px #0002;
+}
+
+.bottomNav a{
+  text-align:center;
+  color:#555;
+  font-size:10px;
+}
+
+.bottomNav span{
+  display:block;
+  font-size:21px;
+}
+
+.bottomNav .active{
+  color:#a00000;
+  font-weight:bold;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+  .zones{
+    grid-template-columns:1fr;
+  }
+
+  .grid,
+  .highlights{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+@media(max-width:450px){
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero h2{
+    font-size:17px;
+  }
+
+  .tagline{
+    font-size:16px;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .highlight{
+    min-height:135px;
+    padding:15px;
+  }
+
+  .quickCard b{
+    font-size:10px;
+  }
+
+  .step{
+    padding:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="logo">
+    🔴 Job<span>Mitra</span> AI
+  </div>
+
+  <div class="menuBtn">☰</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <h1>🔴 Job<span>Mitra AI</span></h1>
+
+  <h2>ଆପଣମାନଙ୍କ ସେବାରେ JobMitra ❤️</h2>
+
+  <p>
+    Jobs • Study • Scholarship • Farmer Services • Public Services
+  </p>
+
+  <div class="tagline">
+    ଆପଣଙ୍କୁ ଯାହା ଦରକାର, ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।
+  </div>
+
+  <div class="search">
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Jobs, Scholarship, Scheme, Service ଖୋଜନ୍ତୁ..."
+    >
+
+    <button onclick="searchSite()">🔍 Search</button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DATE ================= -->
+
+<div class="dateBox">
+
+  📅 <b>ଆଜିର ଦିନ | TODAY</b>
+
+  <div id="today"></div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO SLIDER ================= -->
+
+<div class="slider">
+
+  <div class="slide slide1 active">
+
+    <h2>💼 Latest Jobs</h2>
+
+    <p>
+      ନୂଆ Job Notification, Eligibility,
+      Exam Date ଓ Apply Information ଦେଖନ୍ତୁ।
+    </p>
+
+  </div>
+
+  <div class="slide slide2">
+
+    <h2>🌾 Farmer Services</h2>
+
+    <p>
+      CM KISAN • PM-KISAN • Farmer ID •
+      Insurance • Subsidy ଭଳି ସେବା ଖୋଜନ୍ତୁ।
+    </p>
+
+  </div>
+
+  <div class="slide slide3">
+
+    <h2>🎓 Student Opportunities</h2>
+
+    <p>
+      Scholarship • Admission • Exam •
+      Result • Career ଏକ ସ୍ଥାନରେ।
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ================= MAIN ZONES ================= -->
+
+<div class="title">
+
+  <h2>👋 ଆପଣଙ୍କ ପାଇଁ | Choose Your Zone</h2>
+
+  <p>ଆପଣ କେଉଁ ସେବା ଖୋଜୁଛନ୍ତି?</p>
+
+</div>
+
+
+<div class="zones">
+
+
+  <div class="zone student">
+
+    <div class="zoneIcon">🎓</div>
+
+    <h3>ଛାତ୍ର ସାଥୀ</h3>
+
+    <h4>STUDENT ZONE</h4>
+
+    <p>
+      Study • Scholarship • Exam •
+      Admission • Career
+    </p>
+
+    <a href="#student" class="btn blue">
+      ENTER STUDENT ZONE →
+    </a>
+
+  </div>
+
+
+  <div class="zone farmer">
+
+    <div class="zoneIcon">🌾</div>
+
+    <h3>କୃଷକ ସାଥୀ</h3>
+
+    <h4>FARMER ZONE</h4>
+
+    <p>
+      Farmer ID • KISAN • Insurance •
+      Subsidy • Agriculture
+    </p>
+
+    <a href="#farmer" class="btn green">
+      ENTER FARMER ZONE →
+    </a>
+
+  </div>
+
+
+  <div class="zone public">
+
+    <div class="zoneIcon">🇮🇳</div>
+
+    <h3>ଜନସେବା</h3>
+
+    <h4>PUBLIC SERVICES</h4>
+
+    <p>
+      Documents • Pension • Housing •
+      Health • Government Services
+    </p>
+
+    <a href="#public" class="btn orange">
+      EXPLORE SERVICES →
+    </a>
+
+  </div>
+
+
+</div>
+
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<div class="title">
+
+  <h2>🔔 Latest Notifications</h2>
+
+  <p>ନୂଆ ସୂଚନା ଏଠାରେ ଦେଖନ୍ତୁ</p>
+
+</div>
+
+<div class="notice">
+
+  <div class="noticeLine">
+
+    🔴 Latest Job Update •
+    🎓 Scholarship Update •
+    🎫 Admit Card •
+    📊 Result •
+    🌾 Farmer Scheme •
+    📢 Government Update
+
+  </div>
+
+</div>
+
+
+<!-- ================= QUICK SERVICES ================= -->
+
+<div class="title">
+
+  <h2>⚡ ତୁରନ୍ତ ସେବା | QUICK SERVICES</h2>
+
+  <p>ଦରକାରୀ service କୁ ଶୀଘ୍ର ପାଆନ୍ତୁ</p>
+
+</div>
+
+
+<div class="quick">
+
+  <a class="quickCard" href="#public">
+    <span>🪪</span>
+    <b>Aadhaar</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>💳</span>
+    <b>PAN Card</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>🗳️</span>
+    <b>Voter ID</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>🏦</span>
+    <b>Bank / DBT</b>
+  </a>
+
+  <a class="quickCard" href="#farmer">
+    <span>🌾</span>
+    <b>Farmer ID</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>👷</span>
+    <b>Labour Card</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>🏠</span>
+    <b>Housing</b>
+  </a>
+
+  <a class="quickCard" href="#public">
+    <span>🍚</span>
+    <b>Ration Card</b>
+  </a>
+
+</div>
+
+
+<!-- ================= HIGHLIGHTS ================= -->
+
+<div class="title">
+
+  <h2>🔥 Today's Highlights</h2>
+
+  <p>ଆଜିର ମୁଖ୍ୟ ସୁଯୋଗ</p>
+
+</div>
+
+
+<div class="highlights">
+
+  <div class="highlight jobs">
+    <div style="font-size:30px">💼</div>
+    <h3>Latest Jobs</h3>
+    <p>ନୂଆ Government & Private Job Updates</p>
+  </div>
+
+  <div class="highlight scholarship">
+    <div style="font-size:30px">💰</div>
+    <h3>Scholarships</h3>
+    <p>ନୂଆ Scholarship & Student Benefits</p>
+  </div>
+
+  <div class="highlight admit">
+    <div style="font-size:30px">🎫</div>
+    <h3>Admit Cards</h3>
+    <p>Latest Exam Admit Card Updates</p>
+  </div>
+
+  <div class="highlight govt">
+    <div style="font-size:30px">📢</div>
+    <h3>Govt Updates</h3>
+    <p>ସରକାରୀ ନୂଆ ସୂଚନା</p>
+  </div>
+
+</div>
+
+
+<!-- ================= JOBS ================= -->
+
+<div id="jobs">
+
+<div class="title">
+
+  <h2>💼 Jobs & Career | ଚାକିରି</h2>
+
+  <p>
+    Odisha • India • Government • Private
+  </p>
+
+</div>
+
+
+<div class="grid">
+
+  <div class="card">
+    <h3>🏛️ Odisha Govt Jobs</h3>
+    <p>Odisha Government Job Notifications</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>🇮🇳 Central Govt Jobs</h3>
+    <p>Central Government Opportunities</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>🚆 Railway Jobs</h3>
+    <p>Railway Recruitment Updates</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏦 Banking Jobs</h3>
+    <p>Banking Recruitment Information</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>👮 Police Jobs</h3>
+    <p>Police & Uniformed Services</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>👨‍🏫 Teaching Jobs</h3>
+    <p>Teacher & Education Jobs</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>🪖 Defence Jobs</h3>
+    <p>Army, Navy & Air Force Opportunities</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏢 Private Jobs</h3>
+    <p>Private & Local Employment</p>
+    <a class="action" href="#">VIEW JOBS →</a>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= STUDENT ================= -->
+
+<div id="student">
+
+<div class="title">
+
+  <h2>🎓 Student Zone | ଛାତ୍ର ସାଥୀ</h2>
+
+  <p>ପଢ଼ାରୁ Career ପର୍ଯ୍ୟନ୍ତ</p>
+
+</div>
+
+
+<div class="grid">
+
+  <div class="card">
+    <h3>📚 Study & Notes</h3>
+    <p>Class-wise Notes & Study Material</p>
+  </div>
+
+  <div class="card">
+    <h3>💰 Scholarship</h3>
+    <p>State • Central • SBI • Private</p>
+  </div>
+
+  <div class="card">
+    <h3>📝 Exam Preparation</h3>
+    <p>Entrance & Competitive Exam Preparation</p>
+  </div>
+
+  <div class="card">
+    <h3>🎫 Admit Card</h3>
+    <p>Latest Admit Cards & Downloads</p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Results</h3>
+    <p>Exam Results & Merit Lists</p>
+  </div>
+
+  <div class="card">
+    <h3>🎓 Admission</h3>
+    <p>+2 • +3 • College • University</p>
+  </div>
+
+  <div class="card">
+    <h3>🧪 Mock Test</h3>
+    <p>Practice Questions & Online Tests</p>
+  </div>
+
+  <div class="card">
+    <h3>📖 Current Affairs</h3>
+    <p>India • Odisha • World • Sports</p>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= SCHOLARSHIP ================= -->
+
+<div id="scholarship">
+
+<div class="title">
+
+  <h2>💰 Scholarship | ଛାତ୍ରବୃତ୍ତି</h2>
+
+  <p>ଯୋଗ୍ୟ scholarship ଖୋଜନ୍ତୁ</p>
+
+</div>
+
+
+<div class="grid">
+
+  <div class="card">
+    <h3>🏛️ Odisha Scholarships</h3>
+    <p>State Government Scholarship</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🇮🇳 Central Scholarships</h3>
+    <p>National Level Scholarships</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏦 SBI Scholarship</h3>
+    <p>Education Support Opportunities</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🎓 Other Scholarships</h3>
+    <p>Private & Organisation Scholarships</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CAREER ROADMAP ================= -->
+
+<div class="special career">
+
+<h3>🛣️ Career Roadmap | କ୍ୟାରିୟର ପଥ</h3>
+
+<p>
+କେଉଁଠୁ ଆରମ୍ଭ କରିବି → କଣ ପଢ଼ିବି →
+କେଉଁ Exam ଦେବି → କେଉଁ Job କରିବି
+</p>
+
+
+<div class="roadmap">
+
+  <div class="step">🎓 Education</div>
+  <div class="arrow">→</div>
+
+  <div class="step">📚 Course</div>
+  <div class="arrow">→</div>
+
+  <div class="step">🧠 Skill</div>
+  <div class="arrow">→</div>
+
+  <div class="step">📝 Exam</div>
+  <div class="arrow">→</div>
+
+  <div class="step">💼 Job</div>
+  <div class="arrow">→</div>
+
+  <div class="step">🎯 Future</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= SPOKEN ENGLISH ================= -->
+
+<div class="special english">
+
+<h3>🗣️ Spoken English | ଇଂରାଜୀ କଥାବାର୍ତ୍ତା</h3>
+
+<p>
+ସହଜ ଭାବରେ English କହିବା ଶିଖନ୍ତୁ।
+Learn English Step by Step.
+</p>
+
+
+<div class="grid" style="margin-top:15px">
+
+  <div class="card">
+    <h3>📚 Basic English</h3>
+    <p>ମୌଳିକ English ଶିଖନ୍ତୁ</p>
+  </div>
+
+  <div class="card">
+    <h3>🗣️ Daily Speaking</h3>
+    <p>ପ୍ରତିଦିନ Speaking Practice</p>
+  </div>
+
+  <div class="card">
+    <h3>📖 Grammar</h3>
+    <p>Odia + English Grammar Learning</p>
+  </div>
+
+  <div class="card">
+    <h3>💼 Interview English</h3>
+    <p>Job Interview ପାଇଁ English</p>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FUTURE PLANNER ================= -->
+
+<div class="special future">
+
+<h3>🔮 Future Planner | ଭବିଷ୍ୟତ ଯୋଜନା</h3>
+
+<p>
+ଆଜିର ଠିକ୍ ନିଷ୍ପତ୍ତି, ଆସନ୍ତାକାଲିର ଭଲ Future।
+Plan Today • Build Tomorrow.
+</p>
+
+
+<div class="roadmap">
+
+  <div class="step">📚 Study Plan</div>
+  <div class="arrow">→</div>
+
+  <div class="step">🧠 Skills</div>
+  <div class="arrow">→</div>
+
+  <div class="step">💼 Career</div>
+  <div class="arrow">→</div>
+
+  <div class="step">💰 Finance</div>
+  <div class="arrow">→</div>
+
+  <div class="step">🎯 Goal</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= EXTRA KNOWLEDGE ================= -->
+
+<div class="special knowledge">
+
+<h3>🌟 Extra Knowledge | ଅତିରିକ୍ତ ଜ୍ଞାନ</h3>
+
+<p>
+ପଢ଼ା ଓ Job ବାହାରେ ମଧ୍ୟ ନୂଆ କିଛି ଶିଖନ୍ତୁ।
+Learn Something New Every Day.
+</p>
+
+
+<div class="grid" style="margin-top:15px">
+
+  <div class="card">
+    <h3>📈 Share Market</h3>
+    <p>Share Market Basics & Financial Education</p>
+  </div>
+
+  <div class="card">
+    <h3>💻 Digital Skills</h3>
+    <p>Computer • Internet • AI Tools</p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 General Knowledge</h3>
+    <p>India • Odisha • Science • Technology</p>
+  </div>
+
+  <div class="card">
+    <h3>🚀 Business</h3>
+    <p>Business Ideas & Entrepreneurship</p>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FARMER ================= -->
+
+<div id="farmer">
+
+<div class="title">
+
+<h2>🌾 Farmer Zone | କୃଷକ ସାଥୀ</h2>
+
+<p>
+କୃଷକଙ୍କ ପାଇଁ ଦରକାରୀ Government Services
+</p>
+
+</div>
+
+
+<div class="grid">
+
+  <div class="card">
+    <h3>🆔 Farmer ID</h3>
+    <p>AgriStack / Farmer Registry</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🌾 CM KISAN</h3>
+    <p>Odisha Farmer Scheme</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🇮🇳 PM-KISAN</h3>
+    <p>Central Farmer Support</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🌱 Krushak Odisha</h3>
+    <p>Farmer Registration & Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>🛡️ Crop Insurance</h3>
+    <p>Crop Insurance Information</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>💰 DBT & Subsidy</h3>
+    <p>Government Agriculture Benefits</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>🐘 Crop Damage</h3>
+    <p>Wild Animal Crop Damage Compensation</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>🌱 Seed & Fertilizer</h3>
+    <p>Agriculture Input Services</p>
+  </div>
+
+  <div class="card">
+    <h3>🐄 Animal Husbandry</h3>
+    <p>Livestock Related Schemes</p>
+  </div>
+
+  <div class="card">
+    <h3>🐟 Fisheries</h3>
+    <p>Fisheries Schemes & Services</p>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PUBLIC SERVICES ================= -->
+
+<div id="public">
+
+<div class="title">
+
+<h2>🇮🇳 Public Services | ଜନସେବା</h2>
+
+<p>
+ସମସ୍ତଙ୍କ ପାଇଁ ଦରକାରୀ Government Services
+</p>
+
+</div>
+
+
+<div class="grid">
+
+  <div class="card">
+    <h3>🪪 Aadhaar</h3>
+    <p>Aadhaar Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>💳 PAN Card</h3>
+    <p>PAN Application & Services</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🗳️ Voter ID</h3>
+    <p>Voter Registration & Services</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏦 Bank / DBT</h3>
+    <p>Bank Account & DBT Related Services</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>👷 Labour Card</h3>
+    <p>Worker Registration & Benefits</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>🍚 Ration Card</h3>
+    <p>Food & Ration Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏠 Housing</h3>
+    <p>Housing Schemes & Services</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏥 Health</h3>
+    <p>Government Health Services</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>👴 Pension</h3>
+    <p>Pension & Social Security</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>🚗 Driving Licence</h3>
+    <p>DL & Transport Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>🏠 Land & Revenue</h3>
+    <p>Land Records & Revenue Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>🌳 Forest & Wildlife</h3>
+    <p>Forest & Wildlife Services</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>🛡️ Insurance</h3>
+    <p>Life • Health • Accident • Crop</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+  <div class="card">
+    <h3>📄 Certificates</h3>
+    <p>Income • Residence • Caste & More</p>
+    <a class="action" href="#">APPLY →</a>
+  </div>
+
+  <div class="card">
+    <h3>👮 Police Services</h3>
+    <p>Verification & Citizen Services</p>
+    <a class="action" href="#">OPEN →</a>
+  </div>
+
+  <div class="card">
+    <h3>💼 Employment</h3>
+    <p>Employment & Skill Services</p>
+    <a class="action" href="#">VIEW →</a>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= COMMON PROCESS ================= -->
+
+<div class="special">
+
+<h3>📄 Government Service Process | ସରକାରୀ ସେବା କିପରି ପାଇବେ?</h3>
+
+<p>
+ପ୍ରତ୍ୟେକ service ରେ ଆମେ ଏହି information ଦେବା:
+</p>
+
+
+<div class="roadmap">
+
+  <div class="step">👤 Eligibility<br>ଯୋଗ୍ୟତା</div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">📄 Documents<br>କାଗଜପତ୍ର</div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">📝 Apply<br>ଆବେଦନ</div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">🔵 Status<br>ସ୍ଥିତି</div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">✅ Benefit<br>ସୁବିଧା</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PROMISE ================= -->
+
+<div class="promise">
+
+<h2>❤️ ଆପଣମାନଙ୍କ ସେବାରେ JobMitra</h2>
+
+<p>
+ଆପଣଙ୍କୁ ଯାହା ଦରକାର,
+<br>
+<strong>ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।</strong>
+</p>
+
+<br>
+
+<p>
+Your Jobs • Your Study • Your Benefits • Your Future 🇮🇳
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>🔴 JobMitra AI ❤️</h2>
+
+<p>
+ଆପଣମାନଙ୍କ ସେବାରେ JobMitra
+</p>
+
+<p>
+Jobs • Study • Scholarship • Farmer Services • Public Services
+</p>
+
+<p>
+Your Opportunity Partner 🇮🇳
+</p>
+
+</footer>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<div class="bottomNav">
+
+<a href="#" class="active">
+<span>🏠</span>
+Home
+</a>
+
+<a href="#student">
+<span>🎓</span>
+Student
+</a>
+
+<a href="#jobs">
+<span>💼</span>
+Jobs
+</a>
+
+<a href="#farmer">
+<span>🌾</span>
+Farmer
+</a>
+
+<a href="#public">
+<span>☰</span>
+More
+</a>
+
+</div>
+
+
+<script>
+
+/* ================= TODAY DATE ================= */
+
+function updateDate(){
+
+  const now = new Date();
+
+  const options = {
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+  };
+
+  document.getElementById("today").innerText =
+    now.toLocaleDateString("en-IN",options);
+
+}
+
+updateDate();
+
+
+/* ================= HERO SLIDER ================= */
+
+let slides =
+document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+setInterval(function(){
+
+  slides[currentSlide].classList.remove("active");
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  slides[currentSlide].classList.add("active");
+
+},4000);
+
+
+/* ================= SEARCH ================= */
+
+function searchSite(){
+
+  const input =
+  document.getElementById("searchInput")
+  .value
+  .toLowerCase()
+  .trim();
+
+  if(!input){
+    alert("ଦୟାକରି କିଛି Search କରନ୍ତୁ।");
+    return;
+  }
+
+  const sections = document.querySelectorAll(
+    ".card,.zone,.highlight,.special"
+  );
+
+  let found = false;
+
+  sections.forEach(function(section){
+
+    const text =
+    section.innerText.toLowerCase();
+
+    if(text.includes(input)){
+
+      section.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+      found = true;
+    }
+
+  });
+
+  if(!found){
+
+    alert(
+      "Sorry! ଏହି information ଏବେ JobMitra ରେ ମିଳିଲା ନାହିଁ।"
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
