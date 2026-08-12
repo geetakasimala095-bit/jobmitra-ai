@@ -2,10 +2,10 @@
 <html lang="or">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#4c1d95">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5b21b6">
 
-<title>JobMitra AI | Jobs • Scholarship • Preparation</title>
+<title>JobMitra AI | Jobs • Scholarship • News • Preparation</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -14,15 +14,15 @@ body{
 font-family:Arial,"Noto Sans Oriya",sans-serif;
 background:#f5f7ff;
 color:#172033;
-padding-bottom:100px
+padding-bottom:95px
 }
 
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:linear-gradient(135deg,#4c1d95,#7c3aed,#2563eb);
-color:#fff;
+background:linear-gradient(135deg,#4c1d95,#6d28d9,#2563eb);
+color:white;
 box-shadow:0 4px 20px #0003
 }
 
@@ -30,25 +30,24 @@ box-shadow:0 4px 20px #0003
 max-width:1200px;
 width:94%;
 margin:auto;
-height:64px;
+height:65px;
 display:flex;
 align-items:center;
 justify-content:space-between
 }
 
-.logo{
-font-size:22px;
-font-weight:900
-}
-
+.logo{font-size:23px;font-weight:900}
 .logo span{color:#facc15}
+
+.nav-right{display:flex;gap:8px}
 
 .nav-btn{
 border:1px solid #ffffff55;
 background:#ffffff18;
-color:#fff;
+color:white;
 padding:8px 12px;
-border-radius:20px
+border-radius:20px;
+cursor:pointer
 }
 
 .container{
@@ -59,13 +58,13 @@ margin:auto
 
 .hero{
 margin-top:20px;
-padding:38px 18px;
 border-radius:28px;
+padding:38px 18px;
 text-align:center;
 color:white;
 background:
 radial-gradient(circle at 90% 10%,#c4b5fd55,transparent 30%),
-linear-gradient(135deg,#111827,#312e81,#7c3aed);
+linear-gradient(135deg,#111827,#312e81,#6d28d9);
 box-shadow:0 12px 35px #0002
 }
 
@@ -79,14 +78,14 @@ margin:5px 0
 .hero h1 span{color:#facc15}
 
 .hero p{
-opacity:.9;
-font-size:14px
+font-size:15px;
+opacity:.9
 }
 
 .search{
 max-width:720px;
-margin:20px auto 0;
-background:#fff;
+margin:22px auto 0;
+background:white;
 padding:6px;
 border-radius:40px;
 display:flex
@@ -97,13 +96,14 @@ flex:1;
 border:0;
 outline:0;
 padding:13px 18px;
+font-size:15px;
 border-radius:30px
 }
 
 .search button{
 border:0;
 background:#7c3aed;
-color:#fff;
+color:white;
 padding:0 22px;
 border-radius:30px;
 font-weight:bold
@@ -118,43 +118,47 @@ align-items:center;
 margin-bottom:14px
 }
 
-.title h2{font-size:21px}
+.title h2{font-size:22px}
 
 .badge{
 background:#fee2e2;
 color:#dc2626;
 padding:5px 10px;
 border-radius:20px;
-font-size:10px;
+font-size:11px;
 font-weight:bold
 }
 
 .quick{
 display:grid;
-grid-template-columns:repeat(6,1fr);
+grid-template-columns:repeat(7,1fr);
 gap:10px
 }
 
 .quick button{
 border:0;
 background:white;
-padding:15px 6px;
+padding:16px 8px;
 border-radius:17px;
-box-shadow:0 4px 15px #0001;
-font-weight:bold
+box-shadow:0 4px 15px #0000000d;
+font-size:13px;
+font-weight:bold;
+cursor:pointer;
+transition:.2s
 }
 
 .quick button:hover{
-background:#f3e8ff;
-transform:translateY(-2px)
+transform:translateY(-3px);
+background:#f3e8ff
 }
 
-.i1{border-top:4px solid #2563eb!important}
-.i2{border-top:4px solid #16a34a!important}
-.i3{border-top:4px solid #f59e0b!important}
-.i4{border-top:4px solid #ef4444!important}
-.i5{border-top:4px solid #7c3aed!important}
-.i6{border-top:4px solid #ec4899!important}
+.quick .i1{border-top:4px solid #2563eb}
+.quick .i2{border-top:4px solid #16a34a}
+.quick .i3{border-top:4px solid #f59e0b}
+.quick .i4{border-top:4px solid #ef4444}
+.quick .i5{border-top:4px solid #7c3aed}
+.quick .i6{border-top:4px solid #ec4899}
+.quick .i7{border-top:4px solid #0891b2}
 
 .cards{
 display:grid;
@@ -163,15 +167,21 @@ gap:16px
 }
 
 .card{
-background:#fff;
+background:white;
 border-radius:19px;
 padding:18px;
-box-shadow:0 5px 20px #0001;
-border:1px solid #eee
+box-shadow:0 5px 20px #0000000d;
+border:1px solid #eee;
+transition:.2s
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px #0002
 }
 
 .card h3{
-font-size:17px;
+font-size:18px;
 margin-bottom:7px
 }
 
@@ -188,7 +198,7 @@ color:#667085
 
 .info{
 margin-top:12px;
-padding:11px;
+padding:10px;
 background:#f8fafc;
 border-radius:11px;
 font-size:12px
@@ -203,14 +213,6 @@ font-weight:bold
 
 .last{
 color:#dc2626;
-font-weight:900;
-background:#fff1f2;
-padding:5px;
-border-radius:6px
-}
-
-.start{
-color:#2563eb;
 font-weight:bold
 }
 
@@ -229,11 +231,11 @@ font-weight:bold
 display:inline-block;
 text-decoration:none;
 border:0;
-margin-top:10px;
-padding:9px 12px;
+margin-top:12px;
+padding:9px 13px;
 border-radius:9px;
-color:#fff;
-font-size:11px;
+color:white;
+font-size:12px;
 font-weight:bold;
 cursor:pointer
 }
@@ -256,38 +258,15 @@ white-space:nowrap;
 border:0;
 padding:9px 13px;
 border-radius:20px;
-background:#fff;
+background:white;
 color:#6d28d9;
-box-shadow:0 3px 10px #0001
+box-shadow:0 3px 10px #0001;
+cursor:pointer
 }
 
-.filters button.active,
 .filters button:hover{
 background:#6d28d9;
-color:#fff
-}
-
-/* TODAY */
-
-.datebox{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-background:linear-gradient(135deg,#fff,#f3e8ff);
-border:1px solid #e9d5ff;
-border-radius:22px;
-padding:20px
-}
-
-.date{
-font-size:27px;
-font-weight:900;
-color:#6d28d9
-}
-
-.time{
-font-size:27px;
-font-weight:900
+color:white
 }
 
 /* AI */
@@ -313,7 +292,8 @@ gap:8px
 flex:1;
 border:1px solid #ddd;
 padding:13px;
-border-radius:11px
+border-radius:11px;
+outline:0
 }
 
 .ai-input button{
@@ -328,7 +308,8 @@ font-weight:bold
 .answer{
 margin-top:15px;
 font-weight:bold;
-color:#78350f
+color:#78350f;
+line-height:1.7
 }
 
 /* COMMENT */
@@ -342,12 +323,12 @@ flex-direction:column;
 gap:9px
 }
 
-.form input,
-.form textarea{
+.form input,.form textarea{
 border:1px solid #ddd;
 padding:12px;
 border-radius:10px;
-font-family:inherit
+font-family:inherit;
+outline:0
 }
 
 .form textarea{
@@ -358,7 +339,7 @@ resize:vertical
 .form button{
 border:0;
 background:#ef4444;
-color:#fff;
+color:white;
 padding:12px;
 border-radius:10px;
 font-weight:bold
@@ -370,10 +351,12 @@ color:#777;
 margin-top:8px
 }
 
+/* FOOTER */
+
 footer{
 margin-top:40px;
 background:#111827;
-color:#fff;
+color:white;
 text-align:center;
 padding:28px 15px
 }
@@ -399,7 +382,7 @@ left:0;
 right:0;
 z-index:3000;
 background:linear-gradient(135deg,#111827,#4c1d95,#7c3aed);
-color:#fff;
+color:white;
 box-shadow:0 -5px 25px #0004;
 border-top:2px solid #a78bfa
 }
@@ -412,12 +395,15 @@ position:relative
 }
 
 .ad-title{
-font-size:15px;
+font-size:16px;
 font-weight:900;
 color:#facc15
 }
 
-.ad-text{font-size:11px;margin-top:2px}
+.ad-text{
+font-size:11px;
+margin-top:2px
+}
 
 .ad-services{
 font-size:10px;
@@ -438,7 +424,7 @@ margin-left:4px
 display:inline-block;
 margin-top:5px;
 background:#e1306c;
-color:#fff;
+color:white;
 text-decoration:none;
 padding:5px 10px;
 border-radius:7px;
@@ -455,23 +441,53 @@ height:27px;
 border:0;
 border-radius:50%;
 background:#ffffff22;
-color:#fff;
-font-size:18px
+color:white;
+font-size:18px;
+cursor:pointer
 }
 
-@media(max-width:850px){
-.quick{grid-template-columns:repeat(3,1fr)}
-.cards{grid-template-columns:1fr 1fr}
-.hero h1{font-size:29px}
+@media(max-width:900px){
+
+.quick{
+grid-template-columns:repeat(4,1fr)
+}
+
+.cards{
+grid-template-columns:1fr 1fr
+}
+
 }
 
 @media(max-width:550px){
+
+.nav-right button:first-child{display:none}
+
+.logo{font-size:20px}
+
+.hero{
+padding:30px 14px
+}
+
+.hero h1{font-size:25px}
+
 .cards{grid-template-columns:1fr}
-.quick{grid-template-columns:repeat(3,1fr)}
-.quick button{font-size:11px}
-.datebox{grid-template-columns:1fr;text-align:center}
+
+.quick{
+grid-template-columns:repeat(3,1fr)
+}
+
+.quick button{
+font-size:11px;
+padding:13px 5px
+}
+
 .ai-input{flex-direction:column}
+
 .ai-input button{padding:12px}
+
+.ad-title{font-size:14px}
+.ad-services{font-size:9px}
+
 }
 </style>
 </head>
@@ -480,12 +496,21 @@ font-size:18px
 
 <header>
 <div class="nav">
-<div class="logo">🚀 Job<span>Mitra</span> AI</div>
 
-<div>
-<button class="nav-btn" onclick="goTop()">🏠 Home</button>
-<button class="nav-btn" onclick="openInstagram()">📩 DM</button>
+<div class="logo">
+🚀 Job<span>Mitra</span> AI
 </div>
+
+<div class="nav-right">
+<button class="nav-btn" onclick="goTop()">🏠 Home</button>
+
+<a class="nav-btn"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
+📩 DM
+</a>
+</div>
+
 </div>
 </header>
 
@@ -500,19 +525,24 @@ font-size:18px
 <h1>Job<span>Mitra AI</span></h1>
 
 <p>
-ଚାକିରି • Scholarship • Books • Current Affairs • AI Preparation
+Jobs • Scholarships • Books • News • Current Affairs • AI Preparation
 </p>
 
 <div class="search">
-<input id="searchInput"
-placeholder="Job / Scholarship / Exam search କରନ୍ତୁ...">
+
+<input
+id="searchInput"
+placeholder="Job / Scholarship / Exam search କରନ୍ତୁ..."
+>
+
 <button onclick="searchSite()">Search</button>
+
 </div>
 
 </section>
 
 
-<!-- QUICK -->
+<!-- QUICK ACCESS -->
 
 <section class="section">
 
@@ -546,34 +576,11 @@ placeholder="Job / Scholarship / Exam search କରନ୍ତୁ...">
 💻<br>Online Work
 </button>
 
-</div>
-
-</section>
-
-
-<!-- TODAY -->
-
-<section class="section">
-
-<div class="title">
-<h2>📅 ଆଜି</h2>
-<span class="badge">LIVE</span>
-</div>
-
-<div class="datebox">
-
-<div>
-<div class="date" id="todayDate">Loading...</div>
-<p id="todayDay">Loading...</p>
-</div>
-
-<div>
-<div class="time" id="clock">00:00:00</div>
-<p>🇮🇳 India Standard Time</p>
-</div>
+<button class="i7" onclick="scrollToSection('newspapers')">
+🗞️<br>News Paper
+</button>
 
 </div>
-
 </section>
 
 
@@ -582,410 +589,207 @@ placeholder="Job / Scholarship / Exam search କରନ୍ତୁ...">
 <section class="section" id="jobs">
 
 <div class="title">
-<h2>💼 Latest Government Jobs</h2>
-<span class="badge">UPDATED</span>
+<h2>💼 Latest Job Notifications</h2>
+<span class="badge">CHECK OFFICIAL</span>
 </div>
-
-<p style="font-size:12px;color:#666;margin-bottom:12px">
-📌 Salary ଏବଂ Last Date କେବଳ official notification ଅନୁସାରେ ଦିଅନ୍ତୁ।
-</p>
 
 <div class="filters">
 
-<button onclick="filterJobs('all')">All Jobs</button>
+<button onclick="filterJobs('all')">All</button>
 <button onclick="filterJobs('odisha')">Odisha</button>
-<button onclick="filterJobs('central')">All India</button>
+<button onclick="filterJobs('central')">Central</button>
 <button onclick="filterJobs('10th')">10th</button>
 <button onclick="filterJobs('+2')">+2</button>
 <button onclick="filterJobs('graduate')">Graduate</button>
-<button onclick="filterJobs('railway')">Railway</button>
 <button onclick="filterJobs('bank')">Bank</button>
+<button onclick="filterJobs('railway')">Railway</button>
 <button onclick="filterJobs('police')">Police</button>
-<button onclick="filterJobs('defence')">Defence</button>
 
 </div>
-
 
 <div class="cards" id="jobsList">
 
 
-<!-- SBI -->
-
 <div class="card job" data-category="central bank graduate">
 
-<h3>🏦 SBI Junior Associate / Clerk</h3>
+<h3>🏦 Banking Recruitment Updates</h3>
 
-<p>State Bank of India – Junior Associate recruitment.</p>
-
-<div class="info">
-
-<div>👥 Vacancy: <b>9,766</b></div>
-
-<div>🎓 Qualification: Graduation</div>
-
-<div>🎂 Age: Notification ଅନୁସାରେ</div>
-
-<div class="salary">
-💰 Salary: Official pay scale ଅନୁସାରେ
-</div>
-
-<div class="start">
-🟢 Apply Start: Notification ଅନୁସାରେ
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification ଅନୁସାରେ check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">BANK</span><br>
-
-<a class="btn apply"
-href="https://sbi.bank.in/web/careers"
-target="_blank">
-🔗 Official Details
-</a>
-
-<a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
-target="_blank">
-📩 Apply Help ₹99
-</a>
-
-</div>
-
-
-<!-- RRB JE -->
-
-<div class="card job" data-category="central railway 10th +2 graduate">
-
-<h3>🚆 RRB JE Recruitment</h3>
-
-<p>Railway Recruitment Board Junior Engineer recruitment.</p>
+<p>Current bank recruitment links and official notices.</p>
 
 <div class="info">
-
-<div>👥 Vacancy: <b>4,098</b></div>
-
-<div>🎓 Qualification: Diploma / Degree</div>
-
-<div>🎂 Age: Notification ଅନୁସାରେ</div>
-
-<div class="salary">
-💰 Salary: Pay Level ଅନୁସାରେ
-</div>
-
-<div class="start">
-🟢 Apply Start: Notification ଅନୁସାରେ
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">RAILWAY</span><br>
-
-<a class="btn apply"
-href="https://www.rrbapply.gov.in/"
-target="_blank">
-🔗 RRB Apply
-</a>
-
-<a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
-target="_blank">
-📩 Apply Help ₹99
-</a>
-
-</div>
-
-
-<!-- AOC -->
-
-<div class="card job" data-category="central defence 10th +2">
-
-<h3>🪖 Army Ordnance Corps Group C</h3>
-
-<p>MTS, Fireman and other Group-C recruitment.</p>
-
-<div class="info">
-
-<div>👥 Vacancy: <b>2,615</b></div>
-
 <div>🎓 Qualification: Post-wise</div>
-
-<div>🎂 Age: Notification ଅନୁସାରେ</div>
-
-<div class="salary">
-💰 Salary: Post-wise Pay Level
+<div class="salary">💰 Salary: Notification अनुसार</div>
+<div class="last">📅 Last Date: Check current official notice</div>
 </div>
 
-<div class="start">
-🟢 Apply Start: Official notification
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">DEFENCE</span><br>
+<span class="tag">BANKING</span>
+<br>
 
 <a class="btn apply"
-href="https://www.aocrecruitment.gov.in/"
+href="https://www.ibps.in/"
 target="_blank">
-🔗 Official Website
+Official Details
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 Apply Help ₹99
+📩 Direct DM ₹99
 </a>
 
 </div>
 
 
-<!-- BOB -->
+<div class="card job" data-category="odisha graduate">
 
-<div class="card job" data-category="central bank graduate">
+<h3>🏛️ OSSC Recruitment</h3>
 
-<h3>🏦 Bank of Baroda Specialist Officer</h3>
-
-<p>Specialist Officer recruitment.</p>
+<p>Odisha Staff Selection Commission recruitment updates.</p>
 
 <div class="info">
-
-<div>👥 Vacancy: <b>206</b></div>
-
 <div>🎓 Qualification: Post-wise</div>
-
-<div>🎂 Age: Post-wise</div>
-
-<div class="salary">
-💰 Salary: Official notification
+<div class="salary">💰 Salary: Pay Level अनुसार</div>
+<div class="last">📅 Last Date: Notice अनुसार</div>
 </div>
 
-<div class="start">
-🟢 Apply Start: Notification ଅନୁସାରେ
-</div>
-
-<div class="last">
-🔴 Last Date: <b>26 August 2026</b>
-</div>
-
-</div>
-
-<span class="tag">BANK</span><br>
+<span class="tag">ODISHA</span>
+<br>
 
 <a class="btn apply"
-href="https://www.bankofbaroda.in/career/current-openings"
+href="https://www.ossc.gov.in/"
 target="_blank">
-🔗 Official Website
+Official Website
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 Apply Help ₹99
+📩 Direct DM ₹99
 </a>
 
 </div>
 
 
-<!-- OSSSC -->
+<div class="card job" data-category="odisha +2 police">
 
-<div class="card job" data-category="odisha 10th +2 graduate">
-
-<h3>🏛️ OSSSC Recruitment</h3>
-
-<p>Odisha Sub-Ordinate Staff Selection Commission.</p>
-
-<div class="info">
-
-<div>👥 Vacancy: <b>Post-wise</b></div>
-
-<div>🎓 Qualification: 10th / +2 / Graduate – Post-wise</div>
-
-<div>🎂 Age: Notification ଅନୁସାରେ</div>
-
-<div class="salary">
-💰 Salary: Pay Level ଅନୁସାରେ
-</div>
-
-<div class="start">
-🟢 Apply Start: Notification ଅନୁସାରେ
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">ODISHA</span><br>
-
-<a class="btn apply"
-href="https://osssc.gov.in/"
-target="_blank">
-🔗 OSSSC Official
-</a>
-
-<a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
-target="_blank">
-📩 Apply Help ₹99
-</a>
-
-</div>
-
-
-<!-- Odisha Police -->
-
-<div class="card job" data-category="odisha police +2 graduate">
-
-<h3>👮 Odisha Police Recruitment</h3>
+<h3>👮 Odisha Police</h3>
 
 <p>Odisha Police recruitment updates.</p>
 
 <div class="info">
-
-<div>👥 Vacancy: <b>Notification-wise</b></div>
-
 <div>🎓 Qualification: Post-wise</div>
-
-<div>🎂 Age: Notification-wise</div>
-
-<div class="salary">
-💰 Salary: Post-wise
+<div class="salary">💰 Salary: Notification अनुसार</div>
+<div class="last">📅 Last Date: New notice ଅନୁସାରେ</div>
 </div>
 
-<div class="start">
-🟢 Apply Start: Notification-wise
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">POLICE</span><br>
+<span class="tag">POLICE</span>
+<br>
 
 <a class="btn apply"
 href="https://odishapolice.gov.in/"
 target="_blank">
-🔗 Official Website
+Official Website
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 Apply Help ₹99
+📩 Direct DM ₹99
 </a>
 
 </div>
 
 
-<!-- SSC -->
+<div class="card job" data-category="odisha 10th +2 graduate">
 
-<div class="card job" data-category="central ssc +2 graduate">
+<h3>🌲 OSSSC Recruitment</h3>
 
-<h3>📝 SSC Recruitment</h3>
-
-<p>CGL • CHSL • MTS • GD ଏବଂ ଅନ୍ୟ recruitment.</p>
+<p>RI, ARI, Amin, VAW, Nursing Officer ଓ ଅନ୍ୟ recruitment updates.</p>
 
 <div class="info">
-
-<div>👥 Vacancy: <b>Notification-wise</b></div>
-
-<div>🎓 Qualification: 10th / +2 / Graduate</div>
-
-<div>🎂 Age: Post-wise</div>
-
-<div class="salary">
-💰 Salary: Pay Level ଅନୁସାରେ
+<div>🎓 Qualification: Post-wise</div>
+<div class="salary">💰 Salary: Post-wise pay scale</div>
+<div class="last">📅 Last Date: Official notice check କରନ୍ତୁ</div>
 </div>
 
-<div class="start">
-🟢 Apply Start: Notification-wise
+<span class="tag">ODISHA</span>
+<br>
+
+<a class="btn apply"
+href="https://www.osssc.gov.in/"
+target="_blank">
+Official Website
+</a>
+
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
+📩 Direct DM ₹99
+</a>
+
 </div>
 
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
+
+<div class="card job" data-category="central railway 10th +2 graduate">
+
+<h3>🚆 Railway / RRB Jobs</h3>
+
+<p>Railway recruitment notifications and official updates.</p>
+
+<div class="info">
+<div>🎓 Qualification: Post-wise</div>
+<div class="salary">💰 Salary: Pay Level अनुसार</div>
+<div class="last">📅 Last Date: Official notification check</div>
 </div>
+
+<span class="tag">RAILWAY</span>
+<br>
+
+<a class="btn apply"
+href="https://www.rrbapply.gov.in/"
+target="_blank">
+RRB Portal
+</a>
+
+<a class="btn pink"
+href="https://ig.me/m/naik_babulu"
+target="_blank">
+📩 Direct DM ₹99
+</a>
 
 </div>
 
-<span class="tag">SSC</span><br>
+
+<div class="card job" data-category="central ssc graduate +2">
+
+<h3>📝 SSC Jobs</h3>
+
+<p>SSC CGL, CHSL ଓ ଅନ୍ୟ recruitment updates.</p>
+
+<div class="info">
+<div>🎓 Qualification: Post-wise</div>
+<div class="salary">💰 Salary: Pay Level अनुसार</div>
+<div class="last">📅 Last Date: Notification अनुसार</div>
+</div>
+
+<span class="tag">SSC</span>
+<br>
 
 <a class="btn apply"
 href="https://ssc.gov.in/"
 target="_blank">
-🔗 SSC Official
+SSC Official
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 Apply Help ₹99
-</a>
-
-</div>
-
-
-<!-- AIIMS -->
-
-<div class="card job" data-category="central health graduate">
-
-<h3>🏥 AIIMS NORCET Nursing Officer</h3>
-
-<p>National level Nursing Officer recruitment.</p>
-
-<div class="info">
-
-<div>👥 Vacancy: <b>2,200+</b></div>
-
-<div>🎓 Qualification: Nursing qualification</div>
-
-<div>🎂 Age: Notification-wise</div>
-
-<div class="salary">
-💰 Salary: Government pay scale
-</div>
-
-<div class="start">
-🟢 Apply Start: Notification-wise
-</div>
-
-<div class="last">
-🔴 Last Date: Official notification check କରନ୍ତୁ
-</div>
-
-</div>
-
-<span class="tag">HEALTH</span><br>
-
-<a class="btn apply"
-href="https://www.aiimsexams.ac.in/"
-target="_blank">
-🔗 AIIMS Official
-</a>
-
-<a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
-target="_blank">
-📩 Apply Help ₹99
+📩 Direct DM ₹99
 </a>
 
 </div>
 
 </div>
-
 </section>
 
 
@@ -995,7 +799,7 @@ target="_blank">
 
 <div class="title">
 <h2>🎓 All Scholarships</h2>
-<span class="badge">STUDENT</span>
+<span class="badge">STUDENTS</span>
 </div>
 
 <div class="cards">
@@ -1004,7 +808,7 @@ target="_blank">
 
 <h3>🏛️ Odisha State Scholarship</h3>
 
-<p>Odisha Scholarship Portal ରେ ବିଭିନ୍ନ scholarship.</p>
+<p>Odisha State Scholarship Portal.</p>
 
 <div class="info">
 <div>🎓 School / +2 / +3 / PG</div>
@@ -1014,11 +818,11 @@ target="_blank">
 <a class="btn green"
 href="https://scholarship.odisha.gov.in/"
 target="_blank">
-🔗 Open Portal
+Open Portal
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
 📩 Apply Help ₹99
 </a>
@@ -1030,7 +834,7 @@ target="_blank">
 
 <h3>🎓 Post-Matric Scholarship</h3>
 
-<p>Post-Matric students ପାଇଁ scholarship.</p>
+<p>Post-Matric scholarship schemes.</p>
 
 <div class="info">
 <div>🎓 +2 / +3 / PG / Professional</div>
@@ -1040,11 +844,11 @@ target="_blank">
 <a class="btn green"
 href="https://scholarship.odisha.gov.in/"
 target="_blank">
-🔗 Check Portal
+Check Portal
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
 📩 Apply Help ₹99
 </a>
@@ -1061,11 +865,11 @@ target="_blank">
 <a class="btn green"
 href="https://scholarships.gov.in/"
 target="_blank">
-🔗 NSP Portal
+NSP Portal
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
 📩 Apply Help ₹99
 </a>
@@ -1080,13 +884,13 @@ target="_blank">
 <p>SBI Foundation scholarship opportunities.</p>
 
 <a class="btn green"
-href="https://www.sbi.co.in/web/careers"
+href="https://www.sbi.co.in/"
 target="_blank">
-🔗 SBI Website
+SBI Website
 </a>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
 📩 Apply Help ₹99
 </a>
@@ -1098,12 +902,12 @@ target="_blank">
 
 <h3>📚 Pre-Matric Scholarship</h3>
 
-<p>School students ପାଇଁ scholarship.</p>
+<p>School student scholarship opportunities.</p>
 
 <a class="btn green"
 href="https://scholarship.odisha.gov.in/"
 target="_blank">
-🔗 View
+View Portal
 </a>
 
 </div>
@@ -1111,20 +915,202 @@ target="_blank">
 
 <div class="card scholar">
 
-<h3>🎯 Other Scholarships</h3>
+<h3>🏫 Other Scholarships</h3>
 
-<p>Merit, need-based ଏବଂ other schemes.</p>
+<p>Merit, need-based and other scholarship opportunities.</p>
 
 <a class="btn green"
 href="https://scholarship.odisha.gov.in/"
 target="_blank">
-🔗 Check
+Check Portal
 </a>
 
 </div>
 
 </div>
+</section>
 
+
+<!-- NEWSPAPER -->
+
+<section class="section" id="newspapers">
+
+<div class="title">
+<h2>📰 ଆଜିର News Paper</h2>
+<span class="badge">ODIA • HINDI • ENGLISH</span>
+</div>
+
+<div class="filters">
+<button onclick="filterPaper('all')">ସବୁ</button>
+<button onclick="filterPaper('odia')">ଓଡ଼ିଆ</button>
+<button onclick="filterPaper('hindi')">हिंदी</button>
+<button onclick="filterPaper('english')">English</button>
+</div>
+
+<div class="cards" id="paperList">
+
+<div class="card news paper" data-language="odia">
+
+<h3>🟠 Sambad ePaper</h3>
+
+<p>ଆଜିର ଓଡ଼ିଆ ଖବର ଓ ePaper।</p>
+
+<span class="tag">ଓଡ଼ିଆ</span>
+<br>
+
+<a class="btn blue"
+href="https://www.sambadepaper.com/"
+target="_blank">
+📖 ଆଜିର ପେପର
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="odia">
+
+<h3>🟠 Dharitri</h3>
+
+<p>ଓଡ଼ିଶା ଓ ଭାରତର ଓଡ଼ିଆ ଖବର।</p>
+
+<span class="tag">ଓଡ଼ିଆ</span>
+<br>
+
+<a class="btn blue"
+href="https://www.dharitri.com/"
+target="_blank">
+📖 ଖବର ପଢନ୍ତୁ
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="odia">
+
+<h3>🟠 The Samaja</h3>
+
+<p>ଦୈନିକ ଓଡ଼ିଆ ଖବର।</p>
+
+<span class="tag">ଓଡ଼ିଆ</span>
+<br>
+
+<a class="btn blue"
+href="https://www.thesamaja.com/"
+target="_blank">
+📖 Read News
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="hindi">
+
+<h3>🔵 दैनिक जागरण</h3>
+
+<p>ଆଜିର Hindi News ଓ ePaper।</p>
+
+<span class="tag">हिंदी</span>
+<br>
+
+<a class="btn blue"
+href="https://epaper.jagran.com/epaper/"
+target="_blank">
+📖 आज का पेपर
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="hindi">
+
+<h3>🔵 दैनिक भास्कर</h3>
+
+<p>Latest Hindi national ଓ state news।</p>
+
+<span class="tag">हिंदी</span>
+<br>
+
+<a class="btn blue"
+href="https://www.bhaskar.com/"
+target="_blank">
+📖 आज की खबरें
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="hindi">
+
+<h3>🔵 अमर उजाला</h3>
+
+<p>Hindi news, education ଓ jobs।</p>
+
+<span class="tag">हिंदी</span>
+<br>
+
+<a class="btn blue"
+href="https://www.amarujala.com/"
+target="_blank">
+📖 Read News
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="english">
+
+<h3>🟢 The Hindu</h3>
+
+<p>Today's English news & current affairs.</p>
+
+<span class="tag">ENGLISH</span>
+<br>
+
+<a class="btn blue"
+href="https://epaper.thehindu.com/"
+target="_blank">
+📖 Today's ePaper
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="english">
+
+<h3>🟢 The Indian Express</h3>
+
+<p>India, education, jobs & current affairs.</p>
+
+<span class="tag">ENGLISH</span>
+<br>
+
+<a class="btn blue"
+href="https://indianexpress.com/"
+target="_blank">
+📖 Read News
+</a>
+
+</div>
+
+
+<div class="card news paper" data-language="english">
+
+<h3>🟢 Hindustan Times</h3>
+
+<p>India & national latest news.</p>
+
+<span class="tag">ENGLISH</span>
+<br>
+
+<a class="btn blue"
+href="https://www.hindustantimes.com/"
+target="_blank">
+📖 Read News
+</a>
+
+</div>
+
+</div>
 </section>
 
 
@@ -1140,37 +1126,24 @@ target="_blank">
 <div class="cards">
 
 <div class="card news">
-
 <h3>🇮🇳 India Current Affairs</h3>
-
-<p>National news ଏବଂ exam-related current affairs.</p>
-
+<p>National news ଓ exam-related important events.</p>
 <span class="tag">NATIONAL</span>
-
 </div>
 
 <div class="card news">
-
 <h3>🏛️ Odisha Current Affairs</h3>
-
-<p>Odisha government, education ଏବଂ recruitment updates.</p>
-
+<p>Odisha government, education ଓ recruitment updates.</p>
 <span class="tag">ODISHA</span>
-
 </div>
 
 <div class="card news">
-
 <h3>🏦 Banking Current Affairs</h3>
-
-<p>RBI • SBI • Banking awareness.</p>
-
+<p>RBI, SBI, IBPS ଓ banking awareness.</p>
 <span class="tag">BANKING</span>
-
 </div>
 
 </div>
-
 </section>
 
 
@@ -1187,6 +1160,7 @@ target="_blank">
 
 <button onclick="filterBooks('all')">All</button>
 <button onclick="filterBooks('ossc')">OSSC</button>
+<button onclick="filterBooks('osssc')">OSSSC</button>
 <button onclick="filterBooks('police')">Police</button>
 <button onclick="filterBooks('ssc')">SSC</button>
 <button onclick="filterBooks('railway')">Railway</button>
@@ -1198,14 +1172,33 @@ target="_blank">
 
 <div class="card book" data-book="ossc">
 
-<h3>📕 OSSC Preparation Book</h3>
+<h3>📕 OSSC Preparation</h3>
 
 <p>Odisha GK • Odia • English • Maths • Reasoning • PYQ</p>
 
-<span class="tag">OSSC</span><br>
+<span class="tag">OSSC</span>
+<br>
 
 <a class="btn orange"
 href="https://www.amazon.in/s?k=OSSC+exam+preparation+book"
+target="_blank">
+🛒 Buy Book
+</a>
+
+</div>
+
+
+<div class="card book" data-book="osssc">
+
+<h3>📗 OSSSC RI / ARI / Amin</h3>
+
+<p>Odisha GK • Maths • Reasoning • Odia • English • PYQ</p>
+
+<span class="tag">OSSSC</span>
+<br>
+
+<a class="btn orange"
+href="https://www.amazon.in/s?k=OSSSC+RI+ARI+Amin+book"
 target="_blank">
 🛒 Buy Book
 </a>
@@ -1219,7 +1212,8 @@ target="_blank">
 
 <p>GK • Maths • Reasoning • Odia • English • Current Affairs</p>
 
-<span class="tag">POLICE</span><br>
+<span class="tag">POLICE</span>
+<br>
 
 <a class="btn orange"
 href="https://www.amazon.in/s?k=Odisha+Police+exam+book"
@@ -1232,11 +1226,12 @@ target="_blank">
 
 <div class="card book" data-book="ssc">
 
-<h3>📘 SSC CGL / CHSL Book</h3>
+<h3>📘 SSC CGL / CHSL</h3>
 
-<p>Maths • Reasoning • English • GK • PYQ</p>
+<p>Maths • Reasoning • English • GK • Current Affairs • PYQ</p>
 
-<span class="tag">SSC</span><br>
+<span class="tag">SSC</span>
+<br>
 
 <a class="btn orange"
 href="https://www.amazon.in/s?k=SSC+CGL+CHSL+exam+book"
@@ -1249,11 +1244,12 @@ target="_blank">
 
 <div class="card book" data-book="railway">
 
-<h3>🚆 Railway / RRB Book</h3>
+<h3>🚆 Railway / RRB</h3>
 
 <p>Maths • Reasoning • Science • GK • Current Affairs • PYQ</p>
 
-<span class="tag">RAILWAY</span><br>
+<span class="tag">RAILWAY</span>
+<br>
 
 <a class="btn orange"
 href="https://www.amazon.in/s?k=RRB+Railway+exam+book"
@@ -1266,11 +1262,12 @@ target="_blank">
 
 <div class="card book" data-book="bank">
 
-<h3>🏦 SBI / IBPS Bank Book</h3>
+<h3>🏦 SBI / IBPS Bank</h3>
 
-<p>Quant • Reasoning • English • Banking Awareness</p>
+<p>Quant • Reasoning • English • Banking Awareness • Current Affairs</p>
 
-<span class="tag">BANK</span><br>
+<span class="tag">BANKING</span>
+<br>
 
 <a class="btn orange"
 href="https://www.amazon.in/s?k=SBI+IBPS+bank+exam+book"
@@ -1281,7 +1278,6 @@ target="_blank">
 </div>
 
 </div>
-
 </section>
 
 
@@ -1311,35 +1307,67 @@ placeholder="Example: OSSC RI">
 </section>
 
 
-<!-- ONLINE SERVICE -->
+<!-- JOBMITRA AI CHAT -->
+
+<section class="section" id="ai">
+
+<div class="ai">
+
+<h2>🤖 JobMitra AI</h2>
+
+<p>
+Job, Scholarship, Exam, Book କିମ୍ବା Current Affairs ବିଷୟରେ ପଚାରନ୍ତୁ।
+</p>
+
+<div class="answer" id="chatAnswer">
+👋 ନମସ୍କାର! ମୁଁ JobMitra AI।
+ଆପଣଙ୍କୁ କେମିତି help କରିପାରିବି?
+</div>
+
+<div class="ai-input">
+
+<input id="chatInput"
+placeholder="Example: OSSC ପାଇଁ କେଉଁ book ପଢିବି?">
+
+<button onclick="jobMitraChat()">
+Ask AI
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ONLINE ASSISTANCE -->
 
 <section class="section" id="services">
 
 <div class="title">
-<h2>💻 ଅନଲାଇନ୍ କାମରେ ସହାୟତା</h2>
+<h2>💻 Online Form Assistance</h2>
 <span class="badge">₹99</span>
 </div>
 
 <div class="card service">
 
-<h3>🌐 ଆମ ପାଖରେ Online Form Assistance ହୋଇପାରିବ</h3>
+<h3>🌐 ଆମ ପାଖରେ ଅନଲାଇନ୍ କାମ ହୋଇପାରିବ</h3>
 
 <p style="margin-top:8px">
 ନିଜେ online application କରିପାରୁନାହାନ୍ତି?
-ଆମେ form filling ଏବଂ application assistance କରିବୁ।
+ଆମେ application/form filling ରେ assistance କରିବୁ।
 </p>
 
 <div class="info">
 
-<div>🪪 <b>ଆଧାର</b> — ନାମ/ତଥ୍ୟ update assistance</div>
-<div>🍚 <b>ରାସନ୍ କାର୍ଡ</b> — Apply / Update assistance</div>
+<div>🪪 <b>ଆଧାର</b> — ନାମ/ତଥ୍ୟ ସଂଶୋଧନ ସହାୟତା</div>
+<div>🍚 <b>ରାସନ୍ କାର୍ଡ</b> — Apply / Update</div>
 <div>👶 <b>ଜନ୍ମ ପ୍ରମାଣପତ୍ର</b></div>
 <div>⚰️ <b>ମୃତ୍ୟୁ ପ୍ରମାଣପତ୍ର</b></div>
 <div>📜 <b>ଜାତି ପ୍ରମାଣପତ୍ର</b></div>
 <div>💰 <b>ଆୟ ପ୍ରମାଣପତ୍ର</b></div>
 <div>🏠 <b>ବାସସ୍ଥାନ ପ୍ରମାଣପତ୍ର</b></div>
-<div>📑 <b>SEBC / OBC</b></div>
-<div>🌾 <b>ଭୁଲେଖ / ଜମି ରେକର୍ଡ</b> assistance</div>
+<div>📑 <b>SEBC / OBC ପ୍ରମାଣପତ୍ର</b></div>
+<div>🌾 <b>ଭୁଲେଖ / ଜମି ରେକର୍ଡ</b> ସହାୟତା</div>
 <div>🎓 <b>Scholarship Apply</b></div>
 <div>💼 <b>Government Job Apply</b></div>
 <div>📝 <b>ଅନ୍ୟାନ୍ୟ Online Form</b></div>
@@ -1347,18 +1375,16 @@ placeholder="Example: OSSC RI">
 </div>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 DM @naik_babulu — Assistance ₹99
+📩 Direct DM @naik_babulu — Assistance ₹99
 </a>
 
 <p class="note">
-⚠️ ଏହା ସରକାରୀ କାର୍ଯ୍ୟାଳୟ ନୁହେଁ।
-ସରକାରୀ ଫି ଥିଲେ ତାହା ଅଲଗା।
+⚠️ ଏହା ସରକାରୀ କାର୍ଯ୍ୟାଳୟ ନୁହେଁ। ସରକାରୀ ଫି ଲାଗିଲେ ତାହା ଅଲଗା।
 </p>
 
 </div>
-
 </section>
 
 
@@ -1371,8 +1397,8 @@ target="_blank">
 <h2>💬 କୌଣସି Problem ଅଛି?</h2>
 
 <p style="margin-top:7px">
-Job, Scholarship, Apply, Admit Card କିମ୍ବା website
-ସମ୍ବନ୍ଧରେ problem ହେଲେ ଆମକୁ କୁହନ୍ତୁ।
+Job, Scholarship, Apply, Admit Card କିମ୍ବା website ବିଷୟରେ
+କୌଣସି problem ହେଲେ ଲେଖନ୍ତୁ।
 </p>
 
 <div class="form">
@@ -1384,7 +1410,7 @@ placeholder="👤 ଆପଣଙ୍କ ନାମ">
 placeholder="📱 Mobile Number (Optional)">
 
 <textarea id="commentText"
-placeholder="💬 Problem ଲେଖନ୍ତୁ..."></textarea>
+placeholder="💬 ଆପଣଙ୍କ Problem ଲେଖନ୍ତୁ..."></textarea>
 
 <button onclick="sendComment()">
 📤 Problem Send
@@ -1393,57 +1419,30 @@ placeholder="💬 Problem ଲେଖନ୍ତୁ..."></textarea>
 </div>
 
 <p class="note">
-କିମ୍ବା Instagram ରେ ସିଧା DM କରନ୍ତୁ।
+କିମ୍ବା ସିଧା Instagram Direct DM କରନ୍ତୁ।
 </p>
 
 <a class="btn pink"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 DM @naik_babulu
+📩 Direct DM @naik_babulu
 </a>
 
 </div>
-
-</section>
-
-
-<!-- AI -->
-
-<section class="section" id="ai">
-
-<div class="ai">
-
-<h2>🤖 JobMitra AI Preparation</h2>
-
-<p style="margin-top:6px">
-ଆପଣ କେଉଁ Exam ପାଇଁ ପଢୁଛନ୍ତି?
-</p>
-
-<div class="ai-input">
-
-<input id="aiInput"
-placeholder="Example: OSSC preparation">
-
-<button onclick="askAI()">Ask AI</button>
-
-</div>
-
-<div class="answer" id="aiAnswer"></div>
-
-</div>
-
 </section>
 
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <h3>🚀 JobMitra AI</h3>
 
-<p>Jobs • Scholarships • Books • Current Affairs • AI Preparation</p>
+<p>Jobs • Scholarships • Books • News • Current Affairs • AI</p>
 
-<p>ଓଡ଼ିଶା ଓ ଭାରତର Students ପାଇଁ ❤️</p>
+<p>Odisha Students ପାଇଁ ତିଆରି ❤️</p>
 
 <p class="design">✨ Designed by Babulu Naik</p>
 
@@ -1469,19 +1468,20 @@ placeholder="Example: OSSC preparation">
 
 <div class="ad-text">
 ନିଜେ online କାମ କରିପାରୁନାହାନ୍ତି?
-ଆମେ form/application assistance କରିବୁ।
+ଆମେ application/form filling assistance କରିବୁ।
 </div>
 
 <div class="ad-services">
-🪪 Aadhaar • 🍚 Ration Card • 👶 Birth • ⚰️ Death •
-📜 Caste • 💰 Income • 🏠 Residence • 📑 SEBC/OBC •
-🌾 Bhulekh • 🎓 Scholarship • 💼 Job Apply
+🪪 Aadhaar • 🍚 Ration Card • 👶 Birth Certificate •
+⚰️ Death Certificate • 📜 Caste • 💰 Income •
+🏠 Residence • 📑 SEBC/OBC • 🌾 Bhulekh •
+🎓 Scholarship • 💼 Job Apply • 📝 Other Forms
 </div>
 
 <a class="ad-dm"
-href="https://www.instagram.com/naik_babulu/"
+href="https://ig.me/m/naik_babulu"
 target="_blank">
-📩 DM @naik_babulu
+📩 Direct DM @naik_babulu
 </a>
 
 </div>
@@ -1490,41 +1490,18 @@ target="_blank">
 
 <script>
 
-/* DATE + CLOCK */
-
-function updateClock(){
-
-const now=new Date();
-
-document.getElementById("todayDate").innerText=
-now.toLocaleDateString("en-IN",{
-day:"2-digit",
-month:"long",
-year:"numeric"
-});
-
-document.getElementById("todayDay").innerText=
-now.toLocaleDateString("en-IN",{
-weekday:"long"
-});
-
-document.getElementById("clock").innerText=
-now.toLocaleTimeString("en-IN");
-
-}
-
-updateClock();
-setInterval(updateClock,1000);
-
-
 /* SCROLL */
 
 function scrollToSection(id){
 
-document.getElementById(id)
-.scrollIntoView({
-behavior:"smooth"
+const el=document.getElementById(id);
+
+if(el){
+el.scrollIntoView({
+behavior:"smooth",
+block:"start"
 });
+}
 
 }
 
@@ -1534,18 +1511,6 @@ window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
-}
-
-
-/* INSTAGRAM */
-
-function openInstagram(){
-
-window.open(
-"https://www.instagram.com/naik_babulu/",
-"_blank"
-);
 
 }
 
@@ -1562,6 +1527,25 @@ const categories=card.dataset.category;
 card.style.display=
 category==="all" ||
 categories.includes(category)
+?"block":"none";
+
+});
+
+}
+
+
+/* NEWSPAPER FILTER */
+
+function filterPaper(language){
+
+document.querySelectorAll("#paperList .paper")
+.forEach(card=>{
+
+const lang=card.dataset.language;
+
+card.style.display=
+language==="all" ||
+lang===language
 ?"block":"none";
 
 });
@@ -1632,8 +1616,8 @@ found=true;
 if(!found){
 
 alert(
-"❌ Result ମିଳିଲା ନାହିଁ।\n\n"+
-"Job, Scholarship, Book କିମ୍ବା Exam name search କରନ୍ତୁ।"
+"❌ Result ମିଳିଲା ନାହିଁ.\n\n"+
+"Job, Scholarship, Book, News କିମ୍ବା Exam name search କରନ୍ତୁ।"
 );
 
 }
@@ -1654,7 +1638,22 @@ document.getElementById("bookAnswer");
 
 if(!q){
 
-ans.innerHTML="📚 Exam / Job name ଲେଖନ୍ତୁ।";
+ans.innerHTML=
+"📚 Exam / Job name ଲେଖନ୍ତୁ।";
+
+return;
+
+}
+
+if(q.includes("osssc") ||
+q.includes("ri") ||
+q.includes("ari") ||
+q.includes("amin")){
+
+ans.innerHTML=
+"🎯 <b>OSSSC RI / ARI / Amin:</b><br>"+
+"Odisha GK + Maths + Reasoning + Odia + English + Current Affairs + PYQ";
+
 return;
 
 }
@@ -1669,26 +1668,22 @@ return;
 
 }
 
-if(
-q.includes("police")
-){
+if(q.includes("police")){
 
 ans.innerHTML=
 "👮 <b>Police:</b><br>"+
-"General GK + Odisha GK + Maths + Reasoning + Current Affairs + PYQ";
+"Odisha GK + General GK + Maths + Reasoning + Current Affairs + PYQ";
 
 return;
 
 }
 
-if(
-q.includes("railway")||
-q.includes("rrb")
-){
+if(q.includes("railway") ||
+q.includes("rrb")){
 
 ans.innerHTML=
 "🚆 <b>Railway:</b><br>"+
-"Maths + Reasoning + Science + GK + Current Affairs + PYQ";
+"Maths + Reasoning + General Science + GK + Current Affairs + PYQ";
 
 return;
 
@@ -1704,15 +1699,13 @@ return;
 
 }
 
-if(
-q.includes("bank")||
-q.includes("sbi")||
-q.includes("ibps")
-){
+if(q.includes("bank") ||
+q.includes("sbi") ||
+q.includes("ibps")){
 
 ans.innerHTML=
 "🏦 <b>Banking:</b><br>"+
-"Quant + Reasoning + English + Banking Awareness + Current Affairs";
+"Quant + Reasoning + English + Banking Awareness + Current Affairs + Mock Tests";
 
 return;
 
@@ -1725,67 +1718,75 @@ ans.innerHTML=
 }
 
 
-/* AI PREPARATION */
+/* JOBMITRA AI */
 
-function askAI(){
+function jobMitraChat(){
 
 const q=
-document.getElementById("aiInput")
-.value.toLowerCase();
+document.getElementById("chatInput")
+.value.toLowerCase()
+.trim();
 
-const ans=
-document.getElementById("aiAnswer");
+const answer=
+document.getElementById("chatAnswer");
 
 if(!q){
 
-ans.innerHTML="🤖 Exam name ଲେଖନ୍ତୁ।";
-return;
-
-}
-
-if(q.includes("ossc")){
-
-ans.innerHTML=
-"🎯 OSSC Plan:<br>"+
-"Daily GK + Maths + Reasoning + English/Odia + Current Affairs + PYQ + Weekly Mock Test.";
+answer.innerHTML=
+"🤖 ଦୟାକରି ଆପଣଙ୍କ ପ୍ରଶ୍ନ ଲେଖନ୍ତୁ।";
 
 return;
 
 }
 
-if(q.includes("police")){
+if(q.includes("job") ||
+q.includes("ଚାକିରି")){
 
-ans.innerHTML=
-"👮 Police Plan:<br>"+
-"Odisha GK + General GK + Maths + Reasoning + Current Affairs + PYQ.";
-
-return;
-
-}
-
-if(q.includes("railway")||q.includes("rrb")){
-
-ans.innerHTML=
-"🚆 Railway Plan:<br>"+
-"Maths + Reasoning + Science + GK + Current Affairs + PYQ.";
-
-return;
+answer.innerHTML=
+"💼 Jobs section ରେ ଯାଇ qualification ଅନୁସାରେ job ଦେଖନ୍ତୁ।"+
+"<br>Official notification ର Last Date ଓ eligibility ନିଶ୍ଚିତ check କରନ୍ତୁ।";
 
 }
 
-if(q.includes("bank")||q.includes("sbi")){
+else if(q.includes("scholarship") ||
+q.includes("ସ୍କଲାରସିପ")){
 
-ans.innerHTML=
-"🏦 Bank Plan:<br>"+
-"Quant + Reasoning + English + Banking Awareness + Current Affairs + Mock Tests.";
-
-return;
+answer.innerHTML=
+"🎓 Scholarship section ରେ Odisha State Scholarship, Post-Matric, NSP ଓ SBI scholarship ଦେଖନ୍ତୁ।";
 
 }
 
-ans.innerHTML=
-"🤖 Plan:<br>"+
-"Official syllabus → Important topics → PYQ → Daily Current Affairs → Mock Test.";
+else if(q.includes("book") ||
+q.includes("ବହି")){
+
+answer.innerHTML=
+"📚 Books section ରେ OSSC, OSSSC, Police, SSC, Railway ଓ Bank ପାଇଁ recommended books ଅଛି।";
+
+}
+
+else if(q.includes("news") ||
+q.includes("ଖବର") ||
+q.includes("current")){
+
+answer.innerHTML=
+"📰 Current Affairs ଓ News Paper section ରେ Odia, Hindi ଓ English news ପଢ଼ନ୍ତୁ।";
+
+}
+
+else if(q.includes("apply") ||
+q.includes("ଆବେଦନ")){
+
+answer.innerHTML=
+"📝 Apply କରିବା ପୂର୍ବରୁ official notification ର eligibility, documents, fee ଓ last date check କରନ୍ତୁ। ଆବଶ୍ୟକ ହେଲେ Direct DM କରନ୍ତୁ।";
+
+}
+
+else{
+
+answer.innerHTML=
+"🤖 ମୁଁ Jobs, Scholarship, Books, Current Affairs ଓ Online Apply ବିଷୟରେ help କରିପାରିବି।";
+
+}
 
 }
 
@@ -1802,20 +1803,23 @@ const text=
 document.getElementById("commentText")
 .value.trim();
 
-if(!name||!text){
+if(!name || !text){
 
-alert("⚠️ ନାମ ଏବଂ Problem ଲେଖନ୍ତୁ।");
+alert(
+"⚠️ ନାମ ଏବଂ Problem ଲେଖନ୍ତୁ।"
+);
+
 return;
 
 }
 
 alert(
-"✅ Problem ଲେଖା ହୋଇଛି।\n\n"+
-"ଦୟାକରି Instagram @naik_babulu ରେ DM କରନ୍ତୁ।"
+"✅ Problem ଲେଖାଯାଇଛି।\n\n"+
+"ଆପଣଙ୍କ ସହାୟତା ପାଇଁ Instagram Direct DM କରନ୍ତୁ।"
 );
 
 window.open(
-"https://www.instagram.com/naik_babulu/",
+"https://ig.me/m/naik_babulu",
 "_blank"
 );
 
