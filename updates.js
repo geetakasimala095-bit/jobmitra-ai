@@ -1,600 +1,383 @@
-/* =========================================================
-   JOBMITRA AI — LIVE / DAILY UPDATES
-   Created by Babulu Naik
-   ========================================================= */
+// ==========================================
+// 🔔 LATEST NOTIFICATION
+// JOB + SCHOLARSHIP + ADMIT CARD
+// ==========================================
 
-const JOBMITRA_UPDATES = [
-
-  /* ================= NEWEST POST FIRST ================= */
+const latestNotifications = [
 
   {
-    type: "govt-job",
-    post: "Odisha Police Recruitment",
-    titleOr: "ଓଡ଼ିଶା ପୋଲିସ୍ ନିଯୁକ୍ତି",
+    type: "job",
+    icon: "👮",
+    title: "Odisha Police Recruitment",
     department: "Odisha Police",
-    location: "Odisha",
-    vacancy: "Check Official Notification",
-    qualification: "10th / 12th / Graduate — Post wise",
-    age: "As per official notification",
-    salary: "As per post",
-    fee: "As per official notification",
-
-    notificationDate: "2026-08-13",
-    applyStart: "2026-08-13",
-    lastDate: "2026-08-30",
-
-    documents: [
-      "Aadhaar Card",
-      "Passport Photo",
-      "Signature",
-      "Educational Certificate",
-      "Caste Certificate if applicable",
-      "Residence Certificate if required"
-    ],
-
-    details:
-      "Odisha Police recruitment information. Check the official notification for exact post, vacancy, eligibility and dates.",
-
-    apply: "https://odishapolice.gov.in/",
-    source: "Odisha Police Official Website",
-    active: true
-  },
-
-  {
-    type: "odisha-job",
-    post: "OSSC Recruitment",
-    titleOr: "OSSC ନିଯୁକ୍ତି",
-    department: "Odisha Staff Selection Commission (OSSC)",
-    location: "Odisha",
-    vacancy: "Post wise",
-    qualification: "10th / 12th / Graduate — Post wise",
-    age: "As per notification",
-    salary: "As per post",
-    fee: "As per notification",
-
-    notificationDate: "2026-08-13",
-    applyStart: "Check official notification",
-    lastDate: "Check official notification",
-
-    documents: [
-      "Aadhaar Card",
-      "Photo",
-      "Signature",
-      "Educational Certificate",
-      "Caste Certificate if applicable"
-    ],
-
-    details:
-      "OSSC recruitment updates. Check the official notification before applying.",
-
-    apply: "https://www.ossc.gov.in/",
-    source: "OSSC Official Website",
-    active: true
-  },
-
-  {
-    type: "private-job",
-    post: "Private Company Job",
-    titleOr: "Private Company Job",
-    department: "Private Sector",
-    location: "Odisha / India",
-    vacancy: "Company wise",
-    qualification: "10th / 12th / Graduate — Post wise",
-    age: "18+ / Company rules",
-    salary: "Company rules",
-    fee: "Do not pay unknown recruiters",
-
-    notificationDate: "2026-08-13",
-    applyStart: "Now",
-    lastDate: "Employer wise",
-
-    documents: [
-      "Resume / CV",
-      "Aadhaar Card",
-      "Passport Photo",
-      "Educational Certificate"
-    ],
-
-    details:
-      "Private job opportunities. Never pay money to an unknown person promising a job.",
-
-    apply: "https://www.ncs.gov.in/",
-    source: "National Career Service",
-    active: true
+    vacancy: "Constable / Other Posts",
+    lastDate: "30 Aug 2026",
+    link: "#"
   },
 
   {
     type: "scholarship",
-    post: "Scholarship Update",
-    titleOr: "ଛାତ୍ରଛାତ୍ରୀଙ୍କ ପାଇଁ Scholarship",
-    department: "Scholarship",
-    location: "India",
-    vacancy: "-",
-    qualification: "Eligible Students",
-    age: "Scheme wise",
-    salary: "-",
-    fee: "Free",
-
-    notificationDate: "2026-08-13",
-    applyStart: "Check portal",
-    lastDate: "Scheme wise",
-
-    documents: [
-      "Aadhaar Card",
-      "Marksheet",
-      "Income Certificate",
-      "Caste Certificate if applicable",
-      "Bank Passbook",
-      "Passport Photo",
-      "Mobile Number"
-    ],
-
-    details:
-      "Scholarship information for eligible students. Check the official portal for eligibility and last date.",
-
-    apply: "https://scholarships.gov.in/",
-    source: "National Scholarship Portal",
-    active: true
+    icon: "🎓",
+    title: "Odisha Scholarship Update",
+    department: "State Scholarship Portal",
+    eligibility: "Eligible Students",
+    lastDate: "31 Aug 2026",
+    link: "#"
   },
 
   {
-    type: "admit-card",
-    post: "New Admit Card Update",
-    titleOr: "ନୂଆ Admit Card",
-    department: "Examination",
-    location: "India",
-    vacancy: "-",
-    qualification: "According to examination",
-    age: "-",
-    salary: "-",
-    fee: "-",
-
-    notificationDate: "2026-08-13",
-    applyStart: "-",
-    lastDate: "-",
-
-    documents: [
-      "Application Number",
-      "Date of Birth",
-      "Registered Mobile Number"
-    ],
-
-    details:
-      "Download admit card only from the official examination website.",
-
-    apply: "https://www.nta.ac.in/",
-    source: "Official Examination Website",
-    active: true
-  },
-
-  {
-    type: "result",
-    post: "New Exam Result",
-    titleOr: "ନୂଆ Exam Result",
-    department: "Examination",
-    location: "India",
-    vacancy: "-",
-    qualification: "Candidates",
-    age: "-",
-    salary: "-",
-    fee: "Free",
-
-    notificationDate: "2026-08-13",
-    applyStart: "-",
-    lastDate: "-",
-
-    documents: [
-      "Roll Number",
-      "Registration Number",
-      "Date of Birth"
-    ],
-
-    details:
-      "Check examination result from the official result portal.",
-
-    apply: "https://results.gov.in/",
-    source: "Government Results Portal",
-    active: true
-  },
-
-  {
-    type: "farmer",
-    post: "Farmer Government Scheme",
-    titleOr: "ଚାଷୀଙ୍କ ପାଇଁ ସରକାରୀ ଯୋଜନା",
-    department: "Agriculture Department",
-    location: "Odisha",
-    vacancy: "-",
-    qualification: "Eligible Farmers",
-    age: "Scheme wise",
-    salary: "-",
-    fee: "Usually Free",
-
-    notificationDate: "2026-08-13",
-    applyStart: "Check portal",
-    lastDate: "Scheme wise",
-
-    documents: [
-      "Aadhaar Card",
-      "Mobile Number",
-      "Bank Passbook",
-      "Land Record",
-      "Residence Certificate if required"
-    ],
-
-    details:
-      "Agriculture schemes, subsidy and farmer assistance information.",
-
-    apply: "https://agri.odisha.gov.in/",
-    source: "Odisha Agriculture Department",
-    active: true
-  },
-
-  {
-    type: "news",
-    post: "Odisha Latest News",
-    titleOr: "ଆଜିର ଓଡ଼ିଶା ଖବର",
-    department: "Odisha",
-    location: "Odisha",
-    vacancy: "-",
-    qualification: "-",
-    age: "-",
-    salary: "-",
-    fee: "-",
-
-    notificationDate: "2026-08-13",
-    applyStart: "-",
-    lastDate: "-",
-
-    documents: [],
-
-    details:
-      "Important Odisha news and government updates.",
-
-    apply: "https://odisha.gov.in/",
-    source: "Odisha Government",
-    active: true
-  },
-
-  {
-    type: "news",
-    post: "India Latest News",
-    titleOr: "ଆଜିର India News",
-    department: "Government of India",
-    location: "India",
-    vacancy: "-",
-    qualification: "-",
-    age: "-",
-    salary: "-",
-    fee: "-",
-
-    notificationDate: "2026-08-13",
-    applyStart: "-",
-    lastDate: "-",
-
-    documents: [],
-
-    details:
-      "Important national updates and government information.",
-
-    apply: "https://www.india.gov.in/",
-    source: "Government of India",
-    active: true
-  },
-
-  {
-    type: "sports",
-    post: "Cricket & Sports Update",
-    titleOr: "ଆଜିର Sports Update",
-    department: "Sports",
-    location: "India",
-    vacancy: "-",
-    qualification: "-",
-    age: "-",
-    salary: "-",
-    fee: "-",
-
-    notificationDate: "2026-08-13",
-    applyStart: "-",
-    lastDate: "-",
-
-    documents: [],
-
-    details:
-      "Latest cricket, sports results and important sports events.",
-
-    apply: "#",
-    source: "JobMitra AI",
-    active: true
+    type: "admitcard",
+    icon: "🎫",
+    title: "Latest Government Exam Admit Card",
+    examDate: "Check Official Notice",
+    released: "Released",
+    link: "#"
   }
 
 ];
 
 
-/* =========================================================
-   HELPERS
-   ========================================================= */
+// ==========================================
+// 🎨 BEAUTIFUL DESIGN
+// ==========================================
 
-function formatDate(date) {
+const notificationStyle = document.createElement("style");
 
-  if (!date || date === "-") return date || "-";
+notificationStyle.innerHTML = `
 
-  const d = new Date(date + "T00:00:00");
+#latestNotifications{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:15px;
+}
 
-  if (isNaN(d.getTime())) return date;
+/* CARD */
 
-  return d.toLocaleDateString("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
-  });
+.notification-card{
+  position:relative;
+  width:100%;
+  padding:18px;
+  border-radius:18px;
+  display:flex;
+  gap:15px;
+  overflow:hidden;
+  color:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.18);
+  transition:.3s;
+}
+
+.notification-card:hover{
+  transform:translateY(-3px);
 }
 
 
-function daysLeft(lastDate) {
+/* JOB */
 
-  if (!lastDate || lastDate === "-") return null;
-
-  const end = new Date(lastDate + "T23:59:59");
-  const now = new Date();
-
-  const diff = end - now;
-
-  return Math.ceil(diff / (1000 * 60 * 60 * 24));
+.job-card{
+  background:linear-gradient(135deg,#7f0000,#d40000,#ff3b30);
 }
 
 
-function getStatus(item) {
+/* SCHOLARSHIP */
 
-  const days = daysLeft(item.lastDate);
-
-  if (days === null) return {
-    text: "🟡 DATE CHECK",
-    className: "dateCheck"
-  };
-
-  if (days < 0) return {
-    text: "🔴 APPLICATION CLOSED",
-    className: "closed"
-  };
-
-  if (days === 0) return {
-    text: "🔴 LAST DATE TODAY",
-    className: "today"
-  };
-
-  if (days <= 5) return {
-    text: "⚠️ " + days + " DAYS LEFT",
-    className: "urgent"
-  };
-
-  return {
-    text: "🟢 " + days + " DAYS LEFT",
-    className: "open"
-  };
+.scholarship-card{
+  background:linear-gradient(135deg,#004d40,#00897b,#00bfa5);
 }
 
 
-function getTypeName(type) {
+/* ADMIT CARD */
 
-  const names = {
-    "govt-job": "🏛️ Government Job",
-    "odisha-job": "🏛️ Odisha Govt Job",
-    "private-job": "🏢 Private Job",
-    "scholarship": "🎓 Scholarship",
-    "admit-card": "📝 Admit Card",
-    "result": "📊 Result",
-    "farmer": "🌾 Farmer",
-    "news": "📰 News",
-    "sports": "🏏 Sports"
-  };
-
-  return names[type] || "🆕 Update";
+.admit-card{
+  background:linear-gradient(135deg,#4527a0,#673ab7,#9c27b0);
 }
 
 
-/* =========================================================
-   SORT — NEWEST UPDATE FIRST
-   ========================================================= */
+/* ICON */
 
-function getLatestUpdates() {
-
-  return JOBMITRA_UPDATES
-    .filter(item => item.active === true)
-    .sort(function(a, b) {
-
-      return new Date(b.notificationDate) -
-             new Date(a.notificationDate);
-
-    });
+.notification-icon{
+  min-width:55px;
+  height:55px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
 
-/* =========================================================
-   CREATE CARD
-   ========================================================= */
+/* CONTENT */
 
-function createUpdateCard(item) {
+.notification-content{
+  flex:1;
+}
 
-  const status = getStatus(item);
-  const days = daysLeft(item.lastDate);
+.notification-content h3{
+  margin:7px 0;
+  font-size:18px;
+  font-weight:800;
+  color:#fff;
+}
 
-  let documents = "";
+.notification-content p{
+  margin:5px 0;
+  font-size:13px;
+  color:#fff;
+}
 
-  if (item.documents && item.documents.length) {
 
-    documents = `
-      <div class="updateDocuments">
-        <b>📄 Documents Required</b>
-        <ul>
-          ${item.documents.map(d => `<li>${d}</li>`).join("")}
-        </ul>
-      </div>
-    `;
+/* BADGE */
+
+.notification-badge{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+  background:#fff;
+  color:#b00000;
+}
+
+.scholarship-badge{
+  color:#00695c;
+}
+
+.admit-badge{
+  color:#512da8;
+}
+
+
+/* LAST DATE */
+
+.last-date{
+  margin-top:10px !important;
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(0,0,0,.22);
+  font-size:13px !important;
+}
+
+.last-date b{
+  color:#ffe600;
+}
+
+
+/* BUTTON */
+
+.apply-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:9px 15px;
+  border-radius:10px;
+  background:#fff;
+  color:#b00000;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  transition:.2s;
+}
+
+.apply-btn:hover{
+  transform:scale(1.04);
+}
+
+.admit-btn{
+  color:#512da8;
+}
+
+
+/* TITLE */
+
+.latest-title{
+  margin-bottom:10px;
+  padding:5px 2px;
+  font-size:22px;
+  font-weight:900;
+  color:#8b0000;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .notification-card{
+    padding:14px;
+    border-radius:15px;
   }
 
-  let daysHTML = "";
-
-  if (days !== null && days >= 0) {
-
-    daysHTML = `
-      <div class="daysLeft ${status.className}">
-        ${status.text}
-      </div>
-    `;
-
-  } else if (days !== null && days < 0) {
-
-    daysHTML = `
-      <div class="daysLeft closed">
-        🔴 APPLICATION CLOSED
-      </div>
-    `;
-
-  } else {
-
-    daysHTML = `
-      <div class="daysLeft dateCheck">
-        ${status.text}
-      </div>
-    `;
+  .notification-icon{
+    min-width:45px;
+    width:45px;
+    height:45px;
+    font-size:23px;
   }
 
+  .notification-content h3{
+    font-size:16px;
+  }
 
-  const applyButton =
-    (days !== null && days < 0)
-      ? `<button class="applyBtn disabled" disabled>🔒 APPLY CLOSED</button>`
-      : `<a href="${item.apply}" target="_blank" class="applyBtn">🔗 DIRECT APPLY</a>`;
+  .notification-content p{
+    font-size:12px;
+  }
+
+}
+
+`;
+
+document.head.appendChild(notificationStyle);
 
 
-  return `
+// ==========================================
+// 🔥 DISPLAY NOTIFICATIONS
+// ==========================================
 
-    <article class="updateCard">
+function showLatestNotifications(){
 
-      <div class="updateTop">
+  const box = document.getElementById("latestNotifications");
 
-        <span class="updateBadge">
-          ${getTypeName(item.type)}
-        </span>
+  if(!box) return;
 
-        <span class="updateDate">
-          🆕 ${formatDate(item.notificationDate)}
-        </span>
+  box.innerHTML = `
 
-      </div>
-
-      <div class="updateStatus">
-        ${daysHTML}
-      </div>
-
-      <h2 class="updatePost">
-        ${item.post}
-      </h2>
-
-      <h3 class="updateOdia">
-        ${item.titleOr}
-      </h3>
-
-      <div class="updateGrid">
-
-        <p>🏢 <b>Department</b><br>${item.department}</p>
-
-        <p>📍 <b>Location</b><br>${item.location}</p>
-
-        <p>🔢 <b>Vacancy</b><br>${item.vacancy}</p>
-
-        <p>🎓 <b>Qualification</b><br>${item.qualification}</p>
-
-        <p>🎂 <b>Age</b><br>${item.age}</p>
-
-        <p>💰 <b>Salary</b><br>${item.salary}</p>
-
-        <p>💳 <b>Fee</b><br>${item.fee}</p>
-
-      </div>
-
-      <div class="dateBox">
-
-        <div>
-          📢 <b>Notification</b>
-          <span>${formatDate(item.notificationDate)}</span>
-        </div>
-
-        <div>
-          🟢 <b>Apply Start</b>
-          <span>${formatDate(item.applyStart)}</span>
-        </div>
-
-        <div>
-          🔴 <b>Last Date</b>
-          <span>${formatDate(item.lastDate)}</span>
-        </div>
-
-      </div>
-
-      <div class="updateDetails">
-        ${item.details}
-      </div>
-
-      ${documents}
-
-      <div class="updateButtons">
-
-        ${applyButton}
-
-        <a
-          href="https://ig.me/m/naik_babulu"
-          target="_blank"
-          class="dmBtn"
-        >
-          📩 APPLY ₹99
-        </a>
-
-      </div>
-
-      <small class="source">
-        Source: ${item.source}
-      </small>
-
-    </article>
+    <div class="latest-title">
+      🔔 Latest Notifications
+    </div>
 
   `;
+
+  latestNotifications.forEach(item => {
+
+    let card = "";
+
+    // JOB
+    if(item.type === "job"){
+
+      card = `
+        <div class="notification-card job-card">
+
+          <div class="notification-icon">
+            ${item.icon}
+          </div>
+
+          <div class="notification-content">
+
+            <span class="notification-badge job-badge">
+              JOB NOTIFICATION
+            </span>
+
+            <h3>${item.title}</h3>
+
+            <p>🏢 ${item.department}</p>
+
+            <p>👥 Vacancy: ${item.vacancy}</p>
+
+            <p class="last-date">
+              ⏳ Last Date:
+              <b>${item.lastDate}</b>
+            </p>
+
+            <a href="${item.link}" class="apply-btn">
+              Apply Now →
+            </a>
+
+          </div>
+
+        </div>
+      `;
+    }
+
+
+    // SCHOLARSHIP
+    if(item.type === "scholarship"){
+
+      card = `
+        <div class="notification-card scholarship-card">
+
+          <div class="notification-icon">
+            ${item.icon}
+          </div>
+
+          <div class="notification-content">
+
+            <span class="notification-badge scholarship-badge">
+              SCHOLARSHIP
+            </span>
+
+            <h3>${item.title}</h3>
+
+            <p>🏢 ${item.department}</p>
+
+            <p>🎓 Eligibility: ${item.eligibility}</p>
+
+            <p class="last-date">
+              ⏳ Last Date:
+              <b>${item.lastDate}</b>
+            </p>
+
+            <a href="${item.link}" class="apply-btn">
+              Apply Now →
+            </a>
+
+          </div>
+
+        </div>
+      `;
+    }
+
+
+    // ADMIT CARD
+    if(item.type === "admitcard"){
+
+      card = `
+        <div class="notification-card admit-card">
+
+          <div class="notification-icon">
+            ${item.icon}
+          </div>
+
+          <div class="notification-content">
+
+            <span class="notification-badge admit-badge">
+              ADMIT CARD
+            </span>
+
+            <h3>${item.title}</h3>
+
+            <p>📅 Exam Date:
+              <b>${item.examDate}</b>
+            </p>
+
+            <p>✅ Status: ${item.released}</p>
+
+            <a href="${item.link}" class="apply-btn admit-btn">
+              Download Admit Card →
+            </a>
+
+          </div>
+
+        </div>
+      `;
+    }
+
+    box.innerHTML += card;
+
+  });
+
 }
 
 
-/* =========================================================
-   RENDER LATEST UPDATES
-   ========================================================= */
+// ==========================================
+// 🚀 START
+// ==========================================
 
-function renderLatestUpdates(containerId) {
-
-  const container = document.getElementById(containerId);
-
-  if (!container) return;
-
-  const posts = getLatestUpdates();
-
-  if (!posts.length) {
-
-    container.innerHTML = `
-      <div class="emptyUpdate">
-        📰 No new updates available.
-      </div>
-    `;
-
-    return;
-  }
-
-  container.innerHTML =
-    posts.map(createUpdateCard).join("");
-}
-
-
-/* =========================================================
-   AUTO LOAD
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function() {
-
-  renderLatestUpdates("latestUpdates");
-
-});
+document.addEventListener(
+  "DOMContentLoaded",
+  showLatestNotifications
+);
