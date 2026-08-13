@@ -5,7 +5,263 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>JobMitra AI — Study, Jobs & Life Services</title>
 
-<style>
+<style>/* =====================================================
+   JOBMITRA AI — MAIN + LATEST UPDATE LAYOUT
+   ===================================================== */
+
+.mainLayout{
+  max-width:1100px;
+  margin:auto;
+  padding:18px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 380px;
+  gap:20px;
+  align-items:start;
+}
+
+.mainLeft{
+  min-width:0;
+}
+
+.latestSide{
+  position:sticky;
+  top:85px;
+  max-height:calc(100vh - 100px);
+  overflow-y:auto;
+  background:#fff;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 8px 25px #0002;
+}
+
+.latestTitle{
+  background:linear-gradient(135deg,#790000,#d91e1e);
+  color:white;
+  padding:15px;
+  border-radius:15px;
+  margin-bottom:12px;
+}
+
+.latestTitle h2{
+  font-size:20px;
+  margin:0;
+}
+
+.latestTitle p{
+  font-size:11px;
+  margin-top:4px;
+  opacity:.9;
+}
+
+
+/* UPDATE CARD */
+
+.updateCard{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:16px;
+  padding:15px;
+  margin-bottom:13px;
+  box-shadow:0 4px 14px #00000012;
+}
+
+.updateTop{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.updateBadge{
+  background:#f3e2e2;
+  color:#850000;
+  padding:5px 8px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+}
+
+.updateDate{
+  font-size:10px;
+  color:#777;
+}
+
+.updatePost{
+  font-size:18px;
+  color:#700000;
+  margin:8px 0 3px;
+}
+
+.updateOdia{
+  font-size:13px;
+  color:#444;
+  margin-bottom:10px;
+}
+
+.updateStatus{
+  margin:8px 0;
+}
+
+.daysLeft{
+  padding:8px;
+  border-radius:9px;
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.daysLeft.open{
+  background:#e5f8eb;
+  color:#137333;
+}
+
+.daysLeft.urgent{
+  background:#fff0d5;
+  color:#9a5b00;
+}
+
+.daysLeft.today{
+  background:#ffe0e0;
+  color:#b00000;
+}
+
+.daysLeft.closed{
+  background:#eeeeee;
+  color:#777;
+}
+
+.daysLeft.dateCheck{
+  background:#fff7d8;
+  color:#876500;
+}
+
+.updateGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:10px;
+}
+
+.updateGrid p{
+  background:#f7f7f7;
+  padding:8px;
+  border-radius:8px;
+  font-size:11px;
+  color:#555;
+}
+
+.dateBox{
+  margin-top:10px;
+  background:#fff8e6;
+  border-radius:10px;
+  padding:9px;
+}
+
+.dateBox div{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  border-bottom:1px solid #eadfca;
+  padding:6px 0;
+  font-size:11px;
+}
+
+.dateBox div:last-child{
+  border-bottom:0;
+}
+
+.dateBox span{
+  font-weight:bold;
+  color:#750000;
+}
+
+.updateDetails{
+  margin-top:10px;
+  padding:10px;
+  background:#f7f7f7;
+  border-radius:9px;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.updateDocuments{
+  margin-top:10px;
+  background:#f0f7ff;
+  padding:10px;
+  border-radius:9px;
+  font-size:11px;
+}
+
+.updateDocuments ul{
+  margin:6px 0 0 18px;
+}
+
+.updateDocuments li{
+  margin:3px 0;
+}
+
+.updateButtons{
+  display:flex;
+  gap:7px;
+  margin-top:12px;
+}
+
+.applyBtn,
+.dmBtn{
+  flex:1;
+  text-align:center;
+  padding:9px 5px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.applyBtn{
+  background:#075e2b;
+  color:white;
+}
+
+.dmBtn{
+  background:#c51616;
+  color:white;
+}
+
+.applyBtn.disabled{
+  background:#999;
+  cursor:not-allowed;
+}
+
+.source{
+  display:block;
+  margin-top:9px;
+  color:#888;
+  font-size:9px;
+}
+
+.emptyUpdate{
+  padding:25px 10px;
+  text-align:center;
+  color:#777;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .mainLayout{
+    display:block;
+    padding:12px;
+  }
+
+  .latestSide{
+    position:static;
+    max-height:none;
+    margin-top:18px;
+  }
+
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body{
 font-family:Arial,"Noto Sans Oriya",sans-serif;
