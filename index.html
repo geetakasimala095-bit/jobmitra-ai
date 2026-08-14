@@ -3851,350 +3851,1094 @@ JobMitra AI Advertisement Space
 </div>
 
 </section>
+<!-- =========================================================
+     JOBMITRA AI
+     3 SECTION — FULL KNOWLEDGE
+     1. ସରକାରୀ ସୁବିଧା ଓ ଯୋଜନା
+     2. ଓଡ଼ିଶା ସଂସ୍କୃତି ଓ ପରମ୍ପରା
+     3. Extra Knowledge
+     
+     ପୁରୁଣା 3 Section DELETE କରି ଏହି CODE ଟି PASTE କରନ୍ତୁ
+========================================================= -->
 
-<!-- ================= SKILLS ================= -->
+<section id="jmKnowledge">
 
-<section id="skills">
+<style>
+#jmKnowledge{
+  width:100%;
+  box-sizing:border-box;
+  padding:25px 14px 50px;
+  background:#f4f5f8;
+  font-family:"Noto Sans Oriya","Noto Sans Odia",Arial,sans-serif;
+  color:#333;
+}
 
-<div class="title">
-<h2>💻 Skills & Career</h2>
-<p>Useful skills for students and job seekers</p>
+#jmKnowledge *{
+  box-sizing:border-box;
+}
+
+/* MAIN SECTION */
+.jm-section{
+  max-width:1200px;
+  margin:0 auto 35px;
+}
+
+.jm-section-title{
+  margin:0 0 5px;
+  font-size:27px;
+  font-weight:900;
+  color:#8b1515;
+}
+
+.jm-section-subtitle{
+  margin:0 0 16px;
+  color:#777;
+  font-size:14px;
+}
+
+/* BIG SECTION BOX */
+.jm-section-box{
+  background:#fffdf5;
+  border:1px solid #eadca8;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+/* GRID */
+.jm-knowledge-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+/* EXTRA KNOWLEDGE 4 COLUMNS */
+.jm-extra-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+/* CARD */
+.jm-knowledge-card{
+  background:#fff;
+  border:1px solid #e7e7e7;
+  border-radius:17px;
+  padding:18px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);
+}
+
+.jm-knowledge-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+.jm-icon{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.jm-card-title{
+  color:#8b1515;
+  font-size:18px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+
+.jm-card-short{
+  color:#777;
+  font-size:12px;
+  line-height:1.5;
+}
+
+/* DETAILS */
+.jm-details{
+  display:none;
+  margin-top:15px;
+  padding:17px;
+  background:#fffaf0;
+  border-left:4px solid #b8860b;
+  border-radius:12px;
+  grid-column:1/-1;
+}
+
+.jm-details.active{
+  display:block;
+}
+
+.jm-details h3{
+  color:#8b1515;
+  margin:0 0 10px;
+  font-size:20px;
+}
+
+.jm-details h4{
+  color:#9b6910;
+  margin:15px 0 6px;
+  font-size:16px;
+}
+
+.jm-details p{
+  font-size:14px;
+  line-height:1.75;
+  margin:6px 0;
+}
+
+.jm-details ul{
+  margin:7px 0;
+  padding-left:20px;
+}
+
+.jm-details li{
+  margin:6px 0;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.jm-note{
+  background:#fff1d5;
+  padding:10px;
+  border-radius:9px;
+  margin-top:10px;
+  font-size:13px;
+}
+
+/* CLICK TEXT */
+.jm-click{
+  display:inline-block;
+  margin-top:10px;
+  color:#a00000;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* EXTRA */
+.jm-extra-section{
+  background:#f4f5f8;
+}
+
+.jm-extra-card{
+  background:#fff;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .jm-knowledge-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .jm-extra-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  #jmKnowledge{
+    padding:20px 10px 40px;
+  }
+
+  .jm-section-title{
+    font-size:22px;
+  }
+
+  .jm-section-box{
+    padding:12px;
+    border-radius:15px;
+  }
+
+  .jm-knowledge-grid,
+  .jm-extra-grid{
+    grid-template-columns:1fr;
+  }
+
+  .jm-knowledge-card{
+    padding:16px;
+  }
+
+  .jm-details{
+    padding:14px;
+  }
+
+  .jm-details p,
+  .jm-details li{
+    font-size:13px;
+  }
+}
+</style>
+
+
+<!-- =====================================================
+     SECTION 1
+     ସରକାରୀ ସୁବିଧା ଓ ଯୋଜନା
+===================================================== -->
+
+<div class="jm-section">
+
+  <h2 class="jm-section-title">
+    🏠 ଜନ ସୁବିଧା — କେଉଁ ସୁବିଧା କାହାକୁ ମିଳିପାରେ?
+  </h2>
+
+  <p class="jm-section-subtitle">
+    ସରକାରୀ ଯୋଜନା, ଦଲିଲ, ଶିକ୍ଷା, କୃଷକ, ଶ୍ରମିକ ଓ ନାଗରିକ ସେବା ବିଷୟରେ ଜାଣନ୍ତୁ
+  </p>
+
+  <div class="jm-section-box">
+
+    <div class="jm-knowledge-grid">
+
+      <!-- HOUSING -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('housing')">
+        <div class="jm-icon">🏠</div>
+        <div class="jm-card-title">Housing</div>
+        <div class="jm-card-short">
+          ସରକାରୀ ଘର ଯୋଜନା ଓ ଆବେଦନ ବିଷୟରେ ଜାଣନ୍ତୁ
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="housing" class="jm-details">
+        <h3>🏠 ଆବାସ / Housing</h3>
+        <p>
+          ଆର୍ଥିକ ଭାବେ ଦୁର୍ବଳ ଓ ଆବଶ୍ୟକତା ଥିବା ପରିବାରଙ୍କ ପାଇଁ
+          ବିଭିନ୍ନ ସରକାରୀ ଆବାସ ଯୋଜନା ରହିଛି।
+        </p>
+
+        <h4>କଣ ସୁବିଧା ମିଳିପାରେ?</h4>
+        <ul>
+          <li>ଯୋଗ୍ୟ ପରିବାରଙ୍କୁ ଘର ନିର୍ମାଣ ପାଇଁ ସରକାରୀ ସହାୟତା।</li>
+          <li>ଗ୍ରାମାଞ୍ଚଳ ଓ ସହରାଞ୍ଚଳ ପାଇଁ ଭିନ୍ନ ଆବାସ ଯୋଜନା ଥାଇପାରେ।</li>
+          <li>ଯୋଗ୍ୟତା ଓ ସହାୟତାର ରାଶି ଯୋଜନା ଅନୁସାରେ ଭିନ୍ନ ହୁଏ।</li>
+        </ul>
+
+        <h4>ସାଧାରଣତଃ କେଉଁ ଦଲିଲ ଦରକାର?</h4>
+        <ul>
+          <li>ଆଧାର</li>
+          <li>ବ୍ୟାଙ୍କ ଖାତା</li>
+          <li>ଠିକଣା / ବାସସ୍ଥାନ ପ୍ରମାଣ</li>
+          <li>ଆୟ ସମ୍ବନ୍ଧୀୟ ଦଲିଲ, ଯଦି ଆବଶ୍ୟକ</li>
+        </ul>
+
+        <div class="jm-note">
+          ⚠️ ଆବେଦନ ପୂର୍ବରୁ ନିଜ ଅଞ୍ଚଳର ସରକାରୀ ଅଫିସ୍ / ଅଧିକୃତ ପୋର୍ଟାଲରେ
+          ଯୋଗ୍ୟତା ନିଶ୍ଚିତ କରନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- FOOD SECURITY -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('food')">
+        <div class="jm-icon">🍚</div>
+        <div class="jm-card-title">Food Security</div>
+        <div class="jm-card-short">
+          ରାସନ କାର୍ଡ, PDS ଓ ଖାଦ୍ୟ ସୁରକ୍ଷା ବିଷୟରେ
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="food" class="jm-details">
+        <h3>🍚 ଖାଦ୍ୟ ସୁରକ୍ଷା</h3>
+        <p>
+          ଯୋଗ୍ୟ ପରିବାରଙ୍କୁ ସରକାରୀ ବ୍ୟବସ୍ଥା ମାଧ୍ୟମରେ ନିର୍ଦ୍ଧାରିତ
+          ଖାଦ୍ୟଶସ୍ୟ ଯୋଗାଇବା ପାଇଁ PDS ଓ ବିଭିନ୍ନ ଖାଦ୍ୟ ସୁରକ୍ଷା ବ୍ୟବସ୍ଥା ରହିଛି।
+        </p>
+
+        <h4>ରାସନ କାର୍ଡରେ କଣ ଜାଣିପାରିବେ?</h4>
+        <ul>
+          <li>ପରିବାରର ସଦସ୍ୟଙ୍କ ତଥ୍ୟ।</li>
+          <li>କାର୍ଡର ସ୍ଥିତି।</li>
+          <li>ରାସନ ବଣ୍ଟନ ସମ୍ବନ୍ଧୀୟ ସୂଚନା।</li>
+          <li>ଯୋଗ୍ୟତା ଓ ବଣ୍ଟନ ବିଷୟରେ ତଥ୍ୟ।</li>
+        </ul>
+
+        <h4>ଦରକାରୀ ଦଲିଲ</h4>
+        <ul>
+          <li>ଆଧାର</li>
+          <li>ପରିବାର ସଦସ୍ୟଙ୍କ ତଥ୍ୟ</li>
+          <li>ଠିକଣା ପ୍ରମାଣ</li>
+        </ul>
+      </div>
+
+
+      <!-- EDUCATION -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('education')">
+        <div class="jm-icon">🎓</div>
+        <div class="jm-card-title">Education</div>
+        <div class="jm-card-short">
+          ଛାତ୍ରଛାତ୍ରୀଙ୍କ ପାଇଁ scholarship, admission ଓ education support
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="education" class="jm-details">
+        <h3>🎓 ଶିକ୍ଷା ଓ ଛାତ୍ର ସହାୟତା</h3>
+
+        <h4>ଛାତ୍ରଛାତ୍ରୀ କଣ କଣ ଖୋଜିବେ?</h4>
+        <ul>
+          <li>Scholarship / ଛାତ୍ରବୃତ୍ତି।</li>
+          <li>College / University Admission।</li>
+          <li>Entrance Exam।</li>
+          <li>Admit Card ଓ Result।</li>
+          <li>ପାଠ୍ୟପୁସ୍ତକ ଓ Study Material।</li>
+        </ul>
+
+        <h4>Scholarship ପାଇଁ ସାଧାରଣତଃ</h4>
+        <ul>
+          <li>ଆଧାର</li>
+          <li>ବ୍ୟାଙ୍କ ଖାତା</li>
+          <li>ଆୟ ପ୍ରମାଣପତ୍ର</li>
+          <li>ଜାତି ପ୍ରମାଣପତ୍ର, ଯଦି ଯୋଜନାରେ ଆବଶ୍ୟକ</li>
+          <li>ଶିକ୍ଷାଗତ ପ୍ରମାଣପତ୍ର</li>
+        </ul>
+
+        <div class="jm-note">
+          📚 ପ୍ରତ୍ୟେକ Scholarship ର eligibility ଅଲଗା ହୋଇପାରେ।
+          ଆବେଦନ ପୂର୍ବରୁ official notification ଦେଖନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- FARMER SUPPORT -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('farmerSupport')">
+        <div class="jm-icon">🌾</div>
+        <div class="jm-card-title">Farmer Support</div>
+        <div class="jm-card-short">
+          କୃଷକ ଯୋଜନା, ବୀମା, ସହାୟତା ଓ କୃଷି ସେବା
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="farmerSupport" class="jm-details">
+        <h3>🌾 କୃଷକ ସହାୟତା</h3>
+
+        <p>
+          କୃଷକମାନଙ୍କ ପାଇଁ କେନ୍ଦ୍ର ଓ ରାଜ୍ୟ ସରକାରଙ୍କ ତରଫରୁ
+          ବିଭିନ୍ନ କୃଷି ଯୋଜନା, ଆର୍ଥିକ ସହାୟତା, ବୀମା ଓ କୃଷି ସେବା ରହିଛି।
+        </p>
+
+        <h4>କୃଷକ କଣ କଣ ଦେଖିବେ?</h4>
+        <ul>
+          <li>PM-KISAN</li>
+          <li>CM-KISAN / ରାଜ୍ୟ କୃଷକ ଯୋଜନା</li>
+          <li>ଫସଲ ବୀମା</li>
+          <li>ମୃତ୍ତିକା ସ୍ୱାସ୍ଥ୍ୟ</li>
+          <li>କୃଷି ବଜାର ଦର</li>
+          <li>Farmer Registry / Farmer ID</li>
+          <li>କୃଷି ଯନ୍ତ୍ରପାତି ସହାୟତା</li>
+        </ul>
+
+        <div class="jm-note">
+          🌱 କୃଷକମାନେ ନିଜ ଜମି ଓ ଚାଷ ସମ୍ବନ୍ଧୀୟ ଦଲିଲ ସଠିକ୍ ରଖନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- LABOUR -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('labour')">
+        <div class="jm-icon">👷</div>
+        <div class="jm-card-title">Labour</div>
+        <div class="jm-card-short">
+          ଶ୍ରମିକଙ୍କ ଅଧିକାର, welfare ଓ ସରକାରୀ ସହାୟତା
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="labour" class="jm-details">
+        <h3>👷 ଶ୍ରମିକ ସହାୟତା</h3>
+
+        <h4>ଶ୍ରମିକଙ୍କ ପାଇଁ କଣ କଣ ଦରକାରୀ?</h4>
+        <ul>
+          <li>ଶ୍ରମିକ ପଞ୍ଜୀକରଣ।</li>
+          <li>ନିର୍ମାଣ ଶ୍ରମିକ କଲ୍ୟାଣ ସୁବିଧା।</li>
+          <li>ବୀମା ଓ ସାମାଜିକ ସୁରକ୍ଷା।</li>
+          <li>ଶିକ୍ଷା ସହାୟତା, ଯଦି ଯୋଜନାରେ ରହିଛି।</li>
+          <li>କାର୍ଯ୍ୟସ୍ଥଳ ସୁରକ୍ଷା।</li>
+        </ul>
+
+        <div class="jm-note">
+          ⚠️ ନିର୍ଦ୍ଦିଷ୍ଟ ଲାଭ ପାଇଁ ଶ୍ରମିକଙ୍କ registration ଓ eligibility
+          ଯୋଜନା ଅନୁସାରେ ଯାଞ୍ଚ କରନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- HEALTH -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('health')">
+        <div class="jm-icon">🏥</div>
+        <div class="jm-card-title">Health</div>
+        <div class="jm-card-short">
+          ସରକାରୀ ସ୍ୱାସ୍ଥ୍ୟ ସେବା ଓ health support
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="health" class="jm-details">
+        <h3>🏥 ସ୍ୱାସ୍ଥ୍ୟ ସେବା</h3>
+
+        <p>
+          ସରକାରୀ ହସ୍ପିଟାଲ, ସ୍ୱାସ୍ଥ୍ୟ ଯୋଜନା, ମାତୃ ଓ ଶିଶୁ ସ୍ୱାସ୍ଥ୍ୟ,
+          ଟିକାକରଣ ଓ ଅନ୍ୟାନ୍ୟ public health services ବିଷୟରେ
+          ନାଗରିକମାନେ ସୂଚନା ପାଇପାରିବେ।
+        </p>
+
+        <h4>ସାଧାରଣ ସେବା</h4>
+        <ul>
+          <li>ସରକାରୀ ହସ୍ପିଟାଲ ସେବା।</li>
+          <li>ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ / ଯୋଜନା ସମ୍ବନ୍ଧୀୟ ସୂଚନା।</li>
+          <li>ଟିକାକରଣ।</li>
+          <li>ମାତୃ ଓ ଶିଶୁ ସ୍ୱାସ୍ଥ୍ୟ ସେବା।</li>
+          <li>ସ୍ୱାସ୍ଥ୍ୟ ସଚେତନତା।</li>
+        </ul>
+      </div>
+
+
+      <!-- SOCIAL SUPPORT -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('social')">
+        <div class="jm-icon">👴</div>
+        <div class="jm-card-title">Social Support</div>
+        <div class="jm-card-short">
+          ବୃଦ୍ଧ, ବିଧବା, ଦିବ୍ୟାଙ୍ଗ ଓ ଅନ୍ୟ ସାମାଜିକ ସହାୟତା
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="social" class="jm-details">
+        <h3>👴 ସାମାଜିକ ସହାୟତା</h3>
+
+        <p>
+          ବୃଦ୍ଧ, ବିଧବା, ଦିବ୍ୟାଙ୍ଗ ଓ ଆବଶ୍ୟକତା ଥିବା ଲୋକଙ୍କ ପାଇଁ
+          ବିଭିନ୍ନ ସାମାଜିକ ସୁରକ୍ଷା ଯୋଜନା ରହିଛି।
+        </p>
+
+        <h4>ସାଧାରଣତଃ ଦରକାର ହୋଇପାରେ</h4>
+        <ul>
+          <li>ଆଧାର</li>
+          <li>ବ୍ୟାଙ୍କ ଖାତା</li>
+          <li>ଠିକଣା ପ୍ରମାଣ</li>
+          <li>ଆୟ ପ୍ରମାଣପତ୍ର, ଯଦି ଆବଶ୍ୟକ</li>
+          <li>ସମ୍ପର୍କିତ eligibility certificate</li>
+        </ul>
+      </div>
+
+
+      <!-- CERTIFICATE -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('certificate')">
+        <div class="jm-icon">📜</div>
+        <div class="jm-card-title">Certificate</div>
+        <div class="jm-card-short">
+          ଆୟ, ବାସସ୍ଥାନ, ଜାତି ଓ ଅନ୍ୟାନ୍ୟ ପ୍ରମାଣପତ୍ର
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="certificate" class="jm-details">
+        <h3>📜 ସରକାରୀ ପ୍ରମାଣପତ୍ର</h3>
+
+        <h4>ଦରକାରୀ ପ୍ରମାଣପତ୍ର</h4>
+        <ul>
+          <li>ଆୟ ପ୍ରମାଣପତ୍ର</li>
+          <li>ବାସସ୍ଥାନ / Residence Certificate</li>
+          <li>ଜାତି ପ୍ରମାଣପତ୍ର</li>
+          <li>ଜନ୍ମ ପ୍ରମାଣପତ୍ର</li>
+          <li>ଆଇନଗତ ଉତ୍ତରାଧିକାରୀ ଇତ୍ୟାଦି</li>
+        </ul>
+
+        <p>
+          କେଉଁ ପ୍ରମାଣପତ୍ର କେଉଁ କାମରେ ଦରକାର ହେବ, ତାହା ସମ୍ପର୍କିତ
+          ଆବେଦନ ଓ ସରକାରୀ ନିୟମ ଉପରେ ନିର୍ଭର କରେ।
+        </p>
+      </div>
+
+
+      <!-- COMPLAINT -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('complaint')">
+        <div class="jm-icon">📢</div>
+        <div class="jm-card-title">Complaint</div>
+        <div class="jm-card-short">
+          ସରକାରୀ ସେବା ସମ୍ବନ୍ଧୀୟ ଅଭିଯୋଗ କିପରି କରିବେ
+        </div>
+        <span class="jm-click">ବିସ୍ତୃତ ତଥ୍ୟ ଦେଖନ୍ତୁ →</span>
+      </div>
+
+      <div id="complaint" class="jm-details">
+        <h3>📢 ଅଭିଯୋଗ / Grievance</h3>
+
+        <p>
+          ସରକାରୀ ସେବା ପାଇବାରେ ସମସ୍ୟା ହେଲେ ସମ୍ପର୍କିତ ବିଭାଗର
+          ଅଧିକୃତ grievance system ମାଧ୍ୟମରେ ଅଭିଯୋଗ କରିପାରିବେ।
+        </p>
+
+        <h4>ଅଭିଯୋଗ କରିବା ପୂର୍ବରୁ</h4>
+        <ul>
+          <li>ଆବେଦନ / reference number ରଖନ୍ତୁ।</li>
+          <li>ସମସ୍ୟାର screenshot / document ରଖନ୍ତୁ।</li>
+          <li>ତାରିଖ ଓ ସମ୍ପର୍କିତ ଅଫିସ୍ ର ତଥ୍ୟ ରଖନ୍ତୁ।</li>
+        </ul>
+
+        <div class="jm-note">
+          🔐 OTP, Password, ATM PIN ଭଳି ଗୁପ୍ତ ତଥ୍ୟ କାହାକୁ ଦିଅନ୍ତୁ ନାହିଁ।
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="grid4">
 
-<div class="card">
-<div class="cardIcon">🗣️</div>
-<h3>Spoken English</h3>
-<p>Daily conversation, grammar and vocabulary.</p>
+
+<!-- =====================================================
+     SECTION 2
+     ଓଡ଼ିଶା ସଂସ୍କୃତି ଓ ପରମ୍ପରା
+===================================================== -->
+
+<div class="jm-section">
+
+  <h2 class="jm-section-title">
+    🪶 ଆମ ସଂସ୍କୃତି ଓ ପରମ୍ପରା
+  </h2>
+
+  <p class="jm-section-subtitle">
+    ଓଡ଼ିଶାର ଇତିହାସ, ପରମ୍ପରା, ଖାଦ୍ୟ, ପୋଷାକ, ଗ୍ରାମୀଣ ଜୀବନ ଓ ଆଦିବାସୀ ସଂସ୍କୃତି
+  </p>
+
+  <div class="jm-section-box">
+
+    <div class="jm-knowledge-grid">
+
+      <!-- TRIBAL HISTORY -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('tribalHistory')">
+        <div class="jm-icon">🪶</div>
+        <div class="jm-card-title">Tribal History</div>
+        <div class="jm-card-short">
+          ଓଡ଼ିଶାର ଆଦିବାସୀ ସମୁଦାୟ ଓ ସେମାନଙ୍କ ଇତିହାସ
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="tribalHistory" class="jm-details">
+        <h3>🪶 ଓଡ଼ିଶାର ଆଦିବାସୀ ଇତିହାସ</h3>
+
+        <p>
+          ଓଡ଼ିଶାରେ ବହୁ ସଂଖ୍ୟକ ଆଦିବାସୀ ସମୁଦାୟ ନିଜ ନିଜ ଭାଷା,
+          ପରମ୍ପରା, ନୃତ୍ୟ, ସଙ୍ଗୀତ, ପୋଷାକ ଓ ଜୀବନଶୈଳୀ ମାଧ୍ୟମରେ
+          ରାଜ୍ୟର ସଂସ୍କୃତିକୁ ସମୃଦ୍ଧ କରିଛନ୍ତି।
+        </p>
+
+        <h4>ଜାଣିବା ଦରକାର</h4>
+        <ul>
+          <li>ବିଭିନ୍ନ ଆଦିବାସୀ ସମୁଦାୟର ନିଜସ୍ୱ ପରମ୍ପରା ରହିଛି।</li>
+          <li>ପାରମ୍ପରିକ ଜୀବିକାରେ କୃଷି, ଜଙ୍ଗଲ ଓ ହସ୍ତଶିଳ୍ପର ଭୂମିକା ରହିଛି।</li>
+          <li>ନୃତ୍ୟ ଓ ଗୀତ ଅନେକ ସମୁଦାୟର ସାମାଜିକ ଜୀବନର ଅଂଶ।</li>
+          <li>ସ୍ଥାନୀୟ ଭାଷା ଓ ମୌଖିକ ପରମ୍ପରାର ଗୁରୁତ୍ୱ ଅଧିକ।</li>
+        </ul>
+      </div>
+
+
+      <!-- TRADITION -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('tradition')">
+        <div class="jm-icon">🥁</div>
+        <div class="jm-card-title">Tradition</div>
+        <div class="jm-card-short">
+          ପର୍ବପର୍ବାଣୀ, ନୃତ୍ୟ, ଗୀତ ଓ ପାରମ୍ପରିକ ରୀତିନୀତି
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="tradition" class="jm-details">
+        <h3>🥁 ଓଡ଼ିଶାର ପରମ୍ପରା</h3>
+
+        <p>
+          ଓଡ଼ିଶାର ପରମ୍ପରା ଗ୍ରାମୀଣ ଜୀବନ, ପର୍ବପର୍ବାଣୀ,
+          ଧାର୍ମିକ ଆସ୍ଥା, କୃଷି ଓ ସାମାଜିକ ଜୀବନ ସହିତ ଜଡ଼ିତ।
+        </p>
+
+        <h4>ପରମ୍ପରାର ପ୍ରମୁଖ ଅଂଶ</h4>
+        <ul>
+          <li>ଲୋକନୃତ୍ୟ</li>
+          <li>ଲୋକଗୀତ</li>
+          <li>ପାରମ୍ପରିକ ବାଦ୍ୟଯନ୍ତ୍ର</li>
+          <li>ଗ୍ରାମୀଣ ପର୍ବପର୍ବାଣୀ</li>
+          <li>ସାମୂହିକ ଉତ୍ସବ</li>
+          <li>ପାରମ୍ପରିକ ହସ୍ତଶିଳ୍ପ</li>
+        </ul>
+      </div>
+
+
+      <!-- DRESS -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('dress')">
+        <div class="jm-icon">👕</div>
+        <div class="jm-card-title">Traditional Dress</div>
+        <div class="jm-card-short">
+          ଓଡ଼ିଶାର ପାରମ୍ପରିକ ପୋଷାକ ଓ ବୁଣାକାମ
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="dress" class="jm-details">
+        <h3>👕 ପାରମ୍ପରିକ ପୋଷାକ</h3>
+
+        <p>
+          ଓଡ଼ିଶାର ପାରମ୍ପରିକ ପୋଷାକରେ ସ୍ଥାନୀୟ ବୁଣାକାମ,
+          ହସ୍ତତନ୍ତ ଓ ଅଞ୍ଚଳଭିତ୍ତିକ ଡିଜାଇନ୍‌ର ପ୍ରଭାବ ଦେଖାଯାଏ।
+        </p>
+
+        <h4>ବିଶେଷତା</h4>
+        <ul>
+          <li>ହସ୍ତତନ୍ତ ବସ୍ତ୍ର।</li>
+          <li>ସ୍ଥାନୀୟ ଡିଜାଇନ୍ ଓ ମୋଟିଫ୍।</li>
+          <li>ବିଭିନ୍ନ ପର୍ବରେ ପାରମ୍ପରିକ ପୋଷାକର ବ୍ୟବହାର।</li>
+          <li>ଆଦିବାସୀ ଅଞ୍ଚଳରେ ନିଜସ୍ୱ ପୋଷାକ ଶୈଳୀ।</li>
+        </ul>
+      </div>
+
+
+      <!-- FOOD -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('foodCulture')">
+        <div class="jm-icon">🍚</div>
+        <div class="jm-card-title">Traditional Food</div>
+        <div class="jm-card-short">
+          ଓଡ଼ିଶାର ପାରମ୍ପରିକ ଖାଦ୍ୟ ଓ ସ୍ଥାନୀୟ ଉପାଦାନ
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="foodCulture" class="jm-details">
+        <h3>🍚 ପାରମ୍ପରିକ ଓଡ଼ିଆ ଖାଦ୍ୟ</h3>
+
+        <p>
+          ଓଡ଼ିଶାର ପାରମ୍ପରିକ ଖାଦ୍ୟରେ ଚାଉଳ, ଡାଲି, ଶାଗ, ପନିପରିବା,
+          ମାଛ ଓ ଅଞ୍ଚଳ ଅନୁସାରେ ବିଭିନ୍ନ ସ୍ଥାନୀୟ ଉପାଦାନ ବ୍ୟବହାର ହୁଏ।
+        </p>
+
+        <h4>ଖାଦ୍ୟ ସଂସ୍କୃତି</h4>
+        <ul>
+          <li>ପଖାଳ ଓଡ଼ିଆ ଖାଦ୍ୟ ସଂସ୍କୃତିର ଏକ ପରିଚିତ ଅଂଶ।</li>
+          <li>ପର୍ବପର୍ବାଣୀରେ ବିଭିନ୍ନ ପିଠା ଓ ପାରମ୍ପରିକ ମିଠା ପ୍ରସ୍ତୁତ ହୁଏ।</li>
+          <li>ଜଙ୍ଗଲ ଅଞ୍ଚଳରେ ବିଭିନ୍ନ ସ୍ଥାନୀୟ ଖାଦ୍ୟ ଉପାଦାନ ବ୍ୟବହାର ହୁଏ।</li>
+        </ul>
+      </div>
+
+
+      <!-- VILLAGE LIFE -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('villageLife')">
+        <div class="jm-icon">🏹</div>
+        <div class="jm-card-title">Village Life</div>
+        <div class="jm-card-short">
+          ଗ୍ରାମୀଣ ଜୀବନ, କୃଷି, ଜଙ୍ଗଲ ଓ ଜୀବିକା
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="villageLife" class="jm-details">
+        <h3>🏹 ଗ୍ରାମୀଣ ଜୀବନ</h3>
+
+        <p>
+          ଓଡ଼ିଶାର ଗ୍ରାମୀଣ ଜୀବନରେ କୃଷି, ପଶୁପାଳନ,
+          ହସ୍ତଶିଳ୍ପ, ଛୋଟ ବ୍ୟବସାୟ ଓ ଜଙ୍ଗଲ ଭିତ୍ତିକ ଜୀବିକାର ଭୂମିକା ରହିଛି।
+        </p>
+
+        <h4>ଗ୍ରାମୀଣ ଜୀବନର ମୁଖ୍ୟ ଅଂଶ</h4>
+        <ul>
+          <li>ଧାନ ଓ ଅନ୍ୟାନ୍ୟ ଫସଲ ଚାଷ।</li>
+          <li>ପଶୁପାଳନ।</li>
+          <li>ହସ୍ତଶିଳ୍ପ ଓ ଘରୋଇ ଶିଳ୍ପ।</li>
+          <li>ସ୍ଥାନୀୟ ହାଟ ଓ ବଜାର।</li>
+          <li>ଗ୍ରାମ ସାମାଜିକ ଜୀବନ ଓ ସାମୂହିକ କାର୍ଯ୍ୟ।</li>
+        </ul>
+      </div>
+
+
+      <!-- BHATUDI -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('bhatudi')">
+        <div class="jm-icon">🟠</div>
+        <div class="jm-card-title">Bhatudi Culture</div>
+        <div class="jm-card-short">
+          ଭାଟୁଡ଼ି ସମୁଦାୟର ଇତିହାସ, ଜୀବନଶୈଳୀ ଓ ପରମ୍ପରା
+        </div>
+        <span class="jm-click">ପୂରା ତଥ୍ୟ ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="bhatudi" class="jm-details">
+        <h3>🟠 ଭାଟୁଡ଼ି ସଂସ୍କୃତି</h3>
+
+        <p>
+          ଭାଟୁଡ଼ି ସମୁଦାୟର ସ୍ଥାନୀୟ ଜୀବନ, ପରମ୍ପରା,
+          ପର୍ବପର୍ବାଣୀ, ଖାଦ୍ୟ, ପୋଷାକ ଓ ସାମାଜିକ ରୀତିନୀତି
+          ବିଷୟରେ ଏଠାରେ ଜାଣିପାରିବେ।
+        </p>
+
+        <h4>ଅଧ୍ୟୟନ କରିବାକୁ ଥିବା ବିଷୟ</h4>
+        <ul>
+          <li>ସମୁଦାୟର ଇତିହାସ।</li>
+          <li>ପରମ୍ପରିକ ଜୀବନଶୈଳୀ।</li>
+          <li>ପର୍ବପର୍ବାଣୀ ଓ ସାମାଜିକ ପ୍ରଥା।</li>
+          <li>ପାରମ୍ପରିକ ଖାଦ୍ୟ ଓ ପୋଷାକ।</li>
+          <li>ସ୍ଥାନୀୟ ଭାଷା ଓ ଲୋକପରମ୍ପରା।</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<div class="cardIcon">🎥</div>
-<h3>YouTube</h3>
-<p>Video ideas, shooting, editing and growth.</p>
+
+
+<!-- =====================================================
+     SECTION 3
+     EXTRA KNOWLEDGE
+===================================================== -->
+
+<div class="jm-section">
+
+  <h2 class="jm-section-title">
+    📚 Extra Knowledge
+  </h2>
+
+  <p class="jm-section-subtitle">
+    ଦୈନନ୍ଦିନ ଜୀବନ, ପଢ଼ାଶୁଣା, ଟେକ୍ନୋଲୋଜି, ବିଜ୍ଞାନ ଓ ଭାରତ ବିଷୟରେ ଜାଣନ୍ତୁ
+  </p>
+
+  <div class="jm-section-box">
+
+    <div class="jm-extra-grid">
+
+      <!-- SHARE MARKET -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('shareMarket')">
+        <div class="jm-icon">📈</div>
+        <div class="jm-card-title">Share Market</div>
+        <div class="jm-card-short">
+          Stocks, Index, Investment ଓ risk ବିଷୟରେ ମୌଳିକ ଜ୍ଞାନ
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="shareMarket" class="jm-details">
+        <h3>📈 Share Market</h3>
+
+        <p>
+          Share Market ହେଉଛି ଏକ ଏମିତି ବଜାର ଯେଉଁଠାରେ କମ୍ପାନୀର
+          shares କିଣାବିକ୍ରି ହୁଏ।
+        </p>
+
+        <h4>ମୁଖ୍ୟ ଶବ୍ଦ</h4>
+        <ul>
+          <li><b>Share:</b> କମ୍ପାନୀର ମାଲିକାନାର ଏକ ଅଂଶ।</li>
+          <li><b>Index:</b> ବଜାରର ନିର୍ଦ୍ଦିଷ୍ଟ stocks ର ପ୍ରଦର୍ଶନର ମାପ।</li>
+          <li><b>IPO:</b> କମ୍ପାନୀ ପ୍ରଥମଥର public କୁ share offer କରିବା।</li>
+          <li><b>Dividend:</b> କମ୍ପାନୀ ଲାଭର ଏକ ଅଂଶ shareholder କୁ ଦେଇପାରେ।</li>
+        </ul>
+
+        <div class="jm-note">
+          ⚠️ Share market ରେ ଲାଭ ଯେପରି ସମ୍ଭବ, କ୍ଷତି ମଧ୍ୟ ସମ୍ଭବ।
+          କୌଣସି investment ପୂର୍ବରୁ ନିଜେ research କରନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- TRADING -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('trading')">
+        <div class="jm-icon">💹</div>
+        <div class="jm-card-title">Trading</div>
+        <div class="jm-card-short">
+          Trading, chart, risk management ଓ market basics
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="trading" class="jm-details">
+        <h3>💹 Trading</h3>
+
+        <p>
+          Trading ରେ ଅଳ୍ପ ସମୟ ମଧ୍ୟରେ market movement ଅନୁସାରେ
+          କିଣାବିକ୍ରି କରାଯାଏ।
+        </p>
+
+        <h4>ମୌଳିକ ବିଷୟ</h4>
+        <ul>
+          <li>Candlestick Chart</li>
+          <li>Support & Resistance</li>
+          <li>Trend</li>
+          <li>Volume</li>
+          <li>Risk Management</li>
+          <li>Stop Loss</li>
+        </ul>
+
+        <div class="jm-note">
+          ⚠️ Trading ରେ ନିଶ୍ଚିତ profit ନଥାଏ। ଧାର କରି trading କରିବା
+          କିମ୍ବା ନିଶ୍ଚିତ profit ଦାବି କରୁଥିବା signal ଉପରେ ଅନ୍ଧ ଭରସା
+          କରିବା ଉଚିତ ନୁହେଁ।
+        </div>
+      </div>
+
+
+      <!-- PROGRAMMING -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('programming')">
+        <div class="jm-icon">💻</div>
+        <div class="jm-card-title">Programming</div>
+        <div class="jm-card-short">
+          HTML, CSS, JavaScript ଓ Web Development ର ମୌଳିକ ଜ୍ଞାନ
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="programming" class="jm-details">
+        <h3>💻 Programming</h3>
+
+        <p>
+          Programming ମାଧ୍ୟମରେ କମ୍ପ୍ୟୁଟରକୁ ନିର୍ଦ୍ଦେଶ ଦେଇ
+          website, app ଓ software ତିଆରି କରାଯାଏ।
+        </p>
+
+        <h4>Web Development ର ମୁଖ୍ୟ ଭାଗ</h4>
+        <ul>
+          <li><b>HTML:</b> Website ର structure।</li>
+          <li><b>CSS:</b> Design, colour, layout।</li>
+          <li><b>JavaScript:</b> Website କୁ interactive କରେ।</li>
+          <li><b>Database:</b> ତଥ୍ୟ ସଂରକ୍ଷଣ ପାଇଁ।</li>
+        </ul>
+
+        <h4>ଆରମ୍ଭ କିପରି କରିବେ?</h4>
+        <p>
+          ପ୍ରଥମେ HTML → CSS → JavaScript ଶିଖି,
+          ଛୋଟ website project ତିଆରି କରିବା ଭଲ ଅଭ୍ୟାସ।
+        </p>
+      </div>
+
+
+      <!-- AI -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('ai')">
+        <div class="jm-icon">🤖</div>
+        <div class="jm-card-title">Artificial Intelligence</div>
+        <div class="jm-card-short">
+          AI, Machine Learning ଓ ଦୈନନ୍ଦିନ ବ୍ୟବହାର
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="ai" class="jm-details">
+        <h3>🤖 Artificial Intelligence</h3>
+
+        <p>
+          Artificial Intelligence ହେଉଛି କମ୍ପ୍ୟୁଟର system କୁ
+          କିଛି ମାନବୀୟ କାର୍ଯ୍ୟ ଯେପରିକି language understanding,
+          pattern recognition ଓ decision support କରିବାରେ ସକ୍ଷମ କରିବାର
+          ଏକ technology field।
+        </p>
+
+        <h4>AI କେଉଁଠି ବ୍ୟବହାର ହୁଏ?</h4>
+        <ul>
+          <li>Education</li>
+          <li>Translation</li>
+          <li>Image Generation</li>
+          <li>Customer Support</li>
+          <li>Data Analysis</li>
+          <li>Software Development</li>
+        </ul>
+
+        <div class="jm-note">
+          🤖 AI ର ଉତ୍ତର ସବୁବେଳେ ଠିକ୍ ହେବା ଆବଶ୍ୟକ ନୁହେଁ।
+          ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ତଥ୍ୟ official source ରୁ verify କରନ୍ତୁ।
+        </div>
+      </div>
+
+
+      <!-- SCIENCE -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('science')">
+        <div class="jm-icon">🔬</div>
+        <div class="jm-card-title">Science</div>
+        <div class="jm-card-short">
+          ପଦାର୍ଥ, ଶକ୍ତି, ଜୀବବିଜ୍ଞାନ ଓ ଦୈନନ୍ଦିନ ବିଜ୍ଞାନ
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="science" class="jm-details">
+        <h3>🔬 ବିଜ୍ଞାନ</h3>
+
+        <h4>ଭୌତିକ ବିଜ୍ଞାନ</h4>
+        <ul>
+          <li>ବଳ ଓ ଗତି</li>
+          <li>ଆଲୋକ</li>
+          <li>ଶବ୍ଦ</li>
+          <li>ବିଦ୍ୟୁତ</li>
+          <li>ଚୁମ୍ବକତ୍ୱ</li>
+        </ul>
+
+        <h4>ଜୀବ ବିଜ୍ଞାନ</h4>
+        <ul>
+          <li>ମାନବ ଶରୀର</li>
+          <li>ଉଦ୍ଭିଦ</li>
+          <li>ଜୀବଜଗତ</li>
+          <li>ପରିବେଶ</li>
+        </ul>
+
+        <h4>ରସାୟନ ବିଜ୍ଞାନ</h4>
+        <ul>
+          <li>ପଦାର୍ଥର ଅବସ୍ଥା</li>
+          <li>ତତ୍ତ୍ୱ ଓ ଯୌଗିକ</li>
+          <li>ରାସାୟନିକ ପ୍ରତିକ୍ରିୟା</li>
+        </ul>
+      </div>
+
+
+      <!-- SPACE -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('space')">
+        <div class="jm-icon">🚀</div>
+        <div class="jm-card-title">Space</div>
+        <div class="jm-card-short">
+          ସୌରମଣ୍ଡଳ, ଗ୍ରହ, ତାରା ଓ ମହାକାଶ ବିଜ୍ଞାନ
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="space" class="jm-details">
+        <h3>🚀 ମହାକାଶ ବିଜ୍ଞାନ</h3>
+
+        <p>
+          ମହାକାଶ ବିଜ୍ଞାନରେ ଗ୍ରହ, ଉପଗ୍ରହ, ତାରା, ଆକାଶଗଙ୍ଗା
+          ଓ ବ୍ରହ୍ମାଣ୍ଡର ଅଧ୍ୟୟନ କରାଯାଏ।
+        </p>
+
+        <h4>ମୌଳିକ ବିଷୟ</h4>
+        <ul>
+          <li>ସୂର୍ଯ୍ୟ ଓ ସୌରମଣ୍ଡଳ</li>
+          <li>ଗ୍ରହ ଓ ଉପଗ୍ରହ</li>
+          <li>ତାରା</li>
+          <li>ଗ୍ରହଣ</li>
+          <li>ରକେଟ୍ ଓ ଉପଗ୍ରହ</li>
+          <li>ମହାକାଶ ଅନୁସନ୍ଧାନ</li>
+        </ul>
+      </div>
+
+
+      <!-- WORLD KNOWLEDGE -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('world')">
+        <div class="jm-icon">🌍</div>
+        <div class="jm-card-title">World Knowledge</div>
+        <div class="jm-card-short">
+          ଦେଶ, ମହାଦେଶ, ଭୂଗୋଳ ଓ ବିଶ୍ୱ ସମ୍ବନ୍ଧୀୟ ଜ୍ଞାନ
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="world" class="jm-details">
+        <h3>🌍 ବିଶ୍ୱ ଜ୍ଞାନ</h3>
+
+        <h4>ମୁଖ୍ୟ ବିଷୟ</h4>
+        <ul>
+          <li>ବିଶ୍ୱର ମହାଦେଶ</li>
+          <li>ମହାସାଗର</li>
+          <li>ଦେଶ ଓ ରାଜଧାନୀ</li>
+          <li>ପର୍ବତ ଓ ନଦୀ</li>
+          <li>ଜଳବାୟୁ</li>
+          <li>ବିଶ୍ୱ ଇତିହାସ</li>
+        </ul>
+
+        <p>
+          ଏହି ବିଭାଗ General Knowledge ଓ Competitive Exam ପ୍ରସ୍ତୁତିରେ
+          ମଧ୍ୟ ଉପଯୋଗୀ ହୋଇପାରେ।
+        </p>
+      </div>
+
+
+      <!-- CONSTITUTION -->
+      <div class="jm-knowledge-card"
+           onclick="jmOpenDetail('constitution')">
+        <div class="jm-icon">🇮🇳</div>
+        <div class="jm-card-title">Indian Constitution</div>
+        <div class="jm-card-short">
+          ଭାରତୀୟ ସମ୍ବିଧାନ, ଅଧିକାର, କର୍ତ୍ତବ୍ୟ ଓ ଶାସନ ବ୍ୟବସ୍ଥା
+        </div>
+        <span class="jm-click">ପୂରା ପଢ଼ନ୍ତୁ →</span>
+      </div>
+
+      <div id="constitution" class="jm-details">
+        <h3>🇮🇳 ଭାରତୀୟ ସମ୍ବିଧାନ</h3>
+
+        <p>
+          ଭାରତୀୟ ସମ୍ବିଧାନ ଦେଶର ଶାସନ ବ୍ୟବସ୍ଥା,
+          ନାଗରିକଙ୍କ ଅଧିକାର, କର୍ତ୍ତବ୍ୟ ଓ ବିଭିନ୍ନ ସଂସ୍ଥାର
+          ଭୂମିକା ବିଷୟରେ ମୌଳିକ ନିୟମ ଦେଇଥାଏ।
+        </p>
+
+        <h4>ମୁଖ୍ୟ ବିଷୟ</h4>
+        <ul>
+          <li>ମୌଳିକ ଅଧିକାର</li>
+          <li>ମୌଳିକ କର୍ତ୍ତବ୍ୟ</li>
+          <li>ରାଜ୍ୟର ନୀତିନିର୍ଦ୍ଦେଶକ ତତ୍ତ୍ୱ</li>
+          <li>ସଂସଦ</li>
+          <li>ରାଷ୍ଟ୍ରପତି</li>
+          <li>ପ୍ରଧାନମନ୍ତ୍ରୀ ଓ ମନ୍ତ୍ରିପରିଷଦ</li>
+          <li>ସୁପ୍ରିମକୋର୍ଟ ଓ ନ୍ୟାୟ ବ୍ୟବସ୍ଥା</li>
+          <li>କେନ୍ଦ୍ର ଓ ରାଜ୍ୟ ସରକାର</li>
+        </ul>
+
+        <div class="jm-note">
+          🇮🇳 ସମ୍ବିଧାନ ସମ୍ବନ୍ଧୀୟ ଅଧ୍ୟୟନ ପାଇଁ ମୂଳ ଓ ଅଧିକୃତ
+          ସରକାରୀ ସ୍ରୋତକୁ ପ୍ରାଥମିକତା ଦିଅନ୍ତୁ।
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<div class="cardIcon">📸</div>
-<h3>Photo Editing</h3>
-<p>Mobile editing and poster design.</p>
-</div>
 
-<div class="card">
-<div class="cardIcon">🎬</div>
-<h3>Video Editing</h3>
-<p>Reels and YouTube editing basics.</p>
-</div>
+<script>
+/* =========================================================
+   JOBMITRA AI — CARD DETAIL OPEN/CLOSE
+========================================================= */
 
-<div class="card">
-<div class="cardIcon">💻</div>
-<h3>Coding</h3>
-<p>HTML, CSS and JavaScript.</p>
-</div>
+function jmOpenDetail(id){
 
-<div class="card">
-<div class="cardIcon">🤖</div>
-<h3>AI</h3>
-<p>AI tools and productivity.</p>
-</div>
+  const target = document.getElementById(id);
 
-<div class="card">
-<div class="cardIcon">📱</div>
-<h3>Digital Marketing</h3>
-<p>Social media and online promotion.</p>
-</div>
+  if(!target) return;
 
-<div class="card">
-<div class="cardIcon">📄</div>
-<h3>Resume</h3>
-<p>CV and interview basics.</p>
-</div>
+  /* ସମସ୍ତ detail ବନ୍ଦ */
+  document.querySelectorAll('#jmKnowledge .jm-details')
+    .forEach(function(box){
+      box.classList.remove('active');
+    });
 
-<div class="card">
-<div class="cardIcon">💼</div>
-<h3>Freelancing</h3>
-<p>Skill-based online work basics.</p>
-</div>
+  /* Click କରିଥିବା detail ଖୋଲିବ */
+  target.classList.add('active');
 
-<div class="card">
-<div class="cardIcon">🏪</div>
-<h3>Business</h3>
-<p>Small business planning.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">📷</div>
-<h3>Photography</h3>
-<p>Mobile photography and composition.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🎨</div>
-<h3>Graphic Design</h3>
-<p>Poster, banner and social media design.</p>
-</div>
-
-</div>
+  /* Detail ପାଖକୁ screen ଯିବ */
+  setTimeout(function(){
+    target.scrollIntoView({
+      behavior:'smooth',
+      block:'nearest'
+    });
+  },50);
+}
+</script>
 
 </section>
 
-<!-- ================= LIFE ================= -->
-
-<section id="life">
-
-<div class="title">
-<h2>❤️ Change Your Life</h2>
-<p>Practical knowledge for everyday life</p>
-</div>
-
-<div class="grid4">
-
-<div class="card">
-<div class="cardIcon">💰</div>
-<h3>Money Management</h3>
-<p>Saving, budget and banking basics.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🎯</div>
-<h3>Career Planning</h3>
-<p>Goal setting and career direction.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🧠</div>
-<h3>Life Skills</h3>
-<p>Communication and decision making.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🔐</div>
-<h3>Cyber Safety</h3>
-<p>OTP, PIN, phishing and fraud awareness.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">👩</div>
-<h3>Women Safety</h3>
-<p>Safety awareness and official support.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🛡️</div>
-<h3>Personal Safety</h3>
-<p>Safe travel and emergency awareness.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🏦</div>
-<h3>Banking Knowledge</h3>
-<p>UPI, ATM, account, loan and EMI basics.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">📈</div>
-<h3>Stock Market</h3>
-<p>Market basics and risk awareness.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= RIGHTS ================= -->
-
-<section id="rights">
-
-<div class="title">
-<h2>⚖️ ମୋ ଅଧିକାର — ମୋ ସୁବିଧା</h2>
-<p>Government schemes and citizen information</p>
-</div>
-
-<div class="special">
-
-<h2>🏡 କେଉଁ ସୁବିଧା କାହାକୁ ମିଳିପାରେ?</h2>
-
-<p style="font-size:11px;color:#666;margin:7px 0 15px">
-Eligibility, documents and application process official sourceରୁ check କରନ୍ତୁ।
-</p>
-
-<div class="grid3">
-
-<div class="card">
-<h3>🏠 Housing</h3>
-<p>Government housing scheme information.</p>
-</div>
-
-<div class="card">
-<h3>🍚 Food Security</h3>
-<p>Ration and PDS information.</p>
-</div>
-
-<div class="card">
-<h3>🎓 Education</h3>
-<p>Scholarship and student support.</p>
-</div>
-
-<div class="card">
-<h3>🌾 Farmer Support</h3>
-<p>Scheme, subsidy and insurance.</p>
-</div>
-
-<div class="card">
-<h3>👷 Labour</h3>
-<p>Worker welfare information.</p>
-</div>
-
-<div class="card">
-<h3>🏥 Health</h3>
-<p>Government health service information.</p>
-</div>
-
-<div class="card">
-<h3>👵 Social Support</h3>
-<p>Social welfare information.</p>
-</div>
-
-<div class="card">
-<h3>📜 Certificate</h3>
-<p>Income, residence and other certificates.</p>
-</div>
-
-<div class="card">
-<h3>📢 Complaint</h3>
-<p>Use official grievance channels.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CULTURE ================= -->
-
-<section id="culture">
-
-<div class="title">
-<h2>🪶 ଆମ ସଂସ୍କୃତି & ପରମ୍ପରା</h2>
-<p>Odishaର ଲୋକ, ପରମ୍ପରା ଓ ସଂସ୍କୃତି</p>
-</div>
-
-<div class="special">
-
-<h2>🪶 Odisha Culture</h2>
-
-<p style="font-size:11px;color:#555;margin:7px 0">
-Odishaର indigenous communities, traditional lifestyle, food,
-dress, festivals, dance, music and local culture ବିଷୟରେ
-ଜାଣନ୍ତୁ।
-</p>
-
-<div class="grid3">
-
-<div class="card">
-<div class="cardIcon">🪶</div>
-<h3>Tribal History</h3>
-<p>History and community life.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🥁</div>
-<h3>Tradition</h3>
-<p>Festival, dance, music and customs.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">👕</div>
-<h3>Traditional Dress</h3>
-<p>Dress and cultural identity.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🍚</div>
-<h3>Traditional Food</h3>
-<p>Local food and ingredients.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🏹</div>
-<h3>Village Life</h3>
-<p>Agriculture, forest and livelihood.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🟠</div>
-<h3>Bathudi Culture</h3>
-<p>Bathudi community history and traditions.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= KNOWLEDGE ================= -->
-
-<section id="knowledge">
-
-<div class="title">
-<h2>📚 Extra Knowledge</h2>
-<p>Useful knowledge from different fields</p>
-</div>
-
-<div class="grid4">
-
-<div class="card">
-<div class="cardIcon">📈</div>
-<h3>Share Market</h3>
-<p>Stocks, indices and risk basics.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">💹</div>
-<h3>Trading</h3>
-<p>Technical concepts and risk awareness.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">💻</div>
-<h3>Programming</h3>
-<p>Web development and coding.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🤖</div>
-<h3>Artificial Intelligence</h3>
-<p>AI tools and practical applications.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🔬</div>
-<h3>Science</h3>
-<p>Everyday science and discoveries.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🚀</div>
-<h3>Space</h3>
-<p>Space missions and astronomy.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🌍</div>
-<h3>World Knowledge</h3>
-<p>Countries and geography.</p>
-</div>
-
-<div class="card">
-<div class="cardIcon">🇮🇳</div>
-<h3>Indian Constitution</h3>
-<p>Rights, duties and government system.</p>
-</div>
-
-</div>
 
 </section>
 
