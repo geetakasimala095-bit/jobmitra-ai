@@ -77,7 +77,7 @@ function supabaseRequest(
         headers: {
           "apikey": SUPABASE_KEY,
           "Authorization":
-            Bearer ${SUPABASE_KEY},
+  `Bearer ${SUPABASE_KEY}`,
           "Content-Type":
             "application/json",
           "Prefer":
