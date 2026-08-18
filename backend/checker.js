@@ -1,4 +1,5 @@
 const https = require("https");
+const crypto = require("crypto");
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -20,10 +21,10 @@ function fetchPage(url) {
             "Mozilla/5.0 (compatible; JobMitraAI/1.0)"
         }
       },
-      response => {
+      (response) => {
         let data = "";
 
-        response.on("data", chunk => {
+        response.on("data", (chunk) => {
           data += chunk;
         });
 
@@ -76,18 +77,22 @@ function supabaseRequest(
 
         headers: {
           "apikey": SUPABASE_KEY,
+
           "Authorization":
-  `Bearer ${SUPABASE_KEY}`,
+            `Bearer ${SUPABASE_KEY}`,
+
           "Content-Type":
             "application/json",
+
           "Prefer":
             "return=representation"
         }
       },
-      response => {
+
+      (response) => {
         let result = "";
 
-        response.on("data", chunk => {
+        response.on("data", (chunk) => {
           result += chunk;
         });
 
@@ -106,7 +111,7 @@ function supabaseRequest(
           } else {
             reject(
               new Error(
-                Supabase ${response.statusCode}: ${result}
+                `Supabase ${response.statusCode}: ${result}`
               )
             );
           }
@@ -125,13 +130,20 @@ function supabaseRequest(
 }
 
 function cleanText(text) {
-  return text
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+  return String(text)
+    .replace(
+      /<script[\s\S]*?<\/script>/gi,
+      " "
+    )
+    .replace(
+      /<style[\s\S]*?<\/style>/gi,
+      " "
+    )
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -148,17 +160,15 @@ function absoluteUrl(href) {
 }
 
 function makeFingerprint(title, url) {
-  const crypto = require("crypto");
-
   return crypto
     .createHash("sha256")
-    .update(${title}|${url})
+    .update(`${title}|${url}`)
     .digest("hex");
 }
 
 function isJobRelated(title, href) {
   const text =
-    ${title} ${href}.toLowerCase();
+    `${title} ${href}`.toLowerCase();
 
   const positive = [
     "advertisement",
@@ -169,7 +179,9 @@ function isJobRelated(title, href) {
     "appointment",
     "combined",
     "selection",
-    "examination"
+    "examination",
+    "career",
+    "notification"
   ];
 
   const negative = [
@@ -185,12 +197,12 @@ function isJobRelated(title, href) {
   ];
 
   const hasPositive =
-    positive.some(word =>
+    positive.some((word) =>
       text.includes(word)
     );
 
   const hasNegative =
-    negative.some(word =>
+    negative.some((word) =>
       text.includes(word)
     );
 
@@ -201,7 +213,7 @@ function extractLinks(html) {
   const results = [];
 
   const regex =
-    /<a\b[^>]href\s=\s*["']([^"']+)["'][^>]>([\s\S]?)<\/a>/gi;
+    /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
   let match;
 
@@ -222,10 +234,12 @@ function extractLinks(html) {
       continue;
     }
 
-    if (!isJobRelated(
-      title,
-      officialUrl
-    )) {
+    if (
+      !isJobRelated(
+        title,
+        officialUrl
+      )
+    ) {
       continue;
     }
 
@@ -257,7 +271,7 @@ async function saveJob(job) {
     existing.length > 0
   ) {
     console.log(
-      ⏭️ Already exists: ${job.title}
+      `⏭️ Already exists: ${job.title}`
     );
 
     return false;
@@ -296,7 +310,7 @@ async function saveJob(job) {
     "POST",
     {
       title:
-        New OSSC Job: ${job.title},
+        `New OSSC Job: ${job.title}`,
 
       message:
         "New recruitment-related update found on the official OSSC website.",
@@ -311,7 +325,7 @@ async function saveJob(job) {
   );
 
   console.log(
-    🆕 Added: ${job.title}
+    `🆕 Added: ${job.title}`
   );
 
   return true;
@@ -331,14 +345,14 @@ async function main() {
       await fetchPage(OSSC_URL);
 
     console.log(
-      ✅ OSSC page loaded: ${html.length} bytes
+      `✅ OSSC page loaded: ${html.length} bytes`
     );
 
     const jobs =
       extractLinks(html);
 
     console.log(
-      🔎 Possible recruitment links: ${jobs.length}
+      `🔎 Possible recruitment links: ${jobs.length}`
     );
 
     let added = 0;
@@ -353,7 +367,7 @@ async function main() {
         }
       } catch (error) {
         console.error(
-          ❌ Failed to save "${job.title}":,
+          `❌ Failed to save "${job.title}":`,
           error.message
         );
       }
@@ -380,11 +394,11 @@ async function main() {
     );
 
     console.log(
-      📋 Found: ${jobs.length}
+      `📋 Found: ${jobs.length}`
     );
 
     console.log(
-      🆕 Added: ${added}
+      `🆕 Added: ${added}`
     );
 
     console.log(
@@ -403,14 +417,23 @@ async function main() {
         "POST",
         {
           source_name: "OSSC",
+
           status: "error",
+
           jobs_found: 0,
+
           jobs_added: 0,
+
           error_message:
             error.message
         }
       );
-    } catch {}
+    } catch (logError) {
+      console.error(
+        "⚠️ Could not write automation log:",
+        logError.message
+      );
+    }
 
     process.exit(1);
   }
