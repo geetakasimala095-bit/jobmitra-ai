@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#0b7a3b">
-<meta name="description" content="JobMitra AI - Students, Jobs, Farmer and Digital Seva">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#0b7a3b">
+
+<meta name="description"
+      content="JobMitra AI - Government Jobs, Students, Farmer and Digital Seva">
 
 <title>JobMitra AI</title>
 
+
 <style>
+
+/* =========================
+   BASIC
+   ========================= */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -26,22 +40,26 @@ body{
   line-height:1.5;
 }
 
-button,a{
-  -webkit-tap-highlight-color:transparent;
-}
-
 a{
   text-decoration:none;
   color:inherit;
 }
 
-/* HEADER */
+button{
+  -webkit-tap-highlight-color:transparent;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
 .header{
   position:sticky;
   top:0;
   z-index:1000;
   background:#0b7a3b;
-  color:#fff;
+  color:white;
   box-shadow:0 2px 12px rgba(0,0,0,.18);
 }
 
@@ -69,7 +87,7 @@ a{
 
 .notify-btn{
   border:0;
-  background:#fff;
+  background:white;
   color:#0b7a3b;
   border-radius:22px;
   padding:9px 13px;
@@ -77,7 +95,11 @@ a{
   cursor:pointer;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+   ========================= */
+
 .hero{
   max-width:1100px;
   margin:auto;
@@ -85,8 +107,13 @@ a{
 }
 
 .hero-box{
-  background:linear-gradient(135deg,#0b7a3b,#159957);
-  color:#fff;
+  background:linear-gradient(
+    135deg,
+    #0b7a3b,
+    #159957
+  );
+
+  color:white;
   border-radius:20px;
   padding:25px 20px;
   box-shadow:0 8px 25px rgba(11,122,59,.2);
@@ -97,15 +124,16 @@ a{
   margin-bottom:5px;
 }
 
-.hero p{
-  opacity:.92;
-}
 
-/* FOUR MAIN BOXES */
+/* =========================
+   MAIN BOXES
+   ========================= */
+
 .main-grid{
   max-width:1100px;
   margin:15px auto 0;
   padding:0 16px;
+
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:12px;
@@ -115,14 +143,18 @@ a{
   min-height:125px;
   border-radius:18px;
   padding:18px 12px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+
   text-align:center;
-  color:#fff;
+  color:white;
   font-weight:800;
+
   box-shadow:0 6px 18px rgba(0,0,0,.10);
+
   transition:.2s;
 }
 
@@ -136,22 +168,94 @@ a{
 }
 
 .students{
-  background:linear-gradient(135deg,#155eef,#3977ff);
+  background:linear-gradient(
+    135deg,
+    #155eef,
+    #3977ff
+  );
 }
 
 .jobs{
-  background:linear-gradient(135deg,#e65100,#ff8a00);
+  background:linear-gradient(
+    135deg,
+    #e65100,
+    #ff8a00
+  );
 }
 
 .farmer{
-  background:linear-gradient(135deg,#238636,#45b85c);
+  background:linear-gradient(
+    135deg,
+    #238636,
+    #45b85c
+  );
 }
 
 .digital{
-  background:linear-gradient(135deg,#6a1b9a,#9c4dcc);
+  background:linear-gradient(
+    135deg,
+    #6a1b9a,
+    #9c4dcc
+  );
 }
 
-/* LATEST NOTIFICATION */
+
+/* =========================
+   NOTIFICATION BOX
+   ========================= */
+
+.alert-box{
+  max-width:1100px;
+  margin:18px auto;
+  padding:0 16px;
+}
+
+.alert-inner{
+  background:#e8f4ff;
+  border:1px solid #75bdf5;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+}
+
+.alert-inner h3{
+  margin-bottom:8px;
+  color:#0757a5;
+}
+
+.alert-inner p{
+  font-size:13px;
+  color:#555;
+}
+
+.enable-btn{
+  margin-top:10px;
+  background:#0757a5;
+  color:white;
+
+  border:0;
+  padding:12px 20px;
+
+  border-radius:8px;
+
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.enable-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+#notificationStatus{
+  margin-top:10px;
+}
+
+
+/* =========================
+   LATEST NOTIFICATIONS
+   ========================= */
+
 .latest{
   max-width:1100px;
   margin:18px auto;
@@ -159,21 +263,27 @@ a{
 }
 
 .latest-box{
-  background:#fff;
+  background:white;
   border-radius:18px;
-  box-shadow:0 4px 16px rgba(0,0,0,.08);
+
+  box-shadow:
+    0 4px 16px rgba(0,0,0,.08);
+
   overflow:hidden;
+
   border:1px solid #e3e9e5;
 }
 
 .latest-head{
   padding:14px 16px;
+
   background:#fff3f3;
+
   border-bottom:1px solid #ffdada;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
 }
 
 .latest-title{
@@ -186,7 +296,9 @@ a{
   display:inline-flex;
   align-items:center;
   gap:5px;
+
   color:#c62828;
+
   font-size:12px;
   font-weight:800;
 }
@@ -194,13 +306,20 @@ a{
 .live-dot{
   width:9px;
   height:9px;
+
   background:#e53935;
+
   border-radius:50%;
+
   animation:blink 1s infinite;
 }
 
 @keyframes blink{
-  50%{opacity:.2}
+
+  50%{
+    opacity:.2;
+  }
+
 }
 
 .notification-list{
@@ -210,9 +329,12 @@ a{
 
 .notification{
   padding:13px 15px;
+
   border-bottom:1px solid #edf0ee;
+
   display:flex;
   gap:10px;
+
   align-items:flex-start;
 }
 
@@ -240,12 +362,18 @@ a{
 
 .nbadge{
   display:inline-block;
+
   font-size:10px;
+
   background:#e8f5e9;
   color:#176b35;
+
   padding:2px 7px;
+
   border-radius:10px;
+
   margin-top:4px;
+
   font-weight:700;
 }
 
@@ -255,19 +383,29 @@ a{
   color:#68756d;
 }
 
-/* CONTENT */
+
+/* =========================
+   CONTENT
+   ========================= */
+
 .container{
   max-width:1100px;
-  margin:0 auto;
+  margin:auto;
   padding:10px 16px 50px;
 }
 
 .section{
   margin-top:20px;
-  background:#fff;
+
+  background:white;
+
   border-radius:18px;
+
   padding:18px;
-  box-shadow:0 4px 16px rgba(0,0,0,.07);
+
+  box-shadow:
+    0 4px 16px rgba(0,0,0,.07);
+
   scroll-margin-top:80px;
 }
 
@@ -282,23 +420,62 @@ a{
   margin-bottom:15px;
 }
 
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search{
+  width:100%;
+
+  border:1px solid #d7dfda;
+
+  border-radius:12px;
+
+  padding:12px 14px;
+
+  margin-bottom:15px;
+
+  outline:none;
+
+  font-size:15px;
+}
+
+.search:focus{
+  border-color:#0b7a3b;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
 .cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:11px;
 }
 
 .service{
   border:1px solid #e3e9e5;
+
   border-radius:14px;
+
   padding:14px;
+
   background:#fbfdfc;
+
   transition:.2s;
 }
 
 .service:hover{
   border-color:#0b7a3b;
-  box-shadow:0 5px 15px rgba(0,0,0,.07);
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.07);
 }
 
 .service-icon{
@@ -319,72 +496,95 @@ a{
 
 .open-btn{
   display:inline-block;
+
   margin-top:9px;
+
   padding:7px 11px;
+
   border-radius:9px;
+
   background:#0b7a3b;
-  color:#fff;
+
+  color:white;
+
   font-size:12px;
+
   font-weight:700;
 }
 
-/* SEARCH */
-.search{
-  width:100%;
-  border:1px solid #d7dfda;
-  border-radius:12px;
-  padding:12px 14px;
-  margin-bottom:15px;
-  outline:none;
-  font-size:15px;
-}
 
-.search:focus{
-  border-color:#0b7a3b;
-}
+/* =========================
+   FOOTER
+   ========================= */
 
-/* FOOTER */
 footer{
   background:#122019;
+
   color:#dfe8e2;
+
   padding:25px 16px;
+
   text-align:center;
+
   margin-top:30px;
 }
 
 footer strong{
-  color:#fff;
+  color:white;
 }
 
-/* BACK TOP */
+
+/* =========================
+   TOP BUTTON
+   ========================= */
+
 .top{
   position:fixed;
+
   right:15px;
   bottom:18px;
+
   width:44px;
   height:44px;
+
   border:0;
+
   border-radius:50%;
+
   background:#0b7a3b;
-  color:#fff;
+
+  color:white;
+
   font-size:19px;
+
   display:none;
+
   cursor:pointer;
+
   z-index:999;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media(max-width:800px){
+
   .main-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .cards{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
+
 }
 
 @media(max-width:520px){
+
   .hero h1{
     font-size:25px;
   }
@@ -404,559 +604,1304 @@ footer strong{
   .section{
     padding:15px;
   }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
 <header class="header">
+
   <div class="header-inner">
+
     <div class="logo">
+
       JobMitra AI
-      <small>JOBS • STUDENTS • FARMER • DIGITAL SEVA</small>
+
+      <small>
+        JOBS • STUDENTS • FARMER • DIGITAL SEVA
+      </small>
+
     </div>
 
-    <button class="notify-btn" onclick="enableNotifications()">
+
+    <button
+      id="topAlertButton"
+      class="notify-btn"
+      type="button">
+
       🔔 Alerts
+
     </button>
+
   </div>
+
 </header>
 
 
 <main>
 
+
+<!-- =========================
+     HERO
+     ========================= -->
+
 <section class="hero">
+
   <div class="hero-box">
-    <h1>JobMitra AI 🚀</h1>
-    <p>Jobs, Students, Farmer & Government Digital Services — Official Links</p>
+
+    <h1>
+      JobMitra AI 🚀
+    </h1>
+
+    <p>
+      Jobs, Students, Farmer & Government Digital Services
+    </p>
+
   </div>
+
 </section>
 
 
-<!-- FIRST 4 BOXES -->
+<!-- =========================
+     MAIN FOUR BOXES
+     ========================= -->
+
 <section class="main-grid">
 
-  <a class="main-card students" href="#students">
-    <div class="icon">🎓</div>
-    <div>Students</div>
-    <small>Education & Scholarship</small>
+
+  <a
+    class="main-card students"
+    href="#students">
+
+    <div class="icon">
+      🎓
+    </div>
+
+    <div>
+      Students
+    </div>
+
+    <small>
+      Education & Scholarship
+    </small>
+
   </a>
 
-  <a class="main-card jobs" href="#jobs">
-    <div class="icon">💼</div>
-    <div>Jobs</div>
-    <small>Government Jobs</small>
+
+  <a
+    class="main-card jobs"
+    href="#jobs">
+
+    <div class="icon">
+      💼
+    </div>
+
+    <div>
+      Jobs
+    </div>
+
+    <small>
+      Government Jobs
+    </small>
+
   </a>
 
-  <a class="main-card farmer" href="#farmer">
-    <div class="icon">🌾</div>
-    <div>Farmer</div>
-    <small>Farmer Services</small>
+
+  <a
+    class="main-card farmer"
+    href="#farmer">
+
+    <div class="icon">
+      🌾
+    </div>
+
+    <div>
+      Farmer
+    </div>
+
+    <small>
+      Farmer Services
+    </small>
+
   </a>
 
-  <a class="main-card digital" href="#digital">
-    <div class="icon">🏛️</div>
-    <div>Digital Seva</div>
-    <small>Government Services</small>
+
+  <a
+    class="main-card digital"
+    href="#digital">
+
+    <div class="icon">
+      🏛️
+    </div>
+
+    <div>
+      Digital Seva
+    </div>
+
+    <small>
+      Government Services
+    </small>
+
   </a>
+
 
 </section>
 
-<div style="
-  background:#e8f4ff;
-  border:1px solid #75bdf5;
-  padding:16px;
-  border-radius:12px;
-  margin:15px 0;
-  text-align:center;
-">
-  <h3 style="margin:0 0 8px;color:#0757a5;">
-    🔔 Get New Job Alerts
-  </h3>
 
-  <p style="font-size:13px;color:#555;">
-    ନୂଆ Government Job ଆସିଲେ notification ପାଆନ୍ତୁ।
-  </p>
+<!-- =========================
+     ENABLE NOTIFICATIONS
+     ========================= -->
 
-  <button
-    id="enableNotifications"
-    style="
-      background:#0757a5;
-      color:white;
-      border:0;
-      padding:12px 20px;
-      border-radius:8px;
-      font-weight:bold;
-      cursor:pointer;
-    "
-  >
-    🔔 Enable Notifications
-  </button>
+<div
+  class="alert-box"
+  id="alerts">
 
-  <p id="notificationStatus"
-     style="font-size:12px;">
-  </p>
+  <div class="alert-inner">
+
+    <h3>
+      🔔 Get New Job Alerts
+    </h3>
+
+    <p>
+      ନୂଆ Government Job ଆସିଲେ notification ପାଆନ୍ତୁ।
+    </p>
+
+
+    <button
+      id="enableNotifications"
+      class="enable-btn"
+      type="button">
+
+      🔔 Enable Notifications
+
+    </button>
+
+
+    <p
+      id="notificationStatus">
+    </p>
+
+  </div>
+
 </div>
-<!-- LATEST NOTIFICATIONS -->
-<section class="latest" id="latest">
+
+
+<!-- =========================
+     LATEST NOTIFICATIONS
+     ========================= -->
+
+<section
+  class="latest"
+  id="latest">
+
   <div class="latest-box">
 
     <div class="latest-head">
-      <div class="latest-title">🔴 Latest Notifications</div>
+
+      <div class="latest-title">
+        🔴 Latest Notifications
+      </div>
 
       <div class="live">
+
         <span class="live-dot"></span>
+
         LIVE
+
       </div>
+
     </div>
 
-    <div class="notification-list" id="notificationList">
-      <!-- Notifications inserted by JavaScript -->
+
+    <div
+      class="notification-list"
+      id="notificationList">
     </div>
 
   </div>
+
 </section>
 
 
 <div class="container">
 
-<!-- STUDENTS -->
-<section class="section" id="students">
 
-  <h2 class="section-title">🎓 Students</h2>
+<!-- =========================
+     STUDENTS
+     ========================= -->
+
+<section
+  class="section"
+  id="students">
+
+  <h2 class="section-title">
+    🎓 Students
+  </h2>
+
   <p class="section-sub">
     Scholarship, Admit Card, Result, Syllabus and official education services.
   </p>
 
+
   <input
     class="search"
     oninput="filterCards(this,'studentCards')"
-    placeholder="🔍 Search Students services..."
-  >
+    placeholder="🔍 Search Students services...">
 
-  <div class="cards" id="studentCards">
+
+  <div
+    class="cards"
+    id="studentCards">
+
 
     <div class="service">
-      <div class="service-icon">🎓</div>
-      <h3>National Scholarship Portal</h3>
-      <p>Government scholarship applications.</p>
-      <a class="open-btn"
-         href="https://scholarships.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🎓
+      </div>
+
+      <h3>
+        National Scholarship Portal
+      </h3>
+
+      <p>
+        Government scholarship applications.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://scholarships.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🎓</div>
-      <h3>Odisha Scholarship Portal</h3>
-      <p>Odisha State scholarship services.</p>
-      <a class="open-btn"
-         href="https://scholarship.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🎫</div>
-      <h3>Admit Card</h3>
-      <p>Official recruitment/examination admit cards.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">Official Portal →</a>
+
+      <div class="service-icon">
+        🎓
+      </div>
+
+      <h3>
+        Odisha Scholarship Portal
+      </h3>
+
+      <p>
+        Odisha State scholarship services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://scholarship.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏆</div>
-      <h3>Result</h3>
-      <p>Official examination and recruitment results.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">Official Portal →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">📖</div>
-      <h3>Higher Education</h3>
-      <p>Odisha Higher Education Department.</p>
-      <a class="open-btn"
-         href="https://dhe.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🎫
+      </div>
+
+      <h3>
+        Admit Card
+      </h3>
+
+      <p>
+        Official examination admit cards.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.ossc.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Portal →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏫</div>
-      <h3>School & Mass Education</h3>
-      <p>School education services.</p>
-      <a class="open-btn"
-         href="https://sme.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">📚</div>
-      <h3>AICTE</h3>
-      <p>Technical education and student services.</p>
-      <a class="open-btn"
-         href="https://www.aicte-india.org/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🏆
+      </div>
+
+      <h3>
+        Result
+      </h3>
+
+      <p>
+        Official examination results.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.ossc.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Portal →
+
+      </a>
+
     </div>
 
+
     <div class="service">
-      <div class="service-icon">🪪</div>
-      <h3>DigiLocker</h3>
-      <p>Digital certificates and documents.</p>
-      <a class="open-btn"
-         href="https://www.digilocker.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        📖
+      </div>
+
+      <h3>
+        Higher Education
+      </h3>
+
+      <p>
+        Odisha Higher Education Department.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://dhe.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🏫
+      </div>
+
+      <h3>
+        School & Mass Education
+      </h3>
+
+      <p>
+        School education services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://sme.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        📚
+      </div>
+
+      <h3>
+        AICTE
+      </h3>
+
+      <p>
+        Technical education services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.aicte-india.org/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🪪
+      </div>
+
+      <h3>
+        DigiLocker
+      </h3>
+
+      <p>
+        Digital certificates and documents.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.digilocker.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- JOBS -->
-<section class="section" id="jobs">
+<!-- =========================
+     JOBS
+     ========================= -->
 
-  <h2 class="section-title">💼 Jobs</h2>
+<section
+  class="section"
+  id="jobs">
+
+  <h2 class="section-title">
+    💼 Jobs
+  </h2>
+
   <p class="section-sub">
-    Government jobs, recruitment, official notifications and application portals.
+    Government jobs, recruitment and official application portals.
   </p>
+
 
   <input
     class="search"
     oninput="filterCards(this,'jobCards')"
-    placeholder="🔍 Search Jobs services..."
-  >
+    placeholder="🔍 Search Jobs services...">
 
-  <div class="cards" id="jobCards">
+
+  <div
+    class="cards"
+    id="jobCards">
+
 
     <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>Odisha Govt Recruitment</h3>
-      <p>Official Odisha Government portal.</p>
-      <a class="open-btn"
-         href="https://odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🏛️
+      </div>
+
+      <h3>
+        Odisha Govt Recruitment
+      </h3>
+
+      <p>
+        Official Odisha Government portal.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">📝</div>
-      <h3>OSSC</h3>
-      <p>Odisha Staff Selection Commission.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>OPSC</h3>
-      <p>Odisha Public Service Commission.</p>
-      <a class="open-btn"
-         href="https://www.opsc.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        📝
+      </div>
+
+      <h3>
+        OSSC
+      </h3>
+
+      <p>
+        Odisha Staff Selection Commission.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.ossc.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">👮</div>
-      <h3>Odisha Police</h3>
-      <p>Police recruitment and citizen services.</p>
-      <a class="open-btn"
-         href="https://odishapolice.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🚆</div>
-      <h3>Railway Recruitment</h3>
-      <p>Official Railway recruitment information.</p>
-      <a class="open-btn"
-         href="https://www.rrbcdg.gov.in/"
-         target="_blank" rel="noopener">Official RRB →</a>
+
+      <div class="service-icon">
+        🏛️
+      </div>
+
+      <h3>
+        OPSC
+      </h3>
+
+      <p>
+        Odisha Public Service Commission.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.opsc.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">📋</div>
-      <h3>SSC</h3>
-      <p>Staff Selection Commission.</p>
-      <a class="open-btn"
-         href="https://ssc.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">👨‍💼</div>
-      <h3>National Career Service</h3>
-      <p>Government employment services.</p>
-      <a class="open-btn"
-         href="https://www.ncs.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        👮
+      </div>
+
+      <h3>
+        Odisha Police
+      </h3>
+
+      <p>
+        Police recruitment and citizen services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://odishapolice.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
+
     <div class="service">
-      <div class="service-icon">🏦</div>
-      <h3>IBPS</h3>
-      <p>Official banking recruitment portal.</p>
-      <a class="open-btn"
-         href="https://www.ibps.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🚆
+      </div>
+
+      <h3>
+        Railway Recruitment
+      </h3>
+
+      <p>
+        Official Railway recruitment information.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.rrbcdg.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official RRB →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        📋
+      </div>
+
+      <h3>
+        SSC
+      </h3>
+
+      <p>
+        Staff Selection Commission.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://ssc.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        👨‍💼
+      </div>
+
+      <h3>
+        National Career Service
+      </h3>
+
+      <p>
+        Government employment services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.ncs.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🏦
+      </div>
+
+      <h3>
+        IBPS
+      </h3>
+
+      <p>
+        Official banking recruitment portal.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.ibps.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- FARMER -->
-<section class="section" id="farmer">
+<!-- =========================
+     FARMER
+     ========================= -->
 
-  <h2 class="section-title">🌾 Farmer</h2>
+<section
+  class="section"
+  id="farmer">
+
+  <h2 class="section-title">
+    🌾 Farmer
+  </h2>
+
   <p class="section-sub">
-    Farmer ID, AgriStack, schemes, agriculture and official farmer services.
+    Agriculture schemes and official farmer services.
   </p>
+
 
   <input
     class="search"
     oninput="filterCards(this,'farmerCards')"
-    placeholder="🔍 Search Farmer services..."
-  >
+    placeholder="🔍 Search Farmer services...">
 
-  <div class="cards" id="farmerCards">
+
+  <div
+    class="cards"
+    id="farmerCards">
+
 
     <div class="service">
-      <div class="service-icon">🌾</div>
-      <h3>AgriStack</h3>
-      <p>Digital agriculture ecosystem and farmer services.</p>
-      <a class="open-btn"
-         href="https://agristack.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🌾
+      </div>
+
+      <h3>
+        AgriStack
+      </h3>
+
+      <p>
+        Digital agriculture ecosystem.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://agristack.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🪪</div>
-      <h3>Farmer Registry</h3>
-      <p>Farmer registry related official services.</p>
-      <a class="open-btn"
-         href="https://agristack.gov.in/"
-         target="_blank" rel="noopener">Official Portal →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">💰</div>
-      <h3>PM-KISAN</h3>
-      <p>Pradhan Mantri Kisan Samman Nidhi.</p>
-      <a class="open-btn"
-         href="https://pmkisan.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        💰
+      </div>
+
+      <h3>
+        PM-KISAN
+      </h3>
+
+      <p>
+        Pradhan Mantri Kisan Samman Nidhi.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://pmkisan.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🌱</div>
-      <h3>CM-KISAN Odisha</h3>
-      <p>Odisha farmer support scheme.</p>
-      <a class="open-btn"
-         href="https://cmkisan.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">👨‍🌾</div>
-      <h3>Krushak Odisha</h3>
-      <p>Farmer database and agriculture services.</p>
-      <a class="open-btn"
-         href="https://krushak.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🌱
+      </div>
+
+      <h3>
+        CM-KISAN Odisha
+      </h3>
+
+      <p>
+        Odisha farmer support scheme.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://cmkisan.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🌾</div>
-      <h3>Agriculture Department</h3>
-      <p>Odisha Agriculture & Farmers' Empowerment.</p>
-      <a class="open-btn"
-         href="https://agri.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🐄</div>
-      <h3>Animal Resources</h3>
-      <p>Animal husbandry and veterinary services.</p>
-      <a class="open-btn"
-         href="https://fard.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        👨‍🌾
+      </div>
+
+      <h3>
+        Krushak Odisha
+      </h3>
+
+      <p>
+        Farmer database and agriculture services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://krushak.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
+
     <div class="service">
-      <div class="service-icon">🐟</div>
-      <h3>Fisheries</h3>
-      <p>Fisheries & ARD related services.</p>
-      <a class="open-btn"
-         href="https://fard.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🌾
+      </div>
+
+      <h3>
+        Agriculture Department
+      </h3>
+
+      <p>
+        Odisha Agriculture services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://agri.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🐄
+      </div>
+
+      <h3>
+        Animal Resources
+      </h3>
+
+      <p>
+        Animal husbandry services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://fard.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- DIGITAL SEVA -->
-<section class="section" id="digital">
+<!-- =========================
+     DIGITAL SEVA
+     ========================= -->
 
-  <h2 class="section-title">🏛️ Digital Seva</h2>
+<section
+  class="section"
+  id="digital">
+
+  <h2 class="section-title">
+    🏛️ Digital Seva
+  </h2>
+
   <p class="section-sub">
-    Important government online services and Odisha department portals.
+    Important government online services.
   </p>
+
 
   <input
     class="search"
     oninput="filterCards(this,'digitalCards')"
-    placeholder="🔍 Search Digital Seva..."
-  >
+    placeholder="🔍 Search Digital Seva...">
 
-  <div class="cards" id="digitalCards">
+
+  <div
+    class="cards"
+    id="digitalCards">
+
 
     <div class="service">
-      <div class="service-icon">🪪</div>
-      <h3>Aadhaar / UIDAI</h3>
-      <p>Official Aadhaar services.</p>
-      <a class="open-btn"
-         href="https://uidai.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🪪
+      </div>
+
+      <h3>
+        Aadhaar / UIDAI
+      </h3>
+
+      <p>
+        Official Aadhaar services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://uidai.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">💳</div>
-      <h3>PAN / Income Tax</h3>
-      <p>Official Income Tax services.</p>
-      <a class="open-btn"
-         href="https://www.incometax.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🗳️</div>
-      <h3>Voter Services</h3>
-      <p>Election Commission voter services.</p>
-      <a class="open-btn"
-         href="https://voters.eci.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        💳
+      </div>
+
+      <h3>
+        PAN / Income Tax
+      </h3>
+
+      <p>
+        Official Income Tax services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.incometax.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🛂</div>
-      <h3>Passport Seva</h3>
-      <p>Official passport services.</p>
-      <a class="open-btn"
-         href="https://www.passportindia.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🚗</div>
-      <h3>Driving Licence / Parivahan</h3>
-      <p>Driving licence and vehicle services.</p>
-      <a class="open-btn"
-         href="https://parivahan.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🗳️
+      </div>
+
+      <h3>
+        Voter Services
+      </h3>
+
+      <p>
+        Election Commission voter services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://voters.eci.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">👮</div>
-      <h3>Police Verification</h3>
-      <p>Odisha Police official citizen services.</p>
-      <a class="open-btn"
-         href="https://odishapolice.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">📜</div>
-      <h3>Odisha e-District</h3>
-      <p>Certificates and citizen services.</p>
-      <a class="open-btn"
-         href="https://edistrict.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🛂
+      </div>
+
+      <h3>
+        Passport Seva
+      </h3>
+
+      <p>
+        Official passport services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.passportindia.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏠</div>
-      <h3>Bhulekh Odisha</h3>
-      <p>Official land records.</p>
-      <a class="open-btn"
-         href="https://bhulekh.ori.nic.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🍚</div>
-      <h3>Food & Civil Supplies</h3>
-      <p>Ration and food supply services.</p>
-      <a class="open-btn"
-         href="https://food.odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🚗
+      </div>
+
+      <h3>
+        Driving Licence / Parivahan
+      </h3>
+
+      <p>
+        Driving licence and vehicle services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://parivahan.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>Odisha One</h3>
-      <p>Odisha government citizen services.</p>
-      <a class="open-btn"
-         href="https://www.odishaone.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🔐</div>
-      <h3>DigiLocker</h3>
-      <p>Government digital documents.</p>
-      <a class="open-btn"
-         href="https://www.digilocker.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        📜
+      </div>
+
+      <h3>
+        Odisha e-District
+      </h3>
+
+      <p>
+        Certificates and citizen services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://edistrict.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
-    <div class="service">
-      <div class="service-icon">🇮🇳</div>
-      <h3>MyGov India</h3>
-      <p>Official Government of India citizen portal.</p>
-      <a class="open-btn"
-         href="https://www.mygov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
-    </div>
 
     <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>All Odisha Government Departments</h3>
-      <p>Official Odisha Government department list.</p>
-      <a class="open-btn"
-         href="https://odisha.gov.in/"
-         target="_blank" rel="noopener">Official Website →</a>
+
+      <div class="service-icon">
+        🏠
+      </div>
+
+      <h3>
+        Bhulekh Odisha
+      </h3>
+
+      <p>
+        Official land records.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://bhulekh.ori.nic.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🍚
+      </div>
+
+      <h3>
+        Food & Civil Supplies
+      </h3>
+
+      <p>
+        Ration and food supply services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://food.odisha.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🏛️
+      </div>
+
+      <h3>
+        Odisha One
+      </h3>
+
+      <p>
+        Odisha government citizen services.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.odishaone.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🔐
+      </div>
+
+      <h3>
+        DigiLocker
+      </h3>
+
+      <p>
+        Government digital documents.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.digilocker.gov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🇮🇳
+      </div>
+
+      <h3>
+        MyGov India
+      </h3>
+
+      <p>
+        Government of India citizen portal.
+      </p>
+
+      <a
+        class="open-btn"
+        href="https://www.mygov.in/"
+        target="_blank"
+        rel="noopener">
+
+        Official Website →
+
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 
 </div>
+
 </main>
 
 
+<!-- =========================
+     FOOTER
+     ========================= -->
+
 <footer>
-  <strong>JobMitra AI</strong>
+
+  <strong>
+    JobMitra AI
+  </strong>
+
   <br>
+
   Official Government Links • Jobs • Students • Farmer • Digital Seva
+
   <br><br>
-  <small>Always verify important information on the official department website.</small>
+
+  <small>
+    Always verify important information on the official department website.
+  </small>
+
 </footer>
 
 
-<button class="top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<!-- =========================
+     TOP BUTTON
+     ========================= -->
+
+<button
+  class="top"
+  id="topBtn"
+  type="button">
+
   ↑
+
 </button>
 
 
 <script>
 
-/* =========================
+/* =========================================
    LATEST NOTIFICATIONS
-   ========================= */
+   ========================================= */
 
 const notifications = [
 
@@ -991,56 +1936,68 @@ const notifications = [
   {
     icon:"🌾",
     title:"Farmer Update",
-    text:"Agriculture, AgriStack and farmer scheme updates.",
+    text:"Agriculture and farmer scheme updates.",
     type:"Farmer"
   }
 
 ];
 
 
-function renderNotifications(){
+function escapeHtml(text){
 
-  const list=document.getElementById("notificationList");
+  return String(text)
 
-  if(!notifications.length){
+    .replaceAll("&","&amp;")
 
-    list.innerHTML=
-      `<div class="empty">No latest notification available.</div>`;
+    .replaceAll("<","&lt;")
 
-    return;
-  }
+    .replaceAll(">","&gt;")
 
-  list.innerHTML=notifications.map(item=>`
+    .replaceAll('"',"&quot;")
 
-    <div class="notification">
-
-      <div class="ntype">${item.icon}</div>
-
-      <div class="nbody">
-
-        <strong>${escapeHtml(item.title)}</strong>
-
-        <div>${escapeHtml(item.text)}</div>
-
-        <span class="nbadge">${escapeHtml(item.type)}</span>
-
-      </div>
-
-    </div>
-
-  `).join("");
+    .replaceAll("'","&#039;");
 
 }
 
 
-function escapeHtml(text){
+function renderNotifications(){
 
-  return String(text)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+  const list =
+    document.getElementById(
+      "notificationList"
+    );
+
+  if(!list) return;
+
+
+  list.innerHTML =
+    notifications.map(item => `
+
+      <div class="notification">
+
+        <div class="ntype">
+          ${item.icon}
+        </div>
+
+        <div class="nbody">
+
+          <strong>
+            ${escapeHtml(item.title)}
+          </strong>
+
+          <div>
+            ${escapeHtml(item.text)}
+          </div>
+
+          <span class="nbadge">
+            ${escapeHtml(item.type)}
+          </span>
+
+        </div>
+
+      </div>
+
+    `).join("");
 
 }
 
@@ -1048,152 +2005,28 @@ function escapeHtml(text){
 renderNotifications();
 
 
-/* =========================
-   BROWSER NOTIFICATION
-   ========================= */
-
-async function enableNotifications(){
-
-  if(!("Notification" in window)){
-
-    alert("This browser does not support notifications.");
-
-    return;
-  }
-
-  try{
-
-    const permission =
-      await Notification.requestPermission();
-
-    if(permission==="granted"){
-
-      new Notification("JobMitra AI 🔔",{
-
-        body:"JobMitra AI notifications are enabled.",
-
-        icon:"https://dummyimage.com/192x192/0b7a3b/ffffff.png&text=JM"
-
-      });
-
-      localStorage.setItem(
-        "jobmitra_notification",
-        "enabled"
-      );
-
-    }else{
-
-      alert("Notification permission was not granted.");
-
-    }
-
-  }catch(error){
-
-    console.log(error);
-
-  }
-
-}
-
-
-/* =========================
-   AUTO REFRESH
-   ========================= */
-
-let lastNotificationHash="";
-
-function checkForUpdates(){
-
-  const hash=
-    JSON.stringify(notifications);
-
-  if(lastNotificationHash &&
-     hash!==lastNotificationHash){
-
-    renderNotifications();
-
-    sendNewNotification();
-
-  }
-
-  lastNotificationHash=hash;
-
-}
-
-
-/*
-  IMPORTANT:
-
-  This frontend is ready to receive
-  automatic notification data.
-
-  Your backend/API should update:
-
-  notifications
-
-  and then call renderNotifications().
-
-  Example backend response:
-
-  [
-    {
-      icon:"💼",
-      title:"New Odisha Govt Job",
-      text:"New recruitment notification available.",
-      type:"Jobs"
-    }
-  ]
-*/
-
-checkForUpdates();
-
-setInterval(checkForUpdates,60000);
-
-
-/* =========================
-   PUSH NOTIFICATION HELPER
-   ========================= */
-
-function sendNewNotification(){
-
-  if(
-    "Notification" in window &&
-    Notification.permission==="granted"
-  ){
-
-    new Notification("JobMitra AI — New Update 🔴",{
-
-      body:"A new notification has been added.",
-
-      icon:"https://dummyimage.com/192x192/0b7a3b/ffffff.png&text=JM"
-
-    });
-
-  }
-
-}
-
-
-/* =========================
+/* =========================================
    SEARCH
-   ========================= */
+   ========================================= */
 
 function filterCards(input,id){
 
-  const query=
+  const query =
     input.value.toLowerCase().trim();
 
-  const cards=
+
+  const cards =
     document.querySelectorAll(
-      "#"+id+" .service"
+      "#" + id + " .service"
     );
 
-  cards.forEach(card=>{
 
-    const text=
+  cards.forEach(card => {
+
+    const text =
       card.innerText.toLowerCase();
 
-    card.style.display=
+    card.style.display =
       text.includes(query)
       ? ""
       : "none";
@@ -1203,138 +2036,98 @@ function filterCards(input,id){
 }
 
 
-/* =========================
+/* =========================================
    TOP BUTTON
-   ========================= */
+   ========================================= */
 
-const topBtn=
-  document.getElementById("topBtn");
-
-window.addEventListener("scroll",()=>{
-
-  topBtn.style.display=
-    window.scrollY>400
-    ? "block"
-    : "none";
-
-});
+const topBtn =
+  document.getElementById(
+    "topBtn"
+  );
 
 
-/* =========================
-   SERVICE WORKER
-   ========================= */
+window.addEventListener(
+  "scroll",
+  () => {
 
-if("serviceWorker" in navigator){
+    if(!topBtn) return;
 
-  window.addEventListener("load",()=>{
+    topBtn.style.display =
+      window.scrollY > 400
+      ? "block"
+      : "none";
 
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(()=>{
-        console.log(
-          "JobMitra AI Service Worker registered"
-        );
-      })
-      .catch(err=>{
-        console.log(
-          "Service Worker error:",
-          err
-        );
-      });
-
-  });
-
-}
-
-</script>
-<!-- =========================================
-     JOBMITRA AI - PUSH NOTIFICATION SYSTEM
-     ========================================= -->
-
-<script>
-
-/* =========================
-   1. SERVICE WORKER
-   ========================= */
-
-if ("serviceWorker" in navigator) {
-
-  window.addEventListener("load", async () => {
-
-    try {
-
-      await navigator.serviceWorker.register("./sw.js");
-
-      console.log(
-        "✅ JobMitra AI Service Worker registered"
-      );
-
-    } catch (error) {
-
-      console.error(
-        "❌ Service Worker error:",
-        error
-      );
-
-    }
-
-  });
-
-}
+  }
+);
 
 
-/* =========================
-   2. SUPABASE + VAPID
-   ========================= */
+topBtn.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+/* =========================================
+   SUPABASE
+   ========================================= */
 
 const SUPABASE_URL =
   "https://hsexaatuacdnumxnkehx.supabase.co";
 
-const SUPABASE_KEY =
-  "ତୁମର sb_publishable_KEY ଏଠାରେ paste କର";BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME
 
+/*
+   🔴 IMPORTANT
+
+   Replace YOUR_SB_PUBLISHABLE_KEY
+   with your real sb_publishable_... key.
+
+   NEVER put service_role or secret key here.
+*/
+
+const SUPABASE_KEY =
+  "YOUR_SB_PUBLISHABLE_KEY";
+
+
+/* =========================================
+   VAPID PUBLIC KEY
+   ========================================= */
 
 const VAPID_PUBLIC_KEY =
   "BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME";
 
 
-/* =========================
-   3. BUTTON + STATUS
-   ========================= */
-
-const enableButton =
-  document.getElementById(
-    "enableNotifications"
-  );
-
-const statusText =
-  document.getElementById(
-    "notificationStatus"
-  );
-
-
-/* =========================
-   4. VAPID KEY CONVERTER
-   ========================= */
+/* =========================================
+   VAPID CONVERTER
+   ========================================= */
 
 function urlBase64ToUint8Array(
   base64String
-) {
+){
 
   const padding =
     "=".repeat(
       (4 - base64String.length % 4) % 4
     );
 
+
   const base64 =
-    (
-      base64String + padding
-    )
-      .replace(/-/g, "+")
-      .replace(/_/g, "/");
+    (base64String + padding)
+
+      .replace(/-/g,"+")
+
+      .replace(/_/g,"/");
+
 
   const rawData =
     window.atob(base64);
+
 
   return Uint8Array.from(
     [...rawData].map(
@@ -1346,17 +2139,30 @@ function urlBase64ToUint8Array(
 }
 
 
-/* =========================
-   5. ENABLE PUSH
-   ========================= */
+/* =========================================
+   PUSH NOTIFICATION
+   ========================================= */
 
-async function enablePushNotifications() {
+async function enableNotifications(){
 
-  try {
+  const button =
+    document.getElementById(
+      "enableNotifications"
+    );
+
+
+  const status =
+    document.getElementById(
+      "notificationStatus"
+    );
+
+
+  try{
+
 
     /* Browser support */
 
-    if (!("Notification" in window)) {
+    if(!("Notification" in window)){
 
       throw new Error(
         "This browser does not support notifications."
@@ -1364,7 +2170,8 @@ async function enablePushNotifications() {
 
     }
 
-    if (!("serviceWorker" in navigator)) {
+
+    if(!("serviceWorker" in navigator)){
 
       throw new Error(
         "Service Worker is not supported."
@@ -1372,7 +2179,8 @@ async function enablePushNotifications() {
 
     }
 
-    if (!("PushManager" in window)) {
+
+    if(!("PushManager" in window)){
 
       throw new Error(
         "Push Notifications are not supported."
@@ -1381,11 +2189,9 @@ async function enablePushNotifications() {
     }
 
 
-    /* Status */
+    if(status){
 
-    if (statusText) {
-
-      statusText.textContent =
+      status.textContent =
         "⏳ Enabling notifications...";
 
     }
@@ -1397,11 +2203,11 @@ async function enablePushNotifications() {
       await Notification.requestPermission();
 
 
-    if (permission !== "granted") {
+    if(permission !== "granted"){
 
-      if (statusText) {
+      if(status){
 
-        statusText.textContent =
+        status.textContent =
           "❌ Notification permission was not allowed.";
 
       }
@@ -1414,7 +2220,12 @@ async function enablePushNotifications() {
     /* Service Worker */
 
     const registration =
-      await navigator.serviceWorker.ready;
+      await navigator.serviceWorker.register(
+        "./sw.js"
+      );
+
+
+    await navigator.serviceWorker.ready;
 
 
     /* Existing subscription */
@@ -1424,14 +2235,14 @@ async function enablePushNotifications() {
         .getSubscription();
 
 
-    /* Create subscription */
+    /* New subscription */
 
-    if (!subscription) {
+    if(!subscription){
 
       subscription =
         await registration.pushManager.subscribe({
 
-          userVisibleOnly: true,
+          userVisibleOnly:true,
 
           applicationServerKey:
             urlBase64ToUint8Array(
@@ -1444,35 +2255,39 @@ async function enablePushNotifications() {
 
 
     console.log(
-      "✅ Push subscription created:",
+      "✅ Push subscription created",
       subscription
     );
 
 
-    /* Subscription JSON */
+    /* JSON */
 
     const subscriptionData =
       subscription.toJSON();
 
 
-    /* =========================
+    /* =====================================
        SAVE TO SUPABASE
-       ========================= */
+       ===================================== */
 
     const response =
       await fetch(
-        `${SUPABASE_URL}/rest/v1/push_subscriptions`,
+
+        SUPABASE_URL +
+        "/rest/v1/push_subscriptions",
+
         {
 
-          method: "POST",
+          method:"POST",
 
-          headers: {
+          headers:{
 
             "apikey":
               SUPABASE_KEY,
 
             "Authorization":
-              `Bearer ${SUPABASE_KEY}`,
+              "Bearer " +
+              SUPABASE_KEY,
 
             "Content-Type":
               "application/json",
@@ -1494,12 +2309,11 @@ async function enablePushNotifications() {
             })
 
         }
+
       );
 
 
-    /* Supabase error */
-
-    if (!response.ok) {
+    if(!response.ok){
 
       const errorText =
         await response.text();
@@ -1512,32 +2326,36 @@ async function enablePushNotifications() {
     }
 
 
-    /* Success */
+    /* SUCCESS */
+
+    if(status){
+
+      status.textContent =
+        "✅ Notifications enabled successfully!";
+
+    }
+
+
+    if(button){
+
+      button.textContent =
+        "🔔 Notifications Enabled";
+
+      button.disabled =
+        true;
+
+    }
+
 
     console.log(
       "✅ Subscription saved to Supabase"
     );
 
 
-    if (statusText) {
-
-      statusText.textContent =
-        "✅ Notifications enabled successfully!";
-
-    }
+  }
 
 
-    if (enableButton) {
-
-      enableButton.textContent =
-        "🔔 Notifications Enabled";
-
-      enableButton.disabled = true;
-
-    }
-
-
-  } catch (error) {
+  catch(error){
 
     console.error(
       "❌ Push notification error:",
@@ -1545,9 +2363,9 @@ async function enablePushNotifications() {
     );
 
 
-    if (statusText) {
+    if(status){
 
-      statusText.textContent =
+      status.textContent =
         "❌ " + error.message;
 
     }
@@ -1557,32 +2375,102 @@ async function enablePushNotifications() {
 }
 
 
-/* =========================
-   6. BUTTON CLICK
-   ========================= */
+/* =========================================
+   ENABLE BUTTON
+   ========================================= */
 
-if (enableButton) {
+const enableButton =
+  document.getElementById(
+    "enableNotifications"
+  );
+
+
+if(enableButton){
 
   enableButton.addEventListener(
     "click",
-    enablePushNotifications
+    enableNotifications
   );
 
-  console.log(
-    "🔔 Enable Notifications button ready"
+}
+
+
+/* =========================================
+   TOP ALERT BUTTON
+   ========================================= */
+
+const topAlertButton =
+  document.getElementById(
+    "topAlertButton"
   );
 
-} else {
 
-  console.log(
-    "⚠️ Enable Notifications button not found"
+if(topAlertButton){
+
+  topAlertButton.addEventListener(
+    "click",
+    () => {
+
+      const alertBox =
+        document.getElementById(
+          "alerts"
+        );
+
+
+      if(alertBox){
+
+        alertBox.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   SERVICE WORKER
+   ========================================= */
+
+if("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    async () => {
+
+      try{
+
+        await navigator.serviceWorker.register(
+          "./sw.js"
+        );
+
+        console.log(
+          "✅ JobMitra AI Service Worker registered"
+        );
+
+      }
+
+      catch(error){
+
+        console.error(
+          "❌ Service Worker error:",
+          error
+        );
+
+      }
+
+    }
   );
 
 }
 
 </script>
 
+
 </body>
-</html>
-</body>
+
 </html>
