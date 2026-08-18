@@ -1247,53 +1247,342 @@ if("serviceWorker" in navigator){
 }
 
 </script>
+<!-- =========================================
+     JOBMITRA AI - PUSH NOTIFICATION SYSTEM
+     ========================================= -->
+
 <script>
-const enableButton =
-  document.getElementById("enableNotifications");
 
-const statusText =
-  document.getElementById("notificationStatus");
+/* =========================
+   1. SERVICE WORKER
+   ========================= */
 
-if (enableButton) {
-  enableButton.addEventListener("click", async () => {
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", async () => {
 
     try {
 
-      if (!("Notification" in window)) {
-        statusText.textContent =
-          "❌ This browser does not support notifications.";
-        return;
-      }
+      await navigator.serviceWorker.register("./sw.js");
 
-      const permission =
-        await Notification.requestPermission();
+      console.log(
+        "✅ JobMitra AI Service Worker registered"
+      );
 
-      if (permission === "granted") {
+    } catch (error) {
 
-        statusText.textContent =
-          "✅ Notification permission allowed!";
+      console.error(
+        "❌ Service Worker error:",
+        error
+      );
 
-        enableButton.textContent =
-          "🔔 Notifications Enabled";
+    }
 
-      } else {
+  });
+
+}
+
+
+/* =========================
+   2. SUPABASE + VAPID
+   ========================= */
+
+const SUPABASE_URL =
+  "https://hsexaatuacdnumxnkehx.supabase.co";
+
+const SUPABASE_KEY =
+  "ତୁମର sb_publishable_KEY ଏଠାରେ paste କର";BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME
+
+
+const VAPID_PUBLIC_KEY =
+  "BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME";
+
+
+/* =========================
+   3. BUTTON + STATUS
+   ========================= */
+
+const enableButton =
+  document.getElementById(
+    "enableNotifications"
+  );
+
+const statusText =
+  document.getElementById(
+    "notificationStatus"
+  );
+
+
+/* =========================
+   4. VAPID KEY CONVERTER
+   ========================= */
+
+function urlBase64ToUint8Array(
+  base64String
+) {
+
+  const padding =
+    "=".repeat(
+      (4 - base64String.length % 4) % 4
+    );
+
+  const base64 =
+    (
+      base64String + padding
+    )
+      .replace(/-/g, "+")
+      .replace(/_/g, "/");
+
+  const rawData =
+    window.atob(base64);
+
+  return Uint8Array.from(
+    [...rawData].map(
+      character =>
+        character.charCodeAt(0)
+    )
+  );
+
+}
+
+
+/* =========================
+   5. ENABLE PUSH
+   ========================= */
+
+async function enablePushNotifications() {
+
+  try {
+
+    /* Browser support */
+
+    if (!("Notification" in window)) {
+
+      throw new Error(
+        "This browser does not support notifications."
+      );
+
+    }
+
+    if (!("serviceWorker" in navigator)) {
+
+      throw new Error(
+        "Service Worker is not supported."
+      );
+
+    }
+
+    if (!("PushManager" in window)) {
+
+      throw new Error(
+        "Push Notifications are not supported."
+      );
+
+    }
+
+
+    /* Status */
+
+    if (statusText) {
+
+      statusText.textContent =
+        "⏳ Enabling notifications...";
+
+    }
+
+
+    /* Permission */
+
+    const permission =
+      await Notification.requestPermission();
+
+
+    if (permission !== "granted") {
+
+      if (statusText) {
 
         statusText.textContent =
           "❌ Notification permission was not allowed.";
 
       }
 
-    } catch (error) {
+      return;
 
-      console.error(error);
+    }
+
+
+    /* Service Worker */
+
+    const registration =
+      await navigator.serviceWorker.ready;
+
+
+    /* Existing subscription */
+
+    let subscription =
+      await registration.pushManager
+        .getSubscription();
+
+
+    /* Create subscription */
+
+    if (!subscription) {
+
+      subscription =
+        await registration.pushManager.subscribe({
+
+          userVisibleOnly: true,
+
+          applicationServerKey:
+            urlBase64ToUint8Array(
+              VAPID_PUBLIC_KEY
+            )
+
+        });
+
+    }
+
+
+    console.log(
+      "✅ Push subscription created:",
+      subscription
+    );
+
+
+    /* Subscription JSON */
+
+    const subscriptionData =
+      subscription.toJSON();
+
+
+    /* =========================
+       SAVE TO SUPABASE
+       ========================= */
+
+    const response =
+      await fetch(
+        `${SUPABASE_URL}/rest/v1/push_subscriptions`,
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "apikey":
+              SUPABASE_KEY,
+
+            "Authorization":
+              `Bearer ${SUPABASE_KEY}`,
+
+            "Content-Type":
+              "application/json",
+
+            "Prefer":
+              "return=representation"
+
+          },
+
+          body:
+            JSON.stringify({
+
+              endpoint:
+                subscription.endpoint,
+
+              subscription:
+                subscriptionData
+
+            })
+
+        }
+      );
+
+
+    /* Supabase error */
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      throw new Error(
+        "Supabase error: " +
+        errorText
+      );
+
+    }
+
+
+    /* Success */
+
+    console.log(
+      "✅ Subscription saved to Supabase"
+    );
+
+
+    if (statusText) {
+
+      statusText.textContent =
+        "✅ Notifications enabled successfully!";
+
+    }
+
+
+    if (enableButton) {
+
+      enableButton.textContent =
+        "🔔 Notifications Enabled";
+
+      enableButton.disabled = true;
+
+    }
+
+
+  } catch (error) {
+
+    console.error(
+      "❌ Push notification error:",
+      error
+    );
+
+
+    if (statusText) {
 
       statusText.textContent =
         "❌ " + error.message;
 
     }
 
-  });
+  }
+
 }
+
+
+/* =========================
+   6. BUTTON CLICK
+   ========================= */
+
+if (enableButton) {
+
+  enableButton.addEventListener(
+    "click",
+    enablePushNotifications
+  );
+
+  console.log(
+    "🔔 Enable Notifications button ready"
+  );
+
+} else {
+
+  console.log(
+    "⚠️ Enable Notifications button not found"
+  );
+
+}
+
 </script>
+
+</body>
+</html>
 </body>
 </html>
