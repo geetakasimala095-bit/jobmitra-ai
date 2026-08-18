@@ -1780,7 +1780,606 @@ if("serviceWorker" in navigator){
 }
 
 </script>
+<script>
 
+/* =========================================
+   LATEST NOTIFICATIONS
+   ========================================= */
+
+const notifications = [
+
+  {
+    icon: "💼",
+    title: "Job Updates",
+    text: "New government recruitment updates will appear here.",
+    type: "Jobs"
+  },
+
+  {
+    icon: "🎫",
+    title: "Admit Card",
+    text: "Latest official admit card updates.",
+    type: "Admit Card"
+  },
+
+  {
+    icon: "🏆",
+    title: "Result",
+    text: "Latest official result updates.",
+    type: "Result"
+  },
+
+  {
+    icon: "🎓",
+    title: "Scholarship",
+    text: "New scholarship information and deadlines.",
+    type: "Students"
+  },
+
+  {
+    icon: "🌾",
+    title: "Farmer Update",
+    text: "Agriculture and farmer scheme updates.",
+    type: "Farmer"
+  }
+
+];
+
+
+/* =========================================
+   ESCAPE HTML
+   ========================================= */
+
+function escapeHtml(text) {
+
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+/* =========================================
+   RENDER NOTIFICATIONS
+   ========================================= */
+
+function renderNotifications() {
+
+  const list =
+    document.getElementById("notificationList");
+
+  if (!list) return;
+
+  list.innerHTML = notifications.map(item => `
+
+    <div class="notification">
+
+      <div class="ntype">
+        ${item.icon}
+      </div>
+
+      <div class="nbody">
+
+        <strong>
+          ${escapeHtml(item.title)}
+        </strong>
+
+        <div>
+          ${escapeHtml(item.text)}
+        </div>
+
+        <span class="nbadge">
+          ${escapeHtml(item.type)}
+        </span>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+renderNotifications();
+
+
+/* =========================================
+   SEARCH
+   ========================================= */
+
+function filterCards(input, id) {
+
+  const query =
+    input.value.toLowerCase().trim();
+
+  const cards =
+    document.querySelectorAll(
+      "#" + id + " .service"
+    );
+
+  cards.forEach(card => {
+
+    const text =
+      card.innerText.toLowerCase();
+
+    card.style.display =
+      text.includes(query) ? "" : "none";
+
+  });
+
+}
+
+
+/* =========================================
+   TOP BUTTON
+   ========================================= */
+
+const topBtn =
+  document.getElementById("topBtn");
+
+if (topBtn) {
+
+  window.addEventListener("scroll", () => {
+
+    topBtn.style.display =
+      window.scrollY > 400 ? "block" : "none";
+
+  });
+
+  topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+}
+
+
+/* =========================================
+   SUPABASE
+   ========================================= */
+
+const SUPABASE_URL =
+  "https://hsexaatuacdnumxnkehx.supabase.co";
+
+
+const SUPABASE_KEY =
+  "sb_publishable_mkUyaXPtvVNxFTrGOwErvw_rKhV7t8I";
+
+
+/* =========================================
+   VAPID PUBLIC KEY
+   ========================================= */
+
+const VAPID_PUBLIC_KEY =
+  "BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME";
+
+
+/* =========================================
+   BASE64 CONVERTER
+   ========================================= */
+
+function urlBase64ToUint8Array(base64String) {
+
+  const padding =
+    "=".repeat(
+      (4 - base64String.length % 4) % 4
+    );
+
+  const base64 =
+    (base64String + padding)
+      .replace(/-/g, "+")
+      .replace(/_/g, "/");
+
+  const rawData =
+    window.atob(base64);
+
+  return Uint8Array.from(
+    [...rawData].map(
+      character => character.charCodeAt(0)
+    )
+  );
+
+}
+
+
+/* =========================================
+   ENABLE NOTIFICATIONS
+   ========================================= */
+
+async function enableNotifications() {
+
+  const button =
+    document.getElementById(
+      "enableNotifications"
+    );
+
+  const status =
+    document.getElementById(
+      "notificationStatus"
+    );
+
+
+  try {
+
+    /* =====================================
+       CHECK BROWSER SUPPORT
+       ===================================== */
+
+    if (!("Notification" in window)) {
+
+      throw new Error(
+        "This browser does not support notifications."
+      );
+
+    }
+
+
+    if (!("serviceWorker" in navigator)) {
+
+      throw new Error(
+        "Service Worker is not supported."
+      );
+
+    }
+
+
+    if (!("PushManager" in window)) {
+
+      throw new Error(
+        "Push Notifications are not supported."
+      );
+
+    }
+
+
+    /* =====================================
+       CHECK SUPABASE KEY
+       ===================================== */
+
+    if (
+      !SUPABASE_KEY ||
+      SUPABASE_KEY ===
+      "PASTE_YOUR_SB_PUBLISHABLE_KEY_HERE"
+    ) {
+
+      throw new Error(
+        "Supabase publishable key missing."
+      );
+
+    }
+
+
+    /* =====================================
+       SHOW STATUS
+       ===================================== */
+
+    if (status) {
+
+      status.textContent =
+        "⏳ Enabling notifications...";
+
+    }
+
+
+    if (button) {
+
+      button.disabled = true;
+
+    }
+
+
+    /* =====================================
+       REQUEST PERMISSION
+       ===================================== */
+
+    const permission =
+      await Notification.requestPermission();
+
+
+    if (permission !== "granted") {
+
+      if (status) {
+
+        status.textContent =
+          "❌ Notification permission denied.";
+
+      }
+
+      if (button) {
+
+        button.disabled = false;
+
+      }
+
+      return;
+
+    }
+
+
+    /* =====================================
+       REGISTER SERVICE WORKER
+       ===================================== */
+
+    const registration =
+      await navigator.serviceWorker.register(
+        "./sw.js"
+      );
+
+
+    console.log(
+      "✅ Service Worker registered"
+    );
+
+
+    await navigator.serviceWorker.ready;
+
+
+    /* =====================================
+       GET EXISTING SUBSCRIPTION
+       ===================================== */
+
+    let subscription =
+      await registration.pushManager
+        .getSubscription();
+
+
+    /* =====================================
+       CREATE NEW SUBSCRIPTION
+       ===================================== */
+
+    if (!subscription) {
+
+      subscription =
+        await registration.pushManager.subscribe({
+
+          userVisibleOnly: true,
+
+          applicationServerKey:
+            urlBase64ToUint8Array(
+              VAPID_PUBLIC_KEY
+            )
+
+        });
+
+    }
+
+
+    console.log(
+      "✅ Push subscription:",
+      subscription
+    );
+
+
+    /* =====================================
+       CONVERT SUBSCRIPTION TO JSON
+       ===================================== */
+
+    const subscriptionData =
+      subscription.toJSON();
+
+
+    /* =====================================
+       SAVE TO SUPABASE
+       ===================================== */
+
+    const response =
+      await fetch(
+
+        SUPABASE_URL +
+        "/rest/v1/push_subscriptions",
+
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "apikey":
+              SUPABASE_KEY,
+
+            "Authorization":
+              "Bearer " + SUPABASE_KEY,
+
+            "Content-Type":
+              "application/json",
+
+            "Prefer":
+              "return=representation"
+
+          },
+
+          body:
+            JSON.stringify({
+
+              endpoint:
+                subscription.endpoint,
+
+              subscription:
+                subscriptionData
+
+            })
+
+        }
+
+      );
+
+
+    /* =====================================
+       SUPABASE ERROR
+       ===================================== */
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      throw new Error(
+        "Supabase error: " + errorText
+      );
+
+    }
+
+
+    /* =====================================
+       SUCCESS
+       ===================================== */
+
+    if (status) {
+
+      status.textContent =
+        "✅ Notifications enabled successfully!";
+
+    }
+
+
+    if (button) {
+
+      button.textContent =
+        "🔔 Notifications Enabled";
+
+      button.disabled = true;
+
+    }
+
+
+    console.log(
+      "✅ Subscription saved to Supabase"
+    );
+
+  }
+
+
+  catch (error) {
+
+    console.error(
+      "❌ Push notification error:",
+      error
+    );
+
+
+    if (status) {
+
+      status.textContent =
+        "❌ " + error.message;
+
+    }
+
+
+    if (button) {
+
+      button.disabled = false;
+
+    }
+
+  }
+
+}
+
+
+/* =========================================
+   ENABLE BUTTON
+   ========================================= */
+
+const enableButton =
+  document.getElementById(
+    "enableNotifications"
+  );
+
+
+if (enableButton) {
+
+  enableButton.addEventListener(
+    "click",
+    enableNotifications
+  );
+
+}
+
+
+/* =========================================
+   TOP ALERT BUTTON
+   ========================================= */
+
+const topAlertButton =
+  document.getElementById(
+    "topAlertButton"
+  );
+
+
+if (topAlertButton) {
+
+  topAlertButton.addEventListener(
+    "click",
+    () => {
+
+      const alertBox =
+        document.getElementById(
+          "alerts"
+        );
+
+
+      if (alertBox) {
+
+        alertBox.scrollIntoView({
+
+          behavior: "smooth",
+
+          block: "center"
+
+        });
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   SERVICE WORKER
+   ========================================= */
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener(
+    "load",
+    async () => {
+
+      try {
+
+        await navigator.serviceWorker.register(
+          "./sw.js"
+        );
+
+        console.log(
+          "✅ JobMitra AI Service Worker registered"
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "❌ Service Worker error:",
+          error
+        );
+
+      }
+
+    }
+  );
+
+}
+
+</script>
 </body>
 
 </html>
