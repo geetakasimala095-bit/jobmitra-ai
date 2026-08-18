@@ -8,15 +8,16 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
   process.exit(1);
 }
 
-const OSSC_URL = "https://www.ossc.gov.in/";
+const OSSC_URL = "https://ossc.gov.in/Public/OSSC/Default.aspx";
 
 function fetchPage(url) {
   return new Promise((resolve, reject) => {
-    https.get(
+    const request = https.get(
       url,
       {
         headers: {
-          "User-Agent": "JobMitraAI-AutomaticChecker/1.0"
+          "User-Agent":
+            "Mozilla/5.0 (compatible; JobMitraAI/1.0)"
         }
       },
       response => {
@@ -27,28 +28,45 @@ function fetchPage(url) {
         });
 
         response.on("end", () => {
-          if (response.statusCode >= 200 &&
-              response.statusCode < 400) {
+          if (
+            response.statusCode >= 200 &&
+            response.statusCode < 400
+          ) {
             resolve(data);
           } else {
             reject(
               new Error(
-                `OSSC HTTP ${response.statusCode}`
+                OSSC HTTP ${response.statusCode}
               )
             );
           }
         });
       }
-    ).on("error", reject);
+    );
+
+    request.setTimeout(30000, () => {
+      request.destroy(
+        new Error("OSSC request timed out")
+      );
+    });
+
+    request.on("error", reject);
   });
 }
 
-function supabaseRequest(path, method = "GET", data = null) {
+function supabaseRequest(
+  path,
+  method = "GET",
+  data = null
+) {
   return new Promise((resolve, reject) => {
+    const url = new URL(
+      SUPABASE_URL + path
+    );
 
-    const url = new URL(SUPABASE_URL + path);
-
-    const body = data ? JSON.stringify(data) : null;
+    const body = data
+      ? JSON.stringify(data)
+      : null;
 
     const request = https.request(
       {
@@ -58,14 +76,15 @@ function supabaseRequest(path, method = "GET", data = null) {
 
         headers: {
           "apikey": SUPABASE_KEY,
-          "Authorization": `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json",
-          "Prefer": "return=representation"
+          "Authorization":
+            Bearer ${SUPABASE_KEY},
+          "Content-Type":
+            "application/json",
+          "Prefer":
+            "return=representation"
         }
       },
-
       response => {
-
         let result = "";
 
         response.on("data", chunk => {
@@ -73,26 +92,25 @@ function supabaseRequest(path, method = "GET", data = null) {
         });
 
         response.on("end", () => {
-
           if (
             response.statusCode >= 200 &&
             response.statusCode < 300
           ) {
             try {
-              resolve(JSON.parse(result || "{}"));
+              resolve(
+                JSON.parse(result || "[]")
+              );
             } catch {
               resolve(result);
             }
           } else {
             reject(
               new Error(
-                `Supabase ${response.statusCode}: ${result}`
+                Supabase ${response.statusCode}: ${result}
               )
             );
           }
-
         });
-
       }
     );
 
@@ -108,152 +126,237 @@ function supabaseRequest(path, method = "GET", data = null) {
 
 function cleanText(text) {
   return text
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
     .replace(/\s+/g, " ")
     .trim();
 }
 
+function absoluteUrl(href) {
+  try {
+    return new URL(
+      href,
+      "https://ossc.gov.in/"
+    ).href;
+  } catch {
+    return null;
+  }
+}
+
 function makeFingerprint(title, url) {
-  return Buffer
-    .from(`${title}|${url}`)
-    .toString("base64")
-    .replace(/[^a-zA-Z0-9]/g, "")
-    .slice(0, 200);
+  const crypto = require("crypto");
+
+  return crypto
+    .createHash("sha256")
+    .update(${title}|${url})
+    .digest("hex");
+}
+
+function isJobRelated(title, href) {
+  const text =
+    ${title} ${href}.toLowerCase();
+
+  const positive = [
+    "advertisement",
+    "recruitment",
+    "recruit",
+    "vacancy",
+    "post",
+    "appointment",
+    "combined",
+    "selection",
+    "examination"
+  ];
+
+  const negative = [
+    "answer key",
+    "answer-key",
+    "admit card",
+    "admission letter",
+    "result",
+    "rejection",
+    "objection",
+    "question paper",
+    "mock test"
+  ];
+
+  const hasPositive =
+    positive.some(word =>
+      text.includes(word)
+    );
+
+  const hasNegative =
+    negative.some(word =>
+      text.includes(word)
+    );
+
+  return hasPositive && !hasNegative;
+}
+
+function extractLinks(html) {
+  const results = [];
+
+  const regex =
+    /<a\b[^>]href\s=\s*["']([^"']+)["'][^>]>([\s\S]?)<\/a>/gi;
+
+  let match;
+
+  while (
+    (match = regex.exec(html)) !== null
+  ) {
+    const href = match[1];
+    const title = cleanText(match[2]);
+
+    if (!title || title.length < 8) {
+      continue;
+    }
+
+    const officialUrl =
+      absoluteUrl(href);
+
+    if (!officialUrl) {
+      continue;
+    }
+
+    if (!isJobRelated(
+      title,
+      officialUrl
+    )) {
+      continue;
+    }
+
+    results.push({
+      title,
+      officialUrl
+    });
+  }
+
+  return results;
+}
+
+async function saveJob(job) {
+  const fingerprint =
+    makeFingerprint(
+      job.title,
+      job.officialUrl
+    );
+
+  const existing =
+    await supabaseRequest(
+      `/rest/v1/jobs?fingerprint=eq.${encodeURIComponent(
+        fingerprint
+      )}&select=id`
+    );
+
+  if (
+    Array.isArray(existing) &&
+    existing.length > 0
+  ) {
+    console.log(
+      ⏭️ Already exists: ${job.title}
+    );
+
+    return false;
+  }
+
+  await supabaseRequest(
+    "/rest/v1/jobs",
+    "POST",
+    {
+      title: job.title,
+
+      organization:
+        "Odisha Staff Selection Commission",
+
+      category: "Jobs",
+
+      official_url:
+        job.officialUrl,
+
+      source_url:
+        OSSC_URL,
+
+      source_name:
+        "OSSC",
+
+      fingerprint,
+
+      is_verified: true,
+
+      is_active: true
+    }
+  );
+
+  await supabaseRequest(
+    "/rest/v1/notifications",
+    "POST",
+    {
+      title:
+        New OSSC Job: ${job.title},
+
+      message:
+        "New recruitment-related update found on the official OSSC website.",
+
+      type: "Jobs",
+
+      official_url:
+        job.officialUrl,
+
+      is_active: true
+    }
+  );
+
+  console.log(
+    🆕 Added: ${job.title}
+  );
+
+  return true;
 }
 
 async function main() {
-
-  console.log("🚀 JobMitra AI - Odisha Automatic Checker");
+  console.log(
+    "🚀 JobMitra AI - OSSC Automatic Checker"
+  );
 
   try {
-
-    console.log("🔎 Checking official OSSC website...");
-
-    const html = await fetchPage(OSSC_URL);
-
     console.log(
-      `✅ OSSC website reached. HTML size: ${html.length} bytes`
+      "🌐 Fetching official OSSC page..."
     );
 
-    /*
-      We currently collect recruitment-related links
-      from the official OSSC homepage.
-
-      Only links containing recruitment/job/advertisement/
-      notification keywords are considered.
-    */
-
-    const linkRegex =
-      /<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-
-    const foundJobs = [];
-
-    let match;
-
-    while ((match = linkRegex.exec(html)) !== null) {
-
-      const href = match[1];
-      const rawTitle = match[2];
-
-      const title = cleanText(
-        rawTitle.replace(/<[^>]+>/g, " ")
-      );
-
-      const combined =
-        `${title} ${href}`.toLowerCase();
-
-      const isRecruitment =
-        combined.includes("recruit") ||
-        combined.includes("advertisement") ||
-        combined.includes("vacancy") ||
-        combined.includes("job");
-
-      if (!isRecruitment) {
-        continue;
-      }
-
-      let officialUrl = href;
-
-      if (href.startsWith("/")) {
-        officialUrl = `https://www.ossc.gov.in${href}`;
-      }
-
-      if (!officialUrl.startsWith("http")) {
-        continue;
-      }
-
-      if (!title || title.length < 5) {
-        continue;
-      }
-
-      foundJobs.push({
-        title,
-        officialUrl
-      });
-    }
+    const html =
+      await fetchPage(OSSC_URL);
 
     console.log(
-      `📋 Recruitment-related links found: ${foundJobs.length}`
+      ✅ OSSC page loaded: ${html.length} bytes
+    );
+
+    const jobs =
+      extractLinks(html);
+
+    console.log(
+      🔎 Possible recruitment links: ${jobs.length}
     );
 
     let added = 0;
 
-    for (const job of foundJobs) {
+    for (const job of jobs) {
+      try {
+        const wasAdded =
+          await saveJob(job);
 
-      const fingerprint =
-        makeFingerprint(
-          job.title,
-          job.officialUrl
+        if (wasAdded) {
+          added++;
+        }
+      } catch (error) {
+        console.error(
+          ❌ Failed to save "${job.title}":,
+          error.message
         );
-
-      const existing =
-        await supabaseRequest(
-          `/rest/v1/jobs?fingerprint=eq.${encodeURIComponent(fingerprint)}&select=id`
-        );
-
-      if (Array.isArray(existing) &&
-          existing.length > 0) {
-
-        console.log(
-          `⏭️ Already exists: ${job.title}`
-        );
-
-        continue;
       }
-
-      await supabaseRequest(
-        "/rest/v1/jobs",
-        "POST",
-        {
-          title: job.title,
-          organization: "Odisha Staff Selection Commission",
-          category: "Jobs",
-          official_url: job.officialUrl,
-          source_url: OSSC_URL,
-          source_name: "OSSC",
-          fingerprint,
-          is_verified: true,
-          is_active: true
-        }
-      );
-
-      await supabaseRequest(
-        "/rest/v1/notifications",
-        "POST",
-        {
-          title: `New OSSC Update: ${job.title}`,
-          message:
-            "New official OSSC recruitment-related update found.",
-          type: "Jobs",
-          official_url: job.officialUrl,
-          is_active: true
-        }
-      );
-
-      added++;
-
-      console.log(
-        `🆕 Added: ${job.title}`
-      );
     }
 
     await supabaseRequest(
@@ -261,20 +364,36 @@ async function main() {
       "POST",
       {
         source_name: "OSSC",
+
         status: "success",
-        jobs_found: foundJobs.length,
-        jobs_added: added
+
+        jobs_found:
+          jobs.length,
+
+        jobs_added:
+          added
       }
     );
 
     console.log(
-      `✅ OSSC check completed. Added: ${added}`
+      "================================="
+    );
+
+    console.log(
+      📋 Found: ${jobs.length}
+    );
+
+    console.log(
+      🆕 Added: ${added}
+    );
+
+    console.log(
+      "✅ OSSC automatic check completed."
     );
 
   } catch (error) {
-
     console.error(
-      "❌ Automatic checker failed:",
+      "❌ Checker failed:",
       error.message
     );
 
@@ -287,7 +406,8 @@ async function main() {
           status: "error",
           jobs_found: 0,
           jobs_added: 0,
-          error_message: error.message
+          error_message:
+            error.message
         }
       );
     } catch {}
