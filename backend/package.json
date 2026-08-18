@@ -1,0 +1,11 @@
+{
+  "name": "jobmitra-ai-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node checker.js"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}
