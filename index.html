@@ -1247,6 +1247,53 @@ if("serviceWorker" in navigator){
 }
 
 </script>
+<script>
+const enableButton =
+  document.getElementById("enableNotifications");
 
+const statusText =
+  document.getElementById("notificationStatus");
+
+if (enableButton) {
+  enableButton.addEventListener("click", async () => {
+
+    try {
+
+      if (!("Notification" in window)) {
+        statusText.textContent =
+          "❌ This browser does not support notifications.";
+        return;
+      }
+
+      const permission =
+        await Notification.requestPermission();
+
+      if (permission === "granted") {
+
+        statusText.textContent =
+          "✅ Notification permission allowed!";
+
+        enableButton.textContent =
+          "🔔 Notifications Enabled";
+
+      } else {
+
+        statusText.textContent =
+          "❌ Notification permission was not allowed.";
+
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+      statusText.textContent =
+        "❌ " + error.message;
+
+    }
+
+  });
+}
+</script>
 </body>
 </html>
