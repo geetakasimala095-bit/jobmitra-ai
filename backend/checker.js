@@ -36,7 +36,7 @@ function fetchPage(url) {
           } else {
             reject(
               new Error(
-                OSSC HTTP ${response.statusCode}
+                `OSSC HTTP ${response.statusCode}`
               )
             );
           }
