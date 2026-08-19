@@ -28,8 +28,8 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install backend dependencies
+        run: npm install --prefix backend
 
       - name: Run Automatic Job Checker
         run: node backend/checker.js
