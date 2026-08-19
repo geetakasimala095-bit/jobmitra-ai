@@ -1,176 +1,393 @@
 const https = require("https");
 const crypto = require("crypto");
+const webpush = require("web-push");
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_KEY) {
-  console.error("❌ Supabase secrets are missing.");
+/* =====================================================
+   SUPABASE CONFIG
+   ===================================================== */
+
+const SUPABASE_URL =
+  process.env.SUPABASE_URL;
+
+const SUPABASE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+
+/* =====================================================
+   VAPID CONFIG
+   ===================================================== */
+
+const VAPID_PUBLIC_KEY =
+  process.env.VAPID_PUBLIC_KEY;
+
+const VAPID_PRIVATE_KEY =
+  process.env.VAPID_PRIVATE_KEY;
+
+
+if (
+  !SUPABASE_URL ||
+  !SUPABASE_KEY
+) {
+  console.error(
+    "❌ Supabase secrets are missing."
+  );
+
   process.exit(1);
 }
 
-const OSSC_URL = "https://ossc.gov.in/Public/OSSC/Default.aspx";
+
+if (
+  !VAPID_PUBLIC_KEY ||
+  !VAPID_PRIVATE_KEY
+) {
+  console.error(
+    "❌ VAPID secrets are missing."
+  );
+
+  process.exit(1);
+}
+
+
+/* =====================================================
+   WEB PUSH SETUP
+   ===================================================== */
+
+webpush.setVapidDetails(
+  "mailto:jobmitraai@gmail.com",
+  VAPID_PUBLIC_KEY,
+  VAPID_PRIVATE_KEY
+);
+
+
+/* =====================================================
+   OSSC
+   ===================================================== */
+
+const OSSC_URL =
+  "https://ossc.gov.in/Public/OSSC/Default.aspx";
+
+
+/* =====================================================
+   FETCH WEBSITE
+   ===================================================== */
 
 function fetchPage(url) {
+
   return new Promise((resolve, reject) => {
-    const request = https.get(
-      url,
-      {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (compatible; JobMitraAI/1.0)"
-        }
-      },
-      (response) => {
-        let data = "";
 
-        response.on("data", (chunk) => {
-          data += chunk;
-        });
-
-        response.on("end", () => {
-          if (
-            response.statusCode >= 200 &&
-            response.statusCode < 400
-          ) {
-            resolve(data);
-          } else {
-            reject(
-              new Error(
-                `OSSC HTTP ${response.statusCode}`
-              )
-            );
+    const request =
+      https.get(
+        url,
+        {
+          headers: {
+            "User-Agent":
+              "Mozilla/5.0 (compatible; JobMitraAI/1.0)"
           }
-        });
+        },
+        (response) => {
+
+          let data = "";
+
+          response.on(
+            "data",
+            (chunk) => {
+              data += chunk;
+            }
+          );
+
+          response.on(
+            "end",
+            () => {
+
+              if (
+                response.statusCode >= 200 &&
+                response.statusCode < 400
+              ) {
+
+                resolve(data);
+
+              } else {
+
+                reject(
+                  new Error(
+                    `OSSC HTTP ${response.statusCode}`
+                  )
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+    request.setTimeout(
+      30000,
+      () => {
+
+        request.destroy(
+          new Error(
+            "OSSC request timed out"
+          )
+        );
+
       }
     );
 
-    request.setTimeout(30000, () => {
-      request.destroy(
-        new Error("OSSC request timed out")
-      );
-    });
 
-    request.on("error", reject);
+    request.on(
+      "error",
+      reject
+    );
+
   });
+
 }
+
+
+/* =====================================================
+   SUPABASE REQUEST
+   ===================================================== */
 
 function supabaseRequest(
   path,
   method = "GET",
   data = null
 ) {
-  return new Promise((resolve, reject) => {
-    const url = new URL(
-      SUPABASE_URL + path
-    );
 
-    const body = data
-      ? JSON.stringify(data)
-      : null;
+  return new Promise(
+    (resolve, reject) => {
 
-    const request = https.request(
-      {
-        hostname: url.hostname,
-        path: url.pathname + url.search,
-        method,
+      const url =
+        new URL(
+          SUPABASE_URL + path
+        );
 
-        headers: {
-          "apikey": SUPABASE_KEY,
 
-          "Authorization":
-            `Bearer ${SUPABASE_KEY}`,
+      const body =
+        data
+          ? JSON.stringify(data)
+          : null;
 
-          "Content-Type":
-            "application/json",
 
-          "Prefer":
-            "return=representation"
-        }
-      },
+      const request =
+        https.request(
+          {
+            hostname:
+              url.hostname,
 
-      (response) => {
-        let result = "";
+            path:
+              url.pathname +
+              url.search,
 
-        response.on("data", (chunk) => {
-          result += chunk;
-        });
+            method,
 
-        response.on("end", () => {
-          if (
-            response.statusCode >= 200 &&
-            response.statusCode < 300
-          ) {
-            try {
-              resolve(
-                JSON.parse(result || "[]")
-              );
-            } catch {
-              resolve(result);
+            headers: {
+
+              "apikey":
+                SUPABASE_KEY,
+
+              "Authorization":
+                `Bearer ${SUPABASE_KEY}`,
+
+              "Content-Type":
+                "application/json",
+
+              "Prefer":
+                "return=representation"
+
             }
-          } else {
-            reject(
-              new Error(
-                `Supabase ${response.statusCode}: ${result}`
-              )
+
+          },
+
+          (response) => {
+
+            let result = "";
+
+
+            response.on(
+              "data",
+              (chunk) => {
+                result += chunk;
+              }
             );
+
+
+            response.on(
+              "end",
+              () => {
+
+                if (
+                  response.statusCode >= 200 &&
+                  response.statusCode < 300
+                ) {
+
+                  try {
+
+                    resolve(
+                      JSON.parse(
+                        result || "[]"
+                      )
+                    );
+
+                  } catch {
+
+                    resolve(result);
+
+                  }
+
+                } else {
+
+                  reject(
+                    new Error(
+                      `Supabase ${response.statusCode}: ${result}`
+                    )
+                  );
+
+                }
+
+              }
+            );
+
           }
-        });
+        );
+
+
+      request.on(
+        "error",
+        reject
+      );
+
+
+      if (body) {
+        request.write(body);
       }
-    );
 
-    request.on("error", reject);
 
-    if (body) {
-      request.write(body);
+      request.end();
+
     }
+  );
 
-    request.end();
-  });
 }
 
+
+/* =====================================================
+   CLEAN HTML
+   ===================================================== */
+
 function cleanText(text) {
+
   return String(text)
+
     .replace(
       /<script[\s\S]*?<\/script>/gi,
       " "
     )
+
     .replace(
       /<style[\s\S]*?<\/style>/gi,
       " "
     )
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/\s+/g, " ")
+
+    .replace(
+      /<[^>]+>/g,
+      " "
+    )
+
+    .replace(
+      /&nbsp;/gi,
+      " "
+    )
+
+    .replace(
+      /&amp;/gi,
+      "&"
+    )
+
+    .replace(
+      /&quot;/gi,
+      '"'
+    )
+
+    .replace(
+      /&#39;/gi,
+      "'"
+    )
+
+    .replace(
+      /\s+/g,
+      " "
+    )
+
     .trim();
+
 }
 
+
+/* =====================================================
+   ABSOLUTE URL
+   ===================================================== */
+
 function absoluteUrl(href) {
+
   try {
+
     return new URL(
       href,
       "https://ossc.gov.in/"
     ).href;
+
   } catch {
+
     return null;
+
   }
+
 }
 
-function makeFingerprint(title, url) {
+
+/* =====================================================
+   FINGERPRINT
+   ===================================================== */
+
+function makeFingerprint(
+  title,
+  url
+) {
+
   return crypto
+
     .createHash("sha256")
-    .update(`${title}|${url}`)
+
+    .update(
+      `${title}|${url}`
+    )
+
     .digest("hex");
+
 }
 
-function isJobRelated(title, href) {
+
+/* =====================================================
+   JOB FILTER
+   ===================================================== */
+
+function isJobRelated(
+  title,
+  href
+) {
+
   const text =
-    `${title} ${href}`.toLowerCase();
+    `${title} ${href}`
+      .toLowerCase();
+
 
   const positive = [
+
     "advertisement",
     "recruitment",
     "recruit",
@@ -182,9 +399,12 @@ function isJobRelated(title, href) {
     "examination",
     "career",
     "notification"
+
   ];
 
+
   const negative = [
+
     "answer key",
     "answer-key",
     "admit card",
@@ -194,45 +414,77 @@ function isJobRelated(title, href) {
     "objection",
     "question paper",
     "mock test"
+
   ];
 
+
   const hasPositive =
-    positive.some((word) =>
-      text.includes(word)
+    positive.some(
+      (word) =>
+        text.includes(word)
     );
+
 
   const hasNegative =
-    negative.some((word) =>
-      text.includes(word)
+    negative.some(
+      (word) =>
+        text.includes(word)
     );
 
-  return hasPositive && !hasNegative;
+
+  return (
+    hasPositive &&
+    !hasNegative
+  );
+
 }
 
+
+/* =====================================================
+   EXTRACT JOB LINKS
+   ===================================================== */
+
 function extractLinks(html) {
+
   const results = [];
+
 
   const regex =
     /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
+
   let match;
 
-  while (
-    (match = regex.exec(html)) !== null
-  ) {
-    const href = match[1];
-    const title = cleanText(match[2]);
 
-    if (!title || title.length < 8) {
+  while (
+    (match =
+      regex.exec(html)) !== null
+  ) {
+
+    const href =
+      match[1];
+
+
+    const title =
+      cleanText(match[2]);
+
+
+    if (
+      !title ||
+      title.length < 8
+    ) {
       continue;
     }
+
 
     const officialUrl =
       absoluteUrl(href);
 
+
     if (!officialUrl) {
       continue;
     }
+
 
     if (
       !isJobRelated(
@@ -243,50 +495,271 @@ function extractLinks(html) {
       continue;
     }
 
+
     results.push({
+
       title,
+
       officialUrl
+
     });
+
   }
 
+
   return results;
+
 }
 
+
+/* =====================================================
+   SEND PUSH TO ALL SUBSCRIBERS
+   ===================================================== */
+
+async function sendPushNotification(
+  title,
+  message,
+  url
+) {
+
+  console.log(
+    "📢 Sending push notification..."
+  );
+
+
+  let subscriptions;
+
+
+  try {
+
+    subscriptions =
+      await supabaseRequest(
+        "/rest/v1/push_subscriptions" +
+        "?select=endpoint,subscription"
+      );
+
+  } catch (error) {
+
+    console.error(
+      "❌ Could not load subscriptions:",
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  if (
+    !Array.isArray(subscriptions) ||
+    subscriptions.length === 0
+  ) {
+
+    console.log(
+      "ℹ️ No push subscribers found."
+    );
+
+    return;
+
+  }
+
+
+  let sent = 0;
+
+  let removed = 0;
+
+
+  for (
+    const row of subscriptions
+  ) {
+
+    try {
+
+      let subscription =
+        row.subscription;
+
+
+      if (
+        typeof subscription ===
+        "string"
+      ) {
+
+        subscription =
+          JSON.parse(
+            subscription
+          );
+
+      }
+
+
+      if (
+        !subscription ||
+        !subscription.endpoint
+      ) {
+
+        continue;
+
+      }
+
+
+      await webpush.sendNotification(
+
+        subscription,
+
+        JSON.stringify({
+
+          title,
+
+          body: message,
+
+          icon:
+            "https://jobmitraai.github.io/icon-192.png",
+
+          badge:
+            "https://jobmitraai.github.io/icon-192.png",
+
+          data: {
+            url
+          }
+
+        })
+
+      );
+
+
+      sent++;
+
+
+      console.log(
+        "✅ Push sent:",
+        subscription.endpoint
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "❌ Push failed:",
+        error.statusCode ||
+        error.message
+      );
+
+
+      /*
+       * 404 / 410 means subscription
+       * is no longer valid.
+       */
+
+      if (
+        error.statusCode === 404 ||
+        error.statusCode === 410
+      ) {
+
+        try {
+
+          await supabaseRequest(
+
+            "/rest/v1/push_subscriptions" +
+            "?endpoint=eq." +
+            encodeURIComponent(
+              row.endpoint
+            ),
+
+            "DELETE"
+
+          );
+
+          removed++;
+
+          console.log(
+            "🗑️ Removed expired subscription."
+          );
+
+        } catch (
+          deleteError
+        ) {
+
+          console.error(
+            "⚠️ Could not remove subscription:",
+            deleteError.message
+          );
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+  console.log(
+    `📨 Push sent: ${sent}`
+  );
+
+  console.log(
+    `🗑️ Expired removed: ${removed}`
+  );
+
+}
+
+
+/* =====================================================
+   SAVE JOB
+   ===================================================== */
+
 async function saveJob(job) {
+
   const fingerprint =
     makeFingerprint(
       job.title,
       job.officialUrl
     );
 
+
   const existing =
     await supabaseRequest(
-      `/rest/v1/jobs?fingerprint=eq.${encodeURIComponent(
+
+      `/rest/v1/jobs` +
+      `?fingerprint=eq.${encodeURIComponent(
         fingerprint
-      )}&select=id`
+      )}` +
+      `&select=id`
+
     );
+
 
   if (
     Array.isArray(existing) &&
     existing.length > 0
   ) {
+
     console.log(
       `⏭️ Already exists: ${job.title}`
     );
 
     return false;
+
   }
+
+
+  /* ---------------------------------------------------
+     SAVE TO jobs
+     --------------------------------------------------- */
 
   await supabaseRequest(
     "/rest/v1/jobs",
     "POST",
     {
-      title: job.title,
+
+      title:
+        job.title,
 
       organization:
         "Odisha Staff Selection Commission",
 
-      category: "Jobs",
+      category:
+        "Jobs",
 
       official_url:
         job.officialUrl,
@@ -299,144 +772,301 @@ async function saveJob(job) {
 
       fingerprint,
 
-      is_verified: true,
+      is_verified:
+        true,
 
-      is_active: true
+      is_active:
+        true
+
     }
   );
 
-  await supabaseRequest(
-    "/rest/v1/notifications",
-    "POST",
-    {
-      title:
-        `New OSSC Job: ${job.title}`,
 
-      message:
-        "New recruitment-related update found on the official OSSC website.",
+  /* ---------------------------------------------------
+     SAVE TO job_updates
+     --------------------------------------------------- */
 
-      type: "Jobs",
+  try {
 
-      official_url:
-        job.officialUrl,
+    await supabaseRequest(
+      "/rest/v1/job_updates",
+      "POST",
+      {
 
-      is_active: true
-    }
+        title:
+          job.title,
+
+        description:
+          "New recruitment-related update found on the official OSSC website.",
+
+        category:
+          "Jobs",
+
+        apply_url:
+          job.officialUrl,
+
+        published_at:
+          new Date().toISOString()
+
+      }
+    );
+
+
+    console.log(
+      "✅ Added to job_updates."
+    );
+
+  } catch (error) {
+
+    console.error(
+      "⚠️ job_updates save failed:",
+      error.message
+    );
+
+  }
+
+
+  /* ---------------------------------------------------
+     SAVE TO notifications
+     --------------------------------------------------- */
+
+  try {
+
+    await supabaseRequest(
+      "/rest/v1/notifications",
+      "POST",
+      {
+
+        title:
+          `New OSSC Job: ${job.title}`,
+
+        message:
+          "New recruitment-related update found on the official OSSC website.",
+
+        type:
+          "Jobs",
+
+        official_url:
+          job.officialUrl,
+
+        is_active:
+          true
+
+      }
+    );
+
+  } catch (error) {
+
+    console.error(
+      "⚠️ notifications save failed:",
+      error.message
+    );
+
+  }
+
+
+  /* ---------------------------------------------------
+     SEND PUSH
+     --------------------------------------------------- */
+
+  await sendPushNotification(
+
+    `💼 New OSSC Job`,
+
+    job.title,
+
+    job.officialUrl
+
   );
+
 
   console.log(
     `🆕 Added: ${job.title}`
   );
 
+
   return true;
+
 }
 
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
 async function main() {
+
   console.log(
-    "🚀 JobMitra AI - OSSC Automatic Checker"
+    "🚀 JobMitra AI - Automatic Job Checker"
   );
 
+
   try {
+
     console.log(
       "🌐 Fetching official OSSC page..."
     );
 
+
     const html =
-      await fetchPage(OSSC_URL);
+      await fetchPage(
+        OSSC_URL
+      );
+
 
     console.log(
       `✅ OSSC page loaded: ${html.length} bytes`
     );
 
+
     const jobs =
       extractLinks(html);
+
 
     console.log(
       `🔎 Possible recruitment links: ${jobs.length}`
     );
 
+
     let added = 0;
 
-    for (const job of jobs) {
+
+    for (
+      const job of jobs
+    ) {
+
       try {
+
         const wasAdded =
           await saveJob(job);
+
 
         if (wasAdded) {
           added++;
         }
+
+
       } catch (error) {
+
         console.error(
+
           `❌ Failed to save "${job.title}":`,
+
           error.message
+
         );
+
       }
+
     }
 
-    await supabaseRequest(
-      "/rest/v1/automation_logs",
-      "POST",
-      {
-        source_name: "OSSC",
 
-        status: "success",
+    /* -------------------------------------------------
+       AUTOMATION LOG
+       ------------------------------------------------- */
+
+    await supabaseRequest(
+
+      "/rest/v1/automation_logs",
+
+      "POST",
+
+      {
+
+        source_name:
+          "OSSC",
+
+        status:
+          "success",
 
         jobs_found:
           jobs.length,
 
         jobs_added:
           added
+
       }
+
     );
+
 
     console.log(
       "================================="
     );
 
+
     console.log(
       `📋 Found: ${jobs.length}`
     );
+
 
     console.log(
       `🆕 Added: ${added}`
     );
 
+
     console.log(
-      "✅ OSSC automatic check completed."
+      "🔔 Push notification system active."
     );
 
+
+    console.log(
+      "✅ Automatic check completed."
+    );
+
+
   } catch (error) {
+
     console.error(
       "❌ Checker failed:",
       error.message
     );
 
+
     try {
+
       await supabaseRequest(
+
         "/rest/v1/automation_logs",
+
         "POST",
+
         {
-          source_name: "OSSC",
 
-          status: "error",
+          source_name:
+            "OSSC",
 
-          jobs_found: 0,
+          status:
+            "error",
 
-          jobs_added: 0,
+          jobs_found:
+            0,
+
+          jobs_added:
+            0,
 
           error_message:
             error.message
+
         }
+
       );
+
     } catch (logError) {
+
       console.error(
         "⚠️ Could not write automation log:",
         logError.message
       );
+
     }
 
+
     process.exit(1);
+
   }
+
 }
+
 
 main();
