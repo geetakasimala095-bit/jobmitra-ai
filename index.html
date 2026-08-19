@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="theme-color"
-content="#0b7a3b">
+      content="#0b7a3b">
 
 <meta name="description"
-content="JobMitra AI - Government Jobs, Students, Farmer and Digital Seva">
+      content="JobMitra AI - Government Jobs, Students, Farmer and Digital Seva">
 
 <title>JobMitra AI</title>
 
@@ -45,7 +45,7 @@ button{
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
   position:sticky;
@@ -89,7 +89,7 @@ button{
 }
 
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   max-width:1100px;
@@ -111,7 +111,7 @@ button{
 }
 
 
-/* MAIN BOXES */
+/* ================= MAIN CARDS ================= */
 
 .main-grid{
   max-width:1100px;
@@ -163,7 +163,7 @@ button{
 }
 
 
-/* ALERT */
+/* ================= ALERT ================= */
 
 .alert-box{
   max-width:1100px;
@@ -207,10 +207,11 @@ button{
 
 #notificationStatus{
   margin-top:10px;
+  font-weight:600;
 }
 
 
-/* LATEST */
+/* ================= LATEST ================= */
 
 .latest{
   max-width:1100px;
@@ -322,7 +323,7 @@ button{
 }
 
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 
 .container{
   max-width:1100px;
@@ -351,7 +352,7 @@ button{
 }
 
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search{
   width:100%;
@@ -368,7 +369,7 @@ button{
 }
 
 
-/* CARDS */
+/* ================= SERVICE CARDS ================= */
 
 .cards{
   display:grid;
@@ -417,7 +418,7 @@ button{
 }
 
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   background:#122019;
@@ -432,7 +433,7 @@ footer strong{
 }
 
 
-/* TOP */
+/* ================= TOP BUTTON ================= */
 
 .top{
   position:fixed;
@@ -451,7 +452,7 @@ footer strong{
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -548,6 +549,7 @@ footer strong{
   <a class="main-card students" href="#students">
 
     <div class="icon">🎓</div>
+
     <div>Students</div>
 
     <small>
@@ -560,6 +562,7 @@ footer strong{
   <a class="main-card jobs" href="#jobs">
 
     <div class="icon">💼</div>
+
     <div>Jobs</div>
 
     <small>
@@ -572,6 +575,7 @@ footer strong{
   <a class="main-card farmer" href="#farmer">
 
     <div class="icon">🌾</div>
+
     <div>Farmer</div>
 
     <small>
@@ -584,6 +588,7 @@ footer strong{
   <a class="main-card digital" href="#digital">
 
     <div class="icon">🏛️</div>
+
     <div>Digital Seva</div>
 
     <small>
@@ -594,6 +599,8 @@ footer strong{
 
 </section>
 
+
+<!-- ================= NOTIFICATION ================= -->
 
 <div class="alert-box" id="alerts">
 
@@ -621,6 +628,8 @@ footer strong{
 </div>
 
 
+<!-- ================= LATEST JOBS ================= -->
+
 <section class="latest" id="latest">
 
   <div class="latest-box">
@@ -644,6 +653,27 @@ footer strong{
     <div
       class="notification-list"
       id="notificationList">
+
+      <div class="notification">
+
+        <div class="ntype">
+          ⏳
+        </div>
+
+        <div class="nbody">
+
+          <strong>
+            Loading latest updates...
+          </strong>
+
+          <small>
+            Please wait
+          </small>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
@@ -654,6 +684,8 @@ footer strong{
 <div class="container">
 
 
+<!-- ================= STUDENTS ================= -->
+
 <section class="section" id="students">
 
   <h2 class="section-title">
@@ -661,7 +693,7 @@ footer strong{
   </h2>
 
   <p class="section-sub">
-    Scholarship, Admit Card, Result, Syllabus and official education services.
+    Scholarship, Admit Card, Result, Syllabus and education services.
   </p>
 
   <input
@@ -671,110 +703,195 @@ footer strong{
 
   <div class="cards" id="studentCards">
 
+
     <div class="service">
+
       <div class="service-icon">🎓</div>
+
       <h3>National Scholarship Portal</h3>
-      <p>Government scholarship applications.</p>
+
+      <p>
+        Government scholarship applications.
+      </p>
+
       <a class="open-btn"
-      href="https://scholarships.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://scholarships.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🎓</div>
+
       <h3>Odisha Scholarship Portal</h3>
-      <p>Odisha State scholarship services.</p>
+
+      <p>
+        Odisha State scholarship services.
+      </p>
+
       <a class="open-btn"
-      href="https://scholarship.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://scholarship.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🎫</div>
+
       <h3>Admit Card</h3>
-      <p>Official examination admit cards.</p>
+
+      <p>
+        Official examination admit cards.
+      </p>
+
       <a class="open-btn"
-      href="https://www.ossc.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Portal →
+         href="https://www.ossc.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Portal →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏆</div>
+
       <h3>Result</h3>
-      <p>Official examination results.</p>
+
+      <p>
+        Official examination results.
+      </p>
+
       <a class="open-btn"
-      href="https://www.ossc.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Portal →
+         href="https://www.ossc.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Portal →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">📖</div>
+
       <h3>Higher Education</h3>
-      <p>Odisha Higher Education Department.</p>
+
+      <p>
+        Odisha Higher Education Department.
+      </p>
+
       <a class="open-btn"
-      href="https://dhe.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://dhe.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏫</div>
+
       <h3>School & Mass Education</h3>
-      <p>School education services.</p>
+
+      <p>
+        School education services.
+      </p>
+
       <a class="open-btn"
-      href="https://sme.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://sme.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">📚</div>
+
       <h3>AICTE</h3>
-      <p>Technical education services.</p>
+
+      <p>
+        Technical education services.
+      </p>
+
       <a class="open-btn"
-      href="https://www.aicte-india.org/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.aicte-india.org/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🪪</div>
+
       <h3>DigiLocker</h3>
-      <p>Digital certificates and documents.</p>
+
+      <p>
+        Digital certificates and documents.
+      </p>
+
       <a class="open-btn"
-      href="https://www.digilocker.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.digilocker.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
+
 
   </div>
 
 </section>
 
 
+<!-- ================= JOBS ================= -->
+
 <section class="section" id="jobs">
 
-  <h2 class="section-title">💼 Jobs</h2>
+  <h2 class="section-title">
+    💼 Jobs
+  </h2>
 
   <p class="section-sub">
     Government jobs, recruitment and official application portals.
@@ -787,110 +904,195 @@ footer strong{
 
   <div class="cards" id="jobCards">
 
+
     <div class="service">
+
       <div class="service-icon">🏛️</div>
+
       <h3>Odisha Govt Recruitment</h3>
-      <p>Official Odisha Government portal.</p>
+
+      <p>
+        Official Odisha Government portal.
+      </p>
+
       <a class="open-btn"
-      href="https://odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">📝</div>
+
       <h3>OSSC</h3>
-      <p>Odisha Staff Selection Commission.</p>
+
+      <p>
+        Odisha Staff Selection Commission.
+      </p>
+
       <a class="open-btn"
-      href="https://www.ossc.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.ossc.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏛️</div>
+
       <h3>OPSC</h3>
-      <p>Odisha Public Service Commission.</p>
+
+      <p>
+        Odisha Public Service Commission.
+      </p>
+
       <a class="open-btn"
-      href="https://www.opsc.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.opsc.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">👮</div>
+
       <h3>Odisha Police</h3>
-      <p>Police recruitment and citizen services.</p>
+
+      <p>
+        Police recruitment and services.
+      </p>
+
       <a class="open-btn"
-      href="https://odishapolice.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://odishapolice.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🚆</div>
+
       <h3>Railway Recruitment</h3>
-      <p>Official Railway recruitment information.</p>
+
+      <p>
+        Official Railway recruitment information.
+      </p>
+
       <a class="open-btn"
-      href="https://www.rrbcdg.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official RRB →
+         href="https://www.rrbcdg.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official RRB →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">📋</div>
+
       <h3>SSC</h3>
-      <p>Staff Selection Commission.</p>
+
+      <p>
+        Staff Selection Commission.
+      </p>
+
       <a class="open-btn"
-      href="https://ssc.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://ssc.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">👨‍💼</div>
+
       <h3>National Career Service</h3>
-      <p>Government employment services.</p>
+
+      <p>
+        Government employment services.
+      </p>
+
       <a class="open-btn"
-      href="https://www.ncs.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.ncs.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏦</div>
+
       <h3>IBPS</h3>
-      <p>Official banking recruitment portal.</p>
+
+      <p>
+        Official banking recruitment portal.
+      </p>
+
       <a class="open-btn"
-      href="https://www.ibps.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.ibps.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
+
 
   </div>
 
 </section>
 
 
+<!-- ================= FARMER ================= -->
+
 <section class="section" id="farmer">
 
-  <h2 class="section-title">🌾 Farmer</h2>
+  <h2 class="section-title">
+    🌾 Farmer
+  </h2>
 
   <p class="section-sub">
     Agriculture schemes and official farmer services.
@@ -903,86 +1105,151 @@ footer strong{
 
   <div class="cards" id="farmerCards">
 
+
     <div class="service">
+
       <div class="service-icon">🌾</div>
+
       <h3>AgriStack</h3>
-      <p>Digital agriculture ecosystem.</p>
+
+      <p>
+        Digital agriculture ecosystem.
+      </p>
+
       <a class="open-btn"
-      href="https://agristack.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://agristack.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">💰</div>
+
       <h3>PM-KISAN</h3>
-      <p>Pradhan Mantri Kisan Samman Nidhi.</p>
+
+      <p>
+        Pradhan Mantri Kisan Samman Nidhi.
+      </p>
+
       <a class="open-btn"
-      href="https://pmkisan.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://pmkisan.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🌱</div>
+
       <h3>CM-KISAN Odisha</h3>
-      <p>Odisha farmer support scheme.</p>
+
+      <p>
+        Odisha farmer support scheme.
+      </p>
+
       <a class="open-btn"
-      href="https://cmkisan.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://cmkisan.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">👨‍🌾</div>
+
       <h3>Krushak Odisha</h3>
-      <p>Farmer database and agriculture services.</p>
+
+      <p>
+        Farmer database and agriculture services.
+      </p>
+
       <a class="open-btn"
-      href="https://krushak.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://krushak.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🌾</div>
+
       <h3>Agriculture Department</h3>
-      <p>Odisha Agriculture services.</p>
+
+      <p>
+        Odisha Agriculture services.
+      </p>
+
       <a class="open-btn"
-      href="https://agri.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://agri.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🐄</div>
+
       <h3>Animal Resources</h3>
-      <p>Animal husbandry services.</p>
+
+      <p>
+        Animal husbandry services.
+      </p>
+
       <a class="open-btn"
-      href="https://fard.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://fard.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
+
 
   </div>
 
 </section>
 
 
+<!-- ================= DIGITAL SEVA ================= -->
+
 <section class="section" id="digital">
 
-  <h2 class="section-title">🏛️ Digital Seva</h2>
+  <h2 class="section-title">
+    🏛️ Digital Seva
+  </h2>
 
   <p class="section-sub">
     Important government online services.
@@ -995,141 +1262,253 @@ footer strong{
 
   <div class="cards" id="digitalCards">
 
+
     <div class="service">
+
       <div class="service-icon">🪪</div>
+
       <h3>Aadhaar / UIDAI</h3>
-      <p>Official Aadhaar services.</p>
+
+      <p>
+        Official Aadhaar services.
+      </p>
+
       <a class="open-btn"
-      href="https://uidai.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://uidai.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">💳</div>
+
       <h3>PAN / Income Tax</h3>
-      <p>Official Income Tax services.</p>
+
+      <p>
+        Official Income Tax services.
+      </p>
+
       <a class="open-btn"
-      href="https://www.incometax.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.incometax.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🗳️</div>
+
       <h3>Voter Services</h3>
-      <p>Election Commission voter services.</p>
+
+      <p>
+        Election Commission voter services.
+      </p>
+
       <a class="open-btn"
-      href="https://voters.eci.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://voters.eci.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🛂</div>
+
       <h3>Passport Seva</h3>
-      <p>Official passport services.</p>
+
+      <p>
+        Official passport services.
+      </p>
+
       <a class="open-btn"
-      href="https://www.passportindia.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.passportindia.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🚗</div>
+
       <h3>Driving Licence / Parivahan</h3>
-      <p>Driving licence and vehicle services.</p>
+
+      <p>
+        Driving licence and vehicle services.
+      </p>
+
       <a class="open-btn"
-      href="https://parivahan.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://parivahan.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">📜</div>
+
       <h3>Odisha e-District</h3>
-      <p>Certificates and citizen services.</p>
+
+      <p>
+        Certificates and citizen services.
+      </p>
+
       <a class="open-btn"
-      href="https://edistrict.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://edistrict.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏠</div>
+
       <h3>Bhulekh Odisha</h3>
-      <p>Official land records.</p>
+
+      <p>
+        Official land records.
+      </p>
+
       <a class="open-btn"
-      href="https://bhulekh.ori.nic.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://bhulekh.ori.nic.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🍚</div>
+
       <h3>Food & Civil Supplies</h3>
-      <p>Ration and food supply services.</p>
+
+      <p>
+        Ration and food supply services.
+      </p>
+
       <a class="open-btn"
-      href="https://food.odisha.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://food.odisha.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🏛️</div>
+
       <h3>Odisha One</h3>
-      <p>Odisha government citizen services.</p>
+
+      <p>
+        Odisha government citizen services.
+      </p>
+
       <a class="open-btn"
-      href="https://www.odishaone.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.odishaone.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🔐</div>
+
       <h3>DigiLocker</h3>
-      <p>Government digital documents.</p>
+
+      <p>
+        Government digital documents.
+      </p>
+
       <a class="open-btn"
-      href="https://www.digilocker.gov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.digilocker.gov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
 
+
     <div class="service">
+
       <div class="service-icon">🇮🇳</div>
+
       <h3>MyGov India</h3>
-      <p>Government of India citizen portal.</p>
+
+      <p>
+        Government of India citizen portal.
+      </p>
+
       <a class="open-btn"
-      href="https://www.mygov.in/"
-      target="_blank"
-      rel="noopener">
-      Official Website →
+         href="https://www.mygov.in/"
+         target="_blank"
+         rel="noopener">
+
+        Official Website →
+
       </a>
+
     </div>
+
 
   </div>
 
 </section>
+
 
 </div>
 
@@ -1154,20 +1533,20 @@ Always verify important information on the official department website.
 
 
 <button
-class="top"
-id="topBtn"
-type="button">
+  class="top"
+  id="topBtn"
+  type="button">
 
-↑
+  ↑
 
 </button>
 
 
 <script>
 
-/* =========================================
-   SUPABASE CONFIGURATION
-   ========================================= */
+/* =====================================================
+   SUPABASE + VAPID CONFIGURATION
+   ===================================================== */
 
 const SUPABASE_URL =
   "https://hsexaatuacdnumxnkehx.supabase.co";
@@ -1179,13 +1558,13 @@ const VAPID_PUBLIC_KEY =
   "BIFCryLLPcLUqIXirLhB5cHIYHTRnsprNshuuan7age4MaMpYeFn4MkyJ4AdrrCvmQItr0OBgAMKh5yz-4bdJME";
 
 
-/* =========================================
+/* =====================================================
    ESCAPE HTML
-   ========================================= */
+   ===================================================== */
 
-function escapeHtml(text){
+function escapeHtml(value){
 
-  return String(text ?? "")
+  return String(value ?? "")
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
@@ -1195,16 +1574,14 @@ function escapeHtml(text){
 }
 
 
-/* =========================================
-   LOAD AUTOMATIC JOB UPDATES
-   ========================================= */
+/* =====================================================
+   LOAD JOB UPDATES FROM SUPABASE
+   ===================================================== */
 
 async function loadJobs(){
 
   const list =
-    document.getElementById(
-      "notificationList"
-    );
+    document.getElementById("notificationList");
 
   if(!list) return;
 
@@ -1212,38 +1589,32 @@ async function loadJobs(){
 
     const response =
       await fetch(
-
         SUPABASE_URL +
         "/rest/v1/job_updates" +
         "?select=*" +
         "&order=published_at.desc" +
         "&limit=20",
-
         {
-
           method:"GET",
 
           headers:{
-
-            "apikey":
-              SUPABASE_KEY,
+            "apikey":SUPABASE_KEY,
 
             "Authorization":
-              "Bearer " +
-              SUPABASE_KEY
+              "Bearer " + SUPABASE_KEY
+          },
 
-          }
-
+          cache:"no-store"
         }
-
       );
 
 
     if(!response.ok){
 
-      throw new Error(
-        await response.text()
-      );
+      const errorText =
+        await response.text();
+
+      throw new Error(errorText);
 
     }
 
@@ -1252,7 +1623,7 @@ async function loadJobs(){
       await response.json();
 
 
-    if(!jobs.length){
+    if(!Array.isArray(jobs) || jobs.length === 0){
 
       list.innerHTML = `
 
@@ -1265,16 +1636,12 @@ async function loadJobs(){
           <div class="nbody">
 
             <strong>
-              Job Updates
+              No job updates yet
             </strong>
 
-            <div>
-              New government recruitment updates will appear here.
-            </div>
-
-            <span class="nbadge">
-              Jobs
-            </span>
+            <small>
+              New government job updates will appear here automatically.
+            </small>
 
           </div>
 
@@ -1288,90 +1655,126 @@ async function loadJobs(){
 
 
     list.innerHTML =
-      jobs.map(job => `
+      jobs.map(job => {
 
-        <div class="notification">
+        const title =
+          escapeHtml(
+            job.title || "Government Job"
+          );
 
-          <div class="ntype">
-            💼
-          </div>
+        const description =
+          escapeHtml(
+            job.description || "New recruitment update."
+          );
 
-          <div class="nbody">
+        const category =
+          escapeHtml(
+            job.category || "Jobs"
+          );
 
-            <strong>
-              ${escapeHtml(
-                job.title ||
-                "Government Job"
-              )}
-            </strong>
+        let link = "";
 
-            <div>
-              ${escapeHtml(
-                job.description ||
-                ""
-              )}
+        if(job.apply_url){
+
+          link = `
+
+            <a
+              class="job-link"
+              href="${escapeHtml(job.apply_url)}"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Official Website →
+
+            </a>
+
+          `;
+
+        }
+
+
+        return `
+
+          <div class="notification">
+
+            <div class="ntype">
+              💼
             </div>
 
-            <span class="nbadge">
-              ${escapeHtml(
-                job.category ||
-                "Jobs"
-              )}
-            </span>
+            <div class="nbody">
 
-            ${
-              job.apply_url
-              ? `
+              <strong>
+                ${title}
+              </strong>
 
-                <br>
+              <div>
+                ${description}
+              </div>
 
-                <a
-                  class="job-link"
-                  href="${escapeHtml(
-                    job.apply_url
-                  )}"
-                  target="_blank"
-                  rel="noopener">
+              <span class="nbadge">
+                ${category}
+              </span>
 
-                  Official Website →
+              ${link}
 
-                </a>
-
-              `
-              : ""
-            }
+            </div>
 
           </div>
 
-        </div>
+        `;
 
-      `).join("");
+      }).join("");
+
 
   }
 
   catch(error){
 
     console.error(
-      "❌ Automatic job update error:",
+      "❌ Job update error:",
       error
     );
+
+
+    list.innerHTML = `
+
+      <div class="notification">
+
+        <div class="ntype">
+          ⚠️
+        </div>
+
+        <div class="nbody">
+
+          <strong>
+            Unable to load job updates
+          </strong>
+
+          <small>
+            Please try again later.
+          </small>
+
+        </div>
+
+      </div>
+
+    `;
 
   }
 
 }
 
 
-/* =========================================
-   FIRST LOAD
-   ========================================= */
+/* =====================================================
+   LOAD JOBS NOW
+   ===================================================== */
 
 loadJobs();
 
 
-/* =========================================
-   AUTOMATIC REFRESH
-   EVERY 5 MINUTES
-   ========================================= */
+/* =====================================================
+   AUTOMATIC REFRESH — EVERY 5 MINUTES
+   ===================================================== */
 
 setInterval(
   loadJobs,
@@ -1379,9 +1782,9 @@ setInterval(
 );
 
 
-/* =========================================
+/* =====================================================
    SEARCH
-   ========================================= */
+   ===================================================== */
 
 function filterCards(input,id){
 
@@ -1390,10 +1793,12 @@ function filterCards(input,id){
       .toLowerCase()
       .trim();
 
+
   const cards =
     document.querySelectorAll(
       "#" + id + " .service"
     );
+
 
   cards.forEach(card => {
 
@@ -1401,36 +1806,35 @@ function filterCards(input,id){
       card.innerText
         .toLowerCase();
 
+
     card.style.display =
       text.includes(query)
-      ? ""
-      : "none";
+        ? ""
+        : "none";
 
   });
 
 }
 
 
-/* =========================================
+/* =====================================================
    TOP BUTTON
-   ========================================= */
+   ===================================================== */
 
 const topBtn =
-  document.getElementById(
-    "topBtn"
-  );
+  document.getElementById("topBtn");
 
 
 if(topBtn){
 
   window.addEventListener(
     "scroll",
-    ()=>{
+    function(){
 
       topBtn.style.display =
         window.scrollY > 400
-        ? "block"
-        : "none";
+          ? "block"
+          : "none";
 
     }
   );
@@ -1438,14 +1842,11 @@ if(topBtn){
 
   topBtn.addEventListener(
     "click",
-    ()=>{
+    function(){
 
       window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
       });
 
     }
@@ -1454,18 +1855,15 @@ if(topBtn){
 }
 
 
-/* =========================================
-   BASE64 CONVERTER
-   ========================================= */
+/* =====================================================
+   BASE64 → UINT8ARRAY
+   ===================================================== */
 
-function urlBase64ToUint8Array(
-  base64String
-){
+function urlBase64ToUint8Array(base64String){
 
   const padding =
     "=".repeat(
-      (4 -
-      base64String.length % 4) % 4
+      (4 - base64String.length % 4) % 4
     );
 
 
@@ -1483,20 +1881,18 @@ function urlBase64ToUint8Array(
 
 
   return Uint8Array.from(
-
     [...rawData].map(
       character =>
         character.charCodeAt(0)
     )
-
   );
 
 }
 
 
-/* =========================================
-   ENABLE NOTIFICATIONS
-   ========================================= */
+/* =====================================================
+   ENABLE PUSH NOTIFICATIONS
+   ===================================================== */
 
 async function enableNotifications(){
 
@@ -1512,6 +1908,15 @@ async function enableNotifications(){
 
 
   try{
+
+    if(!window.isSecureContext){
+
+      throw new Error(
+        "Notifications require HTTPS."
+      );
+
+    }
+
 
     if(!("Notification" in window)){
 
@@ -1550,8 +1955,7 @@ async function enableNotifications(){
 
     if(button){
 
-      button.disabled =
-        true;
+      button.disabled = true;
 
     }
 
@@ -1572,8 +1976,7 @@ async function enableNotifications(){
 
       if(button){
 
-        button.disabled =
-          false;
+        button.disabled = false;
 
       }
 
@@ -1592,16 +1995,14 @@ async function enableNotifications(){
 
 
     let subscription =
-      await registration
-        .pushManager
+      await registration.pushManager
         .getSubscription();
 
 
     if(!subscription){
 
       subscription =
-        await registration
-          .pushManager
+        await registration.pushManager
           .subscribe({
 
             userVisibleOnly:true,
@@ -1620,47 +2021,55 @@ async function enableNotifications(){
       subscription.toJSON();
 
 
-   const response =
-  await fetch(
+    const response =
+      await fetch(
 
-    SUPABASE_URL +
-    "/rest/v1/push_subscriptions?on_conflict=endpoint",
+        SUPABASE_URL +
+        "/rest/v1/push_subscriptions?on_conflict=endpoint",
 
-    {
-      method: "POST",
+        {
 
-      headers: {
-        "apikey": SUPABASE_KEY,
+          method:"POST",
 
-        "Authorization":
-          "Bearer " + SUPABASE_KEY,
+          headers:{
 
-        "Content-Type":
-          "application/json",
+            "apikey":
+              SUPABASE_KEY,
 
-        "Prefer":
-          "resolution=ignore-duplicates,return=minimal"
-      },
+            "Authorization":
+              "Bearer " + SUPABASE_KEY,
 
-      body: JSON.stringify({
-        endpoint: subscription.endpoint,
-        subscription: subscriptionData
-      })
-    }
-  );
+            "Content-Type":
+              "application/json",
 
-if (!response.ok) {
+            "Prefer":
+              "resolution=ignore-duplicates,return=minimal"
 
-  throw new Error(
-    "Supabase error: " +
-    await response.text()
-  );
+          },
 
-} {
+          body:JSON.stringify({
+
+            endpoint:
+              subscription.endpoint,
+
+            subscription:
+              subscriptionData
+
+          })
+
+        }
+
+      );
+
+
+    if(!response.ok){
+
+      const errorText =
+        await response.text();
 
       throw new Error(
         "Supabase error: " +
-        await response.text()
+        errorText
       );
 
     }
@@ -1679,13 +2088,12 @@ if (!response.ok) {
       button.textContent =
         "🔔 Notifications Enabled";
 
-      button.disabled =
-        true;
+      button.disabled = true;
 
     }
 
-  }
 
+  }
 
   catch(error){
 
@@ -1698,16 +2106,14 @@ if (!response.ok) {
     if(status){
 
       status.textContent =
-        "❌ " +
-        error.message;
+        "❌ " + error.message;
 
     }
 
 
     if(button){
 
-      button.disabled =
-        false;
+      button.disabled = false;
 
     }
 
@@ -1716,9 +2122,9 @@ if (!response.ok) {
 }
 
 
-/* =========================================
+/* =====================================================
    NOTIFICATION BUTTON
-   ========================================= */
+   ===================================================== */
 
 const enableButton =
   document.getElementById(
@@ -1736,9 +2142,9 @@ if(enableButton){
 }
 
 
-/* =========================================
-   ALERT BUTTON
-   ========================================= */
+/* =====================================================
+   TOP ALERT BUTTON
+   ===================================================== */
 
 const topAlertButton =
   document.getElementById(
@@ -1750,7 +2156,7 @@ if(topAlertButton){
 
   topAlertButton.addEventListener(
     "click",
-    ()=>{
+    function(){
 
       const alertBox =
         document.getElementById(
@@ -1776,15 +2182,15 @@ if(topAlertButton){
 }
 
 
-/* =========================================
-   SERVICE WORKER
-   ========================================= */
+/* =====================================================
+   REGISTER SERVICE WORKER
+   ===================================================== */
 
 if("serviceWorker" in navigator){
 
   window.addEventListener(
     "load",
-    async ()=>{
+    async function(){
 
       try{
 
@@ -1793,7 +2199,7 @@ if("serviceWorker" in navigator){
         );
 
         console.log(
-          "✅ JobMitra AI Service Worker registered"
+          "✅ JobMitra AI Service Worker registered."
         );
 
       }
@@ -1801,7 +2207,7 @@ if("serviceWorker" in navigator){
       catch(error){
 
         console.error(
-          "❌ Service Worker error:",
+          "❌ Service Worker registration error:",
           error
         );
 
