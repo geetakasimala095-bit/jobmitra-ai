@@ -1620,50 +1620,43 @@ async function enableNotifications(){
       subscription.toJSON();
 
 
-    const response =
-      await fetch(
+   const response =
+  await fetch(
 
-        SUPABASE_URL +
-        "/rest/v1/push_subscriptions",
+    SUPABASE_URL +
+    "/rest/v1/push_subscriptions?on_conflict=endpoint",
 
-        {
+    {
+      method: "POST",
 
-          method:"POST",
+      headers: {
+        "apikey": SUPABASE_KEY,
 
-          headers:{
+        "Authorization":
+          "Bearer " + SUPABASE_KEY,
 
-            "apikey":
-              SUPABASE_KEY,
+        "Content-Type":
+          "application/json",
 
-            "Authorization":
-              "Bearer " +
-              SUPABASE_KEY,
+        "Prefer":
+          "resolution=ignore-duplicates,return=minimal"
+      },
 
-            "Content-Type":
-              "application/json",
+      body: JSON.stringify({
+        endpoint: subscription.endpoint,
+        subscription: subscriptionData
+      })
+    }
+  );
 
-            "Prefer":
-              "return=minimal"
+if (!response.ok) {
 
-          },
+  throw new Error(
+    "Supabase error: " +
+    await response.text()
+  );
 
-          body:
-            JSON.stringify({
-
-              endpoint:
-                subscription.endpoint,
-
-              subscription:
-                subscriptionData
-
-            })
-
-        }
-
-      );
-
-
-    if(!response.ok){
+} {
 
       throw new Error(
         "Supabase error: " +
