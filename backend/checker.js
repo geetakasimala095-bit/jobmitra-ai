@@ -175,11 +175,13 @@ function extractJobs(html, sourceUrl) {
       console.log("🟢 ACCEPTED — Genuine advertisement PDF");
       console.log(`JOB   : ${jobTitle}`);
 
-      results.push({
-        title: jobTitle,
-        url: href,
-        source: "UPSC",
-      });
+     results.push({
+  title: jobTitle,
+  url: href,
+  apply_url: href,
+  source: "UPSC",
+}); 
+     
     } else {
       console.log("❌ REJECTED — Not a recruitment advertisement");
     }
