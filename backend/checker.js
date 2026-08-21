@@ -9,45 +9,61 @@ const SOURCES = [
   },
 ];
 
-// ❌ Ei words thile job hisabare save karibani
+// ❌ Generic/menu/non-job links
 const BLOCKED_WORDS = [
-  "advertisement",
-  "advertisements",
-  "find counsellor",
-  "counsellor",
-  "career tools",
   "skip to main content",
   "skip to content",
-  "view pdf",
-  "pdf",
-  "download",
-  "home",
-  "contact us",
+  "find counsellor",
+  "career tools",
+  "advertisements",
+  "advertisement",
+  "forms for certificates",
+  "recruitment tests",
+  "recruitment requisition",
+  "recruitment cases",
+  "representation on question papers",
+  "time-frame-representation",
+  "pending litigations",
   "login",
   "register",
-  "menu",
-  "search",
+  "contact us",
   "privacy policy",
   "sitemap",
+  "home",
+  "search",
+  "menu",
+  ".pdf",
+  "view pdf",
+  "download pdf",
 ];
 
-// ✅ Job-related words
-const JOB_WORDS = [
-  "recruitment",
+// ✅ Words strongly suggesting an actual vacancy/notification
+const STRONG_JOB_WORDS = [
   "vacancy",
   "vacancies",
-  "job",
-  "jobs",
-  "post",
-  "posts",
-  "appointment",
-  "notification",
-  "recruit",
+  "recruitment notification",
   "recruitment notice",
-  "employment",
+  "employment notice",
+  "job notification",
+  "job notice",
+  "online application",
+  "apply online",
+  "application invited",
+  "applications are invited",
+  "invited for recruitment",
+  "posts",
+  "post of",
+  "appointment to",
+  "direct recruitment",
+  "special recruitment",
   "junior engineer",
-  "engineer",
-  "assistant",
+  "assistant engineer",
+  "assistant section officer",
+  "section officer",
+  "junior administrative",
+  "scientist",
+  "professor",
+  "lecturer",
   "officer",
   "clerk",
   "technician",
@@ -55,13 +71,6 @@ const JOB_WORDS = [
   "teacher",
   "constable",
   "inspector",
-  "scientist",
-  "professor",
-  "staff",
-  "group a",
-  "group b",
-  "group c",
-  "group d",
 ];
 
 // --------------------------------------------------
@@ -91,9 +100,7 @@ function fetchPage(url) {
               resolve(data);
             } else {
               reject(
-                new Error(
-                  `HTTP ${res.statusCode}: ${url}`
-                )
+                new Error(`HTTP ${res.statusCode}: ${url}`)
               );
             }
           });
@@ -104,7 +111,7 @@ function fetchPage(url) {
 }
 
 // --------------------------------------------------
-// Remove HTML
+// Clean HTML
 // --------------------------------------------------
 
 function cleanText(html) {
@@ -124,7 +131,7 @@ function cleanText(html) {
 }
 
 // --------------------------------------------------
-// Check blocked words
+// Check blocked content
 // --------------------------------------------------
 
 function isBlocked(text) {
@@ -136,17 +143,13 @@ function isBlocked(text) {
 }
 
 // --------------------------------------------------
-// Check genuine job content
+// Check strong job signal
 // --------------------------------------------------
 
-function isJob(text) {
+function hasStrongJobSignal(text) {
   const value = text.toLowerCase();
 
-  if (isBlocked(value)) {
-    return false;
-  }
-
-  return JOB_WORDS.some((word) =>
+  return STRONG_JOB_WORDS.some((word) =>
     value.includes(word.toLowerCase())
   );
 }
@@ -165,11 +168,9 @@ function extractLinks(html, sourceUrl) {
 
   while ((match = regex.exec(html)) !== null) {
     let href = match[1];
-    const rawText = match[2];
+    const title = cleanText(match[2]);
 
-    const text = cleanText(rawText);
-
-    if (!text || text.length < 5) {
+    if (!title || title.length < 8) {
       continue;
     }
 
@@ -180,20 +181,37 @@ function extractLinks(html, sourceUrl) {
       continue;
     }
 
-    const combinedText = `${text} ${href}`;
+    const combined = `${title} ${href}`.toLowerCase();
 
-    // ❌ Remove unwanted links
-    if (isBlocked(combinedText)) {
+    // ❌ Reject blocked links
+    if (isBlocked(combined)) {
       continue;
     }
 
-    // ❌ Must contain job-related word
-    if (!isJob(combinedText)) {
+    // ❌ Reject homepage
+    try {
+      const linkUrl = new URL(href);
+      const source = new URL(sourceUrl);
+
+      if (
+        linkUrl.hostname === source.hostname &&
+        (linkUrl.pathname === "/" ||
+          linkUrl.pathname === "")
+      ) {
+        continue;
+      }
+    } catch {
+      continue;
+    }
+
+    // ❌ Recruitment alone is NOT enough
+    // Must contain a stronger job signal
+    if (!hasStrongJobSignal(combined)) {
       continue;
     }
 
     results.push({
-      title: text,
+      title,
       url: href,
     });
   }
@@ -202,7 +220,7 @@ function extractLinks(html, sourceUrl) {
 }
 
 // --------------------------------------------------
-// Remove duplicate jobs
+// Remove duplicates
 // --------------------------------------------------
 
 function removeDuplicates(items) {
@@ -257,20 +275,18 @@ async function runChecker() {
       );
       console.log("");
 
-      if (uniqueJobs.length === 0) {
-        console.log("⚠️ No genuine job links found.");
-        console.log("");
-        continue;
-      }
-
       console.log("📋 FILTERED JOBS");
       console.log("------------------------------");
 
-      uniqueJobs.forEach((job, index) => {
-        console.log(`${index + 1}. ${job.title}`);
-        console.log(`   ${job.url}`);
-        console.log("");
-      });
+      if (uniqueJobs.length === 0) {
+        console.log("No genuine job notification links found.");
+      } else {
+        uniqueJobs.forEach((job, index) => {
+          console.log(`${index + 1}. ${job.title}`);
+          console.log(`   ${job.url}`);
+          console.log("");
+        });
+      }
 
       console.log("------------------------------");
       console.log(
@@ -278,9 +294,8 @@ async function runChecker() {
       );
       console.log("");
 
-      // IMPORTANT:
-      // Ebe database/push update intentionally karunahin.
-      // First filter result verify kariba.
+      // ⚠️ Database/push update intentionally disabled.
+      // First verify the filtering result.
     } catch (error) {
       console.error(
         `❌ ${source.name} error: ${error.message}`
