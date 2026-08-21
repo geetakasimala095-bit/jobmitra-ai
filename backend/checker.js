@@ -9,59 +9,8 @@ const SOURCES = [
   },
 ];
 
-// Words that should NEVER become jobs
-const BLOCKED_WORDS = [
-  "skip to main content",
-  "skip to content",
-  "find counsellor",
-  "career tools",
-  "forms for certificates",
-  "recruitment tests",
-  "recruitment requisition",
-  "pending litigations",
-  "representation on question papers",
-  "time-frame-representation",
-  "view pdf",
-  "download pdf",
-  "privacy policy",
-  "sitemap",
-  "contact us",
-  "login",
-  "register",
-];
-
-// Strong job signals
-const JOB_WORDS = [
-  "vacancy",
-  "vacancies",
-  "notification",
-  "notice",
-  "online application",
-  "apply online",
-  "application invited",
-  "applications are invited",
-  "posts",
-  "post of",
-  "recruitment",
-  "appointment",
-  "direct recruitment",
-  "junior engineer",
-  "engineer",
-  "assistant",
-  "officer",
-  "clerk",
-  "technician",
-  "nurse",
-  "teacher",
-  "constable",
-  "inspector",
-  "scientist",
-  "professor",
-  "lecturer",
-];
-
 // --------------------------------------------------
-// Fetch page
+// Fetch webpage
 // --------------------------------------------------
 
 function fetchPage(url) {
@@ -87,9 +36,7 @@ function fetchPage(url) {
               resolve(data);
             } else {
               reject(
-                new Error(
-                  `HTTP ${res.statusCode}: ${url}`
-                )
+                new Error(`HTTP ${res.statusCode}: ${url}`)
               );
             }
           });
@@ -100,7 +47,7 @@ function fetchPage(url) {
 }
 
 // --------------------------------------------------
-// Clean HTML
+// Clean HTML text
 // --------------------------------------------------
 
 function cleanText(html) {
@@ -112,66 +59,97 @@ function cleanText(html) {
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
     .replace(/&#39;/gi, "'")
+    .replace(/&gt;/gi, ">")
     .replace(/\s+/g, " ")
     .trim();
 }
 
 // --------------------------------------------------
-// Find blocked word
+// Check genuine UPSC advertisement PDF
 // --------------------------------------------------
 
-function getBlockedWord(text) {
-  const value = text.toLowerCase();
+function isGenuineAdvertisement(url, title) {
+  const value = `${url} ${title}`.toLowerCase();
 
-  for (const word of BLOCKED_WORDS) {
-    if (value.includes(word.toLowerCase())) {
-      return word;
+  // Must be a PDF
+  if (!value.includes(".pdf")) {
+    return false;
+  }
+
+  // Must look like an official UPSC uploaded file
+  if (!url.includes("upsc.gov.in")) {
+    return false;
+  }
+
+  // UPSC advertisement files normally contain AdvtNo
+  if (!value.includes("advtno")) {
+    return false;
+  }
+
+  // Reject unrelated files
+  const blocked = [
+    "question",
+    "syllabus",
+    "answer-key",
+    "calendar",
+    "forms",
+    "certificate",
+    "model",
+    "demo",
+    "policy",
+  ];
+
+  for (const word of blocked) {
+    if (value.includes(word)) {
+      return false;
     }
   }
 
-  return null;
+  return true;
 }
 
 // --------------------------------------------------
-// Find job word
+// Create readable job title
 // --------------------------------------------------
 
-function getJobWord(text) {
-  const value = text.toLowerCase();
+function createJobTitle(url, originalTitle) {
+  const filename = url.split("/").pop();
 
-  for (const word of JOB_WORDS) {
-    if (value.includes(word.toLowerCase())) {
-      return word;
-    }
+  const match = filename.match(
+    /AdvtNo-([0-9]+)-([0-9]{4})/i
+  );
+
+  if (match) {
+    return `UPSC Recruitment Advertisement - Advt No. ${match[1]}/${match[2]}`;
   }
 
-  return null;
+  return `UPSC Recruitment Advertisement - ${originalTitle}`;
 }
 
 // --------------------------------------------------
-// Extract links + DEBUG
+// Extract ONLY genuine advertisement PDFs
 // --------------------------------------------------
 
-function extractLinks(html, sourceUrl) {
+function extractJobs(html, sourceUrl) {
   const results = [];
 
   const regex =
     /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
   let match;
-  let count = 0;
+  let total = 0;
 
   console.log("");
-  console.log("🔍 DEBUG LINK ANALYSIS");
+  console.log("🔍 UPSC ADVERTISEMENT FILTER");
   console.log("==============================");
 
   while ((match = regex.exec(html)) !== null) {
-    count++;
+    total++;
 
     let href = match[1];
     const title = cleanText(match[2]);
 
-    if (!title || title.length < 3) {
+    if (!title && !href) {
       continue;
     }
 
@@ -181,51 +159,35 @@ function extractLinks(html, sourceUrl) {
       continue;
     }
 
-    const combined = `${title} ${href}`;
-    const blockedWord = getBlockedWord(combined);
-    const jobWord = getJobWord(combined);
-
-    // Print first 100 links only
-    if (count <= 100) {
-      console.log("");
-      console.log(`LINK ${count}`);
-      console.log(`TITLE : ${title}`);
-      console.log(`URL   : ${href}`);
-
-      if (blockedWord) {
-        console.log(`❌ REJECTED`);
-        console.log(`   Reason: blocked word = "${blockedWord}"`);
-        continue;
-      }
-
-      if (!jobWord) {
-        console.log(`❌ REJECTED`);
-        console.log(`   Reason: no job keyword found`);
-        continue;
-      }
-
-      console.log(`🟢 ACCEPTED`);
-      console.log(`   Job keyword = "${jobWord}"`);
-    }
-
-    // Apply filter
-    if (blockedWord) {
+    // Only inspect PDF links
+    if (!href.toLowerCase().includes(".pdf")) {
       continue;
     }
 
-    if (!jobWord) {
-      continue;
-    }
+    console.log("");
+    console.log(`PDF LINK ${total}`);
+    console.log(`TITLE : ${title}`);
+    console.log(`URL   : ${href}`);
 
-    results.push({
-      title,
-      url: href,
-    });
+    if (isGenuineAdvertisement(href, title)) {
+      const jobTitle = createJobTitle(href, title);
+
+      console.log("🟢 ACCEPTED — Genuine advertisement PDF");
+      console.log(`JOB   : ${jobTitle}`);
+
+      results.push({
+        title: jobTitle,
+        url: href,
+        source: "UPSC",
+      });
+    } else {
+      console.log("❌ REJECTED — Not a recruitment advertisement");
+    }
   }
 
   console.log("");
   console.log("==============================");
-  console.log(`🔍 Total links scanned: ${count}`);
+  console.log(`🔍 Total HTML links scanned: ${total}`);
   console.log("==============================");
 
   return results;
@@ -240,13 +202,11 @@ function removeDuplicates(items) {
   const output = [];
 
   for (const item of items) {
-    const key = item.url.toLowerCase();
-
-    if (seen.has(key)) {
+    if (seen.has(item.url)) {
       continue;
     }
 
-    seen.add(key);
+    seen.add(item.url);
     output.push(item);
   }
 
@@ -254,12 +214,12 @@ function removeDuplicates(items) {
 }
 
 // --------------------------------------------------
-// Main
+// Main checker
 // --------------------------------------------------
 
 async function runChecker() {
   console.log("");
-  console.log("🚀 JobMitra AI - DEBUG JOB CHECKER");
+  console.log("🚀 JobMitra AI - UPSC JOB CHECKER");
   console.log("");
   console.log("🇮🇳 India + 🟢 Odisha + 🏢 Government Jobs");
   console.log("");
@@ -278,15 +238,15 @@ async function runChecker() {
         )} bytes`
       );
 
-      const jobs = extractLinks(html, source.url);
+      const jobs = extractJobs(html, source.url);
       const uniqueJobs = removeDuplicates(jobs);
 
       console.log("");
-      console.log("📋 ACCEPTED JOB LINKS");
+      console.log("📋 GENUINE JOB ADVERTISEMENTS");
       console.log("==============================");
 
       if (uniqueJobs.length === 0) {
-        console.log("⚠️ No links accepted.");
+        console.log("⚠️ No genuine advertisement PDF found.");
       } else {
         uniqueJobs.forEach((job, index) => {
           console.log("");
@@ -297,10 +257,11 @@ async function runChecker() {
 
       console.log("");
       console.log("==============================");
-      console.log(
-        `✅ Accepted: ${uniqueJobs.length}`
-      );
+      console.log(`✅ Genuine jobs found: ${uniqueJobs.length}`);
       console.log("==============================");
+
+      // ⚠️ Supabase/PUSH intentionally disabled.
+      // First verify the result.
     } catch (error) {
       console.error(
         `❌ ${source.name} error: ${error.message}`
@@ -309,7 +270,7 @@ async function runChecker() {
   }
 
   console.log("");
-  console.log("🏁 Debug checker finished.");
+  console.log("🏁 Checker finished.");
   console.log("");
 }
 
