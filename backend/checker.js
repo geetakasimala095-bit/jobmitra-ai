@@ -2,15 +2,23 @@ const https = require("https");
 const crypto = require("crypto");
 const webpush = require("web-push");
 
+
 /* =====================================================
-   SUPABASE CONFIG
+   CONFIG
    ===================================================== */
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SUPABASE_URL =
+  process.env.SUPABASE_URL;
 
-const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY;
-const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY;
+const SUPABASE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+const VAPID_PUBLIC_KEY =
+  process.env.VAPID_PUBLIC_KEY;
+
+const VAPID_PRIVATE_KEY =
+  process.env.VAPID_PRIVATE_KEY;
+
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
   console.error("❌ Supabase secrets are missing.");
@@ -22,6 +30,7 @@ if (!VAPID_PUBLIC_KEY || !VAPID_PRIVATE_KEY) {
   process.exit(1);
 }
 
+
 webpush.setVapidDetails(
   "mailto:jobmitraai@gmail.com",
   VAPID_PUBLIC_KEY,
@@ -30,7 +39,7 @@ webpush.setVapidDetails(
 
 
 /* =====================================================
-   OSSC PAGES
+   OSSC URLS
    ===================================================== */
 
 const OSSC_HOME =
@@ -38,6 +47,7 @@ const OSSC_HOME =
 
 const OSSC_ADVERTISEMENTS =
   "https://ossc.gov.in/Public/Pages/View_Content.aspx?id=MeNGKau42B9VX4Nn6oZfXA%3D%3D";
+
 
 /* =====================================================
    FETCH PAGE
@@ -52,12 +62,26 @@ function fetchPage(url) {
       {
         headers: {
           "User-Agent":
-            "Mozilla/5.0 (compatible; JobMitraAI/1.0)",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+
           "Accept":
-            "text/html,application/xhtml+xml"
+            "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+
+          "Accept-Language":
+            "en-US,en;q=0.9",
+
+          "Cache-Control":
+            "no-cache",
+
+          "Pragma":
+            "no-cache",
+
+          "Referer":
+            "https://ossc.gov.in/"
         }
       },
-      response => {
+
+      (response) => {
 
         let data = "";
 
@@ -66,6 +90,10 @@ function fetchPage(url) {
         });
 
         response.on("end", () => {
+
+          console.log(
+            `HTTP ${response.statusCode}: ${url}`
+          );
 
           if (
             response.statusCode >= 200 &&
@@ -90,9 +118,11 @@ function fetchPage(url) {
     );
 
     request.setTimeout(30000, () => {
+
       request.destroy(
         new Error("Request timed out")
       );
+
     });
 
     request.on("error", reject);
@@ -132,7 +162,8 @@ function supabaseRequest(
           method,
 
           headers: {
-            "apikey": SUPABASE_KEY,
+            "apikey":
+              SUPABASE_KEY,
 
             "Authorization":
               `Bearer ${SUPABASE_KEY}`,
@@ -163,9 +194,7 @@ function supabaseRequest(
               try {
 
                 resolve(
-                  JSON.parse(
-                    result || "[]"
-                  )
+                  JSON.parse(result || "[]")
                 );
 
               } catch {
@@ -203,12 +232,12 @@ function supabaseRequest(
 
 
 /* =====================================================
-   CLEAN HTML
+   CLEAN TEXT
    ===================================================== */
 
 function cleanText(text) {
 
-  return String(text)
+  return String(text || "")
 
     .replace(
       /<script[\s\S]*?<\/script>/gi,
@@ -225,30 +254,12 @@ function cleanText(text) {
       " "
     )
 
-    .replace(
-      /&nbsp;/gi,
-      " "
-    )
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
 
-    .replace(
-      /&amp;/gi,
-      "&"
-    )
-
-    .replace(
-      /&quot;/gi,
-      '"'
-    )
-
-    .replace(
-      /&#39;/gi,
-      "'"
-    )
-
-    .replace(
-      /\s+/g,
-      " "
-    )
+    .replace(/\s+/g, " ")
 
     .trim();
 
@@ -281,10 +292,7 @@ function absoluteUrl(href) {
    FINGERPRINT
    ===================================================== */
 
-function makeFingerprint(
-  title,
-  url
-) {
+function makeFingerprint(title, url) {
 
   return crypto
     .createHash("sha256")
@@ -298,13 +306,10 @@ function makeFingerprint(
    JOB FILTER
    ===================================================== */
 
-function isJobRelated(
-  title,
-  href
-) {
+function isJobRelated(title, href) {
 
   const cleanTitle =
-    title
+    String(title || "")
       .toLowerCase()
       .trim();
 
@@ -326,7 +331,9 @@ function isJobRelated(
   if (
     blockedTitles.includes(cleanTitle)
   ) {
+
     return false;
+
   }
 
 
@@ -346,7 +353,12 @@ function isJobRelated(
     "examination",
     "career",
     "appointment",
-    "post"
+    "post",
+    "cglre",
+    "ctsre",
+    "chsre",
+    "technical",
+    "specialist"
 
   ];
 
@@ -401,28 +413,36 @@ function extractLinks(html) {
 
   let match;
 
+
   while (
     (match = regex.exec(html)) !== null
   ) {
 
-    const href = match[1];
+    const href =
+      match[1];
 
     const title =
       cleanText(match[2]);
+
 
     if (
       !title ||
       title.length < 8
     ) {
+
       continue;
+
     }
+
 
     const officialUrl =
       absoluteUrl(href);
 
+
     if (!officialUrl) {
       continue;
     }
+
 
     if (
       !isJobRelated(
@@ -430,8 +450,11 @@ function extractLinks(html) {
         officialUrl
       )
     ) {
+
       continue;
+
     }
+
 
     results.push({
       title,
@@ -439,6 +462,7 @@ function extractLinks(html) {
     });
 
   }
+
 
   return results;
 
@@ -486,7 +510,9 @@ async function sendPushNotification(
     "📢 Sending push notification..."
   );
 
+
   let subscriptions;
+
 
   try {
 
@@ -534,6 +560,7 @@ async function sendPushNotification(
       let subscription =
         row.subscription;
 
+
       if (
         typeof subscription === "string"
       ) {
@@ -543,11 +570,14 @@ async function sendPushNotification(
 
       }
 
+
       if (
         !subscription ||
         !subscription.endpoint
       ) {
+
         continue;
+
       }
 
 
@@ -575,7 +605,9 @@ async function sendPushNotification(
 
       );
 
+
       sent++;
+
 
     } catch (error) {
 
@@ -584,6 +616,7 @@ async function sendPushNotification(
         error.statusCode ||
         error.message
       );
+
 
       if (
         error.statusCode === 404 ||
@@ -645,7 +678,9 @@ async function saveJob(job) {
 
       "/rest/v1/jobs" +
       "?fingerprint=eq." +
-      encodeURIComponent(fingerprint) +
+      encodeURIComponent(
+        fingerprint
+      ) +
       "&select=id"
 
     );
@@ -666,11 +701,8 @@ async function saveJob(job) {
 
 
   await supabaseRequest(
-
     "/rest/v1/jobs",
-
     "POST",
-
     {
 
       title:
@@ -700,18 +732,14 @@ async function saveJob(job) {
         true
 
     }
-
   );
 
 
   try {
 
     await supabaseRequest(
-
       "/rest/v1/job_updates",
-
       "POST",
-
       {
 
         title:
@@ -730,7 +758,6 @@ async function saveJob(job) {
           new Date().toISOString()
 
       }
-
     );
 
     console.log(
@@ -750,11 +777,8 @@ async function saveJob(job) {
   try {
 
     await supabaseRequest(
-
       "/rest/v1/notifications",
-
       "POST",
-
       {
 
         title:
@@ -773,7 +797,6 @@ async function saveJob(job) {
           true
 
       }
-
     );
 
   } catch (error) {
@@ -787,13 +810,9 @@ async function saveJob(job) {
 
 
   await sendPushNotification(
-
     "💼 New OSSC Job",
-
     job.title,
-
     job.officialUrl
-
   );
 
 
@@ -825,6 +844,8 @@ async function main() {
     );
 
 
+    /* ================= HOME ================= */
+
     const homeHtml =
       await fetchPage(
         OSSC_HOME
@@ -846,6 +867,8 @@ async function main() {
       `🔎 Homepage jobs: ${jobs.length}`
     );
 
+
+    /* ================= ADVERTISEMENTS ================= */
 
     try {
 
@@ -876,6 +899,7 @@ async function main() {
           advertisementJobs
         );
 
+
     } catch (error) {
 
       console.error(
@@ -886,6 +910,8 @@ async function main() {
     }
 
 
+    /* ================= UNIQUE ================= */
+
     jobs =
       uniqueJobs(jobs);
 
@@ -894,6 +920,8 @@ async function main() {
       `🔎 Total possible jobs: ${jobs.length}`
     );
 
+
+    /* ================= SAVE ================= */
 
     let added = 0;
 
@@ -907,9 +935,11 @@ async function main() {
         const wasAdded =
           await saveJob(job);
 
+
         if (wasAdded) {
           added++;
         }
+
 
       } catch (error) {
 
@@ -922,6 +952,8 @@ async function main() {
 
     }
 
+
+    /* ================= LOG ================= */
 
     await supabaseRequest(
 
@@ -952,17 +984,21 @@ async function main() {
       "================================="
     );
 
+
     console.log(
       `📋 Found: ${jobs.length}`
     );
+
 
     console.log(
       `🆕 Added: ${added}`
     );
 
+
     console.log(
       "🔔 Push notification system active."
     );
+
 
     console.log(
       "✅ Automatic check completed."
