@@ -37,8 +37,7 @@ const OSSC_HOME =
   "https://ossc.gov.in/Public/OSSC/Default.aspx";
 
 const OSSC_ADVERTISEMENTS =
-  "https://ossc.gov.in/Public/OSSC/Advertisements.aspx";
-
+  "https://ossc.gov.in/Public/Pages/View_Content.aspx?id=MeNGKau42B9VX4Nn6oZfXA%3D%3D";
 
 /* =====================================================
    FETCH PAGE
