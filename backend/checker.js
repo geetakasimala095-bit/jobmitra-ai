@@ -9,61 +9,45 @@ const SOURCES = [
   },
 ];
 
-// ❌ Generic/menu/non-job links
+// Words that should NEVER become jobs
 const BLOCKED_WORDS = [
   "skip to main content",
   "skip to content",
   "find counsellor",
   "career tools",
-  "advertisements",
-  "advertisement",
   "forms for certificates",
   "recruitment tests",
   "recruitment requisition",
-  "recruitment cases",
+  "pending litigations",
   "representation on question papers",
   "time-frame-representation",
-  "pending litigations",
-  "login",
-  "register",
-  "contact us",
-  "privacy policy",
-  "sitemap",
-  "home",
-  "search",
-  "menu",
-  ".pdf",
   "view pdf",
   "download pdf",
+  "privacy policy",
+  "sitemap",
+  "contact us",
+  "login",
+  "register",
 ];
 
-// ✅ Words strongly suggesting an actual vacancy/notification
-const STRONG_JOB_WORDS = [
+// Strong job signals
+const JOB_WORDS = [
   "vacancy",
   "vacancies",
-  "recruitment notification",
-  "recruitment notice",
-  "employment notice",
-  "job notification",
-  "job notice",
+  "notification",
+  "notice",
   "online application",
   "apply online",
   "application invited",
   "applications are invited",
-  "invited for recruitment",
   "posts",
   "post of",
-  "appointment to",
+  "recruitment",
+  "appointment",
   "direct recruitment",
-  "special recruitment",
   "junior engineer",
-  "assistant engineer",
-  "assistant section officer",
-  "section officer",
-  "junior administrative",
-  "scientist",
-  "professor",
-  "lecturer",
+  "engineer",
+  "assistant",
   "officer",
   "clerk",
   "technician",
@@ -71,10 +55,13 @@ const STRONG_JOB_WORDS = [
   "teacher",
   "constable",
   "inspector",
+  "scientist",
+  "professor",
+  "lecturer",
 ];
 
 // --------------------------------------------------
-// Fetch webpage
+// Fetch page
 // --------------------------------------------------
 
 function fetchPage(url) {
@@ -100,7 +87,9 @@ function fetchPage(url) {
               resolve(data);
             } else {
               reject(
-                new Error(`HTTP ${res.statusCode}: ${url}`)
+                new Error(
+                  `HTTP ${res.statusCode}: ${url}`
+                )
               );
             }
           });
@@ -118,9 +107,6 @@ function cleanText(html) {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "")
-    .replace(/<nav[\s\S]*?<\/nav>/gi, "")
-    .replace(/<header[\s\S]*?<\/header>/gi, "")
-    .replace(/<footer[\s\S]*?<\/footer>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
@@ -131,31 +117,39 @@ function cleanText(html) {
 }
 
 // --------------------------------------------------
-// Check blocked content
+// Find blocked word
 // --------------------------------------------------
 
-function isBlocked(text) {
+function getBlockedWord(text) {
   const value = text.toLowerCase();
 
-  return BLOCKED_WORDS.some((word) =>
-    value.includes(word.toLowerCase())
-  );
+  for (const word of BLOCKED_WORDS) {
+    if (value.includes(word.toLowerCase())) {
+      return word;
+    }
+  }
+
+  return null;
 }
 
 // --------------------------------------------------
-// Check strong job signal
+// Find job word
 // --------------------------------------------------
 
-function hasStrongJobSignal(text) {
+function getJobWord(text) {
   const value = text.toLowerCase();
 
-  return STRONG_JOB_WORDS.some((word) =>
-    value.includes(word.toLowerCase())
-  );
+  for (const word of JOB_WORDS) {
+    if (value.includes(word.toLowerCase())) {
+      return word;
+    }
+  }
+
+  return null;
 }
 
 // --------------------------------------------------
-// Extract links
+// Extract links + DEBUG
 // --------------------------------------------------
 
 function extractLinks(html, sourceUrl) {
@@ -165,48 +159,61 @@ function extractLinks(html, sourceUrl) {
     /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
   let match;
+  let count = 0;
+
+  console.log("");
+  console.log("🔍 DEBUG LINK ANALYSIS");
+  console.log("==============================");
 
   while ((match = regex.exec(html)) !== null) {
+    count++;
+
     let href = match[1];
     const title = cleanText(match[2]);
 
-    if (!title || title.length < 8) {
+    if (!title || title.length < 3) {
       continue;
     }
 
-    // Convert relative URL to absolute URL
     try {
       href = new URL(href, sourceUrl).href;
     } catch {
       continue;
     }
 
-    const combined = `${title} ${href}`.toLowerCase();
+    const combined = `${title} ${href}`;
+    const blockedWord = getBlockedWord(combined);
+    const jobWord = getJobWord(combined);
 
-    // ❌ Reject blocked links
-    if (isBlocked(combined)) {
-      continue;
-    }
+    // Print first 100 links only
+    if (count <= 100) {
+      console.log("");
+      console.log(`LINK ${count}`);
+      console.log(`TITLE : ${title}`);
+      console.log(`URL   : ${href}`);
 
-    // ❌ Reject homepage
-    try {
-      const linkUrl = new URL(href);
-      const source = new URL(sourceUrl);
-
-      if (
-        linkUrl.hostname === source.hostname &&
-        (linkUrl.pathname === "/" ||
-          linkUrl.pathname === "")
-      ) {
+      if (blockedWord) {
+        console.log(`❌ REJECTED`);
+        console.log(`   Reason: blocked word = "${blockedWord}"`);
         continue;
       }
-    } catch {
+
+      if (!jobWord) {
+        console.log(`❌ REJECTED`);
+        console.log(`   Reason: no job keyword found`);
+        continue;
+      }
+
+      console.log(`🟢 ACCEPTED`);
+      console.log(`   Job keyword = "${jobWord}"`);
+    }
+
+    // Apply filter
+    if (blockedWord) {
       continue;
     }
 
-    // ❌ Recruitment alone is NOT enough
-    // Must contain a stronger job signal
-    if (!hasStrongJobSignal(combined)) {
+    if (!jobWord) {
       continue;
     }
 
@@ -215,6 +222,11 @@ function extractLinks(html, sourceUrl) {
       url: href,
     });
   }
+
+  console.log("");
+  console.log("==============================");
+  console.log(`🔍 Total links scanned: ${count}`);
+  console.log("==============================");
 
   return results;
 }
@@ -242,12 +254,12 @@ function removeDuplicates(items) {
 }
 
 // --------------------------------------------------
-// Main checker
+// Main
 // --------------------------------------------------
 
 async function runChecker() {
   console.log("");
-  console.log("🚀 JobMitra AI - Automatic Job Checker");
+  console.log("🚀 JobMitra AI - DEBUG JOB CHECKER");
   console.log("");
   console.log("🇮🇳 India + 🟢 Odisha + 🏢 Government Jobs");
   console.log("");
@@ -270,32 +282,25 @@ async function runChecker() {
       const uniqueJobs = removeDuplicates(jobs);
 
       console.log("");
-      console.log(
-        `🔎 ${source.name}: ${uniqueJobs.length} genuine job links found`
-      );
-      console.log("");
-
-      console.log("📋 FILTERED JOBS");
-      console.log("------------------------------");
+      console.log("📋 ACCEPTED JOB LINKS");
+      console.log("==============================");
 
       if (uniqueJobs.length === 0) {
-        console.log("No genuine job notification links found.");
+        console.log("⚠️ No links accepted.");
       } else {
         uniqueJobs.forEach((job, index) => {
+          console.log("");
           console.log(`${index + 1}. ${job.title}`);
           console.log(`   ${job.url}`);
-          console.log("");
         });
       }
 
-      console.log("------------------------------");
-      console.log(
-        `✅ ${uniqueJobs.length} jobs passed strict filter`
-      );
       console.log("");
-
-      // ⚠️ Database/push update intentionally disabled.
-      // First verify the filtering result.
+      console.log("==============================");
+      console.log(
+        `✅ Accepted: ${uniqueJobs.length}`
+      );
+      console.log("==============================");
     } catch (error) {
       console.error(
         `❌ ${source.name} error: ${error.message}`
@@ -303,7 +308,8 @@ async function runChecker() {
     }
   }
 
-  console.log("🏁 Checker finished.");
+  console.log("");
+  console.log("🏁 Debug checker finished.");
   console.log("");
 }
 
