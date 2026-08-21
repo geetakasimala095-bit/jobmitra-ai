@@ -2,8 +2,20 @@ const https = require("https");
 const crypto = require("crypto");
 const webpush = require("web-push");
 
+
 /* =====================================================
-   CONFIG
+   JOBMITRA AI
+   ALL INDIA + ODISHA + PRIVATE JOB CHECKER
+   ===================================================== */
+
+console.log("");
+console.log("🚀 JobMitra AI - Automatic Job Checker");
+console.log("🇮🇳 India + 🟢 Odisha + 🏢 Private Jobs");
+console.log("");
+
+
+/* =====================================================
+   ENV
    ===================================================== */
 
 const SUPABASE_URL =
@@ -18,15 +30,32 @@ const VAPID_PUBLIC_KEY =
 const VAPID_PRIVATE_KEY =
   process.env.VAPID_PRIVATE_KEY;
 
+
 if (!SUPABASE_URL || !SUPABASE_KEY) {
-  console.error("❌ Supabase secrets missing.");
+
+  console.error(
+    "❌ SUPABASE secrets missing."
+  );
+
   process.exit(1);
+
 }
 
+
 if (!VAPID_PUBLIC_KEY || !VAPID_PRIVATE_KEY) {
-  console.error("❌ VAPID secrets missing.");
+
+  console.error(
+    "❌ VAPID secrets missing."
+  );
+
   process.exit(1);
+
 }
+
+
+/* =====================================================
+   WEB PUSH
+   ===================================================== */
 
 webpush.setVapidDetails(
   "mailto:jobmitraai@gmail.com",
@@ -36,100 +65,188 @@ webpush.setVapidDetails(
 
 
 /* =====================================================
-   OFFICIAL SOURCES
+   SOURCES
    ===================================================== */
 
 const SOURCES = [
 
   {
-    name: "NCS",
-    category: "Private / Government",
-    url: "https://www.ncs.gov.in/jobs-in-all-india"
-  },
-
-  {
     name: "UPSC",
     category: "Government",
-    url: "https://www.upsc.gov.in/recruitment/recruitment-advertisement"
+    url:
+      "https://www.upsc.gov.in/recruitment/recruitment-advertisement"
   },
 
   {
     name: "SSC",
     category: "Government",
-    url: "https://ssc.gov.in/home/candidate"
+    url:
+      "https://ssc.gov.in/home/candidate"
   },
 
   {
     name: "OSSC",
     category: "Odisha Government",
-    url: "https://ossc.gov.in/Public/OSSC/Default.aspx"
+    url:
+      "https://ossc.gov.in/Public/OSSC/Default.aspx"
   },
 
   {
     name: "OSSSC",
     category: "Odisha Government",
-    url: "https://www.osssc.gov.in/Public/OSSSC/Default.aspx"
+    url:
+      "https://osssc.gov.in/"
   },
 
   {
-    name: "Odisha Government",
-    category: "Odisha Government",
-    url: "https://odisha.gov.in/"
+    name: "NCS",
+    category: "Private / Government",
+    url:
+      "https://www.ncs.gov.in/"
   }
 
 ];
 
 
 /* =====================================================
-   HTTP FETCH
+   FETCH WITH REDIRECT
    ===================================================== */
 
-function fetchPage(url) {
+function fetchPage(url, redirects = 0) {
 
   return new Promise((resolve, reject) => {
 
+    if (redirects > 5) {
+
+      reject(
+        new Error("Too many redirects")
+      );
+
+      return;
+
+    }
+
+
+    let parsed;
+
+    try {
+
+      parsed = new URL(url);
+
+    } catch {
+
+      reject(
+        new Error("Invalid URL")
+      );
+
+      return;
+
+    }
+
+
     const request =
       https.get(
-        url,
+
+        parsed,
+
         {
+
           headers: {
+
             "User-Agent":
-              "Mozilla/5.0 (compatible; JobMitraAI/2.0)",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) JobMitraAI/2.0",
+
             "Accept":
               "text/html,application/xhtml+xml"
-          }
+
+          },
+
+          timeout: 30000
+
         },
+
         response => {
 
+          const status =
+            response.statusCode || 0;
+
+
+          console.log(
+            `HTTP ${status}: ${url}`
+          );
+
+
+          /* -----------------------------
+             REDIRECT
+             ----------------------------- */
+
+          if (
+            status >= 300 &&
+            status < 400 &&
+            response.headers.location
+          ) {
+
+            const nextUrl =
+              new URL(
+                response.headers.location,
+                url
+              ).href;
+
+
+            response.resume();
+
+
+            fetchPage(
+              nextUrl,
+              redirects + 1
+            )
+              .then(resolve)
+              .catch(reject);
+
+
+            return;
+
+          }
+
+
           let data = "";
+
+
+          response.setEncoding("utf8");
+
 
           response.on(
             "data",
             chunk => {
+
               data += chunk;
+
             }
           );
+
 
           response.on(
             "end",
             () => {
 
-              console.log(
-                `HTTP ${response.statusCode}: ${url}`
-              );
-
               if (
-                response.statusCode >= 200 &&
-                response.statusCode < 400
+                status >= 200 &&
+                status < 300
               ) {
 
-                resolve(data);
+                resolve({
+
+                  url,
+                  status,
+                  html: data
+
+                });
 
               } else {
 
                 reject(
                   new Error(
-                    `HTTP ${response.statusCode}`
+                    `HTTP ${status}`
                   )
                 );
 
@@ -139,10 +256,12 @@ function fetchPage(url) {
           );
 
         }
+
       );
 
-    request.setTimeout(
-      30000,
+
+    request.on(
+      "timeout",
       () => {
 
         request.destroy(
@@ -152,12 +271,158 @@ function fetchPage(url) {
       }
     );
 
+
     request.on(
       "error",
       reject
     );
 
   });
+
+}
+
+
+/* =====================================================
+   SUPABASE REQUEST
+   ===================================================== */
+
+function supabaseRequest(
+  path,
+  method = "GET",
+  data = null
+) {
+
+  return new Promise(
+    (resolve, reject) => {
+
+      const url =
+        new URL(
+          SUPABASE_URL + path
+        );
+
+
+      const body =
+        data !== null
+          ? JSON.stringify(data)
+          : null;
+
+
+      const headers = {
+
+        "apikey":
+          SUPABASE_KEY,
+
+        "Authorization":
+          `Bearer ${SUPABASE_KEY}`,
+
+        "Content-Type":
+          "application/json",
+
+        "Prefer":
+          "return=representation"
+
+      };
+
+
+      if (body) {
+
+        headers["Content-Length"] =
+          Buffer.byteLength(body);
+
+      }
+
+
+      const request =
+        https.request(
+
+          {
+
+            hostname:
+              url.hostname,
+
+            path:
+              url.pathname +
+              url.search,
+
+            method,
+
+            headers
+
+          },
+
+          response => {
+
+            let result = "";
+
+
+            response.on(
+              "data",
+              chunk => {
+
+                result += chunk;
+
+              }
+            );
+
+
+            response.on(
+              "end",
+              () => {
+
+                if (
+                  response.statusCode >= 200 &&
+                  response.statusCode < 300
+                ) {
+
+                  try {
+
+                    resolve(
+                      JSON.parse(
+                        result || "[]"
+                      )
+                    );
+
+                  } catch {
+
+                    resolve(result);
+
+                  }
+
+                } else {
+
+                  reject(
+                    new Error(
+                      `Supabase ${response.statusCode}: ${result}`
+                    )
+                  );
+
+                }
+
+              }
+            );
+
+          }
+
+        );
+
+
+      request.on(
+        "error",
+        reject
+      );
+
+
+      if (body) {
+
+        request.write(body);
+
+      }
+
+
+      request.end();
+
+    }
+  );
 
 }
 
@@ -206,32 +471,11 @@ function cleanText(text) {
     )
 
     .replace(
-      /&#x27;/gi,
-      "'"
-    )
-
-    .replace(
       /\s+/g,
       " "
     )
 
     .trim();
-
-}
-
-
-/* =====================================================
-   HTML ENTITIES
-   ===================================================== */
-
-function decodeHtml(text) {
-
-  return String(text || "")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&#x27;/gi, "'")
-    .replace(/&nbsp;/gi, " ");
 
 }
 
@@ -248,7 +492,7 @@ function absoluteUrl(
   try {
 
     return new URL(
-      decodeHtml(href),
+      href,
       baseUrl
     ).href;
 
@@ -262,22 +506,254 @@ function absoluteUrl(
 
 
 /* =====================================================
+   BAD LINK FILTER
+   ===================================================== */
+
+function isBadLink(
+  title,
+  url
+) {
+
+  const text =
+    `${title} ${url}`
+      .toLowerCase();
+
+
+  const badWords = [
+
+    "skip to main",
+    "skip to content",
+    "hindi",
+    "home",
+    "about us",
+    "contact us",
+    "login",
+    "logout",
+    "feedback",
+    "sitemap",
+    "privacy",
+    "terms",
+    "accessibility",
+    "facebook",
+    "twitter",
+    "youtube",
+    "instagram",
+    "search",
+    "view pdf",
+    "download pdf",
+    "post notice",
+    "apply online",
+    "click here",
+    "recruitment calendar",
+    "instructions to apply online",
+    "forms for certificates",
+    "answer key",
+    "admit card",
+    "admission letter",
+    "result",
+    "question paper",
+    "mock test",
+    "objection",
+    "rejection",
+    "syllabus"
+
+  ];
+
+
+  return badWords.some(
+    word =>
+      text.includes(word)
+  );
+
+}
+
+
+/* =====================================================
+   REAL JOB FILTER
+   ===================================================== */
+
+function isRealJob(
+  title,
+  url
+) {
+
+  const text =
+    `${title} ${url}`
+      .toLowerCase();
+
+
+  if (isBadLink(title, url)) {
+
+    return false;
+
+  }
+
+
+  const positiveWords = [
+
+    "recruitment",
+    "recruit",
+    "vacancy",
+    "vacancies",
+    "advertisement",
+    "advertisements",
+    "notification",
+    "appointment",
+    "selection",
+    "employment",
+    "job",
+    "jobs",
+    "career",
+    "engagement",
+    "hiring",
+    "post",
+    "posts",
+    "direct recruitment",
+    "walk in",
+    "walk-in",
+    "contractual",
+    "deputation"
+
+  ];
+
+
+  const hasPositive =
+    positiveWords.some(
+      word =>
+        text.includes(word)
+    );
+
+
+  if (!hasPositive) {
+
+    return false;
+
+  }
+
+
+  if (title.length < 12) {
+
+    return false;
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =====================================================
+   EXTRACT LINKS
+   ===================================================== */
+
+function extractJobs(
+  html,
+  baseUrl,
+  sourceName,
+  category
+) {
+
+  const results = [];
+
+
+  const regex =
+    /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+
+
+  let match;
+
+
+  while (
+    (match =
+      regex.exec(html)) !== null
+  ) {
+
+    const href =
+      match[1];
+
+
+    const title =
+      cleanText(match[2]);
+
+
+    if (!title) {
+
+      continue;
+
+    }
+
+
+    const url =
+      absoluteUrl(
+        href,
+        baseUrl
+      );
+
+
+    if (!url) {
+
+      continue;
+
+    }
+
+
+    if (
+      !isRealJob(
+        title,
+        url
+      )
+    ) {
+
+      continue;
+
+    }
+
+
+    results.push({
+
+      title,
+
+      officialUrl: url,
+
+      sourceName,
+
+      category
+
+    });
+
+  }
+
+
+  return results;
+
+}
+
+
+/* =====================================================
    REMOVE DUPLICATES
    ===================================================== */
 
-function uniqueJobs(jobs) {
+function uniqueJobs(
+  jobs
+) {
 
   const map =
     new Map();
 
-  for (const job of jobs) {
+
+  for (
+    const job of jobs
+  ) {
 
     const key =
-      `${job.title}|${job.url}`
-        .toLowerCase()
-        .trim();
+      `${job.title}|${job.officialUrl}`
+        .toLowerCase();
 
-    if (!map.has(key)) {
+
+    if (
+      !map.has(key)
+    ) {
 
       map.set(
         key,
@@ -287,6 +763,7 @@ function uniqueJobs(jobs) {
     }
 
   }
+
 
   return [
     ...map.values()
@@ -300,451 +777,43 @@ function uniqueJobs(jobs) {
    ===================================================== */
 
 function fingerprint(
-  title,
-  url
+  job
 ) {
 
   return crypto
+
     .createHash("sha256")
+
     .update(
-      `${title}|${url}`
+
+      `${job.sourceName}|${job.title}|${job.officialUrl}`
+
     )
+
     .digest("hex");
 
 }
 
 
 /* =====================================================
-   JOB WORD FILTER
-   ===================================================== */
-
-function looksLikeJob(
-  title,
-  url
-) {
-
-  const text =
-    `${title} ${url}`
-      .toLowerCase();
-
-  const positive = [
-
-    "recruitment",
-    "recruit",
-    "vacancy",
-    "job",
-    "jobs",
-    "career",
-    "advertisement",
-    "notification",
-    "appointment",
-    "selection",
-    "engagement",
-    "hiring",
-    "post",
-    "posts",
-    "employment",
-    "apply",
-    "application",
-    "apprentice",
-    "apprenticeship"
-
-  ];
-
-  const negative = [
-
-    "answer key",
-    "answer-key",
-    "admit card",
-    "result",
-    "results",
-    "syllabus",
-    "question paper",
-    "mock test",
-    "login",
-    "register",
-    "contact us",
-    "about us",
-    "home page",
-    "privacy policy",
-    "terms"
-
-  ];
-
-  const good =
-    positive.some(
-      word =>
-        text.includes(word)
-    );
-
-  const bad =
-    negative.some(
-      word =>
-        text.includes(word)
-    );
-
-  return good && !bad;
-
-}
-
-
-/* =====================================================
-   GENERIC LINK EXTRACTION
-   ===================================================== */
-
-function extractLinks(
-  html,
-  source
-) {
-
-  const jobs = [];
-
-  const regex =
-    /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-
-  let match;
-
-  while (
-    (match = regex.exec(html)) !== null
-  ) {
-
-    const href =
-      match[1];
-
-    const rawTitle =
-      match[2];
-
-    const title =
-      cleanText(rawTitle);
-
-    if (!title) {
-      continue;
-    }
-
-    if (
-      title.length < 6 ||
-      title.length > 250
-    ) {
-      continue;
-    }
-
-    const url =
-      absoluteUrl(
-        href,
-        source.url
-      );
-
-    if (!url) {
-      continue;
-    }
-
-    if (
-      !looksLikeJob(
-        title,
-        url
-      )
-    ) {
-      continue;
-    }
-
-    jobs.push({
-
-      title,
-
-      url,
-
-      source:
-        source.name,
-
-      category:
-        source.category
-
-    });
-
-  }
-
-  return uniqueJobs(jobs);
-
-}
-
-
-/* =====================================================
-   NCS SPECIAL EXTRACTION
-   ===================================================== */
-
-function extractNCSJobs(
-  html,
-  source
-) {
-
-  const jobs = [];
-
-  /*
-   NCS server-rendered pages contain
-   job title / company / location /
-   description / posted information.
-  */
-
-  const blocks =
-    html.split(
-      /(?=<h[1-6][^>]*>)/gi
-    );
-
-  for (const block of blocks) {
-
-    const text =
-      cleanText(block);
-
-    if (!text) {
-      continue;
-    }
-
-    if (
-      text.length < 20 ||
-      text.length > 3000
-    ) {
-      continue;
-    }
-
-    const jobWords = [
-
-      "vacancy",
-      "recruitment",
-      "hiring",
-      "job",
-      "jobs",
-      "career",
-      "employment",
-      "fresher",
-      "operator",
-      "executive",
-      "engineer",
-      "manager",
-      "assistant",
-      "officer",
-      "supervisor",
-      "technician"
-
-    ];
-
-    const isJob =
-      jobWords.some(
-        word =>
-          text.toLowerCase()
-            .includes(word)
-      );
-
-    if (!isJob) {
-      continue;
-    }
-
-    const titleMatch =
-      block.match(
-        /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/i
-      );
-
-    let title =
-      titleMatch
-        ? cleanText(titleMatch[1])
-        : "";
-
-    if (!title) {
-
-      title =
-        text
-          .split("Company:")
-          [0]
-          .trim();
-
-    }
-
-    if (
-      !title ||
-      title.length < 5
-    ) {
-      continue;
-    }
-
-    let url =
-      source.url;
-
-    const linkMatch =
-      block.match(
-        /<a\b[^>]*href\s*=\s*["']([^"']+)["']/i
-      );
-
-    if (linkMatch) {
-
-      const absolute =
-        absoluteUrl(
-          linkMatch[1],
-          source.url
-        );
-
-      if (absolute) {
-        url = absolute;
-      }
-
-    }
-
-    jobs.push({
-
-      title,
-
-      url,
-
-      source:
-        "NCS",
-
-      category:
-        "Private / Government"
-
-    });
-
-  }
-
-  return uniqueJobs(jobs);
-
-}
-
-
-/* =====================================================
-   SUPABASE REQUEST
-   ===================================================== */
-
-function supabaseRequest(
-  path,
-  method = "GET",
-  data = null
-) {
-
-  return new Promise(
-    (resolve, reject) => {
-
-      const url =
-        new URL(
-          SUPABASE_URL + path
-        );
-
-      const body =
-        data
-          ? JSON.stringify(data)
-          : null;
-
-      const request =
-        https.request(
-          {
-            hostname:
-              url.hostname,
-
-            path:
-              url.pathname +
-              url.search,
-
-            method,
-
-            headers: {
-
-              "apikey":
-                SUPABASE_KEY,
-
-              "Authorization":
-                `Bearer ${SUPABASE_KEY}`,
-
-              "Content-Type":
-                "application/json",
-
-              "Prefer":
-                "return=representation"
-
-            }
-
-          },
-          response => {
-
-            let result = "";
-
-            response.on(
-              "data",
-              chunk => {
-                result += chunk;
-              }
-            );
-
-            response.on(
-              "end",
-              () => {
-
-                if (
-                  response.statusCode >= 200 &&
-                  response.statusCode < 300
-                ) {
-
-                  try {
-
-                    resolve(
-                      JSON.parse(
-                        result || "[]"
-                      )
-                    );
-
-                  } catch {
-
-                    resolve(result);
-
-                  }
-
-                } else {
-
-                  reject(
-                    new Error(
-                      `Supabase ${response.statusCode}: ${result}`
-                    )
-                  );
-
-                }
-
-              }
-            );
-
-          }
-        );
-
-      request.on(
-        "error",
-        reject
-      );
-
-      if (body) {
-        request.write(body);
-      }
-
-      request.end();
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   PUSH NOTIFICATION
+   SEND PUSH
    ===================================================== */
 
 async function sendPush(
-  title,
-  message,
-  url
+  job
 ) {
 
   let subscriptions;
+
 
   try {
 
     subscriptions =
       await supabaseRequest(
+
         "/rest/v1/push_subscriptions" +
         "?select=endpoint,subscription"
+
       );
 
   } catch (error) {
@@ -757,6 +826,7 @@ async function sendPush(
     return;
 
   }
+
 
   if (
     !Array.isArray(subscriptions) ||
@@ -771,7 +841,10 @@ async function sendPush(
 
   }
 
+
   let sent = 0;
+  let removed = 0;
+
 
   for (
     const row of subscriptions
@@ -781,6 +854,7 @@ async function sendPush(
 
       let subscription =
         row.subscription;
+
 
       if (
         typeof subscription ===
@@ -794,12 +868,16 @@ async function sendPush(
 
       }
 
+
       if (
         !subscription ||
         !subscription.endpoint
       ) {
+
         continue;
+
       }
+
 
       await webpush.sendNotification(
 
@@ -807,38 +885,51 @@ async function sendPush(
 
         JSON.stringify({
 
-          title,
+          title:
+            `💼 New Job - ${job.sourceName}`,
 
           body:
-            message,
+            job.title,
 
           icon:
-            "https://geetakasimala095-bit.github.io/jobmitra-ai/icon-192.png",
+            "https://jobmitraai.github.io/icon-192.png",
 
           badge:
-            "https://geetakasimala095-bit.github.io/jobmitra-ai/icon-192.png",
+            "https://jobmitraai.github.io/icon-192.png",
 
           data: {
-            url
+
+            url:
+              job.officialUrl
+
           }
 
         })
 
       );
 
+
       sent++;
+
 
     } catch (error) {
 
+      const code =
+        error.statusCode;
+
+
       console.error(
-        "❌ Push failed:",
-        error.statusCode ||
-        error.message
+        `❌ Push failed: ${code || error.message}`
       );
 
+
+      /*
+       * 404 / 410 = expired subscription
+       */
+
       if (
-        error.statusCode === 404 ||
-        error.statusCode === 410
+        code === 404 ||
+        code === 410
       ) {
 
         try {
@@ -855,16 +946,11 @@ async function sendPush(
 
           );
 
-          console.log(
-            "🗑️ Expired subscription removed."
-          );
+          removed++;
 
-        } catch (deleteError) {
+        } catch {
 
-          console.error(
-            "❌ Delete failed:",
-            deleteError.message
-          );
+          /* ignore delete error */
 
         }
 
@@ -874,8 +960,13 @@ async function sendPush(
 
   }
 
+
   console.log(
     `📨 Push sent: ${sent}`
+  );
+
+  console.log(
+    `🗑️ Expired removed: ${removed}`
   );
 
 }
@@ -890,14 +981,12 @@ async function saveJob(
 ) {
 
   const fp =
-    fingerprint(
-      job.title,
-      job.url
-    );
+    fingerprint(job);
 
-  /*
-   * Check duplicate.
-   */
+
+  /* -----------------------------------------------
+     CHECK DUPLICATE
+     ----------------------------------------------- */
 
   const existing =
     await supabaseRequest(
@@ -908,6 +997,7 @@ async function saveJob(
       "&select=id"
 
     );
+
 
   if (
     Array.isArray(existing) &&
@@ -923,9 +1013,9 @@ async function saveJob(
   }
 
 
-  /*
-   * Save jobs table.
-   */
+  /* -----------------------------------------------
+     SAVE jobs
+     ----------------------------------------------- */
 
   await supabaseRequest(
 
@@ -939,19 +1029,19 @@ async function saveJob(
         job.title,
 
       organization:
-        job.source,
+        job.sourceName,
 
       category:
         job.category,
 
       official_url:
-        job.url,
+        job.officialUrl,
 
       source_url:
-        job.url,
+        job.officialUrl,
 
       source_name:
-        job.source,
+        job.sourceName,
 
       fingerprint:
         fp,
@@ -967,9 +1057,9 @@ async function saveJob(
   );
 
 
-  /*
-   * Save job_updates.
-   */
+  /* -----------------------------------------------
+     SAVE job_updates
+     ----------------------------------------------- */
 
   try {
 
@@ -985,13 +1075,13 @@ async function saveJob(
           job.title,
 
         description:
-          `New job/recruitment update from ${job.source}.`,
+          `New ${job.category} job/recruitment update from ${job.sourceName}.`,
 
         category:
           job.category,
 
         apply_url:
-          job.url,
+          job.officialUrl,
 
         published_at:
           new Date().toISOString()
@@ -1010,9 +1100,9 @@ async function saveJob(
   }
 
 
-  /*
-   * Save notifications.
-   */
+  /* -----------------------------------------------
+     SAVE notification
+     ----------------------------------------------- */
 
   try {
 
@@ -1025,16 +1115,16 @@ async function saveJob(
       {
 
         title:
-          `🆕 ${job.title}`,
+          `New Job: ${job.title}`,
 
         message:
-          `New job update from ${job.source}.`,
+          `New ${job.category} recruitment update from ${job.sourceName}.`,
 
         type:
-          job.category,
+          "Jobs",
 
         official_url:
-          job.url,
+          job.officialUrl,
 
         is_active:
           true
@@ -1053,24 +1143,17 @@ async function saveJob(
   }
 
 
-  /*
-   * Push only for NEW job.
-   */
+  /* -----------------------------------------------
+     PUSH
+     ----------------------------------------------- */
 
-  await sendPush(
-
-    `💼 New Job - ${job.source}`,
-
-    job.title,
-
-    job.url
-
-  );
+  await sendPush(job);
 
 
   console.log(
     `🆕 ADDED: ${job.title}`
   );
+
 
   return true;
 
@@ -1078,62 +1161,59 @@ async function saveJob(
 
 
 /* =====================================================
-   CHECK ONE SOURCE
+   CHECK SOURCE
    ===================================================== */
 
 async function checkSource(
   source
 ) {
 
+  console.log("");
   console.log(
-    `\n🌐 Checking ${source.name}...`
+    `🌐 Checking ${source.name}...`
   );
+
 
   try {
 
-    const html =
+    const result =
       await fetchPage(
         source.url
       );
 
+
     console.log(
-      `✅ ${source.name} loaded: ${html.length} bytes`
+      `✅ ${source.name} loaded: ${result.html.length} bytes`
     );
 
-    let jobs = [];
 
-    if (
-      source.name === "NCS"
-    ) {
+    const jobs =
+      extractJobs(
 
-      jobs =
-        extractNCSJobs(
-          html,
-          source
-        );
+        result.html,
 
-    } else {
+        result.url,
 
-      jobs =
-        extractLinks(
-          html,
-          source
-        );
+        source.name,
 
-    }
+        source.category
+
+      );
+
 
     console.log(
       `🔎 ${source.name}: ${jobs.length} possible jobs`
     );
+
 
     return jobs;
 
   } catch (error) {
 
     console.error(
-      `❌ ${source.name} failed:`,
-      error.message
+      `❌ ${source.name} failed: ${error.message}`
     );
+
 
     return [];
 
@@ -1164,7 +1244,7 @@ async function saveAutomationLog(
       {
 
         source_name:
-          "ALL INDIA JOBS",
+          "ALL SOURCES",
 
         status,
 
@@ -1199,15 +1279,12 @@ async function saveAutomationLog(
 
 async function main() {
 
-  console.log(
-    "🚀 JobMitra AI - All India Automatic Job Checker"
-  );
+  const allJobs = [];
 
-  console.log(
-    "🇮🇳 Government + Private + Odisha Jobs"
-  );
 
-  let allJobs = [];
+  /* -----------------------------------------------
+     CHECK ALL SOURCES
+     ----------------------------------------------- */
 
   for (
     const source of SOURCES
@@ -1218,42 +1295,40 @@ async function main() {
         source
       );
 
-    allJobs =
-      allJobs.concat(
-        jobs
-      );
+
+    allJobs.push(
+      ...jobs
+    );
 
   }
 
 
-  /*
-   * Remove duplicate jobs.
-   */
+  /* -----------------------------------------------
+     UNIQUE
+     ----------------------------------------------- */
 
-  allJobs =
+  const jobs =
     uniqueJobs(
       allJobs
     );
 
 
+  console.log("");
   console.log(
-    "\n================================="
+    `🔎 Total filtered jobs: ${jobs.length}`
   );
-
-  console.log(
-    `📋 Total possible jobs: ${allJobs.length}`
-  );
+  console.log("");
 
 
   let added = 0;
 
 
-  /*
-   * Save jobs one by one.
-   */
+  /* -----------------------------------------------
+     SAVE
+     ----------------------------------------------- */
 
   for (
-    const job of allJobs
+    const job of jobs
   ) {
 
     try {
@@ -1263,15 +1338,17 @@ async function main() {
           job
         );
 
+
       if (result) {
+
         added++;
+
       }
 
     } catch (error) {
 
       console.error(
-        `❌ Save failed: ${job.title}`,
-        error.message
+        `❌ Save failed "${job.title}": ${error.message}`
       );
 
     }
@@ -1279,12 +1356,28 @@ async function main() {
   }
 
 
+  /* -----------------------------------------------
+     LOG
+     ----------------------------------------------- */
+
+  await saveAutomationLog(
+
+    "success",
+
+    jobs.length,
+
+    added
+
+  );
+
+
+  console.log("");
   console.log(
     "================================="
   );
 
   console.log(
-    `📋 Found: ${allJobs.length}`
+    `📋 Found: ${jobs.length}`
   );
 
   console.log(
@@ -1295,14 +1388,6 @@ async function main() {
     "🔔 Push notification system active."
   );
 
-
-  await saveAutomationLog(
-    "success",
-    allJobs.length,
-    added
-  );
-
-
   console.log(
     "✅ Automatic check completed."
   );
@@ -1311,22 +1396,27 @@ async function main() {
 
 
 main()
-  .catch(
-    async error => {
+  .catch(async error => {
 
-      console.error(
-        "❌ Fatal checker error:",
-        error.message
-      );
+    console.error(
+      "❌ Checker failed:",
+      error.message
+    );
 
-      await saveAutomationLog(
-        "error",
-        0,
-        0,
-        error.message
-      );
 
-      process.exit(1);
+    await saveAutomationLog(
 
-    }
-  );
+      "error",
+
+      0,
+
+      0,
+
+      error.message
+
+    );
+
+
+    process.exit(1);
+
+  });
