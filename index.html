@@ -3,16 +3,19 @@
 
 <head>
 
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color"
-      content="#0b7a3b">
+<meta name="theme-color" content="#0b7a3b">
 
 <meta name="description"
       content="JobMitra AI - Government Jobs, Students, Farmer and Digital Seva">
+
+<link rel="manifest" href="./manifest.json">
+
+<link rel="icon" href="./icon-192.png">
 
 <title>JobMitra AI</title>
 
@@ -44,8 +47,7 @@ button{
   -webkit-tap-highlight-color:transparent;
 }
 
-
-/* ================= HEADER ================= */
+/* HEADER */
 
 .header{
   position:sticky;
@@ -88,8 +90,7 @@ button{
   cursor:pointer;
 }
 
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
   max-width:1100px;
@@ -110,8 +111,7 @@ button{
   margin-bottom:5px;
 }
 
-
-/* ================= MAIN CARDS ================= */
+/* MAIN GRID */
 
 .main-grid{
   max-width:1100px;
@@ -134,11 +134,6 @@ button{
   color:white;
   font-weight:800;
   box-shadow:0 6px 18px rgba(0,0,0,.10);
-  transition:.2s;
-}
-
-.main-card:hover{
-  transform:translateY(-3px);
 }
 
 .main-card .icon{
@@ -162,8 +157,7 @@ button{
   background:linear-gradient(135deg,#6a1b9a,#9c4dcc);
 }
 
-
-/* ================= HELP 99 ================= */
+/* HELP */
 
 .help-box{
   max-width:1100px;
@@ -177,7 +171,6 @@ button{
   border-radius:20px;
   padding:20px 16px;
   text-align:center;
-  box-shadow:0 6px 20px rgba(240,180,41,.15);
 }
 
 .help-badge{
@@ -251,11 +244,9 @@ button{
 .help-note{
   margin-top:12px;
   font-size:11px !important;
-  color:#777 !important;
 }
 
-
-/* ================= DATE TIME ================= */
+/* DATE TIME */
 
 .datetime-box{
   max-width:1100px;
@@ -269,22 +260,18 @@ button{
   border-radius:15px;
   padding:13px 16px;
   text-align:center;
-  box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
 #currentDate{
   font-size:13px;
-  opacity:.9;
 }
 
 #currentTime{
   font-size:22px;
   font-weight:800;
-  margin-top:2px;
 }
 
-
-/* ================= ALERT ================= */
+/* ALERT */
 
 .alert-box{
   max-width:1100px;
@@ -321,18 +308,12 @@ button{
   cursor:pointer;
 }
 
-.enable-btn:disabled{
-  opacity:.7;
-  cursor:not-allowed;
-}
-
 #notificationStatus{
   margin-top:10px;
   font-weight:600;
 }
 
-
-/* ================= LATEST ================= */
+/* LATEST */
 
 .latest{
   max-width:1100px;
@@ -387,7 +368,7 @@ button{
 }
 
 .notification-list{
-  max-height:430px;
+  max-height:500px;
   overflow:auto;
 }
 
@@ -397,10 +378,6 @@ button{
   display:flex;
   gap:10px;
   align-items:flex-start;
-}
-
-.notification:last-child{
-  border-bottom:0;
 }
 
 .ntype{
@@ -414,7 +391,7 @@ button{
 
 .nbody strong{
   display:block;
-  margin-bottom:2px;
+  margin-bottom:3px;
 }
 
 .nbody small{
@@ -435,7 +412,7 @@ button{
 .job-link{
   display:inline-block;
   margin-top:8px;
-  padding:6px 10px;
+  padding:7px 11px;
   border-radius:8px;
   background:#0b7a3b;
   color:white;
@@ -443,8 +420,7 @@ button{
   font-weight:700;
 }
 
-
-/* ================= CONTENT ================= */
+/* CONTENT */
 
 .container{
   max-width:1100px;
@@ -472,8 +448,7 @@ button{
   margin-bottom:15px;
 }
 
-
-/* ================= SEARCH ================= */
+/* SEARCH */
 
 .search{
   width:100%;
@@ -489,8 +464,7 @@ button{
   border-color:#0b7a3b;
 }
 
-
-/* ================= SERVICE CARDS ================= */
+/* CARDS */
 
 .cards{
   display:grid;
@@ -503,12 +477,6 @@ button{
   border-radius:14px;
   padding:14px;
   background:#fbfdfc;
-  transition:.2s;
-}
-
-.service:hover{
-  border-color:#0b7a3b;
-  box-shadow:0 5px 15px rgba(0,0,0,.07);
 }
 
 .service-icon{
@@ -538,8 +506,7 @@ button{
   font-weight:700;
 }
 
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
   background:#122019;
@@ -553,8 +520,7 @@ footer strong{
   color:white;
 }
 
-
-/* ================= TOP BUTTON ================= */
+/* TOP */
 
 .top{
   position:fixed;
@@ -572,8 +538,7 @@ footer strong{
   z-index:999;
 }
 
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -609,10 +574,6 @@ footer strong{
     padding:15px;
   }
 
-  .help-inner h2{
-    font-size:19px;
-  }
-
   .help-buttons{
     flex-direction:column;
   }
@@ -627,31 +588,22 @@ footer strong{
 
 </head>
 
-
 <body>
-
 
 <header class="header">
 
   <div class="header-inner">
 
     <div class="logo">
-
       JobMitra AI
-
-      <small>
-        JOBS • STUDENTS • FARMER • DIGITAL SEVA
-      </small>
-
+      <small>JOBS • STUDENTS • FARMER • DIGITAL SEVA</small>
     </div>
 
     <button
       id="topAlertButton"
       class="notify-btn"
       type="button">
-
       🔔 Alerts
-
     </button>
 
   </div>
@@ -660,7 +612,6 @@ footer strong{
 
 
 <main>
-
 
 <section class="hero">
 
@@ -680,56 +631,31 @@ footer strong{
 <section class="main-grid">
 
   <a class="main-card students" href="#students">
-
     <div class="icon">🎓</div>
     <div>Students</div>
-
-    <small>
-      Education & Scholarship
-    </small>
-
+    <small>Education & Scholarship</small>
   </a>
-
 
   <a class="main-card jobs" href="#jobs">
-
     <div class="icon">💼</div>
     <div>Jobs</div>
-
-    <small>
-      Government Jobs
-    </small>
-
+    <small>Government Jobs</small>
   </a>
-
 
   <a class="main-card farmer" href="#farmer">
-
     <div class="icon">🌾</div>
     <div>Farmer</div>
-
-    <small>
-      Farmer Services
-    </small>
-
+    <small>Farmer Services</small>
   </a>
 
-
   <a class="main-card digital" href="#digital">
-
     <div class="icon">🏛️</div>
     <div>Digital Seva</div>
-
-    <small>
-      Government Services
-    </small>
-
+    <small>Government Services</small>
   </a>
 
 </section>
 
-
-<!-- ================= 99 HELP ================= -->
 
 <section class="help-box">
 
@@ -752,7 +678,6 @@ footer strong{
 
       💼 Job Apply • 🎓 Scholarship • 📄 Online Form
       <br>
-
       📝 Registration • 📑 Document Related Online Help
 
       <br><br>
@@ -764,11 +689,11 @@ footer strong{
       <br>
 
       <small>
-        ସରକାରୀ/ଅନ୍ୟ official fee ଥିଲେ ସେହି fee ଅଲଗା ଦେବାକୁ ପଡିବ।
+        ସରକାରୀ/ଅନ୍ୟ official fee ଥିଲେ
+        ସେହି fee ଅଲଗା ଦେବାକୁ ପଡିବ।
       </small>
 
     </div>
-
 
     <div class="help-buttons">
 
@@ -777,49 +702,36 @@ footer strong{
         href="https://wa.me/918249584734?text=Hello%20JobMitra%20AI%2C%20mu%20online%20help%20chahunchi."
         target="_blank"
         rel="noopener">
-
         💬 WhatsApp DM
-
       </a>
-
 
       <a
         class="help-btn complaint-btn"
         href="https://wa.me/918249584734?text=Hello%20JobMitra%20AI%2C%20mu%20Complaint%20/%20Help%20pain%20message%20karuchi."
         target="_blank"
         rel="noopener">
-
         📝 Complaint / Help
-
       </a>
-
 
       <a
         class="help-btn instagram-btn"
         href="https://www.instagram.com/babulunaikofficial/"
         target="_blank"
         rel="noopener">
-
         📸 Follow Instagram
-
       </a>
 
     </div>
 
-
     <p class="help-note">
-
       ⚠️ ଦୟାକରି OTP, ATM PIN, UPI PIN କିମ୍ବା password
       କାହାକୁ ଦିଅନ୍ତୁ ନାହିଁ।
-
     </p>
 
   </div>
 
 </section>
 
-
-<!-- ================= DATE & TIME ================= -->
 
 <section class="datetime-box">
 
@@ -838,15 +750,11 @@ footer strong{
 </section>
 
 
-<!-- ================= NOTIFICATION ================= -->
-
 <div class="alert-box" id="alerts">
 
   <div class="alert-inner">
 
-    <h3>
-      🔔 Get New Job Alerts
-    </h3>
+    <h3>🔔 Get New Job Alerts</h3>
 
     <p>
       ନୂଆ Government Job ଆସିଲେ notification ପାଆନ୍ତୁ।
@@ -856,9 +764,7 @@ footer strong{
       id="enableNotifications"
       class="enable-btn"
       type="button">
-
       🔔 Enable Notifications
-
     </button>
 
     <p id="notificationStatus"></p>
@@ -867,8 +773,6 @@ footer strong{
 
 </div>
 
-
-<!-- ================= LATEST JOBS ================= -->
 
 <section class="latest" id="latest">
 
@@ -881,11 +785,8 @@ footer strong{
       </div>
 
       <div class="live">
-
         <span class="live-dot"></span>
-
         LIVE
-
       </div>
 
     </div>
@@ -896,9 +797,7 @@ footer strong{
 
       <div class="notification">
 
-        <div class="ntype">
-          ⏳
-        </div>
+        <div class="ntype">⏳</div>
 
         <div class="nbody">
 
@@ -924,13 +823,9 @@ footer strong{
 <div class="container">
 
 
-<!-- ================= STUDENTS ================= -->
-
 <section class="section" id="students">
 
-  <h2 class="section-title">
-    🎓 Students
-  </h2>
+  <h2 class="section-title">🎓 Students</h2>
 
   <p class="section-sub">
     Scholarship, Admit Card, Result, Syllabus and education services.
@@ -955,7 +850,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🎓</div>
       <h3>Odisha Scholarship Portal</h3>
@@ -967,7 +861,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🎫</div>
@@ -981,7 +874,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🏆</div>
       <h3>Result</h3>
@@ -993,7 +885,6 @@ footer strong{
         Official Portal →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">📖</div>
@@ -1007,7 +898,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🏫</div>
       <h3>School & Mass Education</h3>
@@ -1020,7 +910,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">📚</div>
       <h3>AICTE</h3>
@@ -1032,7 +921,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🪪</div>
@@ -1051,13 +939,9 @@ footer strong{
 </section>
 
 
-<!-- ================= JOBS ================= -->
-
 <section class="section" id="jobs">
 
-  <h2 class="section-title">
-    💼 Jobs
-  </h2>
+  <h2 class="section-title">💼 Jobs</h2>
 
   <p class="section-sub">
     Government jobs, recruitment and official application portals.
@@ -1082,7 +966,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">📝</div>
       <h3>OSSC</h3>
@@ -1094,7 +977,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🏛️</div>
@@ -1108,7 +990,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">👮</div>
       <h3>Odisha Police</h3>
@@ -1120,7 +1001,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🚆</div>
@@ -1134,7 +1014,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">📋</div>
       <h3>SSC</h3>
@@ -1147,7 +1026,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">👨‍💼</div>
       <h3>National Career Service</h3>
@@ -1159,7 +1037,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🏦</div>
@@ -1178,13 +1055,9 @@ footer strong{
 </section>
 
 
-<!-- ================= FARMER ================= -->
-
 <section class="section" id="farmer">
 
-  <h2 class="section-title">
-    🌾 Farmer
-  </h2>
+  <h2 class="section-title">🌾 Farmer</h2>
 
   <p class="section-sub">
     Agriculture schemes and official farmer services.
@@ -1209,7 +1082,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">💰</div>
       <h3>PM-KISAN</h3>
@@ -1221,7 +1093,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🌱</div>
@@ -1235,7 +1106,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">👨‍🌾</div>
       <h3>Krushak Odisha</h3>
@@ -1248,7 +1118,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🌾</div>
       <h3>Agriculture Department</h3>
@@ -1260,7 +1129,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🐄</div>
@@ -1279,13 +1147,9 @@ footer strong{
 </section>
 
 
-<!-- ================= DIGITAL SEVA ================= -->
-
 <section class="section" id="digital">
 
-  <h2 class="section-title">
-    🏛️ Digital Seva
-  </h2>
+  <h2 class="section-title">🏛️ Digital Seva</h2>
 
   <p class="section-sub">
     Important government online services.
@@ -1310,7 +1174,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">💳</div>
       <h3>PAN / Income Tax</h3>
@@ -1322,7 +1185,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🗳️</div>
@@ -1336,7 +1198,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🛂</div>
       <h3>Passport Seva</h3>
@@ -1348,7 +1209,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🚗</div>
@@ -1362,7 +1222,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">📜</div>
       <h3>Odisha e-District</h3>
@@ -1374,7 +1233,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🏠</div>
@@ -1388,7 +1246,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🍚</div>
       <h3>Food & Civil Supplies</h3>
@@ -1400,7 +1257,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🏛️</div>
@@ -1414,7 +1270,6 @@ footer strong{
       </a>
     </div>
 
-
     <div class="service">
       <div class="service-icon">🔐</div>
       <h3>DigiLocker</h3>
@@ -1426,7 +1281,6 @@ footer strong{
         Official Website →
       </a>
     </div>
-
 
     <div class="service">
       <div class="service-icon">🇮🇳</div>
@@ -1443,7 +1297,6 @@ footer strong{
   </div>
 
 </section>
-
 
 </div>
 
@@ -1477,18 +1330,15 @@ Created by Babulu Naik
   class="top"
   id="topBtn"
   type="button">
-
   ↑
-
 </button>
 
 
 <script>
 
-
 /* =====================================================
-   SUPABASE + VAPID
-   ===================================================== */
+   CONFIG
+===================================================== */
 
 const SUPABASE_URL =
   "https://hsexaatuacdnumxnkehx.supabase.co";
@@ -1502,7 +1352,7 @@ const VAPID_PUBLIC_KEY =
 
 /* =====================================================
    ESCAPE HTML
-   ===================================================== */
+===================================================== */
 
 function escapeHtml(value){
 
@@ -1517,46 +1367,208 @@ function escapeHtml(value){
 
 
 /* =====================================================
-   LOAD JOBS
-   ===================================================== */
+   JOB FILTER
+   STRICTLY REMOVE NCS SERVICES
+===================================================== */
+
+function isRealJob(job){
+
+  const title =
+    String(job.title || "").toLowerCase();
+
+  const description =
+    String(job.description || "").toLowerCase();
+
+  const category =
+    String(job.category || "").toLowerCase();
+
+  const url =
+    String(job.apply_url || "").toLowerCase();
+
+  const text =
+    title + " " +
+    description + " " +
+    category + " " +
+    url;
+
+
+  /* -----------------------------------------------
+     REMOVE ALL NCS CONTENT
+  ------------------------------------------------ */
+
+  const ncsWords = [
+
+    "national career service",
+    "ncs.gov.in",
+    "ncs portal",
+    "ncs service",
+    "ncs services",
+    "career center",
+    "career centre",
+    "find career center",
+    "find career centre",
+    "find counsellor",
+    "career counsellor",
+    "career counseling",
+    "career guidance",
+    "employment exchange",
+    "employment exchanges",
+    "model career center",
+    "model career centre",
+    "job fair",
+    "job fairs",
+    "job fair and events",
+    "job fairs and events",
+    "career tools",
+    "career tools & learning",
+    "find candidates",
+    "e-migrate",
+    "international jobs through e-migrate",
+    "recruitment agencies/international employer",
+    "jobs for ex-servicemen",
+    "jobs for differently abled"
+
+  ];
+
+
+  for(const word of ncsWords){
+
+    if(text.includes(word)){
+
+      return false;
+
+    }
+
+  }
+
+
+  /* -----------------------------------------------
+     REMOVE GENERIC SERVICE PAGES
+  ------------------------------------------------ */
+
+  const genericWords = [
+
+    "career center",
+    "career centre",
+    "counsellor",
+    "employment exchange",
+    "job fair",
+    "career tools",
+    "find candidates",
+    "e-migrate",
+    "ex-servicemen",
+    "differently abled"
+
+  ];
+
+
+  for(const word of genericWords){
+
+    if(title.includes(word)){
+
+      return false;
+
+    }
+
+  }
+
+
+  /* -----------------------------------------------
+     REQUIRE JOB / RECRUITMENT LANGUAGE
+  ------------------------------------------------ */
+
+  const jobWords = [
+
+    "recruitment",
+    "recruit",
+    "vacancy",
+    "vacancies",
+    "appointment",
+    "notification",
+    "advertisement",
+    "selection",
+    "post",
+    "posts",
+    "government job",
+    "job notification",
+    "online application",
+    "apply online",
+    "walk in interview",
+    "engagement",
+    "hiring"
+
+  ];
+
+
+  const hasJobWord =
+    jobWords.some(word =>
+      text.includes(word)
+    );
+
+
+  if(!hasJobWord){
+
+    return false;
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =====================================================
+   LOAD JOBS FROM SUPABASE
+===================================================== */
 
 async function loadJobs(){
 
   const list =
-    document.getElementById("notificationList");
+    document.getElementById(
+      "notificationList"
+    );
 
   if(!list) return;
+
 
   try{
 
     const response =
       await fetch(
+
         SUPABASE_URL +
         "/rest/v1/job_updates" +
         "?select=*" +
         "&order=published_at.desc" +
-        "&limit=50",
+        "&limit=100",
+
         {
+
           method:"GET",
 
           headers:{
-            "apikey":SUPABASE_KEY,
+
+            "apikey":
+              SUPABASE_KEY,
 
             "Authorization":
               "Bearer " + SUPABASE_KEY
+
           },
 
           cache:"no-store"
+
         }
+
       );
 
 
     if(!response.ok){
 
-      const errorText =
-        await response.text();
-
-      throw new Error(errorText);
+      throw new Error(
+        await response.text()
+      );
 
     }
 
@@ -1565,143 +1577,24 @@ async function loadJobs(){
       await response.json();
 
 
-    /* =================================================
-       NCS UNWANTED SERVICE FILTER
-       ================================================= */
-
     const filteredJobs =
-      jobs.filter(job => {
-
-        const title =
-          String(job.title || "")
-            .toLowerCase();
-
-        const description =
-          String(job.description || "")
-            .toLowerCase();
-
-        const category =
-          String(job.category || "")
-            .toLowerCase();
-
-        const url =
-          String(job.apply_url || "")
-            .toLowerCase();
-
-        const text =
-          title + " " +
-          description + " " +
-          category + " " +
-          url;
-
-
-        const unwanted = [
-
-          "career center",
-
-          "find career center",
-
-          "find counsellor",
-
-          "career counsellor",
-
-          "employment exchange",
-
-          "list of employment exchange",
-
-          "model career center",
-
-          "list of model career center",
-
-          "job fairs",
-
-          "job fair",
-
-          "job fairs and events",
-
-          "participate in a job fairs",
-
-          "create job fairs",
-
-          "career tools",
-
-          "career tools & learning",
-
-          "find candidates",
-
-          "international jobs through e-migrate",
-
-          "e-migrate",
-
-          "recruitment agencies/international employer",
-
-          "jobs for ex-servicemen",
-
-          "jobs for differently abled"
-
-        ];
-
-
-        for(const word of unwanted){
-
-          if(text.includes(word)){
-
-            return false;
-
-          }
-
-        }
-
-
-        /* Remove NCS generic service pages */
-
-        if(
-
-          (
-            title.includes(
-              "directorate general of employment"
-            )
-
-            ||
-
-            title.includes(
-              "national career service"
-            )
-          )
-
-          &&
-
-          !(
-            title.includes("job") ||
-            title.includes("recruitment") ||
-            title.includes("vacancy") ||
-            title.includes("government")
-          )
-
-        ){
-
-          return false;
-
-        }
-
-
-        return true;
-
-      });
+      Array.isArray(jobs)
+        ? jobs.filter(isRealJob)
+        : [];
 
 
     console.log(
-      "Total jobs:",
-      jobs.length,
-      "| Showing:",
+      "Total Supabase records:",
+      jobs.length
+    );
+
+    console.log(
+      "Genuine jobs shown:",
       filteredJobs.length
     );
 
 
-    if(
-      !Array.isArray(filteredJobs) ||
-      filteredJobs.length === 0
-    ){
+    if(filteredJobs.length === 0){
 
       list.innerHTML = `
 
@@ -1714,11 +1607,11 @@ async function loadJobs(){
           <div class="nbody">
 
             <strong>
-              No job updates yet
+              No genuine Government Job updates
             </strong>
 
             <small>
-              New Government Job updates will appear here automatically.
+              New recruitment notifications will appear here automatically.
             </small>
 
           </div>
@@ -1812,12 +1705,13 @@ async function loadJobs(){
         })
         .join("");
 
+
   }
 
   catch(error){
 
     console.error(
-      "❌ Job update error:",
+      "Job loading error:",
       error
     );
 
@@ -1863,13 +1757,14 @@ setInterval(
 
 
 /* =====================================================
-   DATE & TIME
-   ===================================================== */
+   DATE TIME
+===================================================== */
 
 function updateDateTime(){
 
   const now =
     new Date();
+
 
   const date =
     now.toLocaleDateString(
@@ -1881,6 +1776,7 @@ function updateDateTime(){
         day:"numeric"
       }
     );
+
 
   const time =
     now.toLocaleTimeString(
@@ -1899,6 +1795,7 @@ function updateDateTime(){
       "currentDate"
     );
 
+
   const timeElement =
     document.getElementById(
       "currentTime"
@@ -1906,20 +1803,25 @@ function updateDateTime(){
 
 
   if(dateElement){
+
     dateElement.textContent =
       "📅 " + date;
+
   }
 
 
   if(timeElement){
+
     timeElement.textContent =
       "🕐 " + time;
+
   }
 
 }
 
 
 updateDateTime();
+
 
 setInterval(
   updateDateTime,
@@ -1929,7 +1831,7 @@ setInterval(
 
 /* =====================================================
    SEARCH
-   ===================================================== */
+===================================================== */
 
 function filterCards(input,id){
 
@@ -1964,10 +1866,12 @@ function filterCards(input,id){
 
 /* =====================================================
    TOP BUTTON
-   ===================================================== */
+===================================================== */
 
 const topBtn =
-  document.getElementById("topBtn");
+  document.getElementById(
+    "topBtn"
+  );
 
 
 if(topBtn){
@@ -1990,8 +1894,11 @@ if(topBtn){
     function(){
 
       window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
       });
 
     }
@@ -2002,7 +1909,7 @@ if(topBtn){
 
 /* =====================================================
    BASE64
-   ===================================================== */
+===================================================== */
 
 function urlBase64ToUint8Array(base64String){
 
@@ -2037,7 +1944,7 @@ function urlBase64ToUint8Array(base64String){
 
 /* =====================================================
    ENABLE NOTIFICATIONS
-   ===================================================== */
+===================================================== */
 
 async function enableNotifications(){
 
@@ -2045,6 +1952,7 @@ async function enableNotifications(){
     document.getElementById(
       "enableNotifications"
     );
+
 
   const status =
     document.getElementById(
@@ -2054,10 +1962,10 @@ async function enableNotifications(){
 
   try{
 
-    if(!window.isSecureContext){
+    if(location.protocol !== "https:"){
 
       throw new Error(
-        "Notifications require HTTPS."
+        "Please open JobMitra AI from GitHub Pages HTTPS."
       );
 
     }
@@ -2066,7 +1974,7 @@ async function enableNotifications(){
     if(!("Notification" in window)){
 
       throw new Error(
-        "This browser does not support notifications."
+        "Notifications are not supported in this browser."
       );
 
     }
@@ -2111,32 +2019,15 @@ async function enableNotifications(){
 
     if(permission !== "granted"){
 
-      if(status){
-
-        status.textContent =
-          "❌ Notification permission denied.";
-
-      }
-
-
-      if(button){
-
-        button.disabled = false;
-
-      }
-
-      return;
+      throw new Error(
+        "Notification permission denied."
+      );
 
     }
 
 
     const registration =
-      await navigator.serviceWorker.register(
-        "./sw.js"
-      );
-
-
-    await navigator.serviceWorker.ready;
+      await navigator.serviceWorker.ready;
 
 
     let subscription =
@@ -2209,12 +2100,9 @@ async function enableNotifications(){
 
     if(!response.ok){
 
-      const errorText =
-        await response.text();
-
       throw new Error(
         "Supabase error: " +
-        errorText
+        await response.text()
       );
 
     }
@@ -2242,7 +2130,7 @@ async function enableNotifications(){
   catch(error){
 
     console.error(
-      "❌ Push notification error:",
+      "Push notification error:",
       error
     );
 
@@ -2266,10 +2154,6 @@ async function enableNotifications(){
 }
 
 
-/* =====================================================
-   NOTIFICATION BUTTON
-   ===================================================== */
-
 const enableButton =
   document.getElementById(
     "enableNotifications"
@@ -2287,8 +2171,8 @@ if(enableButton){
 
 
 /* =====================================================
-   TOP ALERT BUTTON
-   ===================================================== */
+   ALERT BUTTON
+===================================================== */
 
 const topAlertButton =
   document.getElementById(
@@ -2328,9 +2212,13 @@ if(topAlertButton){
 
 /* =====================================================
    SERVICE WORKER
-   ===================================================== */
+   REGISTER ONLY ON HTTPS
+===================================================== */
 
-if("serviceWorker" in navigator){
+if(
+  "serviceWorker" in navigator &&
+  location.protocol === "https:"
+){
 
   window.addEventListener(
     "load",
@@ -2338,12 +2226,18 @@ if("serviceWorker" in navigator){
 
       try{
 
-        await navigator.serviceWorker.register(
-          "./sw.js"
-        );
+        const registration =
+          await navigator.serviceWorker.register(
+            "./sw.js",
+            {
+              scope:"./"
+            }
+          );
+
 
         console.log(
-          "✅ JobMitra AI Service Worker registered."
+          "✅ JobMitra AI Service Worker registered:",
+          registration.scope
         );
 
       }
