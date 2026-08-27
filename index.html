@@ -1,2089 +1,2523 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="or">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#087f3d">
-<meta name="description" content="JobMitra AI - Jobs, Students, Farmer and Digital Seva">
-
-<link rel="manifest" href="./manifest.json">
-<link rel="icon" href="./icon-192.png">
-
-<title>JobMitra AI | Jobs • Students • Farmer • Digital Seva</title>
+<title>ExamSathi Odisha | Prepare Smart. Crack Odisha Govt Exams.</title>
+<meta name="description" content="ExamSathi Odisha - Odisha Government Jobs, Entrance Exams, Teacher Exams, PYQ, Mock Tests, Study Materials and Exam Updates.">
+<meta name="theme-color" content="#071a3d">
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,"Noto Sans Oriya",sans-serif;
-  background:
-    linear-gradient(135deg,#f3fff7,#f5f8ff 45%,#fff8ef);
-  color:#17231b;
-  line-height:1.5;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button,input{
-  font-family:inherit;
-}
-
-.header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:
-    linear-gradient(135deg,#006b32,#08a34e,#087f8c);
-  color:white;
-  box-shadow:0 4px 20px rgba(0,0,0,.18);
-}
-
-.header-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:12px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:900;
-}
-
-.logo small{
-  display:block;
-  font-size:9px;
-  letter-spacing:1px;
-  opacity:.9;
-}
-
-.alert-top{
-  border:0;
-  background:white;
-  color:#087f3d;
-  border-radius:25px;
-  padding:10px 15px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.hero{
-  max-width:1180px;
-  margin:auto;
-  padding:18px 16px 8px;
-}
-
-.hero-box{
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(135deg,#006b32,#0aa653,#087f8c,#4a2ca3);
-  color:white;
-  border-radius:26px;
-  padding:32px 23px;
-  box-shadow:0 12px 35px rgba(0,90,70,.22);
-}
-
-.hero-box:before,
-.hero-box:after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  background:rgba(255,255,255,.10);
-}
-
-.hero-box:before{
-  width:210px;
-  height:210px;
-  right:-55px;
-  top:-80px;
-}
-
-.hero-box:after{
-  width:130px;
-  height:130px;
-  right:120px;
-  bottom:-85px;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-
-.hero h1{
-  font-size:36px;
-  font-weight:900;
-}
-
-.hero p{
-  font-size:15px;
-  margin-top:3px;
-  opacity:.96;
-}
-
-.hero-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:15px;
-}
-
-.hero-badge{
-  background:rgba(255,255,255,.16);
-  border:1px solid rgba(255,255,255,.25);
-  padding:7px 11px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:800;
-}
-
-/* MAIN FOUR BOXES */
-
-.main-grid{
-  max-width:1180px;
-  margin:15px auto;
-  padding:0 16px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:13px;
-}
-
-.main-card{
-  min-height:155px;
-  border-radius:22px;
-  padding:18px 12px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  font-weight:900;
-  box-shadow:0 9px 24px rgba(0,0,0,.14);
-  transition:.2s;
-  position:relative;
-  overflow:hidden;
-}
-
-.main-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 14px 30px rgba(0,0,0,.18);
-}
-
-.main-card:after{
-  content:"";
-  position:absolute;
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  background:rgba(255,255,255,.12);
-  right:-35px;
-  top:-35px;
-}
-
-.main-card .icon{
-  font-size:42px;
-  margin-bottom:5px;
-}
-
-.main-card small{
-  font-size:11px;
-  opacity:.92;
-}
-
-.students{
-  background:linear-gradient(135deg,#145be9,#6538f5);
-}
-
-.jobs{
-  background:linear-gradient(135deg,#e65100,#ffad18);
-}
-
-.farmer{
-  background:linear-gradient(135deg,#087f3d,#57c653);
-}
-
-.digital{
-  background:linear-gradient(135deg,#6a1b9a,#bd4ddd);
-}
-
-/* QUICK */
-
-.quick{
-  max-width:1180px;
-  margin:15px auto;
-  padding:0 16px;
-}
-
-.quick-box{
-  background:white;
-  border-radius:20px;
-  padding:15px;
-  box-shadow:0 5px 18px rgba(0,0,0,.07);
-  border:1px solid #e1ebe4;
-}
-
-.quick-title{
-  color:#087f3d;
-  font-size:17px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.quick-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:8px;
-}
-
-.quick-btn{
-  background:#effaf3;
-  border:1px solid #d5e9dc;
-  border-radius:11px;
-  padding:10px 5px;
-  text-align:center;
-  font-size:11px;
-  font-weight:900;
-  color:#166534;
-  transition:.2s;
-}
-
-.quick-btn:hover{
-  background:#087f3d;
-  color:white;
-}
-
-/* HELP */
-
-.help{
-  max-width:1180px;
-  margin:18px auto;
-  padding:0 16px;
-}
-
-.help-box{
-  background:linear-gradient(135deg,#fff7df,#ffffff,#fff2df);
-  border:2px solid #f2bd3b;
-  border-radius:23px;
-  padding:21px 17px;
-  text-align:center;
-  box-shadow:0 7px 22px rgba(240,180,40,.14);
-}
-
-.help-badge{
-  display:inline-block;
-  background:#e65100;
-  color:white;
-  padding:6px 13px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:900;
-}
-
-.help h2{
-  margin-top:8px;
-  color:#a45a00;
-  font-size:22px;
-}
-
-.help p{
-  font-size:13px;
-  color:#59645c;
-  margin-top:6px;
-}
-
-.help-price{
-  display:inline-block;
-  margin:12px 0 5px;
-  font-size:21px;
-  font-weight:900;
-  color:#d84315;
-}
-
-.help-buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:10px;
-}
-
-.help-btn{
-  padding:10px 15px;
-  border-radius:10px;
-  color:white;
-  font-size:12px;
-  font-weight:900;
-}
-
-.whatsapp{background:#16a34a}
-.instagram{background:#7c3aed}
-.complaint{background:#c62828}
-
-/* DATE TIME */
-
-.datetime{
-  max-width:1180px;
-  margin:15px auto;
-  padding:0 16px;
-}
-
-.datetime-box{
-  background:
-    linear-gradient(135deg,#101c16,#173326,#102b38);
-  color:white;
-  border-radius:18px;
-  padding:14px;
-  text-align:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.14);
-}
-
-#currentDate{
-  font-size:13px;
-  opacity:.9;
-}
-
-#currentTime{
-  font-size:23px;
-  font-weight:900;
-}
-
-/* LIVE NOTIFICATION */
-
-.latest{
-  max-width:1180px;
-  margin:18px auto;
-  padding:0 16px;
-}
-
-.latest-box{
-  background:white;
-  border-radius:21px;
-  overflow:hidden;
-  border:1px solid #e0e9e3;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
-
-.latest-head{
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:linear-gradient(90deg,#fff0f0,#fff7f7,#fff);
-  border-bottom:1px solid #ffdcdc;
-}
-
-.latest-title{
-  color:#c62828;
-  font-size:20px;
-  font-weight:900;
-}
-
-.live{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  color:#c62828;
-  font-size:11px;
-  font-weight:900;
-}
-
-.live-dot{
-  width:9px;
-  height:9px;
-  background:#e53935;
-  border-radius:50%;
-  animation:blink 1s infinite;
-}
-
-@keyframes blink{
-  50%{opacity:.2}
-}
-
-.notification-list{
-  max-height:430px;
-  overflow:auto;
-}
-
-.notification{
-  padding:14px;
-  border-bottom:1px solid #edf1ee;
-  display:flex;
-  gap:10px;
-}
-
-.ntype{
-  font-size:22px;
-  min-width:32px;
-}
-
-.nbody{
-  flex:1;
-}
-
-.nbody strong{
-  display:block;
-  font-size:14px;
-}
-
-.nbody p{
-  font-size:12px;
-  color:#66736a;
-  margin-top:3px;
-}
-
-.nbadge{
-  display:inline-block;
-  margin-top:6px;
-  padding:3px 8px;
-  border-radius:12px;
-  background:#e9f7ee;
-  color:#176b35;
-  font-size:10px;
-  font-weight:900;
-}
-
-.job-link{
-  display:inline-block;
-  margin-top:8px;
-  padding:7px 11px;
-  border-radius:8px;
-  background:#087f3d;
-  color:white;
-  font-size:11px;
-  font-weight:900;
-}
-
-/* CONTENT */
-
-.container{
-  max-width:1180px;
-  margin:auto;
-  padding:0 16px 45px;
-}
-
-.section{
-  margin-top:20px;
-  background:white;
-  border-radius:21px;
-  padding:19px;
-  box-shadow:0 5px 18px rgba(0,0,0,.07);
-  border:1px solid #e0e9e3;
-  scroll-margin-top:85px;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:5px;
-}
-
-.section-title{
-  font-size:25px;
-  font-weight:900;
-}
-
-.section-sub{
-  font-size:13px;
-  color:#66736a;
-  margin:3px 0 15px;
-}
-
-.section-tag{
-  font-size:10px;
-  padding:5px 9px;
-  border-radius:10px;
-  background:#eaf7ee;
-  color:#087f3d;
-  font-weight:900;
-}
-
-.search{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #d7dfda;
-  border-radius:12px;
-  outline:none;
-  margin-bottom:14px;
-  font-size:14px;
-}
-
-.search:focus{
-  border-color:#087f3d;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:11px;
-}
-
-.service{
-  background:linear-gradient(135deg,#ffffff,#f8fcfa);
-  border:1px solid #e0e8e3;
-  border-radius:16px;
-  padding:14px;
-  transition:.2s;
-}
-
-.service:hover{
-  transform:translateY(-3px);
-  border-color:#0b8c46;
-  box-shadow:0 7px 16px rgba(0,0,0,.08);
-}
-
-.service-icon{
-  font-size:29px;
-  margin-bottom:5px;
-}
-
-.service h3{
-  font-size:15px;
-  margin-bottom:3px;
-}
-
-.service p{
-  font-size:11px;
-  color:#66736a;
-  min-height:35px;
-}
-
-.open-btn{
-  display:inline-block;
-  margin-top:8px;
-  background:#087f3d;
-  color:white;
-  padding:7px 10px;
-  border-radius:8px;
-  font-size:11px;
-  font-weight:900;
-}
-
-.open-btn:hover{
-  background:#055b2c;
-}
-
-/* FOOTER */
-
-footer{
-  margin-top:25px;
-  background:
-    linear-gradient(135deg,#0e1e17,#102b22,#101b2c);
-  color:#dce7df;
-  padding:28px 16px;
-  text-align:center;
-}
-
-footer strong{
-  color:white;
-  font-size:19px;
-}
-
-.created{
-  margin-top:10px;
-  color:#55d27e;
-  font-weight:900;
-}
-
-.top{
-  position:fixed;
-  right:15px;
-  bottom:17px;
-  width:45px;
-  height:45px;
-  border:0;
-  border-radius:50%;
-  background:#087f3d;
-  color:white;
-  font-size:20px;
-  font-weight:bold;
-  display:none;
-  cursor:pointer;
-  z-index:999;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-  .main-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .quick-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .cards{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:520px){
-
-  .logo{
-    font-size:20px;
-  }
-
-  .hero h1{
-    font-size:27px;
-  }
-
-  .hero-box{
-    padding:24px 17px;
-  }
-
-  .main-card{
-    min-height:130px;
-  }
-
-  .main-card .icon{
-    font-size:35px;
-  }
-
-  .quick-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .section{
-    padding:15px;
-  }
-
-  .latest-title{
-    font-size:17px;
-  }
-
-  .help-buttons{
-    flex-direction:column;
-  }
-
-  .help-btn{
-    width:100%;
-  }
-}
-
-@media(max-width:360px){
-
-  .main-grid{
-    gap:8px;
-  }
-
-  .main-card{
-    padding:12px 5px;
-  }
-
-  .main-card .icon{
-    font-size:30px;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans Oriya",sans-serif;background:#f5f7fb;color:#14213d;line-height:1.6}
+header{position:sticky;top:0;z-index:1000;background:#071a3d;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.2)}
+.navbar{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;white-space:nowrap}
+.logoIcon{width:42px;height:42px;border-radius:12px;background:#ffd54a;color:#071a3d;display:flex;align-items:center;justify-content:center;font-size:22px}
+.navLinks{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.navLinks button{background:transparent;border:0;color:#fff;padding:8px 9px;cursor:pointer;border-radius:8px;font-size:13px}
+.navLinks button:hover{background:rgba(255,255,255,.12)}
+.langBtn{border:1px solid #ffd54a;background:#ffd54a;color:#071a3d;font-weight:700;padding:8px 11px;border-radius:9px;cursor:pointer}
+.hero{background:radial-gradient(circle at top right,rgba(255,213,74,.18),transparent 35%),linear-gradient(135deg,#071a3d,#0c2b61);color:#fff;padding:62px 18px 52px}
+.heroInner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr .8fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:rgba(255,213,74,.15);border:1px solid rgba(255,213,74,.5);color:#ffd54a;padding:7px 12px;border-radius:30px;font-size:13px;margin-bottom:15px}
+.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.1;margin-bottom:15px}
+.hero h1 span{color:#ffd54a}
+.hero p{color:#dbe5f5;font-size:17px;max-width:680px}
+.heroButtons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:0;padding:11px 17px;border-radius:11px;font-weight:700;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btnGold{background:#ffd54a;color:#071a3d}
+.btnWhite{background:#fff;color:#071a3d}
+.heroCard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:25px;backdrop-filter:blur(10px)}
+.heroCard h3{color:#ffd54a;margin-bottom:12px}
+.stat{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.stat:last-child{border-bottom:0}
+.container{max-width:1200px;margin:auto;padding:52px 18px}
+.sectionHead{text-align:center;margin-bottom:28px}
+.sectionHead h2{font-size:30px;color:#071a3d}
+.sectionHead p{color:#65718a;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.card{background:#fff;border-radius:17px;padding:20px;border:1px solid #e4e9f2;box-shadow:0 7px 22px rgba(8,29,61,.06);transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(8,29,61,.12)}
+.cardIcon{font-size:30px;margin-bottom:10px}
+.card h3{margin-bottom:6px;color:#071a3d}
+.card p{color:#68748b;font-size:14px}
+.card button{margin-top:13px}
+.searchBox{max-width:800px;margin:0 auto 24px;display:flex;gap:8px}
+.searchBox input{flex:1;padding:14px 16px;border:1px solid #d9e0ec;border-radius:12px;outline:none;font-size:15px}
+.jobFilters{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:25px}
+.filter{border:1px solid #d9e1ed;background:#fff;padding:9px 13px;border-radius:20px;cursor:pointer}
+.filter.active{background:#071a3d;color:#fff}
+.jobGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.jobCard{background:#fff;border-radius:16px;border:1px solid #e1e6ef;padding:18px}
+.jobTag{display:inline-block;background:#eef4ff;color:#0b4ba5;border-radius:20px;padding:5px 9px;font-size:12px;margin-bottom:10px}
+.quiz{max-width:800px;margin:auto}
+.mockCard{max-width:850px;margin:auto}
+.mockTop{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}
+.progress{height:9px;background:#e6ebf3;border-radius:10px;overflow:hidden;margin-bottom:22px}
+.progressBar{width:0%;height:100%;background:#ffd54a;transition:.3s}
+.question{font-size:20px;font-weight:700;margin-bottom:18px}
+.option{display:block;width:100%;text-align:left;background:#f8faff;border:1px solid #dce4f1;padding:13px;border-radius:10px;margin:9px 0;cursor:pointer}
+.option:hover{background:#eef4ff}
+.option.correct{border-color:#21a366;background:#e9f9ef}
+.option.wrong{border-color:#d64545;background:#fff0f0}
+.ad{background:linear-gradient(135deg,#101d3d,#18386f);color:#fff;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ad h2{color:#ffd54a}
+.form{max-width:700px;margin:auto;background:#fff;padding:25px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+.form input,.form textarea,.form select{width:100%;padding:12px;border:1px solid #dbe2ed;border-radius:10px;margin:7px 0 15px;font-family:inherit}
+footer{background:#06152f;color:#dce5f4;padding:40px 18px;margin-top:20px}
+.footerInner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h3{color:#ffd54a;margin-bottom:10px}
+footer a{color:#dce5f4;text-decoration:none;display:block;margin:5px 0}
+.copy{text-align:center;border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:20px}
+.bot{position:fixed;right:18px;bottom:18px;z-index:2000}
+.botButton{width:58px;height:58px;border:0;border-radius:50%;background:#ffd54a;color:#071a3d;font-size:25px;cursor:pointer;box-shadow:0 7px 22px rgba(0,0,0,.25)}
+.botBox{display:none;position:absolute;right:0;bottom:70px;width:310px;background:#fff;border-radius:18px;box-shadow:0 15px 45px rgba(0,0,0,.2);overflow:hidden}
+.botHeader{background:#071a3d;color:#fff;padding:14px;font-weight:700}
+.botMessages{height:260px;overflow:auto;padding:12px}
+.msg{padding:9px 11px;border-radius:10px;background:#f0f4fa;margin-bottom:8px;font-size:13px}
+.botInput{display:flex;border-top:1px solid #e2e7ef}
+.botInput input{flex:1;border:0;padding:12px;outline:0}
+.botInput button{border:0;background:#ffd54a;padding:0 15px;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#071a3d;color:#fff;padding:12px 18px;border-radius:10px;opacity:0;transition:.3s;z-index:3000}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.tableWrap{overflow:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid #e7ebf2;text-align:left}
+.status{font-size:12px;padding:5px 9px;border-radius:20px;background:#e9f9ef;color:#187642}
+.empty{grid-column:1/-1;text-align:center}
+@media(max-width:900px){
+  .heroInner{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .jobGrid{grid-template-columns:repeat(2,1fr)}
+  .footerInner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+  .navbar{flex-wrap:wrap}
+  .navLinks{order:3;width:100%;overflow:auto;justify-content:flex-start}
+  .grid,.jobGrid{grid-template-columns:1fr}
+  .searchBox{flex-direction:column}
+  .ad{flex-direction:column;align-items:flex-start}
+  .footerInner{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header class="header">
-  <div class="header-inner">
-
+<header>
+  <div class="navbar">
     <div class="logo">
-      JobMitra AI
-      <small>JOBS • STUDENTS • FARMER • DIGITAL SEVA</small>
+      <div class="logoIcon">📚</div>
+      <div>ExamSathi Odisha</div>
     </div>
 
-    <button class="alert-top" id="topAlertButton">
-      🔔 Alerts
-    </button>
+    <nav class="navLinks">
+      <button onclick="go('home')">🏠 Home</button>
+      <button onclick="go('jobs')">💼 Jobs</button>
+      <button onclick="go('entrance')">🎓 Entrance</button>
+      <button onclick="go('teacher')">👨‍🏫 Teacher</button>
+      <button onclick="go('pyq')">📖 PYQ</button>
+      <button onclick="go('mock')">📝 Mock</button>
+      <button onclick="go('pdf')">📄 PDF</button>
+    </nav>
 
+    <button class="langBtn" onclick="toggleLanguage()">ଓଡ଼ିଆ / EN</button>
   </div>
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <div class="hero-box">
-
-    <div class="hero-content">
-
-      <h1>JobMitra AI 🚀</h1>
-
-      <p>
-        Jobs, Students, Farmer & Government Digital Services
-      </p>
-
-      <div class="hero-badges">
-
-        <span class="hero-badge">🇮🇳 Government Jobs</span>
-        <span class="hero-badge">💼 Private Jobs</span>
-        <span class="hero-badge">🎓 Student Updates</span>
-        <span class="hero-badge">🌾 Farmer Services</span>
-        <span class="hero-badge">🏛️ Digital Seva</span>
-        <span class="hero-badge">🔔 Live Updates</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MAIN FOUR BOXES -->
-
-<section class="main-grid">
-
-  <a class="main-card students" href="#students">
-    <div class="icon">🎓</div>
-    <div>Students</div>
-    <small>Scholarship • Admit Card • Result</small>
-  </a>
-
-  <a class="main-card jobs" href="#jobs">
-    <div class="icon">💼</div>
-    <div>Jobs</div>
-    <small>Government + Private Jobs</small>
-  </a>
-
-  <a class="main-card farmer" href="#farmer">
-    <div class="icon">🌾</div>
-    <div>Farmer</div>
-    <small>Scheme • Agriculture • Services</small>
-  </a>
-
-  <a class="main-card digital" href="#digital">
-    <div class="icon">🏛️</div>
-    <div>Digital Seva</div>
-    <small>Government Online Services</small>
-  </a>
-
-</section>
-
-
-<!-- QUICK OFFICIAL LINKS -->
-
-<section class="quick">
-
-  <div class="quick-box">
-
-    <div class="quick-title">
-      ⚡ Quick Official Links
-    </div>
-
-    <div class="quick-grid">
-
-      <a class="quick-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">
-        OSSC
-      </a>
-
-      <a class="quick-btn"
-         href="https://www.opsc.gov.in/"
-         target="_blank" rel="noopener">
-        OPSC
-      </a>
-
-      <a class="quick-btn"
-         href="https://www.upsc.gov.in/"
-         target="_blank" rel="noopener">
-        UPSC
-      </a>
-
-      <a class="quick-btn"
-         href="https://ssc.gov.in/"
-         target="_blank" rel="noopener">
-        SSC
-      </a>
-
-      <a class="quick-btn"
-         href="https://www.rrbcdg.gov.in/"
-         target="_blank" rel="noopener">
-        Railway
-      </a>
-
-      <a class="quick-btn"
-         href="https://scholarships.gov.in/"
-         target="_blank" rel="noopener">
-        Scholarship
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- JOBMITRA HELP -->
-
-<section class="help">
-
-  <div class="help-box">
-
-    <span class="help-badge">
-      🆘 JOBMITRA HELP
-    </span>
-
-    <h2>
-      ନିଜେ Online Apply କରିପାରୁନାହାନ୍ତି?
-    </h2>
-
-    <p>
-      Job, Scholarship, Online Form କିମ୍ବା Registration
-      କରିବାରେ help ଦରକାର ହେଲେ DM କରନ୍ତୁ।
-    </p>
-
-    <span class="help-price">
-      Online Help ₹99 ରୁ
-    </span>
-
-    <br>
-
-    <small>
-      Government fee ଥିଲେ ସେହି fee ଅଲଗା।
-    </small>
-
-    <div class="help-buttons">
-
-      <a class="help-btn whatsapp"
-         href="https://wa.me/918249584734?text=Hello%20JobMitra%20AI%2C%20mu%20online%20help%20chahunchi."
-         target="_blank" rel="noopener">
-        💬 WhatsApp DM
-      </a>
-
-      <a class="help-btn complaint"
-         href="https://wa.me/918249584734?text=Hello%20JobMitra%20AI%2C%20mu%20Complaint%20%2F%20Help%20pain%20message%20karuchi."
-         target="_blank" rel="noopener">
-        📝 Complaint / Help
-      </a>
-
-      <a class="help-btn instagram"
-         href="https://www.instagram.com/babulunaikofficial/"
-         target="_blank" rel="noopener">
-        📸 Instagram DM
-      </a>
-
-    </div>
-
-    <p>
-      ⚠️ OTP, ATM PIN, UPI PIN କିମ୍ବା password କାହାକୁ share କରନ୍ତୁ ନାହିଁ।
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- DATE TIME -->
-
-<section class="datetime">
-
-  <div class="datetime-box">
-
-    <div id="currentDate">
-      Loading date...
-    </div>
-
-    <div id="currentTime">
-      Loading time...
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- LIVE NOTIFICATIONS -->
-
-<section class="latest" id="alerts">
-
-  <div class="latest-box">
-
-    <div class="latest-head">
-
-      <div class="latest-title">
-        🔴 Latest Job Notifications
-      </div>
-
-      <div class="live">
-        <span class="live-dot"></span>
-        LIVE
-      </div>
-
-    </div>
-
-    <div class="notification-list" id="notificationList">
-
-      <div class="notification">
-
-        <div class="ntype">⏳</div>
-
-        <div class="nbody">
-
-          <strong>
-            Loading latest job notifications...
-          </strong>
-
-          <p>
-            JobMitra AI is checking for new updates.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ALL CONTENT -->
-
-<main class="container">
-
-
-<!-- STUDENTS -->
-
-<section class="section" id="students">
-
-  <div class="section-head">
+<section id="home" class="hero">
+  <div class="heroInner">
 
     <div>
+      <div class="badge">🇮🇳 Odisha Exam Preparation Platform</div>
 
-      <h2 class="section-title">
-        🎓 Students
-      </h2>
+      <h1>
+        Prepare Smart.<br>
+        <span>Crack Odisha Govt Exams.</span>
+      </h1>
 
-      <p class="section-sub">
-        Scholarship, Admit Card, Result, Education & Student Services.
+      <p id="heroText">
+        Odisha Government Exams ପାଇଁ PYQ, Mock Tests, Study Materials,
+        Exam Updates ଏବଂ Smart Practice — ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।
       </p>
 
+      <div class="heroButtons">
+        <button class="btn btnGold" onclick="go('mock')">
+          📝 Start Mock Test
+        </button>
+
+        <button class="btn btnWhite" onclick="go('jobs')">
+          💼 Explore Jobs
+        </button>
+      </div>
     </div>
 
-    <span class="section-tag">
-      STUDENTS
-    </span>
+    <div class="heroCard">
+      <h3>🔥 Daily Motivation</h3>
 
-  </div>
+      <p id="motivation">Loading...</p>
 
-  <input
-    class="search"
-    placeholder="🔍 Search Student services..."
-    oninput="filterCards(this,'studentCards')">
+      <div class="stat">
+        <span>📝 Mock Tests</span>
+        <b>∞ Unlimited</b>
+      </div>
 
-  <div class="cards" id="studentCards">
+      <div class="stat">
+        <span>💰 Platform</span>
+        <b>FREE</b>
+      </div>
 
-    <div class="service">
-      <div class="service-icon">🎓</div>
-      <h3>National Scholarship Portal</h3>
-      <p>Government scholarship applications and updates.</p>
-      <a class="open-btn"
-         href="https://scholarships.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
+      <div class="stat">
+        <span>🌐 Language</span>
+        <b>Odia + English</b>
+      </div>
 
-    <div class="service">
-      <div class="service-icon">🎓</div>
-      <h3>Odisha Scholarship Portal</h3>
-      <p>Odisha State scholarship services.</p>
-      <a class="open-btn"
-         href="https://scholarship.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🎫</div>
-      <h3>Admit Card</h3>
-      <p>Official examination admit card information.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Portal →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🏆</div>
-      <h3>Result</h3>
-      <p>Official examination results and updates.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Portal →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">📖</div>
-      <h3>Higher Education Odisha</h3>
-      <p>Higher education department information.</p>
-      <a class="open-btn"
-         href="https://dhe.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🏫</div>
-      <h3>School & Mass Education</h3>
-      <p>Odisha school education services.</p>
-      <a class="open-btn"
-         href="https://sme.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">📚</div>
-      <h3>AICTE</h3>
-      <p>Technical education information.</p>
-      <a class="open-btn"
-         href="https://www.aicte-india.org/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🪪</div>
-      <h3>DigiLocker</h3>
-      <p>Digital certificates and documents.</p>
-      <a class="open-btn"
-         href="https://www.digilocker.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+      <div class="stat">
+        <span>🔌 Database</span>
+        <b id="dbStatus">Connecting...</b>
+      </div>
     </div>
 
   </div>
+</section>
+
+<section class="container">
+
+  <div class="sectionHead">
+    <h2>🔎 Search Exam</h2>
+    <p>Exam, Job, PYQ କିମ୍ବା Mock Test ଖୋଜନ୍ତୁ</p>
+  </div>
+
+  <div class="searchBox">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search OPSC, OSSC, OTET, CT, B.Ed..."
+      oninput="searchContent()"
+    >
+  </div>
+
+  <div id="searchResults" class="grid"></div>
 
 </section>
 
+<section class="container">
 
-<!-- JOBS -->
-
-<section class="section" id="jobs">
-
-  <div class="section-head">
-
-    <div>
-
-      <h2 class="section-title">
-        💼 Jobs
-      </h2>
-
-      <p class="section-sub">
-        Government + Private Jobs, Recruitment & Vacancy Updates.
-      </p>
-
-    </div>
-
-    <span class="section-tag">
-      JOBS
-    </span>
-
+  <div class="sectionHead">
+    <h2>📚 Explore ExamSathi</h2>
+    <p>ଆପଣଙ୍କ preparation category ବାଛନ୍ତୁ</p>
   </div>
 
-  <input
-    class="search"
-    placeholder="🔍 Search Jobs..."
-    oninput="filterCards(this,'jobCards')">
+  <div class="grid">
 
-  <div class="cards" id="jobCards">
-
-    <div class="service">
-      <div class="service-icon">🏛️</div>
+    <div class="card">
+      <div class="cardIcon">💼</div>
       <h3>Odisha Government Jobs</h3>
-      <p>Odisha government recruitment information.</p>
-      <a class="open-btn"
-         href="https://odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+      <p>
+        OPSC, OSSC, OSSSC, Police, Health, Forest,
+        Revenue, Technical ଏବଂ ଅନ୍ୟ jobs.
+      </p>
+      <button class="btn btnGold" onclick="go('jobs')">
+        Explore
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">📝</div>
-      <h3>OSSC</h3>
-      <p>Odisha Staff Selection Commission recruitment.</p>
-      <a class="open-btn"
-         href="https://www.ossc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">🎓</div>
+      <h3>Entrance Exams</h3>
+      <p>
+        CT, B.Ed, Teacher Education ଏବଂ ଅନ୍ୟ
+        Odisha entrance exams.
+      </p>
+      <button class="btn btnGold" onclick="go('entrance')">
+        Explore
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>OPSC</h3>
-      <p>Odisha Public Service Commission jobs.</p>
-      <a class="open-btn"
-         href="https://www.opsc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">👨‍🏫</div>
+      <h3>Teacher Exams</h3>
+      <p>
+        OTET, OSSTET, CT-related ଏବଂ
+        B.Ed-related preparation.
+      </p>
+      <button class="btn btnGold" onclick="go('teacher')">
+        Explore
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">🇮🇳</div>
-      <h3>UPSC</h3>
-      <p>Union Public Service Commission recruitment.</p>
-      <a class="open-btn"
-         href="https://www.upsc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">📚</div>
+      <h3>Student Exams</h3>
+      <p>
+        +2, +3/Degree, UG/PG ଏବଂ
+        subject-wise preparation.
+      </p>
+      <button
+        class="btn btnGold"
+        onclick="toast('Student Exams module ready for database content')">
+        Explore
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">📋</div>
-      <h3>SSC</h3>
-      <p>Staff Selection Commission recruitment.</p>
-      <a class="open-btn"
-         href="https://ssc.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">📝</div>
+      <h3>Competitive Exams</h3>
+      <p>
+        Odisha state ଏବଂ department
+        competitive examinations.
+      </p>
+      <button
+        class="btn btnGold"
+        onclick="toast('Competitive Exams module ready')">
+        Explore
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">🚆</div>
-      <h3>Railway Jobs</h3>
-      <p>Railway recruitment and vacancy information.</p>
-      <a class="open-btn"
-         href="https://www.rrbcdg.gov.in/"
-         target="_blank" rel="noopener">
-        Official RRB →
-      </a>
+    <div class="card">
+      <div class="cardIcon">📖</div>
+      <h3>Previous Year Questions</h3>
+      <p>
+        Year-wise verified PYQ + answer + explanation.
+      </p>
+      <button class="btn btnGold" onclick="go('pyq')">
+        Open PYQ
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">👮</div>
-      <h3>Odisha Police</h3>
-      <p>Police recruitment and official updates.</p>
-      <a class="open-btn"
-         href="https://odishapolice.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">🤖</div>
+      <h3>AI Practice</h3>
+      <p>
+        Weak-topic based practice ଏବଂ
+        smart study guidance.
+      </p>
+      <button
+        class="btn btnGold"
+        onclick="toast('AI Practice foundation ready')">
+        Practice
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">🏦</div>
-      <h3>Banking Jobs</h3>
-      <p>IBPS and banking recruitment information.</p>
-      <a class="open-btn"
-         href="https://www.ibps.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
+    <div class="card">
+      <div class="cardIcon">🏆</div>
+      <h3>Leaderboard</h3>
+      <p>
+        Mock test score ଏବଂ exam-wise ranking.
+      </p>
+      <button class="btn btnGold" onclick="go('leaderboard')">
+        View
+      </button>
     </div>
 
-    <div class="service">
-      <div class="service-icon">💻</div>
-      <h3>Private Jobs</h3>
-      <p>Private company vacancy information.</p>
-      <a class="open-btn"
-         href="https://www.ncs.gov.in/"
-         target="_blank" rel="noopener">
-        Job Portal →
-      </a>
+  </div>
+</section>
+
+<section id="jobs" class="container">
+
+  <div class="sectionHead">
+    <h2>💼 Odisha Government Jobs</h2>
+    <p>Jobs are loaded automatically from Supabase</p>
+  </div>
+
+  <div class="jobFilters">
+
+    <button class="filter active"
+      onclick="filterJobs('All',this)">All</button>
+
+    <button class="filter"
+      onclick="filterJobs('OPSC',this)">OPSC</button>
+
+    <button class="filter"
+      onclick="filterJobs('OSSC',this)">OSSC</button>
+
+    <button class="filter"
+      onclick="filterJobs('OSSSC',this)">OSSSC</button>
+
+    <button class="filter"
+      onclick="filterJobs('Police',this)">Police</button>
+
+    <button class="filter"
+      onclick="filterJobs('Health',this)">Health</button>
+
+    <button class="filter"
+      onclick="filterJobs('Forest',this)">Forest</button>
+
+    <button class="filter"
+      onclick="filterJobs('Technical',this)">Technical</button>
+
+    <button class="filter"
+      onclick="filterJobs('Graduate',this)">Graduate</button>
+
+  </div>
+
+  <div id="jobGrid" class="jobGrid"></div>
+
+</section>
+
+<section id="entrance" class="container">
+
+  <div class="sectionHead">
+    <h2>🎓 Entrance Exams</h2>
+    <p>Exam list is loaded from the ExamSathi database</p>
+  </div>
+
+  <div id="examGrid" class="grid"></div>
+
+</section>
+
+<section id="teacher" class="container">
+
+  <div class="sectionHead">
+    <h2>👨‍🏫 Teacher Exams</h2>
+    <p>Teacher exam preparation</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="cardIcon">📘</div>
+      <h3>OTET</h3>
+      <p>PYQ, answers, explanations and mock practice.</p>
+      <button class="btn btnGold"
+        onclick="startMock('OTET')">
+        Practice
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">📗</div>
+      <h3>OSSTET</h3>
+      <p>Subject practice and mock tests.</p>
+      <button class="btn btnGold"
+        onclick="startMock('OSSTET')">
+        Practice
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">📙</div>
+      <h3>CT Related</h3>
+      <p>CT teacher preparation materials.</p>
+      <button class="btn btnGold"
+        onclick="startMock('CT Teacher')">
+        Practice
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">📕</div>
+      <h3>B.Ed Related</h3>
+      <p>B.Ed related teacher examination preparation.</p>
+      <button class="btn btnGold"
+        onclick="startMock('B.Ed Teacher')">
+        Practice
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="pyq" class="container">
+
+  <div class="sectionHead">
+    <h2>📖 Previous Year Questions</h2>
+    <p>
+      Verified PYQ ଏବଂ new practice questions
+      ଅଲଗା label ରେ
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="cardIcon">📅</div>
+      <h3>Year-wise PYQ</h3>
+      <p>Exam year ଅନୁସାରେ questions.</p>
+      <button class="btn btnGold" onclick="loadPYQ()">
+        Open
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">✅</div>
+      <h3>Verified Answers</h3>
+      <p>Question + answer + explanation.</p>
+      <button class="btn btnGold" onclick="loadPYQ()">
+        Open
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">🆕</div>
+      <h3>New Practice</h3>
+      <p>PYQ ଠାରୁ separate practice questions.</p>
+      <button class="btn btnGold"
+        onclick="startMock('New Practice')">
+        Practice
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">♾️</div>
+      <h3>Unlimited Mock</h3>
+      <p>PYQ-based unlimited mock practice.</p>
+      <button class="btn btnGold" onclick="go('mock')">
+        Start
+      </button>
+    </div>
+
+  </div>
+
+  <div id="pyqList"
+    class="grid"
+    style="margin-top:20px">
+  </div>
+
+</section>
+
+<section id="mock" class="container">
+
+  <div class="sectionHead">
+    <h2>📝 2026–27 New Mock Tests</h2>
+    <p>
+      Practice • Full • Subject • Easy • Medium • Hard • AI Smart
+    </p>
+  </div>
+
+  <div class="mockCard card">
+
+    <div class="mockTop">
+      <b id="mockTitle">
+        General Odisha Exam Mock
+      </b>
+
+      <span id="mockCount">
+        Question 1 / 5
+      </span>
+    </div>
+
+    <div class="progress">
+      <div id="progressBar"
+        class="progressBar">
+      </div>
+    </div>
+
+    <div id="question"
+      class="question">
+      Loading question...
+    </div>
+
+    <div id="options"></div>
+
+    <button
+      id="nextBtn"
+      class="btn btnGold"
+      onclick="nextQuestion()">
+      Next Question →
+    </button>
+
+    <div
+      id="mockResult"
+      style="display:none;margin-top:20px;text-align:center">
     </div>
 
   </div>
 
 </section>
 
+<section id="pdf" class="container">
 
-<!-- FARMER -->
+  <div class="sectionHead">
+    <h2>📄 PDF Library</h2>
+    <p>
+      PDF documents are loaded automatically from Supabase
+    </p>
+  </div>
 
-<section class="section" id="farmer">
+  <div id="pdfGrid" class="grid"></div>
 
-  <div class="section-head">
+</section>
+
+<section id="leaderboard" class="container">
+
+  <div class="sectionHead">
+    <h2>🏆 Leaderboard</h2>
+    <p>Latest submitted mock results</p>
+  </div>
+
+  <div class="card tableWrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Student</th>
+          <th>Exam</th>
+          <th>Score</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+
+      <tbody id="leaderboardBody">
+
+        <tr>
+          <td colspan="5">
+            Loading...
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+<section class="container">
+
+  <div class="sectionHead">
+    <h2>📊 Result & Performance</h2>
+    <p>Your latest browser-session result</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="cardIcon">🎯</div>
+      <h3 id="resultScore">0</h3>
+      <p>Latest Score</p>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">📈</div>
+      <h3 id="resultPercent">0%</h3>
+      <p>Percentage</p>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">✅</div>
+      <h3 id="resultCorrect">0</h3>
+      <p>Correct</p>
+    </div>
+
+    <div class="card">
+      <div class="cardIcon">❌</div>
+      <h3 id="resultWrong">0</h3>
+      <p>Wrong</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="container" id="suggestion">
+
+  <div class="sectionHead">
+    <h2>💡 Suggestion Box</h2>
+    <p>
+      Suggestion Supabase database ରେ save ହେବ
+    </p>
+  </div>
+
+  <div class="form">
+
+    <label>Name</label>
+
+    <input
+      id="suggestName"
+      placeholder="Your name"
+    >
+
+    <label>Suggestion Type</label>
+
+    <select id="suggestType">
+
+      <option>New Exam Request</option>
+      <option>Question Error</option>
+      <option>PDF Request</option>
+      <option>Mock Suggestion</option>
+      <option>Feature Suggestion</option>
+      <option>Feedback</option>
+
+    </select>
+
+    <label>Message</label>
+
+    <textarea
+      id="suggestMessage"
+      rows="5"
+      placeholder="Write your suggestion...">
+    </textarea>
+
+    <button
+      class="btn btnGold"
+      onclick="submitSuggestion()">
+      Send Suggestion
+    </button>
+
+  </div>
+
+</section>
+
+<section class="container">
+
+  <div class="ad">
 
     <div>
-
-      <h2 class="section-title">
-        🌾 Farmer
-      </h2>
-
-      <p class="section-sub">
-        Farmer Schemes, Agriculture Services & Support.
+      <h2>💼 JobMitra AI</h2>
+      <p>
+        Jobs • Scholarships • Admit Card • Results • Apply Online
       </p>
-
     </div>
 
-    <span class="section-tag">
-      FARMER
-    </span>
-
-  </div>
-
-  <input
-    class="search"
-    placeholder="🔍 Search Farmer services..."
-    oninput="filterCards(this,'farmerCards')">
-
-  <div class="cards" id="farmerCards">
-
-    <div class="service">
-      <div class="service-icon">💰</div>
-      <h3>PM-KISAN</h3>
-      <p>Pradhan Mantri Kisan Samman Nidhi.</p>
-      <a class="open-btn"
-         href="https://pmkisan.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🌱</div>
-      <h3>CM-KISAN Odisha</h3>
-      <p>Odisha farmer support scheme.</p>
-      <a class="open-btn"
-         href="https://cmkisan.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">👨‍🌾</div>
-      <h3>Krushak Odisha</h3>
-      <p>Farmer database and agriculture services.</p>
-      <a class="open-btn"
-         href="https://krushak.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🌾</div>
-      <h3>Agriculture Department</h3>
-      <p>Odisha agriculture information and services.</p>
-      <a class="open-btn"
-         href="https://agri.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🐄</div>
-      <h3>Animal Resources</h3>
-      <p>Animal husbandry and livestock services.</p>
-      <a class="open-btn"
-         href="https://fard.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🌱</div>
-      <h3>AgriStack</h3>
-      <p>Digital agriculture ecosystem.</p>
-      <a class="open-btn"
-         href="https://agristack.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
+    <button
+      class="btn btnGold"
+      onclick="openJobMitra()">
+      Visit JobMitra AI →
+    </button>
 
   </div>
 
 </section>
 
+<section class="container">
 
-<!-- DIGITAL SEVA -->
+  <div class="sectionHead">
 
-<section class="section" id="digital">
+    <h2>📲 Support</h2>
 
-  <div class="section-head">
+    <p>WhatsApp Only / DM</p>
 
-    <div>
+    <h3 style="margin-top:10px">
+      8249584734
+    </h3>
 
-      <h2 class="section-title">
-        🏛️ Digital Seva
-      </h2>
-
-      <p class="section-sub">
-        Important Government Online Services.
-      </p>
-
-    </div>
-
-    <span class="section-tag">
-      DIGITAL
-    </span>
-
-  </div>
-
-  <input
-    class="search"
-    placeholder="🔍 Search Digital Seva..."
-    oninput="filterCards(this,'digitalCards')">
-
-  <div class="cards" id="digitalCards">
-
-    <div class="service">
-      <div class="service-icon">🪪</div>
-      <h3>Aadhaar / UIDAI</h3>
-      <p>Official Aadhaar services.</p>
-      <a class="open-btn"
-         href="https://uidai.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">💳</div>
-      <h3>PAN / Income Tax</h3>
-      <p>Income Tax Department services.</p>
-      <a class="open-btn"
-         href="https://www.incometax.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🗳️</div>
-      <h3>Voter Services</h3>
-      <p>Election Commission voter services.</p>
-      <a class="open-btn"
-         href="https://voters.eci.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🛂</div>
-      <h3>Passport Seva</h3>
-      <p>Official passport services.</p>
-      <a class="open-btn"
-         href="https://www.passportindia.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🚗</div>
-      <h3>Parivahan</h3>
-      <p>Driving licence and vehicle services.</p>
-      <a class="open-btn"
-         href="https://parivahan.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">📜</div>
-      <h3>Odisha e-District</h3>
-      <p>Certificates and citizen services.</p>
-      <a class="open-btn"
-         href="https://edistrict.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🏠</div>
-      <h3>Bhulekh Odisha</h3>
-      <p>Official land record services.</p>
-      <a class="open-btn"
-         href="https://bhulekh.ori.nic.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🍚</div>
-      <h3>Food & Civil Supplies</h3>
-      <p>Ration and food supply services.</p>
-      <a class="open-btn"
-         href="https://food.odisha.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🏛️</div>
-      <h3>Odisha One</h3>
-      <p>Odisha Government citizen services.</p>
-      <a class="open-btn"
-         href="https://www.odishaone.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🔐</div>
-      <h3>DigiLocker</h3>
-      <p>Government digital documents.</p>
-      <a class="open-btn"
-         href="https://www.digilocker.gov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">🇮🇳</div>
-      <h3>MyGov India</h3>
-      <p>Government citizen portal.</p>
-      <a class="open-btn"
-         href="https://www.mygov.in/"
-         target="_blank" rel="noopener">
-        Official Website →
-      </a>
-    </div>
+    <button
+      class="btn btnGold"
+      style="margin-top:15px"
+      onclick="openWhatsApp()">
+      💬 WhatsApp Support
+    </button>
 
   </div>
 
 </section>
-
-</main>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-  <strong>JobMitra AI</strong>
+  <div class="footerInner">
 
-  <br><br>
+    <div>
 
-  Jobs • Students • Farmer • Digital Seva
+      <h3>🇮🇳 ExamSathi Odisha</h3>
 
-  <br>
+      <p>
+        Prepare Smart. Crack Odisha Govt Exams.
+      </p>
 
-  Government + Private Job Updates
+      <p style="margin-top:10px">
+        Free education platform for Odisha exam preparation.
+      </p>
 
-  <br><br>
+    </div>
 
-  <small>
-    Always verify important information on the official department website.
-  </small>
+    <div>
 
-  <div class="created">
-    Created by Babulu Naik 💚
+      <h3>Quick Links</h3>
+
+      <a href="#home">Home</a>
+      <a href="#jobs">Government Jobs</a>
+      <a href="#entrance">Entrance Exams</a>
+      <a href="#teacher">Teacher Exams</a>
+      <a href="#mock">Mock Tests</a>
+
+    </div>
+
+    <div>
+
+      <h3>Preparation</h3>
+
+      <a href="#pyq">PYQ</a>
+      <a href="#pdf">PDF Library</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#suggestion">Suggestion Box</a>
+
+    </div>
+
+  </div>
+
+  <div class="copy">
+    © 2026 ExamSathi Odisha • Created by Babulu Naik
   </div>
 
 </footer>
 
+<div class="bot">
 
-<!-- TOP -->
+  <div id="botBox" class="botBox">
 
-<button class="top" id="topBtn">
-  ↑
-</button>
+    <div class="botHeader">
+      🤖 ExamSathi Bot
+    </div>
 
+    <div id="botMessages" class="botMessages">
+
+      <div class="msg">
+        Namaskar! 🙏 Exam doubt pacharantu.
+      </div>
+
+      <div class="msg">
+        ମୁଁ Odia + English ରେ study help କରିପାରିବି।
+      </div>
+
+    </div>
+
+    <div class="botInput">
+
+      <input
+        id="botInput"
+        placeholder="Ask your doubt..."
+        onkeydown="if(event.key==='Enter')sendBot()"
+      >
+
+      <button onclick="sendBot()">➤</button>
+
+    </div>
+
+  </div>
+
+  <button
+    class="botButton"
+    onclick="toggleBot()">
+    🤖
+  </button>
+
+</div>
+
+<div id="toast" class="toast"></div>
 
 <script>
 
 /* =========================================================
-   SUPABASE
-========================================================= */
+   EXAMSATHI ODISHA - SUPABASE CONNECTED FRONTEND
+   ========================================================= */
 
 const SUPABASE_URL =
-  "https://hsexaatuacdnumxnkehx.supabase.co";
+  "https://ullqxaoctpedgtxlaesh.supabase.co";
 
 const SUPABASE_KEY =
-  "sb_publishable_mkUyaXPtvVNxFTrGOwErvw_rKhV7t8I";
+  "sb_publishable_NW1cUIuZ4pqFxJ_iuNBbcg_pS-PjUqr";
+
+let allJobs = [];
+let allExams = [];
+let allPYQ = [];
+let mockQuestions = [];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+let currentMockTitle =
+  "General Odisha Exam Mock";
 
 
-/* =========================================================
-   HTML ESCAPE
-========================================================= */
+function go(id){
 
-function escapeHtml(value){
+  const el =
+    document.getElementById(id);
 
-  return String(value ?? "")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+  if(el){
+    el.scrollIntoView({
+      behavior:"smooth"
+    });
+  }
 
 }
 
 
-/* =========================================================
-   REMOVE UNWANTED NCS PAGES
-========================================================= */
+function escapeHtml(text){
 
-function isUsefulNotification(job){
+  const div =
+    document.createElement("div");
 
-  const title =
-    String(job.title || "").toLowerCase();
+  div.textContent =
+    text==null ? "" : String(text);
 
-  const description =
-    String(job.description || "").toLowerCase();
+  return div.innerHTML;
 
-  const category =
-    String(job.category || "").toLowerCase();
-
-  const url =
-    String(job.apply_url || "").toLowerCase();
-
-  const text =
-    title + " " +
-    description + " " +
-    category + " " +
-    url;
-
-  const unwanted = [
-
-    "career center",
-    "find career center",
-    "find counsellor",
-    "career counsellor",
-    "employment exchange",
-    "list of employment exchange",
-    "model career center",
-    "list of model career center",
-    "job fairs",
-    "job fair",
-    "job fairs and events",
-    "participate in a job fairs",
-    "create job fairs",
-    "career tools",
-    "career tools & learning",
-    "find candidates",
-    "international jobs through e-migrate",
-    "e-migrate",
-    "recruitment agencies/international employer",
-    "jobs for ex-servicemen",
-    "jobs for differently abled"
-
-  ];
-
-  for(const word of unwanted){
-
-    if(text.includes(word)){
-      return false;
-    }
-
-  }
-
-  const ncsGeneric =
-    title.includes("national career service") ||
-    title.includes("directorate general of employment");
-
-  if(ncsGeneric){
-
-    const actualJobWords = [
-
-      "recruitment",
-      "vacancy",
-      "job",
-      "jobs",
-      "notification",
-      "advertisement",
-      "appointment",
-      "hiring",
-      "post",
-      "posts"
-
-    ];
-
-    const hasActualJobWord =
-      actualJobWords.some(
-        word => title.includes(word)
-      );
-
-    if(!hasActualJobWord){
-      return false;
-    }
-
-  }
-
-  return true;
 }
 
 
-/* =========================================================
-   LIVE JOB NOTIFICATIONS
-========================================================= */
+function safeUrl(url){
 
-async function loadJobs(){
-
-  const list =
-    document.getElementById("notificationList");
-
-  if(!list) return;
+  if(!url) return "";
 
   try{
 
-    const response =
+    const u =
+      new URL(url);
+
+    if(
+      u.protocol==="https:" ||
+      u.protocol==="http:"
+    ){
+      return u.href;
+    }
+
+  }catch(e){}
+
+  return "";
+
+}
+
+
+function openExternal(url){
+
+  const u =
+    safeUrl(url);
+
+  if(!u){
+
+    toast(
+      "Official link is not available."
+    );
+
+    return;
+  }
+
+  window.open(
+    u,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+async function supabaseFetch(
+  table,
+  query=""
+){
+
+  try{
+
+    const res =
       await fetch(
-
-        SUPABASE_URL +
-        "/rest/v1/job_updates" +
-        "?select=*" +
-        "&order=published_at.desc" +
-        "&limit=100",
-
+        `${SUPABASE_URL}/rest/v1/${table}${query}`,
         {
-
           method:"GET",
 
           headers:{
             "apikey":SUPABASE_KEY,
-            "Authorization":"Bearer " + SUPABASE_KEY
+
+            "Authorization":
+              "Bearer "+SUPABASE_KEY,
+
+            "Content-Type":
+              "application/json"
           },
 
           cache:"no-store"
-
         }
-
       );
 
-    if(!response.ok){
+    if(!res.ok){
 
-      throw new Error(
-        await response.text()
+      console.error(
+        "Supabase GET error:",
+        await res.text()
       );
+
+      return [];
 
     }
 
-    const jobs =
-      await response.json();
+    return await res.json();
 
-    const filteredJobs =
-      Array.isArray(jobs)
-        ? jobs.filter(isUsefulNotification)
-        : [];
-
-    console.log(
-      "JobMitra:",
-      jobs.length,
-      "total |",
-      filteredJobs.length,
-      "shown"
-    );
-
-    if(filteredJobs.length === 0){
-
-      list.innerHTML = `
-
-        <div class="notification">
-
-          <div class="ntype">🔎</div>
-
-          <div class="nbody">
-
-            <strong>
-              No new notification found
-            </strong>
-
-            <p>
-              New Job, Admit Card, Result & Student updates
-              will appear here.
-            </p>
-
-          </div>
-
-        </div>
-
-      `;
-
-      return;
-    }
-
-    list.innerHTML =
-      filteredJobs.map(job => {
-
-        const title =
-          escapeHtml(
-            job.title ||
-            "Latest Government / Private Update"
-          );
-
-        const description =
-          escapeHtml(
-            job.description ||
-            "New notification available."
-          );
-
-        const category =
-          escapeHtml(
-            job.category ||
-            "Job Update"
-          );
-
-        let icon = "💼";
-
-        const combined =
-          (
-            String(job.title || "") +
-            " " +
-            String(job.category || "")
-          ).toLowerCase();
-
-        if(combined.includes("admit")){
-          icon = "🎫";
-        }
-        else if(combined.includes("result")){
-          icon = "🏆";
-        }
-        else if(combined.includes("scholar")){
-          icon = "🎓";
-        }
-        else if(combined.includes("exam")){
-          icon = "📝";
-        }
-        else if(combined.includes("police")){
-          icon = "👮";
-        }
-        else if(combined.includes("private")){
-          icon = "🏢";
-        }
-
-        let link = "";
-
-        if(
-          job.apply_url &&
-          String(job.apply_url).startsWith("http")
-        ){
-
-          link = `
-
-            <a
-              class="job-link"
-              href="${escapeHtml(job.apply_url)}"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              Official / Apply Website →
-
-            </a>
-
-          `;
-
-        }
-
-        return `
-
-          <div class="notification">
-
-            <div class="ntype">
-              ${icon}
-            </div>
-
-            <div class="nbody">
-
-              <strong>
-                ${title}
-              </strong>
-
-              <p>
-                ${description}
-              </p>
-
-              <span class="nbadge">
-                ${category}
-              </span>
-
-              ${link}
-
-            </div>
-
-          </div>
-
-        `;
-
-      }).join("");
-
-  }
-
-  catch(error){
+  }catch(e){
 
     console.error(
-      "JobMitra notification error:",
-      error
+      "Supabase connection error:",
+      e
     );
 
-    list.innerHTML = `
+    return [];
 
-      <div class="notification">
+  }
 
-        <div class="ntype">⚠️</div>
+}
 
-        <div class="nbody">
 
-          <strong>
-            Live notification loading problem
-          </strong>
+async function supabaseInsert(
+  table,
+  payload
+){
 
-          <p>
-            Supabase job data could not be loaded right now.
-          </p>
+  try{
 
-        </div>
+    const res =
+      await fetch(
+        `${SUPABASE_URL}/rest/v1/${table}`,
+        {
+          method:"POST",
 
+          headers:{
+            "apikey":SUPABASE_KEY,
+
+            "Authorization":
+              "Bearer "+SUPABASE_KEY,
+
+            "Content-Type":
+              "application/json",
+
+            "Prefer":
+              "return=representation"
+          },
+
+          body:
+            JSON.stringify(payload)
+        }
+      );
+
+    if(!res.ok){
+
+      console.error(
+        "Supabase INSERT error:",
+        await res.text()
+      );
+
+      return false;
+
+    }
+
+    return true;
+
+  }catch(e){
+
+    console.error(
+      "Supabase insert connection error:",
+      e
+    );
+
+    return false;
+
+  }
+
+}
+
+
+const motivations = [
+
+  "Small daily progress creates big success. 💪",
+
+  "ଆଜି ପଢନ୍ତୁ, କାଲି ସଫଳତା ପାଆନ୍ତୁ। 🇮🇳",
+
+  "Your preparation decides your result. 🎯",
+
+  "ହାର ମାନନ୍ତୁ ନାହିଁ — practice କରୁଥାନ୍ତୁ। 🔥",
+
+  "One mock test every day can change your preparation. 📝",
+
+  "Dream big. Prepare smart. Crack your exam. 🚀",
+
+  "ସଫଳତା ପାଇଁ consistency ସବୁଠାରୁ important। ⭐"
+
+];
+
+
+document.getElementById(
+  "motivation"
+).textContent =
+  motivations[
+    Math.floor(
+      Date.now()/86400000
+    ) % motivations.length
+  ];
+
+
+let english=false;
+
+
+function toggleLanguage(){
+
+  english=!english;
+
+  document.getElementById(
+    "heroText"
+  ).textContent =
+    english
+
+    ?
+
+    "Prepare for Odisha Government Exams with PYQ, Mock Tests, Study Materials, Exam Updates and Smart Practice — all in one place."
+
+    :
+
+    "Odisha Government Exams ପାଇଁ PYQ, Mock Tests, Study Materials, Exam Updates ଏବଂ Smart Practice — ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।";
+
+  toast(
+    english
+      ? "English mode activated 🇬🇧"
+      : "Odia mode activated 🇮🇳"
+  );
+
+}
+
+
+function setDbStatus(text){
+
+  document.getElementById(
+    "dbStatus"
+  ).textContent=text;
+
+}
+
+
+async function loadJobsFromSupabase(){
+
+  const grid =
+    document.getElementById(
+      "jobGrid"
+    );
+
+  grid.innerHTML =
+    '<div class="card empty"><h3>⏳ Loading Jobs...</h3><p>Latest jobs loading from database.</p></div>';
+
+  const data =
+    await supabaseFetch(
+      "jobs",
+      "?select=*&order=published_at.desc"
+    );
+
+  allJobs =
+    Array.isArray(data)
+      ? data
+      : [];
+
+  renderJobs(allJobs);
+
+}
+
+
+function renderJobs(list){
+
+  const grid =
+    document.getElementById(
+      "jobGrid"
+    );
+
+  if(!list.length){
+
+    grid.innerHTML =
+      '<div class="card empty"><div class="cardIcon">📭</div><h3>No Jobs Available</h3><p>Add jobs in Supabase → jobs table and they will appear here automatically.</p></div>';
+
+    return;
+
+  }
+
+  grid.innerHTML="";
+
+  list.forEach(job=>{
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "jobCard";
+
+    const date =
+      job.last_date
+        ? new Date(
+            job.last_date
+          ).toLocaleDateString(
+            "en-IN"
+          )
+        : "Not available";
+
+    card.innerHTML = `
+
+      <div class="jobTag">
+        ${escapeHtml(
+          job.category ||
+          "Government Job"
+        )}
       </div>
 
+      <h3>
+        💼
+        ${escapeHtml(
+          job.title ||
+          "Government Job"
+        )}
+      </h3>
+
+      <p style="margin-top:8px">
+        <b>Organization:</b>
+        ${escapeHtml(
+          job.organization ||
+          "Odisha Government"
+        )}
+      </p>
+
+      <p style="margin-top:5px">
+        <b>Eligibility:</b>
+        ${escapeHtml(
+          job.eligibility ||
+          "See notification"
+        )}
+      </p>
+
+      <p style="margin-top:5px">
+        <b>Last Date:</b>
+        ${escapeHtml(date)}
+      </p>
+
+      <div
+        style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+
+        ${
+          job.notification_url
+
+          ?
+
+          `<button
+             class="btn btnGold"
+             onclick="openExternal('${safeUrl(
+               job.notification_url
+             )}')">
+             📄 Notification
+           </button>`
+
+          :
+
+          ""
+        }
+
+        ${
+          job.apply_url
+
+          ?
+
+          `<button
+             class="btn btnGold"
+             onclick="openExternal('${safeUrl(
+               job.apply_url
+             )}')">
+             📝 Apply
+           </button>`
+
+          :
+
+          ""
+        }
+
+      </div>
     `;
 
-  }
-
-}
-
-
-/* LOAD NOW */
-
-loadJobs();
-
-
-/* REFRESH EVERY 5 MINUTES */
-
-setInterval(
-  loadJobs,
-  5 * 60 * 1000
-);
-
-
-/* =========================================================
-   DATE & TIME
-========================================================= */
-
-function updateDateTime(){
-
-  const now = new Date();
-
-  const date =
-    now.toLocaleDateString(
-      "en-IN",
-      {
-        weekday:"long",
-        year:"numeric",
-        month:"long",
-        day:"numeric"
-      }
-    );
-
-  const time =
-    now.toLocaleTimeString(
-      "en-IN",
-      {
-        hour:"2-digit",
-        minute:"2-digit",
-        second:"2-digit",
-        hour12:true
-      }
-    );
-
-  const dateElement =
-    document.getElementById("currentDate");
-
-  const timeElement =
-    document.getElementById("currentTime");
-
-  if(dateElement){
-    dateElement.textContent =
-      "📅 " + date;
-  }
-
-  if(timeElement){
-    timeElement.textContent =
-      "🕐 " + time;
-  }
-
-}
-
-updateDateTime();
-
-setInterval(
-  updateDateTime,
-  1000
-);
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-function filterCards(input,id){
-
-  const query =
-    input.value.toLowerCase().trim();
-
-  const cards =
-    document.querySelectorAll(
-      "#" + id + " .service"
-    );
-
-  cards.forEach(card => {
-
-    const text =
-      card.innerText.toLowerCase();
-
-    card.style.display =
-      text.includes(query)
-        ? ""
-        : "none";
+    grid.appendChild(card);
 
   });
 
 }
 
 
-/* =========================================================
-   TOP BUTTON
-========================================================= */
-
-const topBtn =
-  document.getElementById("topBtn");
-
-if(topBtn){
-
-  window.addEventListener(
-    "scroll",
-    () => {
-
-      topBtn.style.display =
-        window.scrollY > 450
-          ? "block"
-          : "none";
-
-    }
-  );
-
-  topBtn.addEventListener(
-    "click",
-    () => {
-
-      window.scrollTo({
-        top:0,
-        behavior:"smooth"
-      });
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   ALERT BUTTON
-========================================================= */
-
-const topAlertButton =
-  document.getElementById("topAlertButton");
-
-if(topAlertButton){
-
-  topAlertButton.addEventListener(
-    "click",
-    () => {
-
-      const alertBox =
-        document.getElementById("alerts");
-
-      if(alertBox){
-
-        alertBox.scrollIntoView({
-          behavior:"smooth",
-          block:"center"
-        });
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   SERVICE WORKER
-========================================================= */
-
-if(
-  "serviceWorker" in navigator &&
-  (
-    location.protocol === "https:" ||
-    location.hostname === "localhost" ||
-    location.hostname === "127.0.0.1"
-  )
+function filterJobs(
+  category,
+  button
 ){
 
-  window.addEventListener(
-    "load",
-    async () => {
+  document
+    .querySelectorAll(".filter")
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
-      try{
+  button.classList.add("active");
 
-        await navigator.serviceWorker.register("./sw.js");
+  if(category==="All"){
 
-        console.log(
-          "✅ JobMitra AI Service Worker registered."
-        );
+    renderJobs(allJobs);
 
+  }else{
+
+    renderJobs(
+      allJobs.filter(
+        x=>
+          (
+            x.category || ""
+          )
+          .toLowerCase()
+          ===
+          category.toLowerCase()
+
+          ||
+
+          (
+            x.organization || ""
+          )
+          .toLowerCase()
+          .includes(
+            category.toLowerCase()
+          )
+      )
+    );
+
+  }
+
+}
+
+
+async function loadExamsFromSupabase(){
+
+  const grid =
+    document.getElementById(
+      "examGrid"
+    );
+
+  grid.innerHTML =
+    '<div class="card empty"><h3>⏳ Loading Exams...</h3></div>';
+
+  const data =
+    await supabaseFetch(
+      "exams",
+      "?select=*&order=created_at.asc"
+    );
+
+  allExams =
+    Array.isArray(data)
+      ? data
+      : [];
+
+  if(!allExams.length){
+
+    grid.innerHTML =
+      '<div class="card empty"><h3>📚 No exams found</h3><p>Add exams in Supabase → exams table.</p></div>';
+
+    return;
+
+  }
+
+  grid.innerHTML="";
+
+  allExams.forEach(exam=>{
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "card";
+
+    card.innerHTML = `
+
+      <div class="cardIcon">
+        🎓
+      </div>
+
+      <h3>
+        ${escapeHtml(
+          exam.name
+        )}
+      </h3>
+
+      <p>
+        ${escapeHtml(
+          exam.description ||
+          "Odisha exam preparation"
+        )}
+      </p>
+
+      <p style="margin-top:6px">
+        <span class="status">
+          ${escapeHtml(
+            exam.category ||
+            "Exam"
+          )}
+        </span>
+      </p>
+
+      <button
+        class="btn btnGold"
+        onclick="startMock('${escapeHtml(
+          exam.name
+        )}')">
+        Start Practice
+      </button>
+
+      ${
+        safeUrl(
+          exam.official_url
+        )
+
+        ?
+
+        `<button
+           class="btn"
+           style="background:#eef4ff;color:#071a3d"
+           onclick="openExternal('${safeUrl(
+             exam.official_url
+           )}')">
+           Official Site
+         </button>`
+
+        :
+
+        ""
       }
 
-      catch(error){
+    `;
 
-        console.error(
-          "Service Worker registration error:",
-          error
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+async function loadPYQ(){
+
+  const box =
+    document.getElementById(
+      "pyqList"
+    );
+
+  box.innerHTML =
+    '<div class="card empty"><h3>⏳ Loading PYQ...</h3></div>';
+
+  const data =
+    await supabaseFetch(
+      "questions",
+      "?select=*&question_type=eq.pyq&order=pyq_year.desc"
+    );
+
+  allPYQ =
+    Array.isArray(data)
+      ? data
+      : [];
+
+  if(!allPYQ.length){
+
+    box.innerHTML =
+      '<div class="card empty"><h3>📭 No verified PYQ available yet</h3><p>Add PYQ questions in Supabase → questions table with question_type = pyq.</p></div>';
+
+    return;
+
+  }
+
+  box.innerHTML="";
+
+  allPYQ
+    .slice(0,30)
+    .forEach(q=>{
+
+      const card =
+        document.createElement(
+          "div"
         );
 
+      card.className =
+        "card";
+
+      card.innerHTML = `
+
+        <div class="jobTag">
+          VERIFIED PYQ
+          ${
+            q.pyq_year
+              ? escapeHtml(
+                  q.pyq_year
+                )
+              : ""
+          }
+        </div>
+
+        <h3>
+          ${escapeHtml(
+            q.question
+          )}
+        </h3>
+
+        <p style="margin-top:8px">
+          A. ${escapeHtml(
+            q.option_a
+          )}
+        </p>
+
+        <p>
+          B. ${escapeHtml(
+            q.option_b
+          )}
+        </p>
+
+        <p>
+          C. ${escapeHtml(
+            q.option_c
+          )}
+        </p>
+
+        <p>
+          D. ${escapeHtml(
+            q.option_d
+          )}
+        </p>
+
+        <p style="margin-top:9px">
+          <b>Answer:</b>
+          ${escapeHtml(
+            q.correct_answer
+          )}
+        </p>
+
+        ${
+          q.explanation
+
+          ?
+
+          `<p style="margin-top:5px">
+             <b>Explanation:</b>
+             ${escapeHtml(
+               q.explanation
+             )}
+           </p>`
+
+          :
+
+          ""
+        }
+
+      `;
+
+      box.appendChild(card);
+
+    });
+
+}
+
+
+async function loadPDFs(){
+
+  const grid =
+    document.getElementById(
+      "pdfGrid"
+    );
+
+  grid.innerHTML =
+    '<div class="card empty"><h3>⏳ Loading PDFs...</h3></div>';
+
+  const data =
+    await supabaseFetch(
+      "pdf_library",
+      "?select=*&order=created_at.desc"
+    );
+
+  if(!data.length){
+
+    grid.innerHTML =
+      '<div class="card empty"><h3>📭 No PDFs available yet</h3><p>Add PDF records in Supabase → pdf_library table.</p></div>';
+
+    return;
+
+  }
+
+  grid.innerHTML="";
+
+  data.forEach(pdf=>{
+
+    const card =
+      document.createElement(
+        "div"
+      );
+
+    card.className =
+      "card";
+
+    card.innerHTML = `
+
+      <div class="cardIcon">
+        📄
+      </div>
+
+      <div class="jobTag">
+        ${escapeHtml(
+          pdf.pdf_type ||
+          "PDF"
+        )}
+      </div>
+
+      <h3>
+        ${escapeHtml(
+          pdf.title
+        )}
+      </h3>
+
+      <p>
+        ${escapeHtml(
+          pdf.description ||
+          "ExamSathi PDF Library"
+        )}
+      </p>
+
+      ${
+        safeUrl(
+          pdf.file_url
+        )
+
+        ?
+
+        `<button
+           class="btn btnGold"
+           onclick="openExternal('${safeUrl(
+             pdf.file_url
+           )}')">
+           Open PDF →
+         </button>`
+
+        :
+
+        "<p style='margin-top:10px'>PDF link not added yet.</p>"
       }
+
+    `;
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+async function loadLeaderboard(){
+
+  const body =
+    document.getElementById(
+      "leaderboardBody"
+    );
+
+  const data =
+    await supabaseFetch(
+      "results",
+      "?select=student_name,percentage,score,total_questions,exam_id,created_at&order=percentage.desc&limit=20"
+    );
+
+  if(!data.length){
+
+    body.innerHTML =
+      '<tr><td colspan="5">No results yet. Complete a mock test to start the leaderboard.</td></tr>';
+
+    return;
+
+  }
+
+  body.innerHTML =
+    data.map(
+      (r,i)=>`
+
+        <tr>
+
+          <td>
+            ${
+              i===0
+                ? "🥇"
+                : i===1
+                ? "🥈"
+                : i===2
+                ? "🥉"
+                : i+1
+            }
+          </td>
+
+          <td>
+            ${escapeHtml(
+              r.student_name ||
+              "Student"
+            )}
+          </td>
+
+          <td>
+            ${escapeHtml(
+              r.exam_id ||
+              "Exam"
+            )}
+          </td>
+
+          <td>
+            ${escapeHtml(
+              r.score || 0
+            )}
+            /
+            ${escapeHtml(
+              r.total_questions || 0
+            )}
+          </td>
+
+          <td>
+            <b>
+              ${escapeHtml(
+                r.percentage || 0
+              )}%
+            </b>
+          </td>
+
+        </tr>
+
+      `
+    ).join("");
+
+}
+
+
+async function loadMockQuestions(){
+
+  const data =
+    await supabaseFetch(
+      "questions",
+      "?select=*&question_type=eq.practice&order=created_at.asc&limit=20"
+    );
+
+  if(data.length){
+
+    mockQuestions =
+      data
+        .map(q=>({
+
+          q:
+            q.question,
+
+          options:[
+            q.option_a,
+            q.option_b,
+            q.option_c,
+            q.option_d
+          ],
+
+          answer:
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+            .indexOf(
+              String(
+                q.correct_answer || ""
+              )
+              .toLowerCase()
+              .trim()
+            ),
+
+          id:q.id,
+
+          exam_id:q.exam_id
+
+        }))
+        .filter(
+          q=>q.answer>=0
+        );
+
+  }
+
+  if(!mockQuestions.length){
+
+    mockQuestions=[
+
+      {
+        q:"Odisha ra capital kana?",
+
+        options:[
+          "Cuttack",
+          "Bhubaneswar",
+          "Puri",
+          "Sambalpur"
+        ],
+
+        answer:1
+      },
+
+      {
+        q:"Odisha State Formation Day kete?",
+
+        options:[
+          "1 April",
+          "15 August",
+          "26 January",
+          "2 October"
+        ],
+
+        answer:0
+      },
+
+      {
+        q:"Odisha ra official language kana?",
+
+        options:[
+          "Hindi",
+          "English",
+          "Odia",
+          "Bengali"
+        ],
+
+        answer:2
+      },
+
+      {
+        q:"Konark Sun Temple keun district re?",
+
+        options:[
+          "Puri",
+          "Khordha",
+          "Cuttack",
+          "Ganjam"
+        ],
+
+        answer:0
+      },
+
+      {
+        q:"Indian Constitution adopted heithila keun date re?",
+
+        options:[
+          "15 August 1947",
+          "26 November 1949",
+          "26 January 1950",
+          "2 October 1950"
+        ],
+
+        answer:1
+      }
+
+    ];
+
+  }
+
+  loadQuestion();
+
+}
+
+
+function loadQuestion(){
+
+  const q =
+    mockQuestions[
+      currentQuestion
+    ];
+
+  if(!q) return;
+
+  document.getElementById(
+    "question"
+  ).textContent =
+    q.q;
+
+  document.getElementById(
+    "mockCount"
+  ).textContent =
+    `Question ${
+      currentQuestion+1
+    } / ${
+      mockQuestions.length
+    }`;
+
+  document.getElementById(
+    "progressBar"
+  ).style.width =
+    (
+      currentQuestion /
+      mockQuestions.length *
+      100
+    )+"%";
+
+  const options =
+    document.getElementById(
+      "options"
+    );
+
+  options.innerHTML="";
+
+  q.options.forEach(
+    (option,index)=>{
+
+      const btn =
+        document.createElement(
+          "button"
+        );
+
+      btn.className =
+        "option";
+
+      btn.textContent =
+        String.fromCharCode(
+          65+index
+        )+
+        ". "+
+        option;
+
+      btn.onclick =
+        ()=>answerQuestion(
+          index,
+          btn
+        );
+
+      options.appendChild(btn);
 
     }
   );
 
+  answered=false;
+
 }
+
+
+function answerQuestion(
+  index,
+  button
+){
+
+  if(answered) return;
+
+  answered=true;
+
+  const correct =
+    mockQuestions[
+      currentQuestion
+    ].answer;
+
+  const all =
+    document.querySelectorAll(
+      ".option"
+    );
+
+  if(index===correct){
+
+    button.classList.add(
+      "correct"
+    );
+
+    score++;
+
+    toast(
+      "Correct Answer! ✅"
+    );
+
+  }else{
+
+    button.classList.add(
+      "wrong"
+    );
+
+    if(all[correct]){
+      all[correct]
+        .classList
+        .add("correct");
+    }
+
+    toast(
+      "Wrong Answer ❌"
+    );
+
+  }
+
+}
+
+
+function nextQuestion(){
+
+  if(!answered){
+
+    toast(
+      "First choose an answer."
+    );
+
+    return;
+
+  }
+
+  currentQuestion++;
+
+  if(
+    currentQuestion >=
+    mockQuestions.length
+  ){
+
+    finishMock();
+
+    return;
+
+  }
+
+  loadQuestion();
+
+}
+
+
+async function finishMock(){
+
+  document.getElementById(
+    "progressBar"
+  ).style.width="100%";
+
+  document.getElementById(
+    "question"
+  ).textContent =
+    "🎉 Mock Test Completed!";
+
+  document.getElementById(
+    "options"
+  ).innerHTML="";
+
+  document.getElementById(
+    "nextBtn"
+  ).style.display="none";
+
+  const total =
+    mockQuestions.length;
+
+  const percent =
+    Math.round(
+      score/total*100
+    );
+
+  const result =
+    document.getElementById(
+      "mockResult"
+    );
+
+  result.style.display =
+    "block";
+
+  result.innerHTML = `
+
+    <h2>
+      🏆 Your Result
+    </h2>
+
+    <p style="margin-top:8px">
+      Score:
+      <b>
+        ${score}/${total}
+      </b>
+    </p>
+
+    <p>
+      Percentage:
+      <b>
+        ${percent}%
+      </b>
+    </p>
+
+    <button
+      class="btn btnGold"
+      style="margin-top:15px"
+      onclick="restartMock()">
+      Restart Mock
+    </button>
+
+  `;
+
+  document.getElementById(
+    "resultScore"
+  ).textContent =
+    score+"/"+total;
+
+  document.getElementById(
+    "resultPercent"
+  ).textContent =
+    percent+"%";
+
+  document.getElementById(
+    "resultCorrect"
+  ).textContent =
+    score;
+
+  document.getElementById(
+    "resultWrong"
+  ).textContent =
+    total-score;
+
+  const student =
+    localStorage.getItem(
+      "examSathiStudentName"
+    ) ||
+    "Guest Student";
+
+  const examId =
+    mockQuestions[0]?.exam_id ||
+    null;
+
+  await supabaseInsert(
+    "results",
+    {
+
+      student_name:
+        student,
+
+      exam_id:
+        examId,
+
+      score:
+        score,
+
+      total_questions:
+        total,
+
+      percentage:
+        percent,
+
+      correct:
+        score,
+
+      wrong:
+        total-score,
+
+      unanswered:
+        0,
+
+      time_taken_seconds:
+        0
+
+    }
+  );
+
+  loadLeaderboard();
+
+  toast(
+    "Result saved to ExamSathi database ✅"
+  );
+
+}
+
+
+function restartMock(){
+
+  currentQuestion=0;
+
+  score=0;
+
+  document.getElementById(
+    "nextBtn"
+  ).style.display =
+    "inline-block";
+
+  document.getElementById(
+    "mockResult"
+  ).style.display =
+    "none";
+
+  loadQuestion();
+
+}
+
+
+function startMock(name){
+
+  currentMockTitle =
+    name+
+    " Mock Test";
+
+  document.getElementById(
+    "mockTitle"
+  ).textContent =
+    currentMockTitle;
+
+  go("mock");
+
+  restartMock();
+
+}
+
+
+function searchContent(){
+
+  const q =
+    document.getElementById(
+      "searchInput"
+    )
+    .value
+    .toLowerCase()
+    .trim();
+
+  const result =
+    document.getElementById(
+      "searchResults"
+    );
+
+  if(!q){
+
+    result.innerHTML="";
+
+    return;
+
+  }
+
+  const data=[
+
+    ...allJobs.map(
+      x=>({
+
+        title:
+          x.title,
+
+        text:
+          x.organization ||
+          x.category ||
+          "Government Job",
+
+        icon:"💼",
+
+        action:"jobs"
+
+      })
+    ),
+
+    ...allExams.map(
+      x=>({
+
+        title:
+          x.name,
+
+        text:
+          x.category ||
+          "Exam",
+
+        icon:"🎓",
+
+        action:"entrance"
+
+      })
+    ),
+
+    {
+      title:"OTET",
+      text:"Teacher Exam",
+      icon:"👨‍🏫",
+      action:"teacher"
+    },
+
+    {
+      title:"OSSTET",
+      text:"Teacher Exam",
+      icon:"👨‍🏫",
+      action:"teacher"
+    },
+
+    {
+      title:"Mock Tests",
+      text:"Unlimited Mock Tests",
+      icon:"📝",
+      action:"mock"
+    }
+
+  ];
+
+  const found =
+    data.filter(
+      x=>
+        (
+          x.title+
+          " "+
+          x.text
+        )
+        .toLowerCase()
+        .includes(q)
+    );
+
+  if(!found.length){
+
+    result.innerHTML =
+      '<div class="card empty"><h3>❌ No result found</h3><p>Try another exam name.</p></div>';
+
+    return;
+
+  }
+
+  result.innerHTML =
+    found
+      .map(
+        x=>`
+
+          <div class="card">
+
+            <div class="cardIcon">
+              ${x.icon}
+            </div>
+
+            <h3>
+              ${escapeHtml(
+                x.title
+              )}
+            </h3>
+
+            <p>
+              ${escapeHtml(
+                x.text
+              )}
+            </p>
+
+            <button
+              class="btn btnGold"
+              onclick="go('${x.action}')">
+              Open
+            </button>
+
+          </div>
+
+        `
+      )
+      .join("");
+
+}
+
+
+async function submitSuggestion(){
+
+  const name =
+    document.getElementById(
+      "suggestName"
+    ).value.trim();
+
+  const type =
+    document.getElementById(
+      "suggestType"
+    ).value;
+
+  const message =
+    document.getElementById(
+      "suggestMessage"
+    ).value.trim();
+
+  if(!name || !message){
+
+    toast(
+      "Please fill Name and Message."
+    );
+
+    return;
+
+  }
+
+  const ok =
+    await supabaseInsert(
+      "suggestions",
+      {
+        name,
+        suggestion_type:type,
+        message
+      }
+    );
+
+  if(ok){
+
+    document.getElementById(
+      "suggestName"
+    ).value="";
+
+    document.getElementById(
+      "suggestMessage"
+    ).value="";
+
+    toast(
+      "Suggestion saved successfully! 💡"
+    );
+
+  }else{
+
+    toast(
+      "Suggestion could not be saved."
+    );
+
+  }
+
+}
+
+
+function toggleBot(){
+
+  const box =
+    document.getElementById(
+      "botBox"
+    );
+
+  box.style.display =
+    box.style.display==="block"
+      ? "none"
+      : "block";
+
+}
+
+
+function sendBot(){
+
+  const input =
+    document.getElementById(
+      "botInput"
+    );
+
+  const text =
+    input.value.trim();
+
+  if(!text) return;
+
+  const messages =
+    document.getElementById(
+      "botMessages"
+    );
+
+  messages.innerHTML +=
+    `<div class="msg">
+      👤
+      ${escapeHtml(text)}
+    </div>`;
+
+  let answer =
+    "ଆପଣଙ୍କ question ପାଇଁ ExamSathi ର relevant section check କରନ୍ତୁ। Mock Test, PYQ ଏବଂ Study Materials ବ୍ୟବହାର କରନ୍ତୁ।";
+
+  const lower =
+    text.toLowerCase();
+
+  if(
+    lower.includes("otet") ||
+    lower.includes("teacher")
+  ){
+
+    answer =
+      "OTET/Teacher preparation ପାଇଁ Teacher Exams section ଖୋଲନ୍ତୁ। 👨‍🏫";
+
+  }
+
+  else if(
+    lower.includes("ct") ||
+    lower.includes("entrance")
+  ){
+
+    answer =
+      "CT Entrance ପାଇଁ Entrance Exams section ରେ PYQ ଏବଂ Mock Test practice କରନ୍ତୁ। 🎓";
+
+  }
+
+  else if(
+    lower.includes("job") ||
+    lower.includes("opsc") ||
+    lower.includes("ossc")
+  ){
+
+    answer =
+      "Government Jobs section ରେ latest database jobs ଦେଖନ୍ତୁ। 💼";
+
+  }
+
+  messages.innerHTML +=
+    `<div class="msg">
+      🤖 ${answer}
+    </div>`;
+
+  input.value="";
+
+  messages.scrollTop =
+    messages.scrollHeight;
+
+}
+
+
+function openJobMitra(){
+
+  window.open(
+    "https://github.com/geetakasimala095-bit",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+function openWhatsApp(){
+
+  window.open(
+    "https://wa.me/918249584734?text=Hello%20ExamSathi%20Odisha",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+let toastTimer;
+
+
+function toast(message){
+
+  const box =
+    document.getElementById(
+      "toast"
+    );
+
+  box.textContent =
+    message;
+
+  box.classList.add(
+    "show"
+  );
+
+  clearTimeout(
+    toastTimer
+  );
+
+  toastTimer =
+    setTimeout(
+      ()=>box.classList.remove(
+        "show"
+      ),
+      2500
+    );
+
+}
+
+
+async function init(){
+
+  setDbStatus(
+    "Connecting..."
+  );
+
+  try{
+
+    await Promise.all([
+
+      loadJobsFromSupabase(),
+
+      loadExamsFromSupabase(),
+
+      loadPDFs(),
+
+      loadLeaderboard(),
+
+      loadMockQuestions()
+
+    ]);
+
+    setDbStatus(
+      "Connected ✅"
+    );
+
+  }catch(e){
+
+    console.error(e);
+
+    setDbStatus(
+      "Check connection"
+    );
+
+  }
+
+}
+
+
+init();
 
 </script>
 
 </body>
 </html>
-```
