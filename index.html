@@ -1,2523 +1,1595 @@
-<!DOCTYPE html>
-<html lang="or">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ExamSathi Odisha | Prepare Smart. Crack Odisha Govt Exams.</title>
-<meta name="description" content="ExamSathi Odisha - Odisha Government Jobs, Entrance Exams, Teacher Exams, PYQ, Mock Tests, Study Materials and Exam Updates.">
-<meta name="theme-color" content="#071a3d">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,"Noto Sans Oriya",sans-serif;background:#f5f7fb;color:#14213d;line-height:1.6}
-header{position:sticky;top:0;z-index:1000;background:#071a3d;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.2)}
-.navbar{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;white-space:nowrap}
-.logoIcon{width:42px;height:42px;border-radius:12px;background:#ffd54a;color:#071a3d;display:flex;align-items:center;justify-content:center;font-size:22px}
-.navLinks{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
-.navLinks button{background:transparent;border:0;color:#fff;padding:8px 9px;cursor:pointer;border-radius:8px;font-size:13px}
-.navLinks button:hover{background:rgba(255,255,255,.12)}
-.langBtn{border:1px solid #ffd54a;background:#ffd54a;color:#071a3d;font-weight:700;padding:8px 11px;border-radius:9px;cursor:pointer}
-.hero{background:radial-gradient(circle at top right,rgba(255,213,74,.18),transparent 35%),linear-gradient(135deg,#071a3d,#0c2b61);color:#fff;padding:62px 18px 52px}
-.heroInner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr .8fr;gap:35px;align-items:center}
-.badge{display:inline-block;background:rgba(255,213,74,.15);border:1px solid rgba(255,213,74,.5);color:#ffd54a;padding:7px 12px;border-radius:30px;font-size:13px;margin-bottom:15px}
-.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.1;margin-bottom:15px}
-.hero h1 span{color:#ffd54a}
-.hero p{color:#dbe5f5;font-size:17px;max-width:680px}
-.heroButtons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{border:0;padding:11px 17px;border-radius:11px;font-weight:700;cursor:pointer;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btnGold{background:#ffd54a;color:#071a3d}
-.btnWhite{background:#fff;color:#071a3d}
-.heroCard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:25px;backdrop-filter:blur(10px)}
-.heroCard h3{color:#ffd54a;margin-bottom:12px}
-.stat{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.stat:last-child{border-bottom:0}
-.container{max-width:1200px;margin:auto;padding:52px 18px}
-.sectionHead{text-align:center;margin-bottom:28px}
-.sectionHead h2{font-size:30px;color:#071a3d}
-.sectionHead p{color:#65718a;margin-top:6px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.card{background:#fff;border-radius:17px;padding:20px;border:1px solid #e4e9f2;box-shadow:0 7px 22px rgba(8,29,61,.06);transition:.2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(8,29,61,.12)}
-.cardIcon{font-size:30px;margin-bottom:10px}
-.card h3{margin-bottom:6px;color:#071a3d}
-.card p{color:#68748b;font-size:14px}
-.card button{margin-top:13px}
-.searchBox{max-width:800px;margin:0 auto 24px;display:flex;gap:8px}
-.searchBox input{flex:1;padding:14px 16px;border:1px solid #d9e0ec;border-radius:12px;outline:none;font-size:15px}
-.jobFilters{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:25px}
-.filter{border:1px solid #d9e1ed;background:#fff;padding:9px 13px;border-radius:20px;cursor:pointer}
-.filter.active{background:#071a3d;color:#fff}
-.jobGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.jobCard{background:#fff;border-radius:16px;border:1px solid #e1e6ef;padding:18px}
-.jobTag{display:inline-block;background:#eef4ff;color:#0b4ba5;border-radius:20px;padding:5px 9px;font-size:12px;margin-bottom:10px}
-.quiz{max-width:800px;margin:auto}
-.mockCard{max-width:850px;margin:auto}
-.mockTop{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}
-.progress{height:9px;background:#e6ebf3;border-radius:10px;overflow:hidden;margin-bottom:22px}
-.progressBar{width:0%;height:100%;background:#ffd54a;transition:.3s}
-.question{font-size:20px;font-weight:700;margin-bottom:18px}
-.option{display:block;width:100%;text-align:left;background:#f8faff;border:1px solid #dce4f1;padding:13px;border-radius:10px;margin:9px 0;cursor:pointer}
-.option:hover{background:#eef4ff}
-.option.correct{border-color:#21a366;background:#e9f9ef}
-.option.wrong{border-color:#d64545;background:#fff0f0}
-.ad{background:linear-gradient(135deg,#101d3d,#18386f);color:#fff;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.ad h2{color:#ffd54a}
-.form{max-width:700px;margin:auto;background:#fff;padding:25px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
-.form input,.form textarea,.form select{width:100%;padding:12px;border:1px solid #dbe2ed;border-radius:10px;margin:7px 0 15px;font-family:inherit}
-footer{background:#06152f;color:#dce5f4;padding:40px 18px;margin-top:20px}
-.footerInner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h3{color:#ffd54a;margin-bottom:10px}
-footer a{color:#dce5f4;text-decoration:none;display:block;margin:5px 0}
-.copy{text-align:center;border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:20px}
-.bot{position:fixed;right:18px;bottom:18px;z-index:2000}
-.botButton{width:58px;height:58px;border:0;border-radius:50%;background:#ffd54a;color:#071a3d;font-size:25px;cursor:pointer;box-shadow:0 7px 22px rgba(0,0,0,.25)}
-.botBox{display:none;position:absolute;right:0;bottom:70px;width:310px;background:#fff;border-radius:18px;box-shadow:0 15px 45px rgba(0,0,0,.2);overflow:hidden}
-.botHeader{background:#071a3d;color:#fff;padding:14px;font-weight:700}
-.botMessages{height:260px;overflow:auto;padding:12px}
-.msg{padding:9px 11px;border-radius:10px;background:#f0f4fa;margin-bottom:8px;font-size:13px}
-.botInput{display:flex;border-top:1px solid #e2e7ef}
-.botInput input{flex:1;border:0;padding:12px;outline:0}
-.botInput button{border:0;background:#ffd54a;padding:0 15px;cursor:pointer}
-.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#071a3d;color:#fff;padding:12px 18px;border-radius:10px;opacity:0;transition:.3s;z-index:3000}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.tableWrap{overflow:auto}
-table{width:100%;border-collapse:collapse}
-th,td{padding:12px;border-bottom:1px solid #e7ebf2;text-align:left}
-.status{font-size:12px;padding:5px 9px;border-radius:20px;background:#e9f9ef;color:#187642}
-.empty{grid-column:1/-1;text-align:center}
-@media(max-width:900px){
-  .heroInner{grid-template-columns:1fr}
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .jobGrid{grid-template-columns:repeat(2,1fr)}
-  .footerInner{grid-template-columns:1fr 1fr}
-}
-@media(max-width:650px){
-  .navbar{flex-wrap:wrap}
-  .navLinks{order:3;width:100%;overflow:auto;justify-content:flex-start}
-  .grid,.jobGrid{grid-template-columns:1fr}
-  .searchBox{flex-direction:column}
-  .ad{flex-direction:column;align-items:flex-start}
-  .footerInner{grid-template-columns:1fr}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <div class="logoIcon">📚</div>
-      <div>ExamSathi Odisha</div>
-    </div>
-
-    <nav class="navLinks">
-      <button onclick="go('home')">🏠 Home</button>
-      <button onclick="go('jobs')">💼 Jobs</button>
-      <button onclick="go('entrance')">🎓 Entrance</button>
-      <button onclick="go('teacher')">👨‍🏫 Teacher</button>
-      <button onclick="go('pyq')">📖 PYQ</button>
-      <button onclick="go('mock')">📝 Mock</button>
-      <button onclick="go('pdf')">📄 PDF</button>
-    </nav>
-
-    <button class="langBtn" onclick="toggleLanguage()">ଓଡ଼ିଆ / EN</button>
-  </div>
-</header>
-
-<section id="home" class="hero">
-  <div class="heroInner">
-
-    <div>
-      <div class="badge">🇮🇳 Odisha Exam Preparation Platform</div>
-
-      <h1>
-        Prepare Smart.<br>
-        <span>Crack Odisha Govt Exams.</span>
-      </h1>
-
-      <p id="heroText">
-        Odisha Government Exams ପାଇଁ PYQ, Mock Tests, Study Materials,
-        Exam Updates ଏବଂ Smart Practice — ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।
-      </p>
-
-      <div class="heroButtons">
-        <button class="btn btnGold" onclick="go('mock')">
-          📝 Start Mock Test
-        </button>
-
-        <button class="btn btnWhite" onclick="go('jobs')">
-          💼 Explore Jobs
-        </button>
-      </div>
-    </div>
-
-    <div class="heroCard">
-      <h3>🔥 Daily Motivation</h3>
-
-      <p id="motivation">Loading...</p>
-
-      <div class="stat">
-        <span>📝 Mock Tests</span>
-        <b>∞ Unlimited</b>
-      </div>
-
-      <div class="stat">
-        <span>💰 Platform</span>
-        <b>FREE</b>
-      </div>
-
-      <div class="stat">
-        <span>🌐 Language</span>
-        <b>Odia + English</b>
-      </div>
-
-      <div class="stat">
-        <span>🔌 Database</span>
-        <b id="dbStatus">Connecting...</b>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="container">
-
-  <div class="sectionHead">
-    <h2>🔎 Search Exam</h2>
-    <p>Exam, Job, PYQ କିମ୍ବା Mock Test ଖୋଜନ୍ତୁ</p>
-  </div>
-
-  <div class="searchBox">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search OPSC, OSSC, OTET, CT, B.Ed..."
-      oninput="searchContent()"
-    >
-  </div>
-
-  <div id="searchResults" class="grid"></div>
-
-</section>
-
-<section class="container">
-
-  <div class="sectionHead">
-    <h2>📚 Explore ExamSathi</h2>
-    <p>ଆପଣଙ୍କ preparation category ବାଛନ୍ତୁ</p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="cardIcon">💼</div>
-      <h3>Odisha Government Jobs</h3>
-      <p>
-        OPSC, OSSC, OSSSC, Police, Health, Forest,
-        Revenue, Technical ଏବଂ ଅନ୍ୟ jobs.
-      </p>
-      <button class="btn btnGold" onclick="go('jobs')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">🎓</div>
-      <h3>Entrance Exams</h3>
-      <p>
-        CT, B.Ed, Teacher Education ଏବଂ ଅନ୍ୟ
-        Odisha entrance exams.
-      </p>
-      <button class="btn btnGold" onclick="go('entrance')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">👨‍🏫</div>
-      <h3>Teacher Exams</h3>
-      <p>
-        OTET, OSSTET, CT-related ଏବଂ
-        B.Ed-related preparation.
-      </p>
-      <button class="btn btnGold" onclick="go('teacher')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📚</div>
-      <h3>Student Exams</h3>
-      <p>
-        +2, +3/Degree, UG/PG ଏବଂ
-        subject-wise preparation.
-      </p>
-      <button
-        class="btn btnGold"
-        onclick="toast('Student Exams module ready for database content')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📝</div>
-      <h3>Competitive Exams</h3>
-      <p>
-        Odisha state ଏବଂ department
-        competitive examinations.
-      </p>
-      <button
-        class="btn btnGold"
-        onclick="toast('Competitive Exams module ready')">
-        Explore
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📖</div>
-      <h3>Previous Year Questions</h3>
-      <p>
-        Year-wise verified PYQ + answer + explanation.
-      </p>
-      <button class="btn btnGold" onclick="go('pyq')">
-        Open PYQ
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">🤖</div>
-      <h3>AI Practice</h3>
-      <p>
-        Weak-topic based practice ଏବଂ
-        smart study guidance.
-      </p>
-      <button
-        class="btn btnGold"
-        onclick="toast('AI Practice foundation ready')">
-        Practice
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">🏆</div>
-      <h3>Leaderboard</h3>
-      <p>
-        Mock test score ଏବଂ exam-wise ranking.
-      </p>
-      <button class="btn btnGold" onclick="go('leaderboard')">
-        View
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<section id="jobs" class="container">
-
-  <div class="sectionHead">
-    <h2>💼 Odisha Government Jobs</h2>
-    <p>Jobs are loaded automatically from Supabase</p>
-  </div>
-
-  <div class="jobFilters">
-
-    <button class="filter active"
-      onclick="filterJobs('All',this)">All</button>
-
-    <button class="filter"
-      onclick="filterJobs('OPSC',this)">OPSC</button>
-
-    <button class="filter"
-      onclick="filterJobs('OSSC',this)">OSSC</button>
-
-    <button class="filter"
-      onclick="filterJobs('OSSSC',this)">OSSSC</button>
-
-    <button class="filter"
-      onclick="filterJobs('Police',this)">Police</button>
-
-    <button class="filter"
-      onclick="filterJobs('Health',this)">Health</button>
-
-    <button class="filter"
-      onclick="filterJobs('Forest',this)">Forest</button>
-
-    <button class="filter"
-      onclick="filterJobs('Technical',this)">Technical</button>
-
-    <button class="filter"
-      onclick="filterJobs('Graduate',this)">Graduate</button>
-
-  </div>
-
-  <div id="jobGrid" class="jobGrid"></div>
-
-</section>
-
-<section id="entrance" class="container">
-
-  <div class="sectionHead">
-    <h2>🎓 Entrance Exams</h2>
-    <p>Exam list is loaded from the ExamSathi database</p>
-  </div>
-
-  <div id="examGrid" class="grid"></div>
-
-</section>
-
-<section id="teacher" class="container">
-
-  <div class="sectionHead">
-    <h2>👨‍🏫 Teacher Exams</h2>
-    <p>Teacher exam preparation</p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="cardIcon">📘</div>
-      <h3>OTET</h3>
-      <p>PYQ, answers, explanations and mock practice.</p>
-      <button class="btn btnGold"
-        onclick="startMock('OTET')">
-        Practice
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📗</div>
-      <h3>OSSTET</h3>
-      <p>Subject practice and mock tests.</p>
-      <button class="btn btnGold"
-        onclick="startMock('OSSTET')">
-        Practice
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📙</div>
-      <h3>CT Related</h3>
-      <p>CT teacher preparation materials.</p>
-      <button class="btn btnGold"
-        onclick="startMock('CT Teacher')">
-        Practice
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📕</div>
-      <h3>B.Ed Related</h3>
-      <p>B.Ed related teacher examination preparation.</p>
-      <button class="btn btnGold"
-        onclick="startMock('B.Ed Teacher')">
-        Practice
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<section id="pyq" class="container">
-
-  <div class="sectionHead">
-    <h2>📖 Previous Year Questions</h2>
-    <p>
-      Verified PYQ ଏବଂ new practice questions
-      ଅଲଗା label ରେ
-    </p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="cardIcon">📅</div>
-      <h3>Year-wise PYQ</h3>
-      <p>Exam year ଅନୁସାରେ questions.</p>
-      <button class="btn btnGold" onclick="loadPYQ()">
-        Open
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">✅</div>
-      <h3>Verified Answers</h3>
-      <p>Question + answer + explanation.</p>
-      <button class="btn btnGold" onclick="loadPYQ()">
-        Open
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">🆕</div>
-      <h3>New Practice</h3>
-      <p>PYQ ଠାରୁ separate practice questions.</p>
-      <button class="btn btnGold"
-        onclick="startMock('New Practice')">
-        Practice
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">♾️</div>
-      <h3>Unlimited Mock</h3>
-      <p>PYQ-based unlimited mock practice.</p>
-      <button class="btn btnGold" onclick="go('mock')">
-        Start
-      </button>
-    </div>
-
-  </div>
-
-  <div id="pyqList"
-    class="grid"
-    style="margin-top:20px">
-  </div>
-
-</section>
-
-<section id="mock" class="container">
-
-  <div class="sectionHead">
-    <h2>📝 2026–27 New Mock Tests</h2>
-    <p>
-      Practice • Full • Subject • Easy • Medium • Hard • AI Smart
-    </p>
-  </div>
-
-  <div class="mockCard card">
-
-    <div class="mockTop">
-      <b id="mockTitle">
-        General Odisha Exam Mock
-      </b>
-
-      <span id="mockCount">
-        Question 1 / 5
-      </span>
-    </div>
-
-    <div class="progress">
-      <div id="progressBar"
-        class="progressBar">
-      </div>
-    </div>
-
-    <div id="question"
-      class="question">
-      Loading question...
-    </div>
-
-    <div id="options"></div>
-
-    <button
-      id="nextBtn"
-      class="btn btnGold"
-      onclick="nextQuestion()">
-      Next Question →
-    </button>
-
-    <div
-      id="mockResult"
-      style="display:none;margin-top:20px;text-align:center">
-    </div>
-
-  </div>
-
-</section>
-
-<section id="pdf" class="container">
-
-  <div class="sectionHead">
-    <h2>📄 PDF Library</h2>
-    <p>
-      PDF documents are loaded automatically from Supabase
-    </p>
-  </div>
-
-  <div id="pdfGrid" class="grid"></div>
-
-</section>
-
-<section id="leaderboard" class="container">
-
-  <div class="sectionHead">
-    <h2>🏆 Leaderboard</h2>
-    <p>Latest submitted mock results</p>
-  </div>
-
-  <div class="card tableWrap">
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Student</th>
-          <th>Exam</th>
-          <th>Score</th>
-          <th>Percentage</th>
-        </tr>
-      </thead>
-
-      <tbody id="leaderboardBody">
-
-        <tr>
-          <td colspan="5">
-            Loading...
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-<section class="container">
-
-  <div class="sectionHead">
-    <h2>📊 Result & Performance</h2>
-    <p>Your latest browser-session result</p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="cardIcon">🎯</div>
-      <h3 id="resultScore">0</h3>
-      <p>Latest Score</p>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">📈</div>
-      <h3 id="resultPercent">0%</h3>
-      <p>Percentage</p>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">✅</div>
-      <h3 id="resultCorrect">0</h3>
-      <p>Correct</p>
-    </div>
-
-    <div class="card">
-      <div class="cardIcon">❌</div>
-      <h3 id="resultWrong">0</h3>
-      <p>Wrong</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="container" id="suggestion">
-
-  <div class="sectionHead">
-    <h2>💡 Suggestion Box</h2>
-    <p>
-      Suggestion Supabase database ରେ save ହେବ
-    </p>
-  </div>
-
-  <div class="form">
-
-    <label>Name</label>
-
-    <input
-      id="suggestName"
-      placeholder="Your name"
-    >
-
-    <label>Suggestion Type</label>
-
-    <select id="suggestType">
-
-      <option>New Exam Request</option>
-      <option>Question Error</option>
-      <option>PDF Request</option>
-      <option>Mock Suggestion</option>
-      <option>Feature Suggestion</option>
-      <option>Feedback</option>
-
-    </select>
-
-    <label>Message</label>
-
-    <textarea
-      id="suggestMessage"
-      rows="5"
-      placeholder="Write your suggestion...">
-    </textarea>
-
-    <button
-      class="btn btnGold"
-      onclick="submitSuggestion()">
-      Send Suggestion
-    </button>
-
-  </div>
-
-</section>
-
-<section class="container">
-
-  <div class="ad">
-
-    <div>
-      <h2>💼 JobMitra AI</h2>
-      <p>
-        Jobs • Scholarships • Admit Card • Results • Apply Online
-      </p>
-    </div>
-
-    <button
-      class="btn btnGold"
-      onclick="openJobMitra()">
-      Visit JobMitra AI →
-    </button>
-
-  </div>
-
-</section>
-
-<section class="container">
-
-  <div class="sectionHead">
-
-    <h2>📲 Support</h2>
-
-    <p>WhatsApp Only / DM</p>
-
-    <h3 style="margin-top:10px">
-      8249584734
-    </h3>
-
-    <button
-      class="btn btnGold"
-      style="margin-top:15px"
-      onclick="openWhatsApp()">
-      💬 WhatsApp Support
-    </button>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <div class="footerInner">
-
-    <div>
-
-      <h3>🇮🇳 ExamSathi Odisha</h3>
-
-      <p>
-        Prepare Smart. Crack Odisha Govt Exams.
-      </p>
-
-      <p style="margin-top:10px">
-        Free education platform for Odisha exam preparation.
-      </p>
-
-    </div>
-
-    <div>
-
-      <h3>Quick Links</h3>
-
-      <a href="#home">Home</a>
-      <a href="#jobs">Government Jobs</a>
-      <a href="#entrance">Entrance Exams</a>
-      <a href="#teacher">Teacher Exams</a>
-      <a href="#mock">Mock Tests</a>
-
-    </div>
-
-    <div>
-
-      <h3>Preparation</h3>
-
-      <a href="#pyq">PYQ</a>
-      <a href="#pdf">PDF Library</a>
-      <a href="#leaderboard">Leaderboard</a>
-      <a href="#suggestion">Suggestion Box</a>
-
-    </div>
-
-  </div>
-
-  <div class="copy">
-    © 2026 ExamSathi Odisha • Created by Babulu Naik
-  </div>
-
-</footer>
-
-<div class="bot">
-
-  <div id="botBox" class="botBox">
-
-    <div class="botHeader">
-      🤖 ExamSathi Bot
-    </div>
-
-    <div id="botMessages" class="botMessages">
-
-      <div class="msg">
-        Namaskar! 🙏 Exam doubt pacharantu.
-      </div>
-
-      <div class="msg">
-        ମୁଁ Odia + English ରେ study help କରିପାରିବି।
-      </div>
-
-    </div>
-
-    <div class="botInput">
-
-      <input
-        id="botInput"
-        placeholder="Ask your doubt..."
-        onkeydown="if(event.key==='Enter')sendBot()"
-      >
-
-      <button onclick="sendBot()">➤</button>
-
-    </div>
-
-  </div>
-
-  <button
-    class="botButton"
-    onclick="toggleBot()">
-    🤖
-  </button>
-
-</div>
-
-<div id="toast" class="toast"></div>
-
-<script>
-
-/* =========================================================
-   EXAMSATHI ODISHA - SUPABASE CONNECTED FRONTEND
-   ========================================================= */
-
-const SUPABASE_URL =
-  "https://ullqxaoctpedgtxlaesh.supabase.co";
-
-const SUPABASE_KEY =
-  "sb_publishable_NW1cUIuZ4pqFxJ_iuNBbcg_pS-PjUqr";
-
-let allJobs = [];
-let allExams = [];
-let allPYQ = [];
-let mockQuestions = [];
-
-let currentQuestion = 0;
-let score = 0;
-let answered = false;
-
-let currentMockTitle =
-  "General Odisha Exam Mock";
-
-
-function go(id){
-
-  const el =
-    document.getElementById(id);
-
-  if(el){
-    el.scrollIntoView({
-      behavior:"smooth"
-    });
-  }
-
-}
-
-
-function escapeHtml(text){
-
-  const div =
-    document.createElement("div");
-
-  div.textContent =
-    text==null ? "" : String(text);
-
-  return div.innerHTML;
-
-}
-
-
-function safeUrl(url){
-
-  if(!url) return "";
-
-  try{
-
-    const u =
-      new URL(url);
-
-    if(
-      u.protocol==="https:" ||
-      u.protocol==="http:"
-    ){
-      return u.href;
-    }
-
-  }catch(e){}
-
-  return "";
-
-}
-
-
-function openExternal(url){
-
-  const u =
-    safeUrl(url);
-
-  if(!u){
-
-    toast(
-      "Official link is not available."
-    );
-
-    return;
-  }
-
-  window.open(
-    u,
-    "_blank",
-    "noopener,noreferrer"
-  );
-
-}
-
-
-async function supabaseFetch(
-  table,
-  query=""
-){
-
-  try{
-
-    const res =
-      await fetch(
-        `${SUPABASE_URL}/rest/v1/${table}${query}`,
-        {
-          method:"GET",
-
-          headers:{
-            "apikey":SUPABASE_KEY,
-
-            "Authorization":
-              "Bearer "+SUPABASE_KEY,
-
-            "Content-Type":
-              "application/json"
-          },
-
-          cache:"no-store"
-        }
-      );
-
-    if(!res.ok){
-
-      console.error(
-        "Supabase GET error:",
-        await res.text()
-      );
-
-      return [];
-
-    }
-
-    return await res.json();
-
-  }catch(e){
-
-    console.error(
-      "Supabase connection error:",
-      e
-    );
-
-    return [];
-
-  }
-
-}
-
-
-async function supabaseInsert(
-  table,
-  payload
-){
-
-  try{
-
-    const res =
-      await fetch(
-        `${SUPABASE_URL}/rest/v1/${table}`,
-        {
-          method:"POST",
-
-          headers:{
-            "apikey":SUPABASE_KEY,
-
-            "Authorization":
-              "Bearer "+SUPABASE_KEY,
-
-            "Content-Type":
-              "application/json",
-
-            "Prefer":
-              "return=representation"
-          },
-
-          body:
-            JSON.stringify(payload)
-        }
-      );
-
-    if(!res.ok){
-
-      console.error(
-        "Supabase INSERT error:",
-        await res.text()
-      );
-
-      return false;
-
-    }
-
-    return true;
-
-  }catch(e){
-
-    console.error(
-      "Supabase insert connection error:",
-      e
-    );
-
-    return false;
-
-  }
-
-}
-
-
-const motivations = [
-
-  "Small daily progress creates big success. 💪",
-
-  "ଆଜି ପଢନ୍ତୁ, କାଲି ସଫଳତା ପାଆନ୍ତୁ। 🇮🇳",
-
-  "Your preparation decides your result. 🎯",
-
-  "ହାର ମାନନ୍ତୁ ନାହିଁ — practice କରୁଥାନ୍ତୁ। 🔥",
-
-  "One mock test every day can change your preparation. 📝",
-
-  "Dream big. Prepare smart. Crack your exam. 🚀",
-
-  "ସଫଳତା ପାଇଁ consistency ସବୁଠାରୁ important। ⭐"
-
-];
-
-
-document.getElementById(
-  "motivation"
-).textContent =
-  motivations[
-    Math.floor(
-      Date.now()/86400000
-    ) % motivations.length
-  ];
-
-
-let english=false;
-
-
-function toggleLanguage(){
-
-  english=!english;
-
-  document.getElementById(
-    "heroText"
-  ).textContent =
-    english
-
-    ?
-
-    "Prepare for Odisha Government Exams with PYQ, Mock Tests, Study Materials, Exam Updates and Smart Practice — all in one place."
-
-    :
-
-    "Odisha Government Exams ପାଇଁ PYQ, Mock Tests, Study Materials, Exam Updates ଏବଂ Smart Practice — ସବୁ ଗୋଟିଏ ସ୍ଥାନରେ।";
-
-  toast(
-    english
-      ? "English mode activated 🇬🇧"
-      : "Odia mode activated 🇮🇳"
-  );
-
-}
-
-
-function setDbStatus(text){
-
-  document.getElementById(
-    "dbStatus"
-  ).textContent=text;
-
-}
-
-
-async function loadJobsFromSupabase(){
-
-  const grid =
-    document.getElementById(
-      "jobGrid"
-    );
-
-  grid.innerHTML =
-    '<div class="card empty"><h3>⏳ Loading Jobs...</h3><p>Latest jobs loading from database.</p></div>';
-
-  const data =
-    await supabaseFetch(
-      "jobs",
-      "?select=*&order=published_at.desc"
-    );
-
-  allJobs =
-    Array.isArray(data)
-      ? data
-      : [];
-
-  renderJobs(allJobs);
-
-}
-
-
-function renderJobs(list){
-
-  const grid =
-    document.getElementById(
-      "jobGrid"
-    );
-
-  if(!list.length){
-
-    grid.innerHTML =
-      '<div class="card empty"><div class="cardIcon">📭</div><h3>No Jobs Available</h3><p>Add jobs in Supabase → jobs table and they will appear here automatically.</p></div>';
-
-    return;
-
-  }
-
-  grid.innerHTML="";
-
-  list.forEach(job=>{
-
-    const card =
-      document.createElement("div");
-
-    card.className =
-      "jobCard";
-
-    const date =
-      job.last_date
-        ? new Date(
-            job.last_date
-          ).toLocaleDateString(
-            "en-IN"
-          )
-        : "Not available";
-
-    card.innerHTML = `
-
-      <div class="jobTag">
-        ${escapeHtml(
-          job.category ||
-          "Government Job"
-        )}
-      </div>
-
-      <h3>
-        💼
-        ${escapeHtml(
-          job.title ||
-          "Government Job"
-        )}
-      </h3>
-
-      <p style="margin-top:8px">
-        <b>Organization:</b>
-        ${escapeHtml(
-          job.organization ||
-          "Odisha Government"
-        )}
-      </p>
-
-      <p style="margin-top:5px">
-        <b>Eligibility:</b>
-        ${escapeHtml(
-          job.eligibility ||
-          "See notification"
-        )}
-      </p>
-
-      <p style="margin-top:5px">
-        <b>Last Date:</b>
-        ${escapeHtml(date)}
-      </p>
-
-      <div
-        style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-
-        ${
-          job.notification_url
-
-          ?
-
-          `<button
-             class="btn btnGold"
-             onclick="openExternal('${safeUrl(
-               job.notification_url
-             )}')">
-             📄 Notification
-           </button>`
-
-          :
-
-          ""
-        }
-
-        ${
-          job.apply_url
-
-          ?
-
-          `<button
-             class="btn btnGold"
-             onclick="openExternal('${safeUrl(
-               job.apply_url
-             )}')">
-             📝 Apply
-           </button>`
-
-          :
-
-          ""
-        }
-
-      </div>
-    `;
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-function filterJobs(
-  category,
-  button
-){
-
-  document
-    .querySelectorAll(".filter")
-    .forEach(
-      x=>x.classList.remove("active")
-    );
-
-  button.classList.add("active");
-
-  if(category==="All"){
-
-    renderJobs(allJobs);
-
-  }else{
-
-    renderJobs(
-      allJobs.filter(
-        x=>
-          (
-            x.category || ""
-          )
-          .toLowerCase()
-          ===
-          category.toLowerCase()
-
-          ||
-
-          (
-            x.organization || ""
-          )
-          .toLowerCase()
-          .includes(
-            category.toLowerCase()
-          )
-      )
-    );
-
-  }
-
-}
-
-
-async function loadExamsFromSupabase(){
-
-  const grid =
-    document.getElementById(
-      "examGrid"
-    );
-
-  grid.innerHTML =
-    '<div class="card empty"><h3>⏳ Loading Exams...</h3></div>';
-
-  const data =
-    await supabaseFetch(
-      "exams",
-      "?select=*&order=created_at.asc"
-    );
-
-  allExams =
-    Array.isArray(data)
-      ? data
-      : [];
-
-  if(!allExams.length){
-
-    grid.innerHTML =
-      '<div class="card empty"><h3>📚 No exams found</h3><p>Add exams in Supabase → exams table.</p></div>';
-
-    return;
-
-  }
-
-  grid.innerHTML="";
-
-  allExams.forEach(exam=>{
-
-    const card =
-      document.createElement("div");
-
-    card.className =
-      "card";
-
-    card.innerHTML = `
-
-      <div class="cardIcon">
-        🎓
-      </div>
-
-      <h3>
-        ${escapeHtml(
-          exam.name
-        )}
-      </h3>
-
-      <p>
-        ${escapeHtml(
-          exam.description ||
-          "Odisha exam preparation"
-        )}
-      </p>
-
-      <p style="margin-top:6px">
-        <span class="status">
-          ${escapeHtml(
-            exam.category ||
-            "Exam"
-          )}
-        </span>
-      </p>
-
-      <button
-        class="btn btnGold"
-        onclick="startMock('${escapeHtml(
-          exam.name
-        )}')">
-        Start Practice
-      </button>
-
-      ${
-        safeUrl(
-          exam.official_url
-        )
-
-        ?
-
-        `<button
-           class="btn"
-           style="background:#eef4ff;color:#071a3d"
-           onclick="openExternal('${safeUrl(
-             exam.official_url
-           )}')">
-           Official Site
-         </button>`
-
-        :
-
-        ""
-      }
-
-    `;
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-async function loadPYQ(){
-
-  const box =
-    document.getElementById(
-      "pyqList"
-    );
-
-  box.innerHTML =
-    '<div class="card empty"><h3>⏳ Loading PYQ...</h3></div>';
-
-  const data =
-    await supabaseFetch(
-      "questions",
-      "?select=*&question_type=eq.pyq&order=pyq_year.desc"
-    );
-
-  allPYQ =
-    Array.isArray(data)
-      ? data
-      : [];
-
-  if(!allPYQ.length){
-
-    box.innerHTML =
-      '<div class="card empty"><h3>📭 No verified PYQ available yet</h3><p>Add PYQ questions in Supabase → questions table with question_type = pyq.</p></div>';
-
-    return;
-
-  }
-
-  box.innerHTML="";
-
-  allPYQ
-    .slice(0,30)
-    .forEach(q=>{
-
-      const card =
-        document.createElement(
-          "div"
-        );
-
-      card.className =
-        "card";
-
-      card.innerHTML = `
-
-        <div class="jobTag">
-          VERIFIED PYQ
-          ${
-            q.pyq_year
-              ? escapeHtml(
-                  q.pyq_year
-                )
-              : ""
-          }
-        </div>
-
-        <h3>
-          ${escapeHtml(
-            q.question
-          )}
-        </h3>
-
-        <p style="margin-top:8px">
-          A. ${escapeHtml(
-            q.option_a
-          )}
-        </p>
-
-        <p>
-          B. ${escapeHtml(
-            q.option_b
-          )}
-        </p>
-
-        <p>
-          C. ${escapeHtml(
-            q.option_c
-          )}
-        </p>
-
-        <p>
-          D. ${escapeHtml(
-            q.option_d
-          )}
-        </p>
-
-        <p style="margin-top:9px">
-          <b>Answer:</b>
-          ${escapeHtml(
-            q.correct_answer
-          )}
-        </p>
-
-        ${
-          q.explanation
-
-          ?
-
-          `<p style="margin-top:5px">
-             <b>Explanation:</b>
-             ${escapeHtml(
-               q.explanation
-             )}
-           </p>`
-
-          :
-
-          ""
-        }
-
-      `;
-
-      box.appendChild(card);
-
-    });
-
-}
-
-
-async function loadPDFs(){
-
-  const grid =
-    document.getElementById(
-      "pdfGrid"
-    );
-
-  grid.innerHTML =
-    '<div class="card empty"><h3>⏳ Loading PDFs...</h3></div>';
-
-  const data =
-    await supabaseFetch(
-      "pdf_library",
-      "?select=*&order=created_at.desc"
-    );
-
-  if(!data.length){
-
-    grid.innerHTML =
-      '<div class="card empty"><h3>📭 No PDFs available yet</h3><p>Add PDF records in Supabase → pdf_library table.</p></div>';
-
-    return;
-
-  }
-
-  grid.innerHTML="";
-
-  data.forEach(pdf=>{
-
-    const card =
-      document.createElement(
-        "div"
-      );
-
-    card.className =
-      "card";
-
-    card.innerHTML = `
-
-      <div class="cardIcon">
-        📄
-      </div>
-
-      <div class="jobTag">
-        ${escapeHtml(
-          pdf.pdf_type ||
-          "PDF"
-        )}
-      </div>
-
-      <h3>
-        ${escapeHtml(
-          pdf.title
-        )}
-      </h3>
-
-      <p>
-        ${escapeHtml(
-          pdf.description ||
-          "ExamSathi PDF Library"
-        )}
-      </p>
-
-      ${
-        safeUrl(
-          pdf.file_url
-        )
-
-        ?
-
-        `<button
-           class="btn btnGold"
-           onclick="openExternal('${safeUrl(
-             pdf.file_url
-           )}')">
-           Open PDF →
-         </button>`
-
-        :
-
-        "<p style='margin-top:10px'>PDF link not added yet.</p>"
-      }
-
-    `;
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-async function loadLeaderboard(){
-
-  const body =
-    document.getElementById(
-      "leaderboardBody"
-    );
-
-  const data =
-    await supabaseFetch(
-      "results",
-      "?select=student_name,percentage,score,total_questions,exam_id,created_at&order=percentage.desc&limit=20"
-    );
-
-  if(!data.length){
-
-    body.innerHTML =
-      '<tr><td colspan="5">No results yet. Complete a mock test to start the leaderboard.</td></tr>';
-
-    return;
-
-  }
-
-  body.innerHTML =
-    data.map(
-      (r,i)=>`
-
-        <tr>
-
-          <td>
-            ${
-              i===0
-                ? "🥇"
-                : i===1
-                ? "🥈"
-                : i===2
-                ? "🥉"
-                : i+1
-            }
-          </td>
-
-          <td>
-            ${escapeHtml(
-              r.student_name ||
-              "Student"
-            )}
-          </td>
-
-          <td>
-            ${escapeHtml(
-              r.exam_id ||
-              "Exam"
-            )}
-          </td>
-
-          <td>
-            ${escapeHtml(
-              r.score || 0
-            )}
-            /
-            ${escapeHtml(
-              r.total_questions || 0
-            )}
-          </td>
-
-          <td>
-            <b>
-              ${escapeHtml(
-                r.percentage || 0
-              )}%
-            </b>
-          </td>
-
-        </tr>
-
-      `
-    ).join("");
-
-}
-
-
-async function loadMockQuestions(){
-
-  const data =
-    await supabaseFetch(
-      "questions",
-      "?select=*&question_type=eq.practice&order=created_at.asc&limit=20"
-    );
-
-  if(data.length){
-
-    mockQuestions =
-      data
-        .map(q=>({
-
-          q:
-            q.question,
-
-          options:[
-            q.option_a,
-            q.option_b,
-            q.option_c,
-            q.option_d
-          ],
-
-          answer:
-            [
-              "a",
-              "b",
-              "c",
-              "d"
-            ]
-            .indexOf(
-              String(
-                q.correct_answer || ""
-              )
-              .toLowerCase()
-              .trim()
-            ),
-
-          id:q.id,
-
-          exam_id:q.exam_id
-
-        }))
-        .filter(
-          q=>q.answer>=0
-        );
-
-  }
-
-  if(!mockQuestions.length){
-
-    mockQuestions=[
-
-      {
-        q:"Odisha ra capital kana?",
-
-        options:[
-          "Cuttack",
-          "Bhubaneswar",
-          "Puri",
-          "Sambalpur"
-        ],
-
-        answer:1
-      },
-
-      {
-        q:"Odisha State Formation Day kete?",
-
-        options:[
-          "1 April",
-          "15 August",
-          "26 January",
-          "2 October"
-        ],
-
-        answer:0
-      },
-
-      {
-        q:"Odisha ra official language kana?",
-
-        options:[
-          "Hindi",
-          "English",
-          "Odia",
-          "Bengali"
-        ],
-
-        answer:2
-      },
-
-      {
-        q:"Konark Sun Temple keun district re?",
-
-        options:[
-          "Puri",
-          "Khordha",
-          "Cuttack",
-          "Ganjam"
-        ],
-
-        answer:0
-      },
-
-      {
-        q:"Indian Constitution adopted heithila keun date re?",
-
-        options:[
-          "15 August 1947",
-          "26 November 1949",
-          "26 January 1950",
-          "2 October 1950"
-        ],
-
-        answer:1
-      }
-
-    ];
-
-  }
-
-  loadQuestion();
-
-}
-
-
-function loadQuestion(){
-
-  const q =
-    mockQuestions[
-      currentQuestion
-    ];
-
-  if(!q) return;
-
-  document.getElementById(
-    "question"
-  ).textContent =
-    q.q;
-
-  document.getElementById(
-    "mockCount"
-  ).textContent =
-    `Question ${
-      currentQuestion+1
-    } / ${
-      mockQuestions.length
-    }`;
-
-  document.getElementById(
-    "progressBar"
-  ).style.width =
-    (
-      currentQuestion /
-      mockQuestions.length *
-      100
-    )+"%";
-
-  const options =
-    document.getElementById(
-      "options"
-    );
-
-  options.innerHTML="";
-
-  q.options.forEach(
-    (option,index)=>{
-
-      const btn =
-        document.createElement(
-          "button"
-        );
-
-      btn.className =
-        "option";
-
-      btn.textContent =
-        String.fromCharCode(
-          65+index
-        )+
-        ". "+
-        option;
-
-      btn.onclick =
-        ()=>answerQuestion(
-          index,
-          btn
-        );
-
-      options.appendChild(btn);
-
-    }
-  );
-
-  answered=false;
-
-}
-
-
-function answerQuestion(
-  index,
-  button
-){
-
-  if(answered) return;
-
-  answered=true;
-
-  const correct =
-    mockQuestions[
-      currentQuestion
-    ].answer;
-
-  const all =
-    document.querySelectorAll(
-      ".option"
-    );
-
-  if(index===correct){
-
-    button.classList.add(
-      "correct"
-    );
-
-    score++;
-
-    toast(
-      "Correct Answer! ✅"
-    );
-
-  }else{
-
-    button.classList.add(
-      "wrong"
-    );
-
-    if(all[correct]){
-      all[correct]
-        .classList
-        .add("correct");
-    }
-
-    toast(
-      "Wrong Answer ❌"
-    );
-
-  }
-
-}
-
-
-function nextQuestion(){
-
-  if(!answered){
-
-    toast(
-      "First choose an answer."
-    );
-
-    return;
-
-  }
-
-  currentQuestion++;
-
-  if(
-    currentQuestion >=
-    mockQuestions.length
-  ){
-
-    finishMock();
-
-    return;
-
-  }
-
-  loadQuestion();
-
-}
-
-
-async function finishMock(){
-
-  document.getElementById(
-    "progressBar"
-  ).style.width="100%";
-
-  document.getElementById(
-    "question"
-  ).textContent =
-    "🎉 Mock Test Completed!";
-
-  document.getElementById(
-    "options"
-  ).innerHTML="";
-
-  document.getElementById(
-    "nextBtn"
-  ).style.display="none";
-
-  const total =
-    mockQuestions.length;
-
-  const percent =
-    Math.round(
-      score/total*100
-    );
-
-  const result =
-    document.getElementById(
-      "mockResult"
-    );
-
-  result.style.display =
-    "block";
-
-  result.innerHTML = `
-
-    <h2>
-      🏆 Your Result
-    </h2>
-
-    <p style="margin-top:8px">
-      Score:
-      <b>
-        ${score}/${total}
-      </b>
-    </p>
-
-    <p>
-      Percentage:
-      <b>
-        ${percent}%
-      </b>
-    </p>
-
-    <button
-      class="btn btnGold"
-      style="margin-top:15px"
-      onclick="restartMock()">
-      Restart Mock
-    </button>
-
-  `;
-
-  document.getElementById(
-    "resultScore"
-  ).textContent =
-    score+"/"+total;
-
-  document.getElementById(
-    "resultPercent"
-  ).textContent =
-    percent+"%";
-
-  document.getElementById(
-    "resultCorrect"
-  ).textContent =
-    score;
-
-  document.getElementById(
-    "resultWrong"
-  ).textContent =
-    total-score;
-
-  const student =
-    localStorage.getItem(
-      "examSathiStudentName"
-    ) ||
-    "Guest Student";
-
-  const examId =
-    mockQuestions[0]?.exam_id ||
-    null;
-
-  await supabaseInsert(
-    "results",
-    {
-
-      student_name:
-        student,
-
-      exam_id:
-        examId,
-
-      score:
-        score,
-
-      total_questions:
-        total,
-
-      percentage:
-        percent,
-
-      correct:
-        score,
-
-      wrong:
-        total-score,
-
-      unanswered:
-        0,
-
-      time_taken_seconds:
-        0
-
-    }
-  );
-
-  loadLeaderboard();
-
-  toast(
-    "Result saved to ExamSathi database ✅"
-  );
-
-}
-
-
-function restartMock(){
-
-  currentQuestion=0;
-
-  score=0;
-
-  document.getElementById(
-    "nextBtn"
-  ).style.display =
-    "inline-block";
-
-  document.getElementById(
-    "mockResult"
-  ).style.display =
-    "none";
-
-  loadQuestion();
-
-}
-
-
-function startMock(name){
-
-  currentMockTitle =
-    name+
-    " Mock Test";
-
-  document.getElementById(
-    "mockTitle"
-  ).textContent =
-    currentMockTitle;
-
-  go("mock");
-
-  restartMock();
-
-}
-
-
-function searchContent(){
-
-  const q =
-    document.getElementById(
-      "searchInput"
-    )
-    .value
-    .toLowerCase()
-    .trim();
-
-  const result =
-    document.getElementById(
-      "searchResults"
-    );
-
-  if(!q){
-
-    result.innerHTML="";
-
-    return;
-
-  }
-
-  const data=[
-
-    ...allJobs.map(
-      x=>({
-
-        title:
-          x.title,
-
-        text:
-          x.organization ||
-          x.category ||
-          "Government Job",
-
-        icon:"💼",
-
-        action:"jobs"
-
-      })
-    ),
-
-    ...allExams.map(
-      x=>({
-
-        title:
-          x.name,
-
-        text:
-          x.category ||
-          "Exam",
-
-        icon:"🎓",
-
-        action:"entrance"
-
-      })
-    ),
-
-    {
-      title:"OTET",
-      text:"Teacher Exam",
-      icon:"👨‍🏫",
-      action:"teacher"
-    },
-
-    {
-      title:"OSSTET",
-      text:"Teacher Exam",
-      icon:"👨‍🏫",
-      action:"teacher"
-    },
-
-    {
-      title:"Mock Tests",
-      text:"Unlimited Mock Tests",
-      icon:"📝",
-      action:"mock"
-    }
-
-  ];
-
-  const found =
-    data.filter(
-      x=>
-        (
-          x.title+
-          " "+
-          x.text
-        )
-        .toLowerCase()
-        .includes(q)
-    );
-
-  if(!found.length){
-
-    result.innerHTML =
-      '<div class="card empty"><h3>❌ No result found</h3><p>Try another exam name.</p></div>';
-
-    return;
-
-  }
-
-  result.innerHTML =
-    found
-      .map(
-        x=>`
-
-          <div class="card">
-
-            <div class="cardIcon">
-              ${x.icon}
-            </div>
-
-            <h3>
-              ${escapeHtml(
-                x.title
-              )}
-            </h3>
-
-            <p>
-              ${escapeHtml(
-                x.text
-              )}
-            </p>
-
-            <button
-              class="btn btnGold"
-              onclick="go('${x.action}')">
-              Open
-            </button>
-
-          </div>
-
-        `
-      )
-      .join("");
-
-}
-
-
-async function submitSuggestion(){
-
-  const name =
-    document.getElementById(
-      "suggestName"
-    ).value.trim();
-
-  const type =
-    document.getElementById(
-      "suggestType"
-    ).value;
-
-  const message =
-    document.getElementById(
-      "suggestMessage"
-    ).value.trim();
-
-  if(!name || !message){
-
-    toast(
-      "Please fill Name and Message."
-    );
-
-    return;
-
-  }
-
-  const ok =
-    await supabaseInsert(
-      "suggestions",
-      {
-        name,
-        suggestion_type:type,
-        message
-      }
-    );
-
-  if(ok){
-
-    document.getElementById(
-      "suggestName"
-    ).value="";
-
-    document.getElementById(
-      "suggestMessage"
-    ).value="";
-
-    toast(
-      "Suggestion saved successfully! 💡"
-    );
-
-  }else{
-
-    toast(
-      "Suggestion could not be saved."
-    );
-
-  }
-
-}
-
-
-function toggleBot(){
-
-  const box =
-    document.getElementById(
-      "botBox"
-    );
-
-  box.style.display =
-    box.style.display==="block"
-      ? "none"
-      : "block";
-
-}
-
-
-function sendBot(){
-
-  const input =
-    document.getElementById(
-      "botInput"
-    );
-
-  const text =
-    input.value.trim();
-
-  if(!text) return;
-
-  const messages =
-    document.getElementById(
-      "botMessages"
-    );
-
-  messages.innerHTML +=
-    `<div class="msg">
-      👤
-      ${escapeHtml(text)}
-    </div>`;
-
-  let answer =
-    "ଆପଣଙ୍କ question ପାଇଁ ExamSathi ର relevant section check କରନ୍ତୁ। Mock Test, PYQ ଏବଂ Study Materials ବ୍ୟବହାର କରନ୍ତୁ।";
-
-  const lower =
-    text.toLowerCase();
-
-  if(
-    lower.includes("otet") ||
-    lower.includes("teacher")
-  ){
-
-    answer =
-      "OTET/Teacher preparation ପାଇଁ Teacher Exams section ଖୋଲନ୍ତୁ। 👨‍🏫";
-
-  }
-
-  else if(
-    lower.includes("ct") ||
-    lower.includes("entrance")
-  ){
-
-    answer =
-      "CT Entrance ପାଇଁ Entrance Exams section ରେ PYQ ଏବଂ Mock Test practice କରନ୍ତୁ। 🎓";
-
-  }
-
-  else if(
-    lower.includes("job") ||
-    lower.includes("opsc") ||
-    lower.includes("ossc")
-  ){
-
-    answer =
-      "Government Jobs section ରେ latest database jobs ଦେଖନ୍ତୁ। 💼";
-
-  }
-
-  messages.innerHTML +=
-    `<div class="msg">
-      🤖 ${answer}
-    </div>`;
-
-  input.value="";
-
-  messages.scrollTop =
-    messages.scrollHeight;
-
-}
-
-
-function openJobMitra(){
-
-  window.open(
-    "https://github.com/geetakasimala095-bit",
-    "_blank",
-    "noopener,noreferrer"
-  );
-
-}
-
-
-function openWhatsApp(){
-
-  window.open(
-    "https://wa.me/918249584734?text=Hello%20ExamSathi%20Odisha",
-    "_blank",
-    "noopener,noreferrer"
-  );
-
-}
-
-
-let toastTimer;
-
-
-function toast(message){
-
-  const box =
-    document.getElementById(
-      "toast"
-    );
-
-  box.textContent =
-    message;
-
-  box.classList.add(
-    "show"
-  );
-
-  clearTimeout(
-    toastTimer
-  );
-
-  toastTimer =
-    setTimeout(
-      ()=>box.classList.remove(
-        "show"
-      ),
-      2500
-    );
-
-}
-
-
-async function init(){
-
-  setDbStatus(
-    "Connecting..."
-  );
-
-  try{
-
-    await Promise.all([
-
-      loadJobsFromSupabase(),
-
-      loadExamsFromSupabase(),
-
-      loadPDFs(),
-
-      loadLeaderboard(),
-
-      loadMockQuestions()
-
-    ]);
-
-    setDbStatus(
-      "Connected ✅"
-    );
-
-  }catch(e){
-
-    console.error(e);
-
-    setDbStatus(
-      "Check connection"
-    );
-
-  }
-
-}
-
-
-init();
-
-</script>
-
-</body>
-</html>
+🔴
+JobMitra AI
+Jobs • Students • Seva • Knowledge
+🏠 Home
+🆕 Latest
+💼 Jobs
+🎓 Students
+🌾 Farmer
+🇮🇳 Seva
+📰 News
+❤️ Life
+📚 Knowledge
+💬 Help
+WELCOME TO JOBMITRA AI
+Everything You Need in One Place
+Government Jobs, Odisha Jobs, Scholarship, Admit Card, Result, Digital Seva, Farmer Services, Student Resources, News, Government Schemes & Useful Knowledge.
+
+💼 Latest Jobs
+🎓 Scholarship
+🇮🇳 Digital Seva
+📩 ₹99 Apply Help
+📅 Friday, August 28, 2026
+🔍
+Search Job, Scholarship, Aadhaar, Farmer, Exam...
+✨ Explore JobMitra AI
+ଆପଣଙ୍କ ଦରକାର ଅନୁସାରେ category ବାଛନ୍ତୁ
+
+🎓
+Students
+Scholarship • Admission • Exam • Result • Notes
+
+Explore →
+💼
+Jobs
+Odisha • India • Govt • Police • Railway
+
+Find Jobs →
+🌾
+Farmer
+Scheme • Subsidy • Farmer ID • Agriculture
+
+Open →
+🇮🇳
+Digital Seva
+Aadhaar • PAN • Voter • Land • Certificate
+
+Open Seva →
+❤️
+Change Your Life
+Money • Career • Safety
+
+Start →
+🆕 Latest Updates
+Job • Admit Card • Result • Scholarship • Admission
+
+🔴 Latest Notifications
+ LIVE
+JOB
+Latest
+Government Job Notifications
+UPSC, SSC, Railway, Odisha Police, OSSC, OPSC ଓ ଅନ୍ୟ recruitment updates official portalରେ check କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+SCHOLARSHIP
+Latest
+Odisha Scholarship
+Odisha State Scholarship Portal ରେ scholarship application/status check କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+SCHOLARSHIP
+Latest
+National Scholarship
+Central Government scholarship ପାଇଁ National Scholarship Portal check କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+EXAM
+Latest
+Entrance Examination Updates
+NTA ଓ examination authoritiesର latest notices check କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+RESULT
+Latest
+Government Exam Results
+Government examination results ପାଇଁ official results portal ଦେଖନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+SEVA
+Latest
+Aadhaar Online Services
+Aadhaar download/update ପାଇଁ official portal ବ୍ୟବହାର କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+FARMER
+Latest
+PM-KISAN Farmer Services
+Farmer registration, status ଓ related services check କରନ୍ତୁ।
+
+OPEN / APPLY
+₹99 HELP
+📰 Latest News
+Odia • Hindi • English trusted news sources
+
+🟠
+Odisha News
+Odisha ଓ ଦେଶର latest news ଦେଖନ୍ତୁ।
+
+Read News →
+🔵
+Hindi News
+Indiaର latest Hindi news updates।
+
+Read News →
+⚫
+English News
+National & international news।
+
+Read News →
+🗞️ Newspapers
+🟠 Sambad
+Odia Newspaper
+Open →
+🔵 Dainik Jagran
+Hindi Newspaper
+Open →
+⚫ The Hindu
+English Newspaper
+Open →
+🎓 Students Zone
+Scholarship • Admission • Exam • Result • Study
+
+💰
+National Scholarship Portal
+Central Government scholarships.
+
+Open Official Portal →
+🎓
+Odisha Scholarship
+Odisha State Scholarship Portal.
+
+Open Portal →
+📝
+NTA Exams
+Entrance examinations and notices.
+
+Official Site →
+📊
+Government Results
+Central government examination results.
+
+Check Result →
+📄
+DigiLocker
+Marksheet and digital certificates.
+
+Open →
+💻
+SWAYAM
+Online courses and learning.
+
+Learn →
+🏫
+UGC
+Higher education information.
+
+Official Site →
+🧭
+Career Guidance
+National Career Service.
+
+Open →
+📚
+Notes
+Subject-wise notes and important questions.
+
+🧪
+Mock Test
+MCQ practice and exam preparation.
+
+📖
+Study Plan
+Daily study and revision planning.
+
+💡
+Exam Tips
+Preparation strategy and useful tips.
+
+💼 Government Jobs
+Odisha + All India • Official recruitment portals
+
+🏛️
+UPSC Jobs
+Civil Services and central recruitment.
+
+Official Apply →
+📋
+SSC Jobs
+CGL • CHSL • MTS • GD and others.
+
+Official Apply →
+🚆
+Railway Jobs
+Railway recruitment and application.
+
+Apply Portal →
+🏦
+Banking Jobs
+IBPS banking recruitment.
+
+Official Site →
+🏛️
+OPSC
+Odisha Public Service Commission.
+
+Official Site →
+📝
+OSSC
+Odisha Staff Selection Commission.
+
+Official Site →
+👮
+Odisha Police
+Police recruitment and notices.
+
+Official Site →
+🪖
+Indian Army
+Army recruitment.
+
+Official Apply →
+✈️
+Indian Air Force
+Air Force recruitment.
+
+Official Site →
+⚓
+Coast Guard
+Recruitment and notices.
+
+Official Site →
+📮
+India Post
+Post Office recruitment and services.
+
+Official Site →
+💼
+Private Jobs
+National Career Service job search.
+
+Find Jobs →
+🧑‍🔧
+Apprenticeship
+Apprenticeship opportunities.
+
+Apply →
+🔬
+DRDO Careers
+Defence research recruitment.
+
+Official Site →
+🚀
+ISRO Careers
+Space sector recruitment.
+
+Official Site →
+🏦
+LIC Careers
+LIC recruitment information.
+
+Official Site →
+💰
+RBI Careers
+Reserve Bank recruitment information.
+
+Official Site →
+🌾
+NABARD
+Banking and rural development careers.
+
+Official Site →
+ADVERTISEMENT
+JobMitra AI Advertisement Space
+🔴 LIVE • AUTO UPDATE
+🔥 Latest Jobs
+Odisha + All India • Government Jobs • Fresh Notifications
+
+All
+Odisha Govt
+All India
+Private
+Admit Card
+Results
+🟢 LIVE • 87 updates • Auto refresh every 5 minutes
+🟢 ODISHA GOVT
+🏢 OPSC
+OPSC - Results
+Category: Odisha Government Jobs
+
+Result from OPSC. Official notification link.
+
+📅 28 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OPSC
+OPSC - Recruitment Calendar
+Category: Odisha Government Jobs
+
+Job from OPSC. Official notification link.
+
+📅 28 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OPSC
+OPSC - Advertisements
+Category: Odisha Government Jobs
+
+Job from OPSC. Official notification link.
+
+📅 28 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OPSC
+OPSC - Notifications
+Category: Odisha Government Jobs
+
+Notification from OPSC. Official notification link.
+
+📅 28 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OPSC
+OPSC - Apply Online
+Category: Odisha Government Jobs
+
+Notification from OPSC. Official notification link.
+
+📅 28 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Post Notice
+Category: Odisha Government Jobs
+
+Notification from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Recruitment Calendar
+Category: Odisha Government Jobs
+
+Job from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Results
+Category: Odisha Government Jobs
+
+Result from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Notifications
+Category: Odisha Government Jobs
+
+Notification from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Download Admit Card
+Category: Odisha Government Jobs
+
+Admit Card from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Advertisements
+Category: Odisha Government Jobs
+
+Job from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Instructions to Apply online
+Category: Odisha Government Jobs
+
+Notification from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Apply Online
+Category: Odisha Government Jobs
+
+Notification from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Final Answer Key Link
+Category: Odisha Government Jobs
+
+Answer Key from OSSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Web Information Manager
+Category: All India Government Jobs
+
+Notification from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - View Archives >>
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment cases kept on hold on account of Pending Litigations
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - हिन्दी
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Answer Keys
+Category: All India Government Jobs
+
+Answer Key from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Representation on Question Papers
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Advertisements
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Status of Lateral Recruitment Cases (Advertisement wise)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Online Recruitment Application (ORA)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Status of Recruitment Cases (Advertisement wise)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - संघ लोक सेवा आयोग UNION PUBLIC SERVICE COMMISSION
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment Tests
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment Requisition
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Forms for Certificates
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Skip to main content
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Skip to main content
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 26 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Advertisements
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 25 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Advertisements
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 25 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 OSSC
+OSSC - Final Answer Key Link
+Category: Odisha Government Jobs
+
+Answer Key from OSSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Status of Lateral Recruitment Cases (Advertisement wise)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment Tests
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Online Recruitment Application (ORA)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment Requisition
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Status of Recruitment Cases (Advertisement wise)
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - Recruitment cases kept on hold on account of Pending Litigations
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 UPSC
+UPSC - संघ लोक सेवा आयोग UNION PUBLIC SERVICE COMMISSION
+Category: All India Government Jobs
+
+Job from UPSC. Official notification link.
+
+📅 24 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Directorate General of Employment (DGE)​ Ministry of Labour & Employment Govt. of India, Shram Shakti Bhawan Rafi Marg, ​New Delhi-110001, India
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Jobs for Women
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+International Jobs through e-migrate
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Government Jobs
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Career Schemes
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Employment Exchange Portal
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+List Of Employment Exchange
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+List of Model Career Centers
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+List of Model Career Center
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Create Job Fairs and Events
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Career Center
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Participate in a Job Fairs and Events
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Recruitment Agencies/International Employer
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Find Candidates
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Find Career Center
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Find Counsellor
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Career Tools & Learning
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Jobs for Ex-Servicemen
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Jobs for Differently Abled
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Jobs in Government sector
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Jobs in Health Sector
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Advisories for International Jobseeker
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Find International Jobs E-migrate
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Find Domestic Jobs
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Registration Flowchart
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🏢 PRIVATE
+🏢 JobMitra AI
+Classified jobs
+Category: Private / Government
+
+New Private / Government job/recruitment update from NCS.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Notifications
+Category: Odisha Government
+
+New Odisha Government job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Advertisements
+Category: Odisha Government
+
+New Odisha Government job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 JobMitra AI
+View Archives &gt;&gt;
+Category: Government
+
+New Government job/recruitment update from UPSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 JobMitra AI
+Recruitment Advertisements
+Category: Government
+
+New Government job/recruitment update from UPSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Instructions to Apply online
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Recruitment Calendar
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Notifications
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Advertisements
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Post Notice
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Objection Link
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🟢 ODISHA GOVT
+🏢 JobMitra AI
+Apply Online
+Category: Odisha Government
+
+New job/recruitment update from OSSC.
+
+📅 21 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🇮🇳 ALL INDIA GOVT
+🏢 JobMitra AI
+View Pdf
+Category: Jobs
+
+New recruitment-related update found on the official OSSC website.
+
+📅 19 Aug 2026
+OFFICIAL LINK ↗
+Verify the official notification before applying.
+🔴 LIVE UPDATE
+🔥 Latest Jobs 2026
+Odisha + All India Government & PSU Jobs
+
+NEW
+🏫 HIMS ODISHA
+Guest Faculty Recruitment 2026
+Guest Faculty – Contractual
+📌 Post: Guest Faculty
+
+🔢 Vacancy: 127 Posts
+
+🎓 Qualification: Post Graduation / Relevant qualification as per subject
+
+💼 Job Type: Contractual
+
+💰 Salary: As per HIMS / Odisha Government norms
+
+🎂 Age: As per official notification
+
+⏰ Last Date: 23 August 2026
+
+DIRECT APPLY ↗
+Official HIMS Odisha Portal
+NEW
+🔬 NIT ROURKELA
+Project Fellow Recruitment 2026
+AI-Powered Robotic Therapeutic System
+📌 Post: Project Fellow
+
+🏢 Organization: NIT Rourkela
+
+🎓 Qualification: Relevant qualification as per project notification
+
+💰 Salary: As per NIT Rourkela project norms
+
+📅 Advertisement: 08 August 2026
+
+⏰ Last Date: 21 August 2026
+
+DIRECT APPLY ↗
+Official NIT Rourkela Career Portal
+NEW
+🔬 NIT ROURKELA
+Project Fellow Recruitment 2026
+Generative AI – Cancer Prediction
+📌 Post: Project Fellow
+
+🔬 Project: Generative AI based cancer prediction & early diagnosis
+
+🎓 Qualification: Relevant qualification as per official notification
+
+💰 Salary: As per NIT Rourkela norms
+
+📅 Advertisement: 08 August 2026
+
+⏰ Last Date: 19 August 2026
+
+DIRECT APPLY ↗
+Official NIT Rourkela Career Portal
+NEW
+🔬 NIT ROURKELA
+Project Fellow Recruitment 2026
+AI Driven Protein Texturization
+📌 Post: Project Fellow
+
+🔬 Project: Artificial Intelligence Driven Indigenous Protein Texturization
+
+🎓 Qualification: Relevant qualification as per official advertisement
+
+💰 Salary: As per NIT Rourkela norms
+
+📅 Advertisement: 05 August 2026
+
+⏰ Last Date: 20 August 2026
+
+DIRECT APPLY ↗
+Official NIT Rourkela Career Portal
+NEW
+🌊 NIT ROURKELA
+Project Fellow Recruitment 2026
+Mahanadi Delta Flooding Research
+📌 Post: Project Fellow
+
+🔬 Project: Sea Level Rise, Land Subsidence & Tropical Cyclones
+
+🎓 Qualification: Relevant qualification as per official advertisement
+
+💰 Salary: As per NIT Rourkela norms
+
+📅 Advertisement: 30 July 2026
+
+⏰ Last Date: 20 August 2026
+
+DIRECT APPLY ↗
+Official NIT Rourkela Career Portal
+NEW
+🌩️ NIT ROURKELA
+Project Fellow Recruitment 2026
+Lightning & Hail Forecasting
+📌 Post: Project Fellow
+
+🔬 Project: Impact-based forecasting of lightning and hail
+
+📍 Region: Eastern India
+
+🎓 Qualification: Relevant qualification as per official advertisement
+
+💰 Salary: As per NIT Rourkela norms
+
+📅 Advertisement: 22 July 2026
+
+⏰ Last Date: 26 August 2026
+
+DIRECT APPLY ↗
+Official NIT Rourkela Career Portal
+🌾 Farmer Zone
+କୃଷକଙ୍କ ପାଇଁ scheme, subsidy, insurance ଓ services
+
+🌾
+PM-KISAN
+Registration, status and farmer services.
+
+Official Portal →
+🌱
+Krushak Odisha
+Odisha farmer services.
+
+Open Portal →
+🚜
+Agriculture Odisha
+Government schemes and agriculture information.
+
+Official Site →
+🛡️
+Crop Insurance
+Pradhan Mantri Fasal Bima Yojana.
+
+Official Portal →
+🌱
+Soil Health
+Soil health information.
+
+Open →
+🏪
+e-NAM
+National Agriculture Market.
+
+Official Portal →
+👨‍🌾
+Farmer Portal
+Central agriculture information.
+
+Open →
+📊
+Agmarknet
+Agricultural market information.
+
+Open →
+📱
+mKisan
+Farmer advisory and information.
+
+Open →
+🌾
+AgriStack – Odisha Farmer Registry
+Farmer Registration, Farmer ID & Registry Services.
+
+Official Portal →
+🇮🇳 Digital Seva
+Click କଲେ official website/portal ଖୋଲିବ
+
+🪪
+Aadhaar
+Download, update and Aadhaar services.
+
+Official Portal →
+💳
+PAN / Income Tax
+PAN and Income Tax Department services.
+
+Official Portal →
+💳
+PAN Services
+PAN related official services.
+
+Open →
+🗳️
+Voter ID
+Registration, correction and voter services.
+
+Official Portal →
+📄
+DigiLocker
+Digital documents and certificates.
+
+Open →
+📜
+Odisha e-District
+Certificates and citizen services.
+
+Official Portal →
+🍚
+Ration / PDS Odisha
+Public Distribution System services.
+
+Open →
+🌾
+Bhulekh Odisha
+Land record and RoR information.
+
+Open →
+🏠
+Land & Revenue
+Odisha Revenue Department.
+
+Official Site →
+🚗
+Driving Licence
+DL and vehicle services.
+
+Official Portal →
+🛂
+Passport Seva
+Passport application and services.
+
+Open →
+📢
+Government Grievance
+Public grievance portal.
+
+Open →
+🇮🇳
+Election Commission
+Election information and services.
+
+Official Site →
+📱
+UMANG
+Multiple Government services in one platform.
+
+Open →
+🇮🇳
+India.gov.in
+Government information and services.
+
+Open →
+📚 ଜ୍ଞାନ ଓ ଶିକ୍ଷା କୋଣ
+ସରକାରୀ ସେବା, ଓଡ଼ିଶାର ସଂସ୍କୃତି ଓ ବିଭିନ୍ନ ବିଷୟରେ ସହଜ ଭାଷାରେ ବିସ୍ତୃତ ଅଧ୍ୟୟନ
+
+🏠 ସରକାରୀ ସୁବିଧା — ମୋ ସୁବିଧା
+ସରକାରୀ ଯୋଜନା, ନାଗରିକ ସେବା, ଶିକ୍ଷା, ଖାଦ୍ୟ, କୃଷକ, ଶ୍ରମିକ, ସ୍ୱାସ୍ଥ୍ୟ ଓ ଅଭିଯୋଗ ସମ୍ବନ୍ଧୀୟ ମୌଳିକ ଜ୍ଞାନ।
+
+🏠
+Housing — ଆବାସ
+ସରକାରୀ ଘର ଯୋଜନା, ଯୋଗ୍ୟତା, ଦଲିଲ ଓ ଆବେଦନ ପ୍ରକ୍ରିୟା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🍚
+Food Security — ଖାଦ୍ୟ ସୁରକ୍ଷା
+ରାସନ କାର୍ଡ, PDS, ଚାଉଳ ଓ ସରକାରୀ ଖାଦ୍ୟ ସୁବିଧା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🎓
+Education — ଶିକ୍ଷା
+ଛାତ୍ରବୃତ୍ତି, ଶିକ୍ଷା ସହାୟତା ଓ ଛାତ୍ରଛାତ୍ରୀଙ୍କ ସୁବିଧା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🌾
+Farmer Support — କୃଷକ ସହାୟତା
+କୃଷକଙ୍କ ପାଇଁ ଯୋଜନା, ବୀମା, ସବସିଡି ଓ ଆର୍ଥିକ ସହାୟତା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+👷
+Labour — ଶ୍ରମିକ
+ଶ୍ରମିକଙ୍କ ଅଧିକାର, କଲ୍ୟାଣ ଓ ସରକାରୀ ସହାୟତା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🏥
+Health — ସ୍ୱାସ୍ଥ୍ୟ
+ସରକାରୀ ସ୍ୱାସ୍ଥ୍ୟ ସେବା, ବୀମା ଓ ଚିକିତ୍ସା ସୁବିଧା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+👨‍👩‍👧
+Social Support — ସାମାଜିକ ସହାୟତା
+ବୃଦ୍ଧ, ବିଧବା, ଦିବ୍ୟାଙ୍ଗ ଓ ଆବଶ୍ୟକତା ଥିବା ଲୋକଙ୍କ ସହାୟତା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+📜
+Certificate — ପ୍ରମାଣପତ୍ର
+ଆୟ, ବାସସ୍ଥାନ, ଜାତି ଓ ଅନ୍ୟାନ୍ୟ ପ୍ରମାଣପତ୍ର ବିଷୟରେ ଜ୍ଞାନ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+📢
+Complaint — ଅଭିଯୋଗ
+ସରକାରୀ ସେବାରେ ସମସ୍ୟା ହେଲେ କିପରି ଅଭିଯୋଗ କରିବେ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🪶 ଓଡ଼ିଶାର ସଂସ୍କୃତି ଓ ଐତିହ୍ୟ
+ଓଡ଼ିଶାର ଇତିହାସ, ପରମ୍ପରା, ପୋଷାକ, ଖାଦ୍ୟ, ଗ୍ରାମୀଣ ଜୀବନ ଓ ବିଭିନ୍ନ ସମ୍ପ୍ରଦାୟ ବିଷୟରେ ଅଧ୍ୟୟନ।
+
+🪶
+Tribal History — ଜନଜାତି ଇତିହାସ
+ଓଡ଼ିଶାର ଜନଜାତି ସମାଜ, ଇତିହାସ ଓ ଜୀବନଧାରା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🥁
+Tradition — ପରମ୍ପରା
+ପର୍ବପର୍ବାଣୀ, ନୃତ୍ୟ, ସଙ୍ଗୀତ ଓ ପାରମ୍ପରିକ ରୀତିନୀତି।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+👕
+Traditional Dress — ପାରମ୍ପରିକ ପୋଷାକ
+ଓଡ଼ିଶାର ପାରମ୍ପରିକ ପୋଷାକ ଓ ତାହାର ସାଂସ୍କୃତିକ ମହତ୍ତ୍ୱ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🍚
+Traditional Food — ପାରମ୍ପରିକ ଖାଦ୍ୟ
+ଓଡ଼ିଶାର ପ୍ରସିଦ୍ଧ ଖାଦ୍ୟ, ଉପାଦାନ ଓ ପାକପ୍ରଣାଳୀ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🏹
+Village Life — ଗ୍ରାମୀଣ ଜୀବନ
+ଗାଁର ଜୀବନ, କୃଷି, ଜଙ୍ଗଲ ଓ ପାରମ୍ପରିକ ଜୀବିକା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🟠
+Bathudi Culture — ବାଥୁଡ଼ି ସଂସ୍କୃତି
+ବାଥୁଡ଼ି ସମ୍ପ୍ରଦାୟର ପରମ୍ପରା, ଜୀବନଧାରା ଓ ସାଂସ୍କୃତିକ ପରିଚୟ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+📚 Extra Knowledge — ଅତିରିକ୍ତ ଜ୍ଞାନ
+ଦୈନନ୍ଦିନ ଜୀବନ, ପଢ଼ାଶୁଣା ଓ ଭବିଷ୍ୟତ କାର୍ଯ୍ୟଜୀବନ ପାଇଁ ବିଭିନ୍ନ ବିଷୟର ସହଜ ଅଧ୍ୟୟନ।
+
+📈
+Share Market — ଶେୟାର ବଜାର
+ଶେୟାର, ସୂଚକାଙ୍କ, IPO, ଲାଭ-କ୍ଷତି ଓ ଝୁମ୍ପ ବିଷୟରେ ମୌଳିକ ଜ୍ଞାନ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+💹
+Trading — ଟ୍ରେଡିଂ
+ଟ୍ରେଣ୍ଡ, Support, Resistance, Risk Management ଓ Trading ର ମୌଳିକ ଧାରଣା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+💻
+Programming — ପ୍ରୋଗ୍ରାମିଂ
+HTML, CSS, JavaScript ଓ Coding ର ମୌଳିକ ଧାରଣା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🤖
+Artificial Intelligence — କୃତ୍ରିମ ବୁଦ୍ଧିମତ୍ତା
+AI କଣ, କିପରି କାମ କରେ, Machine Learning ଓ ଦୈନନ୍ଦିନ ବ୍ୟବହାର।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🔬
+Science — ବିଜ୍ଞାନ
+ପଦାର୍ଥ, ଶକ୍ତି, ଜୀବବିଜ୍ଞାନ, ରସାୟନ ଓ ଦୈନନ୍ଦିନ ବିଜ୍ଞାନ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🚀
+Space — ମହାକାଶ
+ଗ୍ରହ, ନକ୍ଷତ୍ର, ସୌରମଣ୍ଡଳ, ଉପଗ୍ରହ ଓ ମହାକାଶ ଅନୁସନ୍ଧାନ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🌍
+World Knowledge — ବିଶ୍ୱ ଜ୍ଞାନ
+ଦେଶ, ରାଜଧାନୀ, ମହାଦେଶ, ଭୂଗୋଳ ଓ ବିଶ୍ୱ ସମ୍ବନ୍ଧୀୟ ତଥ୍ୟ।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🇮🇳
+Indian Constitution — ଭାରତୀୟ ସମ୍ବିଧାନ
+ସମ୍ବିଧାନ, ମୌଳିକ ଅଧିକାର, କର୍ତ୍ତବ୍ୟ, ସଂସଦ ଓ ଶାସନ ବ୍ୟବସ୍ଥା।
+
+📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
+🛍️ Useful Shopping
+Useful categories
+
+📱
+Mobile
+Shop →
+💻
+Laptop
+Shop →
+🎧
+Electronics
+Shop →
+📚
+Books
+Shop →
+👕
+Fashion
+Shop →
+🏠
+Home
+Shop →
+🎒
+Student Items
+Shop →
+📷
+Camera
+Shop →
+ADVERTISEMENT
+
+JobMitra AI Advertisement Space
+📩 ₹99 Apply Service
+Job / Scholarship / Government Form apply କରିପାରୁନାହାନ୍ତି?
+
+ଆମକୁ Direct DM କରନ୍ତୁ — ଆମେ application assistance ଦେବୁ।
+
+Service Charge: ₹99
+
+💬 Direct DM Now
+Instagram: @naik_babulu
+
+⚠️ ₹99 କେବଳ application assistance/service charge। Government application fee ଥିଲେ ସେହି fee ଅଲଗା। OTP, UPI PIN, ATM PIN, password କିମ୍ବା confidential information କେବେ ମାଗନ୍ତୁ ନାହିଁ।
+
+🔴 JobMitra AI
+Jobs • Scholarship • Students • Farmer • Digital Seva • News
+
+Create by Babulu Naik
+
+Create by Babulu Naik • ₹99 Apply Service • Direct DM
+
+© 2026 JobMitra AI
+
+Jobs are refreshed automatically from the JobMitra AI database.
