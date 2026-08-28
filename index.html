@@ -1,1595 +1,2050 @@
-🔴
-JobMitra AI
-Jobs • Students • Seva • Knowledge
-🏠 Home
-🆕 Latest
-💼 Jobs
-🎓 Students
-🌾 Farmer
-🇮🇳 Seva
-📰 News
-❤️ Life
-📚 Knowledge
-💬 Help
+<!DOCTYPE html>
+<html lang="or">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>JobMitra AI | Latest Jobs, Scholarship & Digital Seva</title>
+
+<meta name="description"
+content="JobMitra AI - Odisha and All India Government Jobs, Private Jobs, Scholarship, Admit Card, Results, Farmer Services and Digital Seva.">
+
+<meta name="theme-color" content="#071a3d">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,"Noto Sans Oriya",sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.5;
+  padding-bottom:70px;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input{
+  font-family:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:linear-gradient(135deg,#071a3d,#0d2f68);
+  color:#fff;
+  box-shadow:0 5px 25px #0003;
+}
+
+.header{
+  max-width:1200px;
+  margin:auto;
+  min-height:68px;
+  padding:10px 15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ffd166,#e09b00);
+  font-size:23px;
+  box-shadow:0 5px 15px #0004;
+}
+
+.brand h1{
+  font-size:21px;
+  font-weight:900;
+}
+
+.brand small{
+  font-size:9px;
+  opacity:.8;
+}
+
+.menuBtn{
+  border:1px solid #ffffff44;
+  background:#ffffff18;
+  color:#fff;
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:21px;
+  cursor:pointer;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:0 15px 12px;
+  display:none;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+nav.open{
+  display:flex;
+}
+
+nav a{
+  padding:7px 11px;
+  border:1px solid #ffffff30;
+  border-radius:20px;
+  background:#ffffff12;
+  color:#fff;
+  font-size:10px;
+}
+
+nav a:hover{
+  background:#fff;
+  color:#071a3d;
+}
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 15px;
+}
+
+.heroBox{
+  position:relative;
+  overflow:hidden;
+  border-radius:25px;
+  padding:32px 24px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 90% 10%,#ffd16655,transparent 30%),
+    radial-gradient(circle at 10% 90%,#00a6ff33,transparent 25%),
+    linear-gradient(135deg,#071a3d,#124b9b,#071a3d);
+  box-shadow:0 15px 40px #071a3d35;
+}
+
+.heroMini{
+  font-size:10px;
+  letter-spacing:1px;
+  font-weight:bold;
+}
+
+.heroBox h2{
+  font-size:clamp(27px,6vw,48px);
+  line-height:1.15;
+  margin:8px 0;
+}
+
+.heroBox p{
+  max-width:760px;
+  font-size:13px;
+  opacity:.93;
+}
+
+.heroButtons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.heroBtn{
+  padding:10px 14px;
+  border-radius:11px;
+  background:#fff;
+  color:#071a3d;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.heroBtn.dark{
+  background:#ffffff18;
+  color:#fff;
+  border:1px solid #ffffff40;
+}
+
+.dateBox{
+  display:inline-block;
+  margin-top:15px;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#ffffff15;
+  border:1px solid #ffffff35;
+  font-size:10px;
+}
+
+.searchWrap{
+  max-width:1200px;
+  margin:auto;
+  padding:0 15px 12px;
+}
+
+.search{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  padding:4px;
+  box-shadow:0 5px 20px #0000000b;
+}
+
+.search span{
+  padding:10px;
+  color:#071a3d;
+}
+
+.search input{
+  width:100%;
+  border:0;
+  outline:0;
+  padding:11px;
+  font-size:13px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 15px 30px;
+}
+
+.title{
+  margin:27px 0 13px;
+}
+
+.title h2{
+  color:#071a3d;
+  font-size:21px;
+}
+
+.title p{
+  color:#777;
+  font-size:10px;
+}
+
+.categoryGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.category{
+  color:#fff;
+  min-height:145px;
+  border-radius:20px;
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 24px #0002;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-3px);
+}
+
+.category .icon{
+  font-size:32px;
+}
+
+.category h3{
+  font-size:16px;
+  margin:4px 0;
+}
+
+.category p{
+  font-size:10px;
+  opacity:.9;
+}
+
+.category .go{
+  display:inline-block;
+  margin-top:9px;
+  padding:5px 9px;
+  border-radius:15px;
+  background:#ffffff20;
+  border:1px solid #ffffff35;
+  font-size:9px;
+}
+
+.c1{background:linear-gradient(135deg,#0b3d91,#168ccf);}
+.c2{background:linear-gradient(135deg,#08753b,#25a76c);}
+.c3{background:linear-gradient(135deg,#704600,#d69b1d);}
+.c4{background:linear-gradient(135deg,#54247c,#d62d68);}
+
+.latest{
+  background:#fff;
+  border:1px solid #e4e4e4;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 7px 25px #0000000b;
+}
+
+.latestHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.live{
+  background:#ffe8e8;
+  color:#c00000;
+  border-radius:20px;
+  padding:5px 9px;
+  font-size:9px;
+  font-weight:bold;
+}
+
+.dot{
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:red;
+  margin-right:4px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:.2}
+}
+
+.autoControls{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.autoFilter{
+  border:1px solid #d7dce5;
+  background:#fff;
+  color:#172033;
+  border-radius:20px;
+  padding:7px 11px;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:bold;
+}
+
+.autoFilter.active,
+.autoFilter:hover{
+  background:#071a3d;
+  color:#fff;
+}
+
+#jobStatus{
+  font-size:10px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.jobGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.jobCard{
+  background:#fff;
+  border:1px solid #e2e6ed;
+  border-radius:17px;
+  padding:15px;
+  box-shadow:0 6px 20px #00000009;
+  display:flex;
+  flex-direction:column;
+  min-height:250px;
+}
+
+.jobBadge{
+  display:inline-block;
+  align-self:flex-start;
+  padding:5px 8px;
+  border-radius:15px;
+  background:#eef3ff;
+  color:#071a3d;
+  font-size:8px;
+  font-weight:900;
+}
+
+.jobSource{
+  margin-top:9px;
+  font-size:10px;
+  font-weight:bold;
+  color:#555;
+}
+
+.jobCard h3{
+  color:#071a3d;
+  font-size:14px;
+  margin:6px 0;
+  line-height:1.4;
+}
+
+.jobCard p{
+  color:#666;
+  font-size:10px;
+  margin:4px 0;
+}
+
+.jobDate{
+  color:#777;
+  font-size:9px;
+  margin-top:auto;
+  padding-top:10px;
+}
+
+.applyBtn{
+  display:block;
+  margin-top:10px;
+  padding:9px;
+  text-align:center;
+  border-radius:9px;
+  background:#08753b;
+  color:#fff;
+  font-size:9px;
+  font-weight:bold;
+}
+
+.jobNote{
+  margin-top:7px;
+  color:#888;
+  font-size:8px;
+}
+
+.emptyJobs{
+  grid-column:1/-1;
+  text-align:center;
+  padding:40px 15px;
+  border:1px dashed #ccd3df;
+  border-radius:16px;
+  color:#777;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.grid4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:11px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:17px;
+  padding:16px;
+  box-shadow:0 6px 20px #00000009;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px #0002;
+}
+
+.card h3{
+  color:#071a3d;
+  font-size:14px;
+  margin:4px 0;
+}
+
+.card p{
+  color:#666;
+  font-size:10px;
+}
+
+.cardIcon{
+  font-size:28px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:7px 11px;
+  border-radius:8px;
+  background:#eaf0ff;
+  color:#071a3d;
+  font-size:9px;
+  font-weight:bold;
+}
+
+.apply{
+  background:#08753b;
+  color:#fff;
+}
+
+.darkBtn{
+  background:#222;
+  color:#fff;
+}
+
+.paper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:15px;
+  padding:14px;
+}
+
+.paper strong{
+  font-size:12px;
+}
+
+.paper small{
+  display:block;
+  color:#777;
+  font-size:9px;
+}
+
+.help{
+  margin-top:25px;
+  border-radius:24px;
+  padding:26px 20px;
+  text-align:center;
+  color:#fff;
+  background:linear-gradient(135deg,#071a3d,#124b9b);
+  box-shadow:0 12px 35px #071a3d35;
+}
+
+.help h2{
+  font-size:22px;
+}
+
+.help p{
+  font-size:11px;
+  margin-top:5px;
+  opacity:.92;
+}
+
+.dm{
+  display:inline-block;
+  margin-top:14px;
+  background:#fff;
+  color:#071a3d;
+  padding:11px 19px;
+  border-radius:11px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.ad{
+  margin:20px 0;
+  padding:23px;
+  background:#fff;
+  border:2px dashed #ccc;
+  border-radius:17px;
+  text-align:center;
+  color:#888;
+  font-size:10px;
+}
+
+footer{
+  background:#07111f;
+  color:#fff;
+  text-align:center;
+  padding:35px 15px 85px;
+}
+
+footer h2{
+  font-size:20px;
+}
+
+footer p{
+  color:#999;
+  font-size:10px;
+  margin-top:5px;
+}
+
+.branding{
+  color:#ffd166;
+  font-weight:bold;
+}
+
+.bottom{
+  position:fixed;
+  z-index:99999;
+  bottom:0;
+  left:0;
+  right:0;
+  height:64px;
+  background:#fff;
+  border-top:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  box-shadow:0 -5px 20px #0001;
+}
+
+.bottom a,
+.bottom button{
+  border:0;
+  background:none;
+  color:#444;
+  text-align:center;
+  font-size:18px;
+}
+
+.bottom small{
+  display:block;
+  font-size:8px;
+}
+
+.searchResult{
+  display:none;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:15px;
+  margin-top:7px;
+  padding:10px;
+  font-size:11px;
+}
+
+@media(min-width:801px){
+  .menuBtn{display:none}
+  nav{display:flex}
+  .bottom{display:none}
+  body{padding-bottom:0}
+}
+
+@media(max-width:900px){
+  .categoryGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid4{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .jobGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .grid3{
+    grid-template-columns:1fr;
+  }
+
+  .jobGrid{
+    grid-template-columns:1fr;
+  }
+
+  .categoryGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .heroBox{
+    padding:25px 18px;
+  }
+
+  .heroBox h2{
+    font-size:28px;
+  }
+
+  .container,
+  .hero,
+  .searchWrap{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .autoControls{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding-bottom:4px;
+  }
+
+  .autoFilter{
+    flex:0 0 auto;
+  }
+}
+
+@media(max-width:390px){
+  .categoryGrid,
+  .grid4{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="brand">
+
+<div class="logo">💼</div>
+
+<div>
+<h1>JobMitra AI</h1>
+<small>Jobs • Students • Seva • Knowledge</small>
+</div>
+
+</div>
+
+<button class="menuBtn" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="nav">
+
+<a href="#home">🏠 Home</a>
+<a href="#latest">🆕 Latest</a>
+<a href="#jobs">💼 Jobs</a>
+<a href="#students">🎓 Students</a>
+<a href="#farmer">🌾 Farmer</a>
+<a href="#seva">🇮🇳 Seva</a>
+<a href="#news">📰 News</a>
+<a href="#help">💬 Help</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<div class="heroBox">
+
+<div class="heroMini">
 WELCOME TO JOBMITRA AI
-Everything You Need in One Place
-Government Jobs, Odisha Jobs, Scholarship, Admit Card, Result, Digital Seva, Farmer Services, Student Resources, News, Government Schemes & Useful Knowledge.
+</div>
 
-💼 Latest Jobs
-🎓 Scholarship
-🇮🇳 Digital Seva
-📩 ₹99 Apply Help
-📅 Friday, August 28, 2026
-🔍
-Search Job, Scholarship, Aadhaar, Farmer, Exam...
-✨ Explore JobMitra AI
-ଆପଣଙ୍କ ଦରକାର ଅନୁସାରେ category ବାଛନ୍ତୁ
+<h2>Everything You Need in One Place</h2>
 
-🎓
-Students
-Scholarship • Admission • Exam • Result • Notes
+<p>
+Latest Government Jobs, Odisha Jobs, All India Jobs,
+Private Jobs, Scholarship, Admit Card, Results,
+Digital Seva, Farmer Services and Useful Government Information.
+</p>
 
-Explore →
-💼
-Jobs
-Odisha • India • Govt • Police • Railway
+<div class="heroButtons">
 
-Find Jobs →
-🌾
-Farmer
-Scheme • Subsidy • Farmer ID • Agriculture
+<a class="heroBtn" href="#jobs">💼 Latest Jobs</a>
 
-Open →
-🇮🇳
-Digital Seva
-Aadhaar • PAN • Voter • Land • Certificate
+<a class="heroBtn" href="#students">🎓 Scholarship</a>
 
-Open Seva →
-❤️
-Change Your Life
-Money • Career • Safety
+<a class="heroBtn dark" href="#seva">🇮🇳 Digital Seva</a>
 
-Start →
-🆕 Latest Updates
-Job • Admit Card • Result • Scholarship • Admission
+<a class="heroBtn dark" href="#help">📩 Apply Help</a>
 
-🔴 Latest Notifications
- LIVE
-JOB
-Latest
-Government Job Notifications
-UPSC, SSC, Railway, Odisha Police, OSSC, OPSC ଓ ଅନ୍ୟ recruitment updates official portalରେ check କରନ୍ତୁ।
+</div>
 
-OPEN / APPLY
-₹99 HELP
-SCHOLARSHIP
-Latest
-Odisha Scholarship
-Odisha State Scholarship Portal ରେ scholarship application/status check କରନ୍ତୁ।
+<div class="dateBox" id="today"></div>
 
-OPEN / APPLY
-₹99 HELP
-SCHOLARSHIP
-Latest
-National Scholarship
-Central Government scholarship ପାଇଁ National Scholarship Portal check କରନ୍ତୁ।
+</div>
 
-OPEN / APPLY
-₹99 HELP
-EXAM
-Latest
-Entrance Examination Updates
-NTA ଓ examination authoritiesର latest notices check କରନ୍ତୁ।
+</section>
 
-OPEN / APPLY
-₹99 HELP
-RESULT
-Latest
-Government Exam Results
-Government examination results ପାଇଁ official results portal ଦେଖନ୍ତୁ।
 
-OPEN / APPLY
-₹99 HELP
-SEVA
-Latest
-Aadhaar Online Services
-Aadhaar download/update ପାଇଁ official portal ବ୍ୟବହାର କରନ୍ତୁ।
+<div class="searchWrap">
 
-OPEN / APPLY
-₹99 HELP
-FARMER
-Latest
-PM-KISAN Farmer Services
-Farmer registration, status ଓ related services check କରନ୍ତୁ।
+<div class="search">
 
-OPEN / APPLY
-₹99 HELP
-📰 Latest News
-Odia • Hindi • English trusted news sources
+<span>🔍</span>
 
-🟠
-Odisha News
-Odisha ଓ ଦେଶର latest news ଦେଖନ୍ତୁ।
+<input
+id="searchInput"
+type="search"
+placeholder="Search Job, Scholarship, Aadhaar, Farmer..."
+oninput="searchSite()">
 
-Read News →
-🔵
-Hindi News
-Indiaର latest Hindi news updates।
+</div>
 
-Read News →
-⚫
-English News
-National & international news।
+<div id="searchResult" class="searchResult"></div>
 
-Read News →
-🗞️ Newspapers
-🟠 Sambad
-Odia Newspaper
-Open →
-🔵 Dainik Jagran
-Hindi Newspaper
-Open →
-⚫ The Hindu
-English Newspaper
-Open →
-🎓 Students Zone
-Scholarship • Admission • Exam • Result • Study
+</div>
 
-💰
-National Scholarship Portal
-Central Government scholarships.
 
-Open Official Portal →
-🎓
-Odisha Scholarship
-Odisha State Scholarship Portal.
+<main class="container">
 
-Open Portal →
-📝
-NTA Exams
-Entrance examinations and notices.
 
-Official Site →
-📊
-Government Results
-Central government examination results.
+<div class="title">
 
-Check Result →
-📄
-DigiLocker
-Marksheet and digital certificates.
+<h2>✨ Explore JobMitra AI</h2>
 
-Open →
-💻
-SWAYAM
-Online courses and learning.
+<p>Choose the service you need</p>
 
-Learn →
-🏫
-UGC
-Higher education information.
+</div>
 
-Official Site →
-🧭
-Career Guidance
-National Career Service.
 
-Open →
-📚
-Notes
-Subject-wise notes and important questions.
+<div class="categoryGrid">
 
-🧪
-Mock Test
-MCQ practice and exam preparation.
 
-📖
-Study Plan
-Daily study and revision planning.
+<a class="category c1" href="#jobs">
 
-💡
-Exam Tips
-Preparation strategy and useful tips.
+<div class="icon">💼</div>
 
-💼 Government Jobs
-Odisha + All India • Official recruitment portals
+<h3>Jobs</h3>
 
-🏛️
-UPSC Jobs
-Civil Services and central recruitment.
+<p>Odisha • India • Govt • Private • Police • Railway</p>
 
-Official Apply →
-📋
-SSC Jobs
-CGL • CHSL • MTS • GD and others.
+<span class="go">Find Jobs →</span>
 
-Official Apply →
-🚆
-Railway Jobs
-Railway recruitment and application.
+</a>
 
-Apply Portal →
-🏦
-Banking Jobs
-IBPS banking recruitment.
 
-Official Site →
-🏛️
-OPSC
-Odisha Public Service Commission.
+<a class="category c2" href="#students">
 
-Official Site →
-📝
-OSSC
-Odisha Staff Selection Commission.
+<div class="icon">🎓</div>
 
-Official Site →
-👮
-Odisha Police
-Police recruitment and notices.
+<h3>Students</h3>
 
-Official Site →
-🪖
-Indian Army
-Army recruitment.
+<p>Scholarship • Admission • Exam • Result • Study</p>
 
-Official Apply →
-✈️
-Indian Air Force
-Air Force recruitment.
+<span class="go">Explore →</span>
 
-Official Site →
-⚓
-Coast Guard
-Recruitment and notices.
+</a>
 
-Official Site →
-📮
-India Post
-Post Office recruitment and services.
 
-Official Site →
-💼
-Private Jobs
-National Career Service job search.
+<a class="category c3" href="#farmer">
 
-Find Jobs →
-🧑‍🔧
-Apprenticeship
-Apprenticeship opportunities.
+<div class="icon">🌾</div>
 
-Apply →
-🔬
-DRDO Careers
-Defence research recruitment.
+<h3>Farmer</h3>
 
-Official Site →
-🚀
-ISRO Careers
-Space sector recruitment.
+<p>Scheme • Subsidy • Farmer ID • Agriculture</p>
 
-Official Site →
-🏦
-LIC Careers
-LIC recruitment information.
+<span class="go">Open →</span>
 
-Official Site →
-💰
-RBI Careers
-Reserve Bank recruitment information.
+</a>
 
-Official Site →
-🌾
-NABARD
-Banking and rural development careers.
 
-Official Site →
-ADVERTISEMENT
-JobMitra AI Advertisement Space
-🔴 LIVE • AUTO UPDATE
-🔥 Latest Jobs
-Odisha + All India • Government Jobs • Fresh Notifications
+<a class="category c4" href="#seva">
 
+<div class="icon">🇮🇳</div>
+
+<h3>Digital Seva</h3>
+
+<p>Aadhaar • PAN • Voter • Land • Certificate</p>
+
+<span class="go">Open Seva →</span>
+
+</a>
+
+
+</div>
+
+
+<section id="latest">
+
+<div class="title">
+
+<h2>🆕 Latest Automatic Updates</h2>
+
+<p>Jobs • Admit Card • Results • Notifications</p>
+
+</div>
+
+
+<div class="latest">
+
+<div class="latestHead">
+
+<strong>🔴 Live Job Updates</strong>
+
+<span class="live">
+<span class="dot"></span>
+LIVE
+</span>
+
+</div>
+
+
+<div class="autoControls">
+
+<button class="autoFilter active"
+data-filter="all"
+onclick="filterJobs('all')">
 All
+</button>
+
+<button class="autoFilter"
+data-filter="Odisha Government Jobs"
+onclick="filterJobs('Odisha Government Jobs')">
 Odisha Govt
+</button>
+
+<button class="autoFilter"
+data-filter="All India Government Jobs"
+onclick="filterJobs('All India Government Jobs')">
 All India
+</button>
+
+<button class="autoFilter"
+data-filter="Private Jobs"
+onclick="filterJobs('Private Jobs')">
 Private
+</button>
+
+<button class="autoFilter"
+data-filter="Admit Card"
+onclick="filterJobs('Admit Card')">
 Admit Card
+</button>
+
+<button class="autoFilter"
+data-filter="Results"
+onclick="filterJobs('Results')">
 Results
-🟢 LIVE • 87 updates • Auto refresh every 5 minutes
-🟢 ODISHA GOVT
-🏢 OPSC
-OPSC - Results
-Category: Odisha Government Jobs
-
-Result from OPSC. Official notification link.
-
-📅 28 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OPSC
-OPSC - Recruitment Calendar
-Category: Odisha Government Jobs
-
-Job from OPSC. Official notification link.
-
-📅 28 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OPSC
-OPSC - Advertisements
-Category: Odisha Government Jobs
-
-Job from OPSC. Official notification link.
-
-📅 28 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OPSC
-OPSC - Notifications
-Category: Odisha Government Jobs
-
-Notification from OPSC. Official notification link.
-
-📅 28 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OPSC
-OPSC - Apply Online
-Category: Odisha Government Jobs
-
-Notification from OPSC. Official notification link.
-
-📅 28 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Post Notice
-Category: Odisha Government Jobs
-
-Notification from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Recruitment Calendar
-Category: Odisha Government Jobs
-
-Job from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Results
-Category: Odisha Government Jobs
-
-Result from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Notifications
-Category: Odisha Government Jobs
-
-Notification from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Download Admit Card
-Category: Odisha Government Jobs
-
-Admit Card from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Advertisements
-Category: Odisha Government Jobs
-
-Job from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Instructions to Apply online
-Category: Odisha Government Jobs
-
-Notification from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Apply Online
-Category: Odisha Government Jobs
-
-Notification from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Final Answer Key Link
-Category: Odisha Government Jobs
-
-Answer Key from OSSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Web Information Manager
-Category: All India Government Jobs
-
-Notification from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - View Archives >>
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment cases kept on hold on account of Pending Litigations
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - हिन्दी
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Answer Keys
-Category: All India Government Jobs
-
-Answer Key from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Representation on Question Papers
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Advertisements
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Status of Lateral Recruitment Cases (Advertisement wise)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Online Recruitment Application (ORA)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Status of Recruitment Cases (Advertisement wise)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - संघ लोक सेवा आयोग UNION PUBLIC SERVICE COMMISSION
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment Tests
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment Requisition
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Forms for Certificates
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Skip to main content
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Skip to main content
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 26 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Advertisements
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 25 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Advertisements
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 25 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 OSSC
-OSSC - Final Answer Key Link
-Category: Odisha Government Jobs
-
-Answer Key from OSSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Status of Lateral Recruitment Cases (Advertisement wise)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment Tests
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Online Recruitment Application (ORA)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment Requisition
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Status of Recruitment Cases (Advertisement wise)
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - Recruitment cases kept on hold on account of Pending Litigations
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 UPSC
-UPSC - संघ लोक सेवा आयोग UNION PUBLIC SERVICE COMMISSION
-Category: All India Government Jobs
-
-Job from UPSC. Official notification link.
-
-📅 24 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Directorate General of Employment (DGE)​ Ministry of Labour & Employment Govt. of India, Shram Shakti Bhawan Rafi Marg, ​New Delhi-110001, India
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Jobs for Women
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-International Jobs through e-migrate
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Government Jobs
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Career Schemes
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Employment Exchange Portal
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-List Of Employment Exchange
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-List of Model Career Centers
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-List of Model Career Center
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Create Job Fairs and Events
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Career Center
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Participate in a Job Fairs and Events
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Recruitment Agencies/International Employer
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Find Candidates
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Find Career Center
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Find Counsellor
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Career Tools & Learning
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Jobs for Ex-Servicemen
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Jobs for Differently Abled
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Jobs in Government sector
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Jobs in Health Sector
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Advisories for International Jobseeker
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Find International Jobs E-migrate
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Find Domestic Jobs
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Registration Flowchart
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🏢 PRIVATE
-🏢 JobMitra AI
-Classified jobs
-Category: Private / Government
-
-New Private / Government job/recruitment update from NCS.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Notifications
-Category: Odisha Government
-
-New Odisha Government job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Advertisements
-Category: Odisha Government
-
-New Odisha Government job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 JobMitra AI
-View Archives &gt;&gt;
-Category: Government
-
-New Government job/recruitment update from UPSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 JobMitra AI
-Recruitment Advertisements
-Category: Government
-
-New Government job/recruitment update from UPSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Instructions to Apply online
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Recruitment Calendar
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Notifications
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Advertisements
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Post Notice
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Objection Link
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🟢 ODISHA GOVT
-🏢 JobMitra AI
-Apply Online
-Category: Odisha Government
-
-New job/recruitment update from OSSC.
-
-📅 21 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🇮🇳 ALL INDIA GOVT
-🏢 JobMitra AI
-View Pdf
-Category: Jobs
-
-New recruitment-related update found on the official OSSC website.
-
-📅 19 Aug 2026
-OFFICIAL LINK ↗
-Verify the official notification before applying.
-🔴 LIVE UPDATE
-🔥 Latest Jobs 2026
-Odisha + All India Government & PSU Jobs
-
-NEW
-🏫 HIMS ODISHA
-Guest Faculty Recruitment 2026
-Guest Faculty – Contractual
-📌 Post: Guest Faculty
-
-🔢 Vacancy: 127 Posts
-
-🎓 Qualification: Post Graduation / Relevant qualification as per subject
-
-💼 Job Type: Contractual
-
-💰 Salary: As per HIMS / Odisha Government norms
-
-🎂 Age: As per official notification
-
-⏰ Last Date: 23 August 2026
-
-DIRECT APPLY ↗
-Official HIMS Odisha Portal
-NEW
-🔬 NIT ROURKELA
-Project Fellow Recruitment 2026
-AI-Powered Robotic Therapeutic System
-📌 Post: Project Fellow
-
-🏢 Organization: NIT Rourkela
-
-🎓 Qualification: Relevant qualification as per project notification
-
-💰 Salary: As per NIT Rourkela project norms
-
-📅 Advertisement: 08 August 2026
-
-⏰ Last Date: 21 August 2026
-
-DIRECT APPLY ↗
-Official NIT Rourkela Career Portal
-NEW
-🔬 NIT ROURKELA
-Project Fellow Recruitment 2026
-Generative AI – Cancer Prediction
-📌 Post: Project Fellow
-
-🔬 Project: Generative AI based cancer prediction & early diagnosis
-
-🎓 Qualification: Relevant qualification as per official notification
-
-💰 Salary: As per NIT Rourkela norms
-
-📅 Advertisement: 08 August 2026
-
-⏰ Last Date: 19 August 2026
-
-DIRECT APPLY ↗
-Official NIT Rourkela Career Portal
-NEW
-🔬 NIT ROURKELA
-Project Fellow Recruitment 2026
-AI Driven Protein Texturization
-📌 Post: Project Fellow
-
-🔬 Project: Artificial Intelligence Driven Indigenous Protein Texturization
-
-🎓 Qualification: Relevant qualification as per official advertisement
-
-💰 Salary: As per NIT Rourkela norms
-
-📅 Advertisement: 05 August 2026
-
-⏰ Last Date: 20 August 2026
-
-DIRECT APPLY ↗
-Official NIT Rourkela Career Portal
-NEW
-🌊 NIT ROURKELA
-Project Fellow Recruitment 2026
-Mahanadi Delta Flooding Research
-📌 Post: Project Fellow
-
-🔬 Project: Sea Level Rise, Land Subsidence & Tropical Cyclones
-
-🎓 Qualification: Relevant qualification as per official advertisement
-
-💰 Salary: As per NIT Rourkela norms
-
-📅 Advertisement: 30 July 2026
-
-⏰ Last Date: 20 August 2026
-
-DIRECT APPLY ↗
-Official NIT Rourkela Career Portal
-NEW
-🌩️ NIT ROURKELA
-Project Fellow Recruitment 2026
-Lightning & Hail Forecasting
-📌 Post: Project Fellow
-
-🔬 Project: Impact-based forecasting of lightning and hail
-
-📍 Region: Eastern India
-
-🎓 Qualification: Relevant qualification as per official advertisement
-
-💰 Salary: As per NIT Rourkela norms
-
-📅 Advertisement: 22 July 2026
-
-⏰ Last Date: 26 August 2026
-
-DIRECT APPLY ↗
-Official NIT Rourkela Career Portal
-🌾 Farmer Zone
-କୃଷକଙ୍କ ପାଇଁ scheme, subsidy, insurance ଓ services
-
-🌾
-PM-KISAN
-Registration, status and farmer services.
-
-Official Portal →
-🌱
-Krushak Odisha
-Odisha farmer services.
-
-Open Portal →
-🚜
-Agriculture Odisha
-Government schemes and agriculture information.
-
-Official Site →
-🛡️
-Crop Insurance
-Pradhan Mantri Fasal Bima Yojana.
-
-Official Portal →
-🌱
-Soil Health
-Soil health information.
+</button>
 
+</div>
+
+
+<div id="jobStatus">
+⏳ Loading latest jobs...
+</div>
+
+
+<div id="jobGrid" class="jobGrid">
+
+<div class="emptyJobs">
+⏳ Loading automatic job updates...
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="jobs">
+
+<div class="title">
+
+<h2>💼 Jobs</h2>
+
+<p>Odisha + All India Government and Private Jobs</p>
+
+</div>
+
+
+<div class="grid3">
+
+<div class="card">
+
+<div class="cardIcon">🏛️</div>
+
+<h3>Odisha Government Jobs</h3>
+
+<p>OSSC, OPSC, OSSSC, Police, Health, Forest and other Odisha recruitment.</p>
+
+<a class="btn" href="#latest">
+View Latest →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardIcon">🇮🇳</div>
+
+<h3>All India Government Jobs</h3>
+
+<p>UPSC, SSC, Railway and other central government recruitment.</p>
+
+<a class="btn" href="#latest">
+View Latest →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardIcon">🏢</div>
+
+<h3>Private Jobs</h3>
+
+<p>Latest private and fresher opportunities.</p>
+
+<a class="btn" href="#latest">
+View Latest →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="students">
+
+<div class="title">
+
+<h2>🎓 Students Zone</h2>
+
+<p>Scholarship • Admission • Exam • Result</p>
+
+</div>
+
+
+<div class="grid3">
+
+
+<a class="card"
+href="https://scholarships.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">💰</div>
+
+<h3>National Scholarship Portal</h3>
+
+<p>Central Government scholarships.</p>
+
+<span class="btn">Official Portal →</span>
+
+</a>
+
+
+<a class="card"
+href="https://scholarship.odisha.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🎓</div>
+
+<h3>Odisha Scholarship Portal</h3>
+
+<p>Odisha Government scholarship services.</p>
+
+<span class="btn">Official Portal →</span>
+
+</a>
+
+
+<a class="card"
+href="https://results.odisha.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">📊</div>
+
+<h3>Results</h3>
+
+<p>Check examination results and updates.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<section id="farmer">
+
+<div class="title">
+
+<h2>🌾 Farmer Services</h2>
+
+<p>Government schemes and agriculture services</p>
+
+</div>
+
+
+<div class="grid3">
+
+
+<a class="card"
+href="https://pmkisan.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🌾</div>
+
+<h3>PM-KISAN</h3>
+
+<p>Official PM-KISAN services.</p>
+
+<span class="btn">Open Official →</span>
+
+</a>
+
+
+<a class="card"
+href="https://agri.odisha.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🚜</div>
+
+<h3>Odisha Agriculture</h3>
+
+<p>Odisha agriculture department information.</p>
+
+<span class="btn">Open Official →</span>
+
+</a>
+
+
+<a class="card"
+href="https://pmfby.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🛡️</div>
+
+<h3>Crop Insurance</h3>
+
+<p>Pradhan Mantri Fasal Bima Yojana.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<section id="seva">
+
+<div class="title">
+
+<h2>🇮🇳 Digital Seva</h2>
+
+<p>Important official citizen services</p>
+
+</div>
+
+
+<div class="grid4">
+
+
+<a class="card"
+href="https://uidai.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🪪</div>
+
+<h3>Aadhaar</h3>
+
+<p>Official UIDAI services.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+<a class="card"
+href="https://www.pan.utiitsl.com/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">💳</div>
+
+<h3>PAN</h3>
+
+<p>PAN related services.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+<a class="card"
+href="https://voters.eci.gov.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🗳️</div>
+
+<h3>Voter Service</h3>
+
+<p>Election Commission services.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+<a class="card"
+href="https://bhulekh.ori.nic.in/"
+target="_blank"
+rel="noopener">
+
+<div class="cardIcon">🏠</div>
+
+<h3>Bhulekh Odisha</h3>
+
+<p>Odisha land record services.</p>
+
+<span class="btn">Open →</span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<section id="news">
+
+<div class="title">
+
+<h2>📰 News & Newspapers</h2>
+
+<p>Useful news sources</p>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="card">
+
+<div class="cardIcon">🟠</div>
+
+<h3>Odisha TV</h3>
+
+<p>Odisha latest news.</p>
+
+<a class="btn"
+href="https://odishatv.in/"
+target="_blank">
+Read News →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardIcon">🔵</div>
+
+<h3>Dainik Jagran</h3>
+
+<p>Hindi news.</p>
+
+<a class="btn"
+href="https://www.jagran.com/"
+target="_blank">
+Read News →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardIcon">⚫</div>
+
+<h3>The Hindu</h3>
+
+<p>English national news.</p>
+
+<a class="btn"
+href="https://www.thehindu.com/"
+target="_blank">
+Read News →
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="title">
+
+<h2>🗞️ Newspapers</h2>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="paper">
+
+<div>
+<strong>🟠 Sambad</strong>
+<small>Odia Newspaper</small>
+</div>
+
+<a class="btn"
+href="https://sambad.in/"
+target="_blank">
 Open →
-🏪
-e-NAM
-National Agriculture Market.
+</a>
 
-Official Portal →
-👨‍🌾
-Farmer Portal
-Central agriculture information.
+</div>
 
+
+<div class="paper">
+
+<div>
+<strong>🔵 Dainik Jagran</strong>
+<small>Hindi Newspaper</small>
+</div>
+
+<a class="btn"
+href="https://www.jagran.com/"
+target="_blank">
 Open →
-📊
-Agmarknet
-Agricultural market information.
+</a>
 
+</div>
+
+
+<div class="paper">
+
+<div>
+<strong>⚫ The Hindu</strong>
+<small>English Newspaper</small>
+</div>
+
+<a class="btn"
+href="https://www.thehindu.com/"
+target="_blank">
 Open →
-📱
-mKisan
-Farmer advisory and information.
+</a>
 
-Open →
-🌾
-AgriStack – Odisha Farmer Registry
-Farmer Registration, Farmer ID & Registry Services.
+</div>
 
-Official Portal →
-🇮🇳 Digital Seva
-Click କଲେ official website/portal ଖୋଲିବ
 
-🪪
-Aadhaar
-Download, update and Aadhaar services.
+</div>
 
-Official Portal →
-💳
-PAN / Income Tax
-PAN and Income Tax Department services.
+</section>
 
-Official Portal →
-💳
-PAN Services
-PAN related official services.
 
-Open →
-🗳️
-Voter ID
-Registration, correction and voter services.
+<div class="ad">
+ADVERTISEMENT SPACE
+</div>
 
-Official Portal →
-📄
-DigiLocker
-Digital documents and certificates.
 
-Open →
-📜
-Odisha e-District
-Certificates and citizen services.
+<section id="help">
 
-Official Portal →
-🍚
-Ration / PDS Odisha
-Public Distribution System services.
+<div class="help">
 
-Open →
-🌾
-Bhulekh Odisha
-Land record and RoR information.
+<h2>💬 JobMitra AI Help</h2>
 
-Open →
-🏠
-Land & Revenue
-Odisha Revenue Department.
+<p>
+Online Apply, Job Form Filling and General Application Help
+</p>
 
-Official Site →
-🚗
-Driving Licence
-DL and vehicle services.
+<a class="dm"
+href="https://wa.me/"
+target="_blank">
+📲 WhatsApp Support
+</a>
 
-Official Portal →
-🛂
-Passport Seva
-Passport application and services.
+<p class="warning">
+Always verify job information from the official notification before applying.
+</p>
 
-Open →
-📢
-Government Grievance
-Public grievance portal.
+</div>
 
-Open →
-🇮🇳
-Election Commission
-Election information and services.
+</section>
 
-Official Site →
-📱
-UMANG
-Multiple Government services in one platform.
 
-Open →
-🇮🇳
-India.gov.in
-Government information and services.
+</main>
 
-Open →
-📚 ଜ୍ଞାନ ଓ ଶିକ୍ଷା କୋଣ
-ସରକାରୀ ସେବା, ଓଡ଼ିଶାର ସଂସ୍କୃତି ଓ ବିଭିନ୍ନ ବିଷୟରେ ସହଜ ଭାଷାରେ ବିସ୍ତୃତ ଅଧ୍ୟୟନ
 
-🏠 ସରକାରୀ ସୁବିଧା — ମୋ ସୁବିଧା
-ସରକାରୀ ଯୋଜନା, ନାଗରିକ ସେବା, ଶିକ୍ଷା, ଖାଦ୍ୟ, କୃଷକ, ଶ୍ରମିକ, ସ୍ୱାସ୍ଥ୍ୟ ଓ ଅଭିଯୋଗ ସମ୍ବନ୍ଧୀୟ ମୌଳିକ ଜ୍ଞାନ।
+<footer>
 
-🏠
-Housing — ଆବାସ
-ସରକାରୀ ଘର ଯୋଜନା, ଯୋଗ୍ୟତା, ଦଲିଲ ଓ ଆବେଦନ ପ୍ରକ୍ରିୟା।
+<h2>JobMitra AI</h2>
 
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🍚
-Food Security — ଖାଦ୍ୟ ସୁରକ୍ଷା
-ରାସନ କାର୍ଡ, PDS, ଚାଉଳ ଓ ସରକାରୀ ଖାଦ୍ୟ ସୁବିଧା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🎓
-Education — ଶିକ୍ଷା
-ଛାତ୍ରବୃତ୍ତି, ଶିକ୍ଷା ସହାୟତା ଓ ଛାତ୍ରଛାତ୍ରୀଙ୍କ ସୁବିଧା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🌾
-Farmer Support — କୃଷକ ସହାୟତା
-କୃଷକଙ୍କ ପାଇଁ ଯୋଜନା, ବୀମା, ସବସିଡି ଓ ଆର୍ଥିକ ସହାୟତା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-👷
-Labour — ଶ୍ରମିକ
-ଶ୍ରମିକଙ୍କ ଅଧିକାର, କଲ୍ୟାଣ ଓ ସରକାରୀ ସହାୟତା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🏥
-Health — ସ୍ୱାସ୍ଥ୍ୟ
-ସରକାରୀ ସ୍ୱାସ୍ଥ୍ୟ ସେବା, ବୀମା ଓ ଚିକିତ୍ସା ସୁବିଧା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-👨‍👩‍👧
-Social Support — ସାମାଜିକ ସହାୟତା
-ବୃଦ୍ଧ, ବିଧବା, ଦିବ୍ୟାଙ୍ଗ ଓ ଆବଶ୍ୟକତା ଥିବା ଲୋକଙ୍କ ସହାୟତା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-📜
-Certificate — ପ୍ରମାଣପତ୍ର
-ଆୟ, ବାସସ୍ଥାନ, ଜାତି ଓ ଅନ୍ୟାନ୍ୟ ପ୍ରମାଣପତ୍ର ବିଷୟରେ ଜ୍ଞାନ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-📢
-Complaint — ଅଭିଯୋଗ
-ସରକାରୀ ସେବାରେ ସମସ୍ୟା ହେଲେ କିପରି ଅଭିଯୋଗ କରିବେ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🪶 ଓଡ଼ିଶାର ସଂସ୍କୃତି ଓ ଐତିହ୍ୟ
-ଓଡ଼ିଶାର ଇତିହାସ, ପରମ୍ପରା, ପୋଷାକ, ଖାଦ୍ୟ, ଗ୍ରାମୀଣ ଜୀବନ ଓ ବିଭିନ୍ନ ସମ୍ପ୍ରଦାୟ ବିଷୟରେ ଅଧ୍ୟୟନ।
-
-🪶
-Tribal History — ଜନଜାତି ଇତିହାସ
-ଓଡ଼ିଶାର ଜନଜାତି ସମାଜ, ଇତିହାସ ଓ ଜୀବନଧାରା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🥁
-Tradition — ପରମ୍ପରା
-ପର୍ବପର୍ବାଣୀ, ନୃତ୍ୟ, ସଙ୍ଗୀତ ଓ ପାରମ୍ପରିକ ରୀତିନୀତି।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-👕
-Traditional Dress — ପାରମ୍ପରିକ ପୋଷାକ
-ଓଡ଼ିଶାର ପାରମ୍ପରିକ ପୋଷାକ ଓ ତାହାର ସାଂସ୍କୃତିକ ମହତ୍ତ୍ୱ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🍚
-Traditional Food — ପାରମ୍ପରିକ ଖାଦ୍ୟ
-ଓଡ଼ିଶାର ପ୍ରସିଦ୍ଧ ଖାଦ୍ୟ, ଉପାଦାନ ଓ ପାକପ୍ରଣାଳୀ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🏹
-Village Life — ଗ୍ରାମୀଣ ଜୀବନ
-ଗାଁର ଜୀବନ, କୃଷି, ଜଙ୍ଗଲ ଓ ପାରମ୍ପରିକ ଜୀବିକା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🟠
-Bathudi Culture — ବାଥୁଡ଼ି ସଂସ୍କୃତି
-ବାଥୁଡ଼ି ସମ୍ପ୍ରଦାୟର ପରମ୍ପରା, ଜୀବନଧାରା ଓ ସାଂସ୍କୃତିକ ପରିଚୟ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-📚 Extra Knowledge — ଅତିରିକ୍ତ ଜ୍ଞାନ
-ଦୈନନ୍ଦିନ ଜୀବନ, ପଢ଼ାଶୁଣା ଓ ଭବିଷ୍ୟତ କାର୍ଯ୍ୟଜୀବନ ପାଇଁ ବିଭିନ୍ନ ବିଷୟର ସହଜ ଅଧ୍ୟୟନ।
-
-📈
-Share Market — ଶେୟାର ବଜାର
-ଶେୟାର, ସୂଚକାଙ୍କ, IPO, ଲାଭ-କ୍ଷତି ଓ ଝୁମ୍ପ ବିଷୟରେ ମୌଳିକ ଜ୍ଞାନ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-💹
-Trading — ଟ୍ରେଡିଂ
-ଟ୍ରେଣ୍ଡ, Support, Resistance, Risk Management ଓ Trading ର ମୌଳିକ ଧାରଣା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-💻
-Programming — ପ୍ରୋଗ୍ରାମିଂ
-HTML, CSS, JavaScript ଓ Coding ର ମୌଳିକ ଧାରଣା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🤖
-Artificial Intelligence — କୃତ୍ରିମ ବୁଦ୍ଧିମତ୍ତା
-AI କଣ, କିପରି କାମ କରେ, Machine Learning ଓ ଦୈନନ୍ଦିନ ବ୍ୟବହାର।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🔬
-Science — ବିଜ୍ଞାନ
-ପଦାର୍ଥ, ଶକ୍ତି, ଜୀବବିଜ୍ଞାନ, ରସାୟନ ଓ ଦୈନନ୍ଦିନ ବିଜ୍ଞାନ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🚀
-Space — ମହାକାଶ
-ଗ୍ରହ, ନକ୍ଷତ୍ର, ସୌରମଣ୍ଡଳ, ଉପଗ୍ରହ ଓ ମହାକାଶ ଅନୁସନ୍ଧାନ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🌍
-World Knowledge — ବିଶ୍ୱ ଜ୍ଞାନ
-ଦେଶ, ରାଜଧାନୀ, ମହାଦେଶ, ଭୂଗୋଳ ଓ ବିଶ୍ୱ ସମ୍ବନ୍ଧୀୟ ତଥ୍ୟ।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🇮🇳
-Indian Constitution — ଭାରତୀୟ ସମ୍ବିଧାନ
-ସମ୍ବିଧାନ, ମୌଳିକ ଅଧିକାର, କର୍ତ୍ତବ୍ୟ, ସଂସଦ ଓ ଶାସନ ବ୍ୟବସ୍ଥା।
-
-📖 ବିସ୍ତୃତ ଭାବେ ପଢ଼ନ୍ତୁ
-🛍️ Useful Shopping
-Useful categories
-
-📱
-Mobile
-Shop →
-💻
-Laptop
-Shop →
-🎧
-Electronics
-Shop →
-📚
-Books
-Shop →
-👕
-Fashion
-Shop →
-🏠
-Home
-Shop →
-🎒
-Student Items
-Shop →
-📷
-Camera
-Shop →
-ADVERTISEMENT
-
-JobMitra AI Advertisement Space
-📩 ₹99 Apply Service
-Job / Scholarship / Government Form apply କରିପାରୁନାହାନ୍ତି?
-
-ଆମକୁ Direct DM କରନ୍ତୁ — ଆମେ application assistance ଦେବୁ।
-
-Service Charge: ₹99
-
-💬 Direct DM Now
-Instagram: @naik_babulu
-
-⚠️ ₹99 କେବଳ application assistance/service charge। Government application fee ଥିଲେ ସେହି fee ଅଲଗା। OTP, UPI PIN, ATM PIN, password କିମ୍ବା confidential information କେବେ ମାଗନ୍ତୁ ନାହିଁ।
-
-🔴 JobMitra AI
+<p>
 Jobs • Scholarship • Students • Farmer • Digital Seva • News
+</p>
 
-Create by Babulu Naik
+<p>
+Created by <span class="branding">Babulu Naik</span>
+</p>
 
-Create by Babulu Naik • ₹99 Apply Service • Direct DM
+<p>
+© 2026 JobMitra AI. All Rights Reserved.
+</p>
 
-© 2026 JobMitra AI
+</footer>
 
-Jobs are refreshed automatically from the JobMitra AI database.
+
+<div class="bottom">
+
+<a href="#home">
+🏠
+<small>Home</small>
+</a>
+
+<a href="#latest">
+💼
+<small>Jobs</small>
+</a>
+
+<a href="#students">
+🎓
+<small>Students</small>
+</a>
+
+<a href="#seva">
+🇮🇳
+<small>Seva</small>
+</a>
+
+<a href="#help">
+💬
+<small>Help</small>
+</a>
+
+</div>
+
+
+<script>
+
+/* ==========================================================
+   JOBMITRA AI
+   BASIC FUNCTIONS
+========================================================== */
+
+function toggleMenu(){
+
+  const nav=document.getElementById("nav");
+
+  nav.classList.toggle("open");
+
+}
+
+
+function updateDate(){
+
+  const box=document.getElementById("today");
+
+  if(!box) return;
+
+  const now=new Date();
+
+  box.textContent=
+    "📅 "+
+    now.toLocaleDateString("en-IN",{
+      weekday:"long",
+      day:"2-digit",
+      month:"long",
+      year:"numeric"
+    });
+
+}
+
+updateDate();
+
+
+/* ==========================================================
+   SUPABASE LIVE JOB SYSTEM
+========================================================== */
+
+const SUPABASE_URL =
+  "https://hsexaatuacdnumxnkehx.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_mkUyaXPtvVNxFTrGOwErvw_rKhV7t8I";
+
+const JOB_TABLE="job_updates";
+
+const JOB_LIMIT=100;
+
+let allJobs=[];
+
+let currentFilter="all";
+
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+function safeURL(value){
+
+  try{
+
+    const url=new URL(value,window.location.href);
+
+    if(
+      url.protocol==="https:" ||
+      url.protocol==="http:"
+    ){
+
+      return url.href;
+
+    }
+
+  }catch(e){}
+
+  return "#";
+
+}
+
+
+function formatDate(value){
+
+  if(!value) return "Latest";
+
+  const date=new Date(value);
+
+  if(Number.isNaN(date.getTime()))
+    return "Latest";
+
+  return date.toLocaleDateString(
+    "en-IN",
+    {
+      day:"2-digit",
+      month:"short",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+function timeAgo(value){
+
+  if(!value) return "";
+
+  const date=new Date(value);
+
+  if(Number.isNaN(date.getTime()))
+    return "";
+
+  const minutes=
+    Math.floor(
+      (Date.now()-date.getTime())/60000
+    );
+
+  if(minutes<1)
+    return "Just now";
+
+  if(minutes<60)
+    return minutes+" min ago";
+
+  const hours=Math.floor(minutes/60);
+
+  if(hours<24)
+    return hours+" hr ago";
+
+  const days=Math.floor(hours/24);
+
+  if(days<7)
+    return days+" day ago";
+
+  return formatDate(value);
+
+}
+
+
+function badge(category){
+
+  const c=
+    String(category||"")
+    .toLowerCase();
+
+  if(c.includes("admit"))
+    return "🎫 ADMIT CARD";
+
+  if(c.includes("result"))
+    return "📊 RESULT";
+
+  if(c.includes("private"))
+    return "🏢 PRIVATE";
+
+  if(c.includes("odisha"))
+    return "🟢 ODISHA GOVT";
+
+  return "🇮🇳 ALL INDIA GOVT";
+
+}
+
+
+function renderJobs(){
+
+  const grid=
+    document.getElementById("jobGrid");
+
+  if(!grid) return;
+
+  let jobs=allJobs;
+
+  if(currentFilter!=="all"){
+
+    jobs=allJobs.filter(job=>
+      String(job.category||"")
+      .toLowerCase()===
+      currentFilter.toLowerCase()
+    );
+
+  }
+
+  grid.innerHTML="";
+
+  if(!jobs.length){
+
+    grid.innerHTML=`
+
+      <div class="emptyJobs">
+
+        <div style="font-size:38px">📭</div>
+
+        <h3>No job updates found</h3>
+
+        <p>
+        New jobs will appear automatically
+        after the checker updates Supabase.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  jobs.forEach(job=>{
+
+    const card=
+      document.createElement("article");
+
+    card.className="jobCard";
+
+
+    const title=
+      escapeHTML(
+        job.title ||
+        "Latest Job Notification"
+      );
+
+
+    const description=
+      escapeHTML(
+        job.description ||
+        "Open the official notification for complete details."
+      );
+
+
+    const category=
+      escapeHTML(
+        job.category ||
+        "Jobs"
+      );
+
+
+    const source=
+      escapeHTML(
+        job.source ||
+        "JobMitra AI"
+      );
+
+
+    const url=
+      safeURL(job.apply_url);
+
+
+    const date=
+      escapeHTML(
+        formatDate(job.published_at)
+      );
+
+
+    const age=
+      escapeHTML(
+        timeAgo(job.published_at)
+      );
+
+
+    card.innerHTML=`
+
+      <span class="jobBadge">
+        ${badge(job.category)}
+      </span>
+
+      <div class="jobSource">
+        🏢 ${source}
+      </div>
+
+      <h3>
+        ${title}
+      </h3>
+
+      <p>
+        <b>Category:</b>
+        ${category}
+      </p>
+
+      <p>
+        ${description}
+      </p>
+
+      <div class="jobDate">
+        📅 ${date}
+        ${age ? " • 🕐 "+age : ""}
+      </div>
+
+      <a
+        class="applyBtn"
+        href="${url}"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        OFFICIAL LINK ↗
+
+      </a>
+
+      <div class="jobNote">
+        Verify the official notification
+        before applying.
+      </div>
+
+    `;
+
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+function filterJobs(filter){
+
+  currentFilter=filter;
+
+  document
+    .querySelectorAll(".autoFilter")
+    .forEach(button=>{
+
+      button.classList.toggle(
+        "active",
+        String(button.dataset.filter)
+          .toLowerCase()===
+        String(filter).toLowerCase()
+      );
+
+    });
+
+
+  renderJobs();
+
+}
+
+
+async function loadJobs(){
+
+  const status=
+    document.getElementById("jobStatus");
+
+
+  if(status){
+
+    status.textContent=
+      "⏳ Updating latest jobs...";
+
+  }
+
+
+  try{
+
+    const url=
+      SUPABASE_URL+
+      "/rest/v1/"+
+      JOB_TABLE+
+      "?select=*"+
+      "&order=published_at.desc.nullslast"+
+      "&limit="+
+      JOB_LIMIT;
+
+
+    const response=
+      await fetch(
+        url,
+        {
+          method:"GET",
+
+          headers:{
+            "apikey":
+              SUPABASE_PUBLISHABLE_KEY,
+
+            "Authorization":
+              "Bearer "+
+              SUPABASE_PUBLISHABLE_KEY
+          },
+
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "Supabase HTTP "+
+        response.status
+      );
+
+    }
+
+
+    const data=
+      await response.json();
+
+
+    allJobs=
+      Array.isArray(data)
+      ? data
+      : [];
+
+
+    renderJobs();
+
+
+    if(status){
+
+      status.textContent=
+        "🟢 LIVE • "+
+        allJobs.length+
+        " updates • Auto refresh every 5 minutes";
+
+    }
+
+
+  }catch(error){
+
+    console.error(
+      "JobMitra jobs error:",
+      error
+    );
+
+
+    if(status){
+
+      status.textContent=
+        "🟠 Live job database temporarily unavailable.";
+
+    }
+
+
+  }
+
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+function searchSite(){
+
+  const input=
+    document.getElementById(
+      "searchInput"
+    );
+
+  const result=
+    document.getElementById(
+      "searchResult"
+    );
+
+
+  const query=
+    String(input.value||"")
+    .trim()
+    .toLowerCase();
+
+
+  if(!query){
+
+    result.style.display="none";
+
+    return;
+
+  }
+
+
+  const matches=[];
+
+
+  allJobs.forEach(job=>{
+
+    const text=
+      (
+        job.title+
+        " "+
+        job.description+
+        " "+
+        job.category+
+        " "+
+        job.source
+      )
+      .toLowerCase();
+
+
+    if(text.includes(query)){
+
+      matches.push(job);
+
+    }
+
+  });
+
+
+  if(!matches.length){
+
+    result.style.display="block";
+
+    result.innerHTML=
+      "❌ No matching live job found.";
+
+    return;
+
+  }
+
+
+  result.style.display="block";
+
+
+  result.innerHTML=
+    "<b>🔎 Live Job Results</b><br><br>"+
+    matches
+      .slice(0,8)
+      .map(job=>`
+
+        <a
+          href="${safeURL(job.apply_url)}"
+          target="_blank"
+          rel="noopener"
+          style="
+            display:block;
+            padding:7px 0;
+            border-bottom:1px solid #eee;
+          ">
+
+          ${escapeHTML(job.title)}
+
+        </a>
+
+      `)
+      .join("");
+
+}
+
+
+/* ==========================================================
+   AUTOMATIC REFRESH
+========================================================== */
+
+loadJobs();
+
+
+/*
+   Website checks Supabase every 5 minutes.
+   GitHub Actions/checker.js should update
+   the Supabase job_updates table automatically.
+*/
+
+setInterval(
+  loadJobs,
+  5*60*1000
+);
+
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    if(!document.hidden){
+
+      loadJobs();
+
+    }
+
+  }
+);
+
+
+window.addEventListener(
+  "focus",
+  loadJobs
+);
+
+
+/* ==========================================================
+   PWA SERVICE WORKER
+========================================================== */
+
+if(
+  "serviceWorker" in navigator
+){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker
+        .register("sw.js")
+        .catch(
+          error=>
+            console.log(
+              "Service worker:",
+              error
+            )
+        );
+
+    }
+  );
+
+}
+
+</script>
+
+</body>
+</html>
